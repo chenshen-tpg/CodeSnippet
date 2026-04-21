@@ -1,4 +1,0 @@
-package CodingQuestions.Algorithms.Algorithm.Graph.GraphGeneral.MinimizetheMaximumEdgeWeightofGraph_3419;
-
-public class MinimizetheMaximumEdgeWeightofGraph_3419 {
-}
