@@ -3,7 +3,7 @@ package main.SomeParticalExamples;
 import java.util.HashMap;
 import lombok.Synchronized;
 
-public class MapSum {
+public class LatestMapSumUsage {
 
 /*The Scenario: "We have a cache of user balances. Multiple threads update it.
 What is wrong with this code, and how do you fix it without using synchronized?"
