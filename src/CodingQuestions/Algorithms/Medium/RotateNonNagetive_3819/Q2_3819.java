@@ -1,4 +1,4 @@
-package main.SomeParticalExamples.Random.WeeklyContest_486;
+package CodingQuestions.Algorithms.Medium.RotateNonNagetive_3819;
 
 public class Q2_3819 {
 

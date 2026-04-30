@@ -1,4 +1,4 @@
-package main.SomeParticalExamples.Random.WeeklyContest_486;
+package CodingQuestions.Algorithms.Medium.MinimalPrefixRemoval_3818;
 
 public class Q1_3818 {
     public static void main(String[] args) {

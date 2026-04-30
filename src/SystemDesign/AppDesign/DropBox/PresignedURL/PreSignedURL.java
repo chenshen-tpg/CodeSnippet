@@ -1,4 +1,4 @@
-package SystemDesign.SystemDesign.DropBox.PresignedURL;
+package SystemDesign.AppDesign.DropBox.PresignedURL;
 
 import software.amazon.awssdk.regions.Region;
 
