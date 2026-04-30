@@ -1,9 +1,18 @@
 package CodingQuestions.Algorithms.Easy.ArmstrongNumber_1134;
 
 public class Count {
+    /***
+     *
+     Given an integer n, return true if and only if it is an Armstrong number.
+     The k-digit number n is an Armstrong number if and only if the kth power of each digit sums to n.
+     Input: n = 153
+     Output: true
+     Explanation: 153 is a 3-digit number, and 153 = 13 + 53 + 33.
+     */
+
     public static void main(String[] args) {
         Count solution = new Count();
-        solution.isArmstrong(2);
+        System.out.println(solution.isArmstrong(2));
     }
 
     public boolean isArmstrong(int n) {
