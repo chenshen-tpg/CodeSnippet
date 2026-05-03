@@ -1,4 +1,4 @@
-package SystemDesign.AppDesign.Tinder;
+package main.SystemDesign.AppDesign.Tinder;
 
 import java.util.HashSet;
 import java.util.Set;

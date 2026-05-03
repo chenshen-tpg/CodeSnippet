@@ -1,4 +1,4 @@
-package SystemDesign.AppDesign.Tinder;
+package main.SystemDesign.AppDesign.Tinder;
 
 import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;

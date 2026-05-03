@@ -1,4 +1,4 @@
-package SystemDesign.CoreConcepts.ConsistentHashing;
+package main.SystemDesign.CoreConcepts.ConsistentHashing;
 
 import java.util.HashSet;
 import java.util.Set;

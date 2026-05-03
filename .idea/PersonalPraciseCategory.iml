@@ -33,5 +33,6 @@
     </orderEntry>
     <orderEntry type="library" name="Python 3.14 (Practise) interpreter library" level="application" />
     <orderEntry type="library" name="Maven: javax.websocket:javax.websocket-api:1.1" level="project" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-stub:1.63.0" level="project" />
   </component>
 </module>
