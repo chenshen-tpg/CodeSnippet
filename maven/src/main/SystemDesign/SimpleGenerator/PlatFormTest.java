@@ -39,7 +39,7 @@ public class PlatFormTest {
                 Point point = (Point) o;
                 return x == point.x && y == point.y;
             }
-            //Values are based on the x,y, in stead of memory address.
+            //Values are based on the x,y, instead of memory address.
             @Override
             public int hashCode() {
                 return Objects.hash(x, y);
