@@ -1,8 +1,7 @@
-package Concept.randomShit.Platform;
+package randomShit.Platform.HashMapCollision;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class HashMapCollisionDemo {
     static class Point {

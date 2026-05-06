@@ -1,4 +1,4 @@
-package Concept.randomShit.Platform;
+package randomShit.Platform.HashMapCollision;
 
 public class MaxSumSubcube3D {
     // arr: 3D array, k, l, m: window sizes

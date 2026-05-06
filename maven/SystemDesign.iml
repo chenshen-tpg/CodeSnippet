@@ -2,7 +2,12 @@
 <module version="4">
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$" dumb="true">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Concept" isTestSource="false" />
     </content>
+  </component>
+  <component name="FacetManager">
+    <facet type="Python" name="Python">
+      <configuration sdkName="Python 3.14 (Personal_Code)" />
+    </facet>
   </component>
 </module>
