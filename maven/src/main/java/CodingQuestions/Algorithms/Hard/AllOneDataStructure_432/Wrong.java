@@ -63,7 +63,7 @@ public class Wrong {
 
 
     public Wrong() {
-     map =  new TreeMap<>();
+        map = new TreeMap<>();
     }
 
     public void inc(String key) {

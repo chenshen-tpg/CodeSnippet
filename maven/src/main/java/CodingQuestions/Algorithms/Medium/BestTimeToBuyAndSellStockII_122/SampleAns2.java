@@ -1,4 +1,4 @@
-package CodingQuestions.Algorithms.Medium.BestTimeToBuyAndSell_122;
+package CodingQuestions.Algorithms.Medium.BestTimeToBuyAndSellStockII_122;
 
 public class SampleAns2 {
     public static void main(String[] args) {

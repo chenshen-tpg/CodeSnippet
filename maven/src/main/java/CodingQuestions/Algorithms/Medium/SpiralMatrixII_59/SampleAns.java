@@ -1,4 +1,4 @@
-package CodingQuestions.Algorithms.Medium.SpiralMatrix_59;
+package CodingQuestions.Algorithms.Medium.SpiralMatrixII_59;
 
 public class SampleAns {
     public static void main(String[] args) {

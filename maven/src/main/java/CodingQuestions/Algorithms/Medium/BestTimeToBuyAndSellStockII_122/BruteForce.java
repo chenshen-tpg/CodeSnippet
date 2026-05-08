@@ -1,11 +1,13 @@
 package CodingQuestions.Algorithms.Medium.BestTimeToBuyAndSellStockII_122;
 
 public class BruteForce {
+
     public static void main(String[] args) {
         BruteForce solution = new BruteForce();
-        int [] prices = {7,1,5,3,6,4};
+        int[] prices = {7, 1, 5, 3, 6, 4};
         System.out.println(solution.maxProfit(prices));
     }
+
     public int maxProfit(int[] prices) {
         return calculate(prices, 0);
     }
