@@ -1,6 +1,6 @@
 package CodingQuestions.Algorithms.Medium.BestTimeToBuyAndSellStockII_122;
 
-public class SampleAns1 {
+public class SampleAnswer {
 
     /***
      *

@@ -41,7 +41,7 @@ import java.util.Map;
  *
  *
  */
-public class notRefined {
+public class SampleAnswer {
     public static void main(String[] args) {
 
     }

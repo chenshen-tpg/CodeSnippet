@@ -4,9 +4,9 @@ package CodingQuestions.Algorithms.Medium.AddBoldTagInString_616;
 /***
 
 
- You are given a string s and an array of strings words.
+ You are given a string s and an array of String words.
 
- You should add a closed pair of bold tag <b> and </b> to wrap the substrings in s that exist in words.
+ You should add a closed pair of bold Tag <b> and </b> to wrap the substrings in s that exist in words.
 
  If two such substrings overlap, you should wrap them together with only one pair of closed bold-tag.
  If two substrings wrapped by bold tags are consecutive, you should combine them.
@@ -24,9 +24,9 @@ package CodingQuestions.Algorithms.Medium.AddBoldTagInString_616;
 
 
  */
-public class ModelAnswer {
+public class SampleAnswer {
     public static void main(String[] args) {
-        ModelAnswer solution = new ModelAnswer();
+        SampleAnswer solution = new SampleAnswer();
         solution.addBoldTag("abcxyz123", new String[]{"abc", "123"});
     }
 

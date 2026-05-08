@@ -7,7 +7,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-public class TEST {
+public class SampleAnswer {
+
+    /***
+     *
+     Given the root of a binary tree, return the level order traversal of its nodes' values. (i.e., from left to right, level by level).
+     Example 1:
+     Input: root = [3,9,20,null,null,15,7]
+     Output: [[3],[9,20],[15,7]]
+
+     */
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> li = new ArrayList();
         if (root == null) return li;
