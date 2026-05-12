@@ -25,14 +25,16 @@ public class FullMigration {
     @RestController
     @RequestMapping("/users")
     public class UserController {
+
         @GetMapping("/{id}")
         public User getUser(@PathVariable Long id) {
-
             return null;
         }
     }
+
     @RequestMapping("/orders")
     public class OrderController {
+
         @GetMapping("/{id}")
         public Order getOrder(@PathVariable Long id) {
             return null;
