@@ -8,7 +8,7 @@ public class HashMapExample {
     @RestController
     public class SessionController {
         // BAD: Static map causes memory leak if not managed properly
-        private static final Map<String, UserSession> sessionCache = new HashMap<>();
+        private final Map<String, UserSession> sessionCache = new HashMap<>();
 
         @PostMapping("/login")
         public String login(@RequestParam String userId) {

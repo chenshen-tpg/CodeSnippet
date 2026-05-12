@@ -42,7 +42,7 @@ public class Example {
 
     // Usage
     public class Main {
-        public static void main(String[] args) {
+        public void main(String[] args) {
 //            Notifier notifier = new SMSDecorator(new EmailNotifier());
 //            notifier.send("Hello!");
             // Output:

@@ -9,7 +9,7 @@ public class StaticListExample {
     @RestController
     public class FileUploadController {
         // BAD: Static list grows forever!
-        private static final List<String> uploadedFiles = new ArrayList<>();
+        private final List<String> uploadedFiles = new ArrayList<>();
 
         @PostMapping("/upload")
         public String uploadFile(@RequestParam("file") MultipartFile file) {

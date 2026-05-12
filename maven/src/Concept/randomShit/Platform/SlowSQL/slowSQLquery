@@ -1,0 +1,18 @@
+I once worked on a reporting feature where a SQL query fetching user activity logs was taking over 10 seconds to run.
+
+
+My process was:
+Analyzed the Query Plan:
+
+I used EXPLAIN to review the query execution plan and found full table scans and missing indexes.
+Reviewed Indexes:
+
+I added composite indexes on the columns used in WHERE and ORDER BY clauses.
+Optimized the Query:
+
+I rewrote subqueries as joins and limited the result set with pagination.
+
+Tested Performance:
+After changes, the query time dropped to under 500ms.
+Monitored in Production:
+I set up slow query logging to catch regressions.
