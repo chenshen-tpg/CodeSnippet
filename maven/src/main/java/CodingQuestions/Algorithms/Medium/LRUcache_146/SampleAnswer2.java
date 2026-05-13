@@ -42,8 +42,10 @@ import java.util.Map;
 class LRUCache {
 
     class Node {
-        int value, key;
-        Node prev, next;
+        int value;
+        int key;
+        Node prev;
+        Node next;
     }
 
     private Map<Integer, Node> map = new HashMap<>();
@@ -93,7 +95,6 @@ class LRUCache {
     private void removeNode(Node node) {
         Node prev = node.prev;
         Node next = node.next;
-
         prev.next = next;
         next.prev = prev;
     }
@@ -110,6 +111,7 @@ class LRUCache {
         removeNode(res);
         return res;
     }
+
     public static void main(String[] args) {
         LRUCache cache = new LRUCache(2); // Capacity of 2
         cache.put(1, 1); // Add key=1, value=1
