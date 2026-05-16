@@ -31,7 +31,8 @@ public class SampleAnswer {
     }
 
     public String addBoldTag(String s, String[] words) {
-        boolean[] bold = new boolean[s.length()];
+        int len = s.length();
+        boolean[] bold = new boolean[len];
         for (String word : words) {
             int start = s.indexOf(word);
             while (start != -1) {
@@ -42,10 +43,14 @@ public class SampleAnswer {
             }
         }
         StringBuilder ans = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            if (bold[i] && (i == 0 || !bold[i - 1])) ans.append("<b>");
+        for (int i = 0; i < len; i++) {
+            if (bold[i] && (i == 0 || !bold[i - 1])) {
+                ans.append("<b>");
+            }
             ans.append(s.charAt(i));
-            if (bold[i] && (i == s.length() - 1 || !bold[i + 1])) ans.append("</b>");
+            if (bold[i] && (i == len - 1 || !bold[i + 1])) {
+                ans.append("</b>");
+            }
         }
         return ans.toString();
     }
