@@ -2,6 +2,13 @@ package CodingQuestions.Algorithms.Medium.FindKPairswithSmallestSums_373;
 
 import CodingQuestions.Lib.Pair;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Set;
+
 public class FindKPairswithSmallestSums_373 {
 
     public static void main(String[] args) {

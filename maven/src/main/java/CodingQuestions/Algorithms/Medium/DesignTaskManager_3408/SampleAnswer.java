@@ -1,5 +1,11 @@
 package CodingQuestions.Algorithms.Medium.DesignTaskManager_3408;
 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+
 public class SampleAnswer {
     private PriorityQueue<int[]> pq;
     private Map<Integer, Integer> taskPriority;

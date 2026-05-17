@@ -1,9 +1,9 @@
 <archetype>
-  <id>maven</id>
-  <sources>
-    <source>src/main/java/App.java</source>
-  </sources>
-  <testSources>
-    <source>src/twoSet/java/AppTest.java</source>
-  </testSources>
+    <id>maven</id>
+    <sources>
+        <source>src/main/java/App.java</source>
+    </sources>
+    <testSources>
+        <source>src/twoSet/java/AppTest.java</source>
+    </testSources>
 </archetype>

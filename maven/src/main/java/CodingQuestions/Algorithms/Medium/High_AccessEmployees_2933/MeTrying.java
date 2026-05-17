@@ -1,5 +1,11 @@
 package CodingQuestions.Algorithms.Medium.High_AccessEmployees_2933;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+
 public class MeTrying {
     public static void main(String[] args) {
         List<List<String>> testCases = new ArrayList<>(Arrays.asList(

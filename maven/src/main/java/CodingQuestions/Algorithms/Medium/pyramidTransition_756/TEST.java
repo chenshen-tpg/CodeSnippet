@@ -1,5 +1,11 @@
 package CodingQuestions.Algorithms.Medium.pyramidTransition_756;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class TEST {
     Map<String, List<Character>> map = new HashMap<>();
     Map<String, Boolean> memo = new HashMap<>();
