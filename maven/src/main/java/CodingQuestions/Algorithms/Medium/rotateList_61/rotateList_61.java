@@ -17,6 +17,7 @@ public class rotateList_61 {
             res = res.next;
         }
     }
+
     public ListNode rotateRight(ListNode head, int k) {
         if (head == null) return null;
         ListNode dummy = new ListNode(0);

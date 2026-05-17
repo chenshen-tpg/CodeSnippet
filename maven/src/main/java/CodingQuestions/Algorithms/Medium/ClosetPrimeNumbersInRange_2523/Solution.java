@@ -7,8 +7,9 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.closestPrimes(10,19);
+        solution.closestPrimes(10, 19);
     }
+
     public int[] closestPrimes(int left, int right) {
         int[] memo = sieve(right);
         List<Integer> li = new ArrayList<>();
@@ -17,7 +18,7 @@ public class Solution {
                 li.add(i);
             }
         }
-        if (li.size() < 2) return new int[] { -1, -1 };
+        if (li.size() < 2) return new int[]{-1, -1};
         int minDifference = Integer.MAX_VALUE;
         int[] closestPair = new int[2];
         Arrays.fill(closestPair, -1);

@@ -8,10 +8,10 @@ public class CalculateFirstK_TheRestAfter {
         System.out.println(helper(s, k));
     }
 
-    public static int helper (String s,int k) {
+    public static int helper(String s, int k) {
         int ans = 0, count = 0;
         for (int i = 0; i < k; i++) {
-            if ("aeiou".contains(s.charAt(i)+"")) count++;
+            if ("aeiou".contains(s.charAt(i) + "")) count++;
         }
         //don't forget this, it won't go to the next loop when its length is 1
         ans = count;
@@ -19,7 +19,7 @@ public class CalculateFirstK_TheRestAfter {
             if ("aeiou".contains(s.charAt(i) + "")) {
                 count++;
             }
-            if ("aeiou".contains(s.charAt(i - k) + "")){
+            if ("aeiou".contains(s.charAt(i - k) + "")) {
                 count--;
             }
             ans = Math.max(ans, count);

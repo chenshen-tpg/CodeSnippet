@@ -4,15 +4,16 @@ import CodingQuestions.Lib.TreeNode;
 
 public class TEST {
     private int maxLen = 0;
+
     public int longestConsecutive(TreeNode root) {
         maxLen = 0;
-        helper(root, null, new int[]{1,1});
+        helper(root, null, new int[]{1, 1});
         return maxLen;
     }
 
     public void helper(TreeNode child, TreeNode parent, int[] parentLens) {
         if (child == null) return;
-        int[] childLen = new int[]{1,1};
+        int[] childLen = new int[]{1, 1};
         helper(child.left, child, childLen);
         helper(child.right, child, childLen);
         if (parent != null) {

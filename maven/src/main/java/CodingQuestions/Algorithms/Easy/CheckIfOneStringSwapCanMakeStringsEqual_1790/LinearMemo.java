@@ -6,8 +6,9 @@ public class LinearMemo {
     public static void main(String[] args) {
         String s1 = "caa", s2 = "aaz";
         LinearMemo solution = new LinearMemo();
-        solution.areAlmostEqual(s1,s2);
+        solution.areAlmostEqual(s1, s2);
     }
+
     public boolean areAlmostEqual(String s1, String s2) {
         if (s1.equals(s2)) {
             return true;

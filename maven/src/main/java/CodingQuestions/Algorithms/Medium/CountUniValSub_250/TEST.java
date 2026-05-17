@@ -16,7 +16,7 @@ public class TEST {
     }
 
     public boolean helper(TreeNode root) {
-        if (root == null)  return true;
+        if (root == null) return true;
         boolean left = helper(root.left);
         boolean right = helper(root.right);
         if (left && right) {

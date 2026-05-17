@@ -17,6 +17,7 @@ public class SortList_148 {
             res = res.next;
         }
     }
+
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode mid = getMid(head);
@@ -24,6 +25,7 @@ public class SortList_148 {
         ListNode right = sortList(mid);
         return merge(left, right);
     }
+
     ListNode merge(ListNode list1, ListNode list2) {
         ListNode dummy = new ListNode();
         ListNode tail = dummy;
@@ -41,9 +43,10 @@ public class SortList_148 {
         tail.next = (list1 != null) ? list1 : list2;
         return dummy.next;
     }
+
     ListNode getMid(ListNode head) {
         ListNode midpre = null;
-        while (head !=null && head.next != null) {
+        while (head != null && head.next != null) {
             midpre = (midpre == null) ? head : midpre.next;
             head = head.next.next;
         }

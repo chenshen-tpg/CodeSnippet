@@ -1,11 +1,12 @@
 package CodingQuestions.Algorithms.Hard.BasicCalculator_224;
 
 public class SampleAnsRec {
+    int idx; // this index traverse the string in one pass, between different level of recursion
+
     public static void main(String[] args) {
 
     }
 
-    int idx; // this index traverse the string in one pass, between different level of recursion
     public int calculate(String s) {
         idx = 0; // Initialization should be here
         return calc(s);

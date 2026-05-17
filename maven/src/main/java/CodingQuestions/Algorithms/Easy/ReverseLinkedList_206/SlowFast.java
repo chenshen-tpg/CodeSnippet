@@ -11,6 +11,7 @@ public class SlowFast {
         SlowFast solution = new SlowFast();
         solution.reverseList(head);
     }
+
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode p = reverseList(head.next);

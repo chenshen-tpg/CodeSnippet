@@ -5,10 +5,11 @@ import java.util.Deque;
 
 public class DequeSolution {
     public static void main(String[] args) {
-        int [] test = {0,1,1,1,0,0};
+        int[] test = {0, 1, 1, 1, 0, 0};
         DequeSolution solution = new DequeSolution();
         solution.minOperations(test);
     }
+
     public int minOperations(int[] nums) {
         Deque<Integer> q = new ArrayDeque<>();
         int count = 0;

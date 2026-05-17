@@ -6,9 +6,9 @@ import java.util.LinkedList;
 public class LinkedListSolution {
     public static void main(String[] args) {
         LinkedListSolution mi = new LinkedListSolution();
-        int[][] intervals = new int[][]{{1,3},{2,6},{8,10},{15,18}};
+        int[][] intervals = new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         mi.merge_LinkedListVersion(intervals);
-        Arrays.asList(1,2);
+        Arrays.asList(1, 2);
     }
 
     public int[][] merge_LinkedListVersion(int[][] intervals) {

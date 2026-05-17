@@ -7,11 +7,11 @@ public class TEST {
         System.out.println(obj.method(153));
     }
 
-    public boolean loopSolution (int n) {
+    public boolean loopSolution(int n) {
         int ans = 0;
         int cur = n, len = 0;
         while (cur > 0) {
-            cur/= 10;
+            cur /= 10;
             len++;
         }
         int cal = n;
@@ -22,7 +22,8 @@ public class TEST {
         }
         return ans == n;
     }
-    public boolean method (int n) {
+
+    public boolean method(int n) {
         int ans = 0;
         //logarithms to get the length
         int length = (n == 0) ? 1 : (int) Math.log10(n) + 1;

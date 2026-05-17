@@ -31,9 +31,11 @@ public class TEST {
         }
         return res;
     }
+
     private String devowel(String word) {
         return word.replaceAll("[aeiou]", "#");
     }
+
     private String devowel1(String word) {
         StringBuilder sb = new StringBuilder();
         for (char c : word.toCharArray()) {

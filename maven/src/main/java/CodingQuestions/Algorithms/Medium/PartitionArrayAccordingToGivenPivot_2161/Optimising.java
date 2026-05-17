@@ -2,8 +2,9 @@ package CodingQuestions.Algorithms.Medium.PartitionArrayAccordingToGivenPivot_21
 
 public class Optimising {
     public static void main(String[] args) {
-        pivotArray(new int [] {9,12,5,10,14,3,10}, 10);
+        pivotArray(new int[]{9, 12, 5, 10, 14, 3, 10}, 10);
     }
+
     public static int[] pivotArray(int[] nums, int pivot) {
         int[] ans = new int[nums.length];
         int left = 0, right = nums.length - 1;

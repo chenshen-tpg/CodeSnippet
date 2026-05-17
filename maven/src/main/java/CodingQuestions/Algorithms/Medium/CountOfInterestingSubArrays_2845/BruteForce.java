@@ -6,6 +6,7 @@ public class BruteForce {
     public static void main(String[] args) {
 
     }
+
     public long countInterestingSubarrays(List<Integer> nums, int modulo, int k) {
         int res = 0;
         for (int i = 0; i < nums.size(); i++) {

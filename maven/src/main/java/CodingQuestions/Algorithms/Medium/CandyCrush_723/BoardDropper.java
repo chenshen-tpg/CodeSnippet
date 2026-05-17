@@ -8,6 +8,7 @@ public class BoardDropper {
         this.m = m;
         this.n = n;
     }
+
     public static void main(String[] args) {
         int[][] gameBoard = {
                 {1, 0, 2, 0},
@@ -25,6 +26,16 @@ public class BoardDropper {
         System.out.println("\nBoard After Drop:");
         printBoard(gameBoard);
     }
+
+    private static void printBoard(int[][] board) {
+        for (int[] row : board) {
+            for (int val : row) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
+
     public void drop(int[][] board) {
         for (int c = 0; c < n; c++) {
             int lowestZero = -1;
@@ -43,8 +54,8 @@ public class BoardDropper {
 
     public void drop1(int[][] board) {
         for (int j = 0; j < board[0].length; j++) {
-            int emptyRow =  board.length - 1;
-            for (int i =  board.length - 1; i >= 0; i--) {
+            int emptyRow = board.length - 1;
+            for (int i = board.length - 1; i >= 0; i--) {
                 if (board[i][j] != 0) {
                     if (i < emptyRow) {
                         board[emptyRow][j] = board[i][j];
@@ -53,15 +64,6 @@ public class BoardDropper {
                     emptyRow--;
                 }
             }
-        }
-    }
-
-    private static void printBoard(int[][] board) {
-        for (int[] row : board) {
-            for (int val : row) {
-                System.out.print(val + " ");
-            }
-            System.out.println();
         }
     }
 }

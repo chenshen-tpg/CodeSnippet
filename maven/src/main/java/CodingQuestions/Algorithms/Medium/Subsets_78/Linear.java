@@ -7,6 +7,7 @@ public class Linear {
     public static void main(String[] args) {
 
     }
+
     public static List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> output = new ArrayList();
         output.add(new ArrayList());

@@ -4,6 +4,7 @@ public class realMax {
     public static void main(String[] args) {
 
     }
+
     public long maximumTripletValue(int[] nums) {
         int n = nums.length;
         long res = 0, i = 0, ij = 0;

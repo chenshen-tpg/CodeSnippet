@@ -4,6 +4,7 @@ public class WhyWorking {
     public static void main(String[] args) {
 
     }
+
     public long countOfSubstrings(String word, int k) {
         int[][] frequencies = new int[2][128];
         frequencies[0]['a'] = 1;

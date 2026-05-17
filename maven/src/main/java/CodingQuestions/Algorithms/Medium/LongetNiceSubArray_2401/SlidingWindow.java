@@ -4,6 +4,7 @@ public class SlidingWindow {
     public static void main(String[] args) {
 
     }
+
     public int longestNiceSubarray(int[] nums) {
         int maxLength = 1;
         int j = 0;

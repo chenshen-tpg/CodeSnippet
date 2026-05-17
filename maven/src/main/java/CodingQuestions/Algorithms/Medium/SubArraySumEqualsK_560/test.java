@@ -2,9 +2,9 @@ package CodingQuestions.Algorithms.Medium.SubArraySumEqualsK_560;
 
 public class test {
     public static void main(String[] args) {
-        int [] test = {1,2,3,4,7,6,1,1,2};
+        int[] test = {1, 2, 3, 4, 7, 6, 1, 1, 2};
         SubArraySum s = new SubArraySum();
-        System.out.println(s.subarraySum(test,7));
+        System.out.println(s.subarraySum(test, 7));
     }
 
     public int subarraySum(int[] nums, int k) {
@@ -14,10 +14,10 @@ public class test {
         for (int num : nums) {
             currSum += num;
             if (currSum == k) count++;
-            if (currSum - k >= 0 && currSum - k < prefixSums.length){
+            if (currSum - k >= 0 && currSum - k < prefixSums.length) {
                 count += prefixSums[currSum - k];
             }
-            if (currSum >= 0 && currSum < prefixSums.length){
+            if (currSum >= 0 && currSum < prefixSums.length) {
                 prefixSums[currSum]++;
             }
         }

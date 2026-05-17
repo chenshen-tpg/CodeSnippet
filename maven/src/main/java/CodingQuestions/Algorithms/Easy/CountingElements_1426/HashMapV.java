@@ -7,6 +7,7 @@ public class HashMapV {
     public static void main(String[] args) {
 
     }
+
     public int countElements(int[] arr) {
         Map<Integer, Boolean> hm = new HashMap<>();
         int count = 0;

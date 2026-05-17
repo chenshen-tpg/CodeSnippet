@@ -26,13 +26,13 @@ public class TEST {
             String temp = hm.get(str);
             while (temp.contains("%")) {
                 int cord = temp.indexOf("%") + 1;
-                temp = temp.replace("%"+ temp.charAt(cord) +"%",   hm.get(temp.charAt(cord) + ""));
+                temp = temp.replace("%" + temp.charAt(cord) + "%", hm.get(temp.charAt(cord) + ""));
                 hm.put(str, temp);
             }
         }
         while (text.contains("%")) {
             int cord = text.indexOf("%") + 1;
-            text = text.replace("%"+ text.charAt(cord) +"%",   hm.get(text.charAt(cord) + ""));
+            text = text.replace("%" + text.charAt(cord) + "%", hm.get(text.charAt(cord) + ""));
         }
         return text;
     }

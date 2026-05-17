@@ -2,10 +2,11 @@ package CodingQuestions.Algorithms.Medium.GasStation_134;
 
 public class OnePass {
     public static void main(String[] args) {
-        int [] gas = {1,2,3,4,5}, cost = {3,4,5,1,2};
-        linear(gas,cost);
+        int[] gas = {1, 2, 3, 4, 5}, cost = {3, 4, 5, 1, 2};
+        linear(gas, cost);
     }
-    public static int linear (int [] gas, int [] cost) {
+
+    public static int linear(int[] gas, int[] cost) {
         int total = 0, cur = 0, ans = 0;
         for (int i = 0; i < gas.length; i++) {
             total += gas[i] - cost[i];

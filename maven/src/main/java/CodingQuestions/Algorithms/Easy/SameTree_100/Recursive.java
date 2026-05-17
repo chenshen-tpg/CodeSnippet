@@ -16,6 +16,7 @@ public class Recursive {
         n2.right = n4;
         System.out.println(st.isSameTree(root, root));
     }
+
     public static boolean isSameTree(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;

@@ -27,8 +27,7 @@ public class LinearSolution {
             if (last < mn) {
                 last = mn;
                 ans++;
-            }
-            else if (last < mx) {
+            } else if (last < mx) {
                 last++;
                 ans++;
             }

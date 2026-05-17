@@ -4,12 +4,12 @@ public class TwoPrefixArray {
     public static void main(String[] args) {
         TwoPrefixArray f = new TwoPrefixArray();
         System.out.println(f.rewrite(new int[]{1, 7, 3, 6, 5, 6}));
-        
+
     }
 
-    private int rewrite (int[] nums) {
-        int [] leftToRight = new int [nums.length];
-        int [] rightToLeft = new int [nums.length];
+    private int rewrite(int[] nums) {
+        int[] leftToRight = new int[nums.length];
+        int[] rightToLeft = new int[nums.length];
         int tempF = 0;
         for (int i = 0; i < nums.length; i++) {
             tempF += nums[i];
@@ -30,8 +30,8 @@ public class TwoPrefixArray {
 
 
     private int pivotIndex(int[] nums) {
-        int left = 0, sum =0;
-        for (int num:nums) {
+        int left = 0, sum = 0;
+        for (int num : nums) {
             sum += num;
         }
         for (int i = 0; i < nums.length; i++) {

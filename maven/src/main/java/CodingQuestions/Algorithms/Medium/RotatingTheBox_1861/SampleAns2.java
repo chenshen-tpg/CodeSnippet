@@ -1,7 +1,5 @@
 package CodingQuestions.Algorithms.Medium.RotatingTheBox_1861;
 
-import java.util.Arrays;
-
 public class SampleAns2 {
     public char[][] rotateTheBox(char[][] boxGrid) {
         int m = boxGrid.length;

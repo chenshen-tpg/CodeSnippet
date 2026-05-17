@@ -32,6 +32,7 @@ public class OOP {
         }
         System.out.println(results);
     }
+
     public void StringIterator(String str) {
         for (int i = 0; i < str.length(); i++) {
             char currentChar = str.charAt(i);

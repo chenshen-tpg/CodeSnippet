@@ -4,10 +4,12 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public char kthCharacter(int k) {
         return helper("a", k);
     }
-    public char helper (String c, int k) {
+
+    public char helper(String c, int k) {
         if (c.length() >= k) {
             return c.charAt(k - 1);
         }

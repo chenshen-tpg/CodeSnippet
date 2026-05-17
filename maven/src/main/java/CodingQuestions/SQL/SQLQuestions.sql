@@ -1,13 +1,15 @@
-
 -- 1757. Recyclable and Low Fat Products
-SELECT product_id FROM Products
-WHERE low_fats = 'Y' and recyclable = 'y';
+SELECT product_id
+FROM Products
+WHERE low_fats = 'Y'
+  and recyclable = 'y';
 
 
 
-
-SELECT name, population, area FROM World WHERE
-    population >= 25000000  or  area >= 3000000;
+SELECT name, population, area
+FROM World
+WHERE population >= 25000000
+   or area >= 3000000;
 
 -- 1148. Article Views I
 SELECT DISTINCT author_id AS id
@@ -28,28 +30,33 @@ ORDER BY user_id;
 
 --- 1068 Product Sales Analysis i
 SELECT p.product_name, s.year, s.price
-FROM Sales s, Product p
+FROM Sales s,
+     Product p
 WHERE s.product_id = p.product_id;
 
 ---1581. Customer Who Visited but Did Not Make Any Transactions
 
 SELECT customer_id, COUNT(visit_id) AS count_no_trans
-FROM    Visits
+FROM Visits
 WHERE visit_id NOT IN (SELECT visit_id FROM Transactions)
 GROUP BY customer_id
 
 
-
 --181 Employees Earning more than their manager
 
-SELECT Name As Employee FROM Employee e
-WHERE e.salary > (SELECT salary FROM Employee WHERE e.managerId = id );
+SELECT Name As Employee
+FROM Employee e
+WHERE e.salary > (SELECT salary FROM Employee WHERE e.managerId = id);
 
-SELECT a.Name AS 'Employee' FROM Employee AS a, Employee AS b
-WHERE a.ManagerId = b.Id AND a.Salary > b.Salary;
+SELECT a.Name AS 'Employee'
+FROM Employee AS a,
+     Employee AS b
+WHERE a.ManagerId = b.Id
+  AND a.Salary > b.Salary;
 
 --1581. Customer Who Visited but Did Not Make Any Transactions
-SELECT customer_id, COUNT(visit_id) AS count_no_trans from Visits
+SELECT customer_id, COUNT(visit_id) AS count_no_trans
+from Visits
 WHERE visit_id NOT IN (SELECT visit_id FROM Transactions)
 GROUP BY customer_id
 
@@ -63,7 +70,7 @@ ORDER BY user_id;
 
 --1211 Query Quality and Percentage
 select query_name,
-       round(avg(rating / position), 2) as quality,
-       round(avg(if (rating < 3, 1, 0)) * 100, 2) as poor_query_percentage
+       round(avg(rating / position), 2)          as quality,
+       round(avg(if(rating < 3, 1, 0)) * 100, 2) as poor_query_percentage
 from queries
 group by query_name;

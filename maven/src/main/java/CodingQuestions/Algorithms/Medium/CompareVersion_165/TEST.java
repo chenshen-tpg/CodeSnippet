@@ -1,10 +1,11 @@
 package CodingQuestions.Algorithms.Medium.CompareVersion_165;
 
 public class TEST {
-//    version1 = "1.2", version2 = "1.10"
+    //    version1 = "1.2", version2 = "1.10"
     public static void main(String[] args) {
 
     }
+
     public int compareVersion(String version1, String version2) {
         int v1 = 0, v2 = 0;
 

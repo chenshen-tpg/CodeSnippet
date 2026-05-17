@@ -7,13 +7,13 @@ public class New_OOP {
     String[] chars;
     int[] nums;
 
-    public static void main(String[] args) {
-
-    }
-
     public New_OOP(String compressedString) {
         nums = Arrays.stream(compressedString.substring(1).split("[a-zA-Z]+")).mapToInt(Integer::parseInt).toArray();
         chars = compressedString.split("[0-9]+");
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public char next() {

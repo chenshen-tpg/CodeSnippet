@@ -6,6 +6,7 @@ public class SampleAnswer {
     public static void main(String[] args) {
 
     }
+
     public long totalCost(int[] costs, int k, int candidates) {
         PriorityQueue<Integer> headWorkers = new PriorityQueue<>();
         PriorityQueue<Integer> tailWorkers = new PriorityQueue<>();
@@ -25,8 +26,7 @@ public class SampleAnswer {
                     headWorkers.add(costs[nextHead]);
                     nextHead++;
                 }
-            }
-            else {
+            } else {
                 answer += tailWorkers.poll();
                 if (nextHead <= nextTail) {
                     tailWorkers.add(costs[nextTail]);

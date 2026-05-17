@@ -7,9 +7,16 @@ public class MapSolution {
     public static void main(String[] args) {
 
     }
+
     public boolean confusingNumber(int n) {
         Map<Character, Character> hm = new HashMap() {
-            {put('0', '0');put('1', '1');put('6', '9');put('8', '8');put('9', '6');}
+            {
+                put('0', '0');
+                put('1', '1');
+                put('6', '9');
+                put('8', '8');
+                put('9', '6');
+            }
         };
         StringBuilder sb = new StringBuilder();
         for (char ch : String.valueOf(n).toCharArray()) {

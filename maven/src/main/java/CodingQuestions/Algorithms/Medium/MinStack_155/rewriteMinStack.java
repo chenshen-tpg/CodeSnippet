@@ -4,7 +4,11 @@ import java.util.Stack;
 
 public class rewriteMinStack {
 
-    Stack<int []> stack;
+    Stack<int[]> stack;
+
+    public rewriteMinStack() {
+        stack = new Stack<>();
+    }
 
     public static void main(String[] args) {
         rewriteMinStack minStack = new rewriteMinStack();
@@ -21,14 +25,10 @@ public class rewriteMinStack {
         System.out.println(minStack.getMin());
     }
 
-    public rewriteMinStack() {
-       stack = new Stack<>();
-    }
-
     public void push(int val) {
-       if (stack.isEmpty()) stack.add(new int [] {val,val});
-       int curMin = stack.peek()[1];
-       stack.push(new int [] {val,Math.min(curMin,val)});
+        if (stack.isEmpty()) stack.add(new int[]{val, val});
+        int curMin = stack.peek()[1];
+        stack.push(new int[]{val, Math.min(curMin, val)});
     }
 
     public void pop() {

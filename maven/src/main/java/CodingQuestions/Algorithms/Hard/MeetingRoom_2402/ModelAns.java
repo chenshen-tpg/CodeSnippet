@@ -5,10 +5,11 @@ import java.util.Arrays;
 public class ModelAns {
     public static void main(String[] args) {
         ModelAns solution = new ModelAns();
-        int[][] meetings = new int[][]{{0, 10},{1, 5},{2, 7},{3, 4}};
+        int[][] meetings = new int[][]{{0, 10}, {1, 5}, {2, 7}, {3, 4}};
         int result = solution.mostBooked(2, meetings);
         System.out.println(result);
     }
+
     public int mostBooked(int n, int[][] meetings) {
         long[] memo = new long[n];
         int[] meetingCount = new int[n];

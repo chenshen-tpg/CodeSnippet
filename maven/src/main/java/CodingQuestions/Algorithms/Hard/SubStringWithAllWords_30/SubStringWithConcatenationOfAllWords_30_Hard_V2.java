@@ -8,7 +8,7 @@ public class SubStringWithConcatenationOfAllWords_30_Hard_V2 {
     public static void main(String[] args) {
         SubStringWithConcatenationOfAllWords_30_Hard_V2 sc = new SubStringWithConcatenationOfAllWords_30_Hard_V2();
         String s = "barfoofoobarthefoobarman";
-        String[] words = new String[]{"bar","foo","the"};
+        String[] words = new String[]{"bar", "foo", "the"};
         List<Integer> res = sc.findSubstring(s, words);
         for (int i : res) {
             System.out.println(i);

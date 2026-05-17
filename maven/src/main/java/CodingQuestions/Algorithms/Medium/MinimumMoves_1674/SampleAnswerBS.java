@@ -9,6 +9,7 @@ public class SampleAnswerBS {
     public static void main(String[] args) {
 
     }
+
     public int minMoves(int[] nums, int limit) {
         int n = nums.length;
         Map<Integer, Integer> sumCount = new HashMap<>();

@@ -15,9 +15,9 @@ public class Wrong {
                 counter++;
                 i++;
             }
-            if (counter != 0) sb.append(temp.charAt(i)+ "" + counter +"" );
+            if (counter != 0) sb.append(temp.charAt(i) + "" + counter + "");
             if (temp.charAt(i) != temp.charAt(i + 1)) {
-                sb.append(temp.charAt(i) +""+ 1 + "");
+                sb.append(temp.charAt(i) + "" + 1 + "");
             }
         }
         return sb.toString();

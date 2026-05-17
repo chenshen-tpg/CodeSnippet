@@ -3,9 +3,9 @@ package CodingQuestions.Algorithms.Medium.MnimumSizeSubarraySum_209;
 public class Review {
     public static void main(String[] args) {
         Review solution = new Review();
-        int [] nums = {2,3,1,2,4,3};
+        int[] nums = {2, 3, 1, 2, 4, 3};
         int target = 7;
-        System.out.println(solution.minSubArrayLen(target,nums));
+        System.out.println(solution.minSubArrayLen(target, nums));
     }
 
     private int minSubArrayLen(int target, int[] nums) {

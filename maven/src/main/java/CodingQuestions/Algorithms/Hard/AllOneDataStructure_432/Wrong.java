@@ -5,6 +5,10 @@ import java.util.TreeMap;
 public class Wrong {
     TreeMap<String, Integer> map;
 
+    public Wrong() {
+        map = new TreeMap<>();
+    }
+
     public static void main(String[] args) {
 //            String[] operations = {"AllOne", "inc", "inc", "getMaxKey", "getMinKey", "inc", "getMaxKey", "getMinKey"};
 //            Object[][] inputs = {
@@ -59,11 +63,6 @@ public class Wrong {
                     break;
             }
         }
-    }
-
-
-    public Wrong() {
-        map = new TreeMap<>();
     }
 
     public void inc(String key) {

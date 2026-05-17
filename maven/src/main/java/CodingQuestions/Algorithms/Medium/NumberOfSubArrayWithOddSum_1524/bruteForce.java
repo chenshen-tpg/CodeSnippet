@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class bruteForce {
 
     static ArrayList<Integer> li = new ArrayList<>();
+
     public static void main(String[] args) {
-        numOfSubarrays(new int [] {1,3,5});
+        numOfSubarrays(new int[]{1, 3, 5});
         System.out.println("Done");
     }
 

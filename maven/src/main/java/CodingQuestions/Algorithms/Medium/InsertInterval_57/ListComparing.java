@@ -16,7 +16,7 @@ public class ListComparing {
     }
 
     private int[][] insert(int[][] intervals, int[] newInterval) {
-        List<int []> res = new ArrayList<>();
+        List<int[]> res = new ArrayList<>();
         int l = 0, r = intervals.length;
 
         while (l < r && intervals[l][1] < newInterval[0]) {
@@ -24,15 +24,15 @@ public class ListComparing {
             l++;
         }
         while (l < r && intervals[l][0] <= newInterval[1]) {
-                newInterval[0] = Math.min(newInterval[0],intervals[l][0]);
-                newInterval[1] = Math.max(newInterval[1],intervals[l][1]);
-                l++;
+            newInterval[0] = Math.min(newInterval[0], intervals[l][0]);
+            newInterval[1] = Math.max(newInterval[1], intervals[l][1]);
+            l++;
         }
         res.add(newInterval);
-        while (l < r){
+        while (l < r) {
             res.add(intervals[l]);
             l++;
         }
-        return res.toArray(new int [res.size()][]);
+        return res.toArray(new int[res.size()][]);
     }
 }

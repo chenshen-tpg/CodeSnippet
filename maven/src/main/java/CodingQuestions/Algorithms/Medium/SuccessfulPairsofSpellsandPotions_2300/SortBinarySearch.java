@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class SortBinarySearch {
     public static void main(String[] args) {
-        int [] spells = {5, 1, 3};
-        int [] potions = {1, 2, 3, 4, 5};
+        int[] spells = {5, 1, 3};
+        int[] potions = {1, 2, 3, 4, 5};
         int success = 7;
         SortBinarySearch solution = new SortBinarySearch();
         solution.successfulPairs(spells, potions, success);
@@ -13,15 +13,15 @@ public class SortBinarySearch {
 
     public int[] successfulPairs(int[] spells, int[] potions, long success) {
         Arrays.sort(potions);
-        int [] ans = new int [spells.length];
-        int maxPotions = potions[potions.length-1];
+        int[] ans = new int[spells.length];
+        int maxPotions = potions[potions.length - 1];
         for (int i = 0; i < spells.length; i++) {
             long minPotion = (long) Math.ceil((1.0 * success) / spells[i]);
             if (minPotion > maxPotions) {
                 ans[i] = 0;
                 continue;
             }
-            int index = lowerBound(potions, (int)minPotion);
+            int index = lowerBound(potions, (int) minPotion);
             ans[i] = potions.length - index;
         }
         return ans;

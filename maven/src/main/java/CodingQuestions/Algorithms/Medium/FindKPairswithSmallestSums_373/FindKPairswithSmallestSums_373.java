@@ -2,13 +2,11 @@ package CodingQuestions.Algorithms.Medium.FindKPairswithSmallestSums_373;
 
 import CodingQuestions.Lib.Pair;
 
-import java.util.*;
-
 public class FindKPairswithSmallestSums_373 {
 
     public static void main(String[] args) {
         FindKPairswithSmallestSums_373 f = new FindKPairswithSmallestSums_373();
-        List<List<Integer>> res = f.kSmallestPairs(new int[]{1,7,11}, new int[]{2,4,6}, 3);
+        List<List<Integer>> res = f.kSmallestPairs(new int[]{1, 7, 11}, new int[]{2, 4, 6}, 3);
         for (List<Integer> l : res) {
             System.out.println(l);
         }
@@ -19,7 +17,7 @@ public class FindKPairswithSmallestSums_373 {
         int n = nums2.length;
         List<List<Integer>> ans = new ArrayList<>();
         Set<Pair<Integer, Integer>> visited = new HashSet<>();
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b)->(a[0] - b[0]));
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> (a[0] - b[0]));
         minHeap.offer(new int[]{nums1[0] + nums2[0], 0, 0});
         visited.add(new Pair<Integer, Integer>(0, 0));
 
@@ -41,16 +39,17 @@ public class FindKPairswithSmallestSums_373 {
 
         return ans;
     }
+
     public List<int[]> kSmallestPairsSingleRound(int[] nums1, int[] nums2, int k) {
-        PriorityQueue <int[]> q = new PriorityQueue<>((a,b)-> a[0] + a[1] - b[0] - b[1]);
+        PriorityQueue<int[]> q = new PriorityQueue<>((a, b) -> a[0] + a[1] - b[0] - b[1]);
         List<int[]> res = new ArrayList<>();
-        if (nums1.length==0 || nums2.length==0 || k==0) return res;
-        for (int i=0; i <nums1.length && i < k; i++) q.offer(new int[]{nums1[i], nums2[0], 0});
-        while (k-- > 0 && !q.isEmpty()){
+        if (nums1.length == 0 || nums2.length == 0 || k == 0) return res;
+        for (int i = 0; i < nums1.length && i < k; i++) q.offer(new int[]{nums1[i], nums2[0], 0});
+        while (k-- > 0 && !q.isEmpty()) {
             int[] cur = q.poll();
-            res.add (new int[]{cur[0], cur[1]});
-            if (cur[2] == nums2.length-1) continue;
-            q.offer (new int[]{cur[0], nums2[cur[2]+1], cur[2]+1});
+            res.add(new int[]{cur[0], cur[1]});
+            if (cur[2] == nums2.length - 1) continue;
+            q.offer(new int[]{cur[0], nums2[cur[2] + 1], cur[2] + 1});
         }
         return res;
     }

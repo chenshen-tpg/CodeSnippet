@@ -6,6 +6,7 @@ public class HM {
     public static void main(String[] args) {
 
     }
+
     public int findLHS(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int res = 0;

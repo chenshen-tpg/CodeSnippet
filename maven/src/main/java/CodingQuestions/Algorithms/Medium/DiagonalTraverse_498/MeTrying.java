@@ -4,6 +4,7 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public int[] findDiagonalOrder(int[][] mat) {
         if (mat == null || mat.length == 0) return new int[0];
         int rows = mat.length;

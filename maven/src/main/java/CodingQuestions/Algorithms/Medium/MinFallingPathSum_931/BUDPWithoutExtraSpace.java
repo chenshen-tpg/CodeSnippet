@@ -16,7 +16,7 @@ public class BUDPWithoutExtraSpace {
             for (int j = 0; j < matrix[0].length; j++) {
                 int min = Integer.MAX_VALUE;
                 if (j > 0) min = Math.min(min, matrix[i - 1][j - 1]);
-                min = Math.min(min,  matrix[i - 1][j]);
+                min = Math.min(min, matrix[i - 1][j]);
                 if (j < matrix[0].length - 1) min = Math.min(min, matrix[i - 1][j + 1]);
                 matrix[i][j] = matrix[i][j] + min;
             }

@@ -1,12 +1,12 @@
 package CodingQuestions.Algorithms.Medium.LongestPalinDromicSub_5;
 
 public class Recursive {
+    private int maxStart = 0;
+    private int maxEnd = 0;
+
     public static void main(String[] args) {
 
     }
-
-    private int maxStart = 0;
-    private int maxEnd = 0;
 
     public String longestPalindrome(String s) {
         expandCenters(s.toCharArray(), 0);

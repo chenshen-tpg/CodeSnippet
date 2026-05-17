@@ -13,8 +13,7 @@ public class ModelAns {
         for (int i : arr)
             if (i % 2 == 1) {
                 oddmax = Math.max(i, oddmax);
-            }
-            else {
+            } else {
                 evenmax = Math.min(i == 0 ? s.length() : i, evenmax);
             }
 

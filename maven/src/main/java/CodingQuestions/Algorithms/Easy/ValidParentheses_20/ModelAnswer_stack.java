@@ -7,15 +7,15 @@ public class ModelAnswer_stack {
 
     private HashMap<Character, Character> mappings;
 
-    public static void main(String[] args) {
-
-    }
-
     public ModelAnswer_stack() {
         this.mappings = new HashMap<Character, Character>();
         this.mappings.put(')', '(');
         this.mappings.put('}', '{');
         this.mappings.put(']', '[');
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public boolean isValid(String s) {

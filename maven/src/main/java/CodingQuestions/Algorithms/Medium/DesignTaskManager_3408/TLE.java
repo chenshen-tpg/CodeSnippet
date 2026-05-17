@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TLE {
-    public static void main(String[] args) {
-
-    }
     List<List<Integer>> li;
+
     public TLE(List<List<Integer>> tasks) {
         li = tasks;
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public void add(int userId, int taskId, int priority) {
@@ -21,7 +23,7 @@ public class TLE {
     }
 
     public void edit(int taskId, int newPriority) {
-        for (int i = 0; i < li.size();i++) {
+        for (int i = 0; i < li.size(); i++) {
             if (li.get(i).get(1) == taskId) {
                 li.get(i).set(2, newPriority);
             }
@@ -29,7 +31,7 @@ public class TLE {
     }
 
     public void rmv(int taskId) {
-        for (int i = 0; i < li.size();i++) {
+        for (int i = 0; i < li.size(); i++) {
             if (li.get(i).get(1) == taskId) {
                 li.remove(li.get(i));
             }

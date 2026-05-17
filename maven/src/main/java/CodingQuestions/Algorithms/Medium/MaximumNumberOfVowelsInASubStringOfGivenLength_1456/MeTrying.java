@@ -4,6 +4,7 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public int maxVowels(String s, int k) {
         int res = 0;
         char[] c = s.toCharArray();

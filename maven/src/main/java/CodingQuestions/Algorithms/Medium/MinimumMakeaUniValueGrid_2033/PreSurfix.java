@@ -7,6 +7,7 @@ public class PreSurfix {
     public static void main(String[] args) {
 
     }
+
     public int minOperations(int[][] grid, int x) {
 
         ArrayList<Integer> numsArray = new ArrayList<>();
@@ -22,7 +23,8 @@ public class PreSurfix {
         int[] prefixSum = new int[length];
         int[] suffixSum = new int[length];
         for (int index = 1; index < length; index++) prefixSum[index] = prefixSum[index - 1] + numsArray.get(index - 1);
-        for (int index = length - 2; index >= 0; index--) suffixSum[index] = suffixSum[index + 1] + numsArray.get(index + 1);
+        for (int index = length - 2; index >= 0; index--)
+            suffixSum[index] = suffixSum[index + 1] + numsArray.get(index + 1);
         for (int index = 0; index < length; index++) {
             int leftOperations = (numsArray.get(index) * index - prefixSum[index]) / x;
             int rightOperations = (suffixSum[index] - numsArray.get(index) * (length - index - 1)) / x;

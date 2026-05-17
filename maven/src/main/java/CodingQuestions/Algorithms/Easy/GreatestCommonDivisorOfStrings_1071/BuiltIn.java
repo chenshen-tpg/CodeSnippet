@@ -7,7 +7,6 @@ public class BuiltIn {
     }
 
 
-
     public static String gcdOfStrings(String str1, String str2) {
         if (str2.length() > str1.length()) return gcdOfStrings(str2, str1);
         if (str2.equals(str1)) return str2;

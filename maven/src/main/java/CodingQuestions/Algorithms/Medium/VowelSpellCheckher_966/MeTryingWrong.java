@@ -8,14 +8,15 @@ public class MeTryingWrong {
     public static void main(String[] args) {
 
     }
+
     public String[] spellchecker(String[] wordlist, String[] queries) {
         HashMap<String, String> hm = new HashMap();
         HashMap<String, String> hmVowel = new HashMap();
-        for (String  word : wordlist) {
+        for (String word : wordlist) {
             StringBuilder matchCharcter = new StringBuilder();
             StringBuilder matchNoVowel = new StringBuilder();
-            for (int i = 0; i <  word.length(); i++) {
-                char c =  word.charAt(i);
+            for (int i = 0; i < word.length(); i++) {
+                char c = word.charAt(i);
                 matchCharcter.append(Character.toLowerCase(c));
                 if (!vowelCheck(c)) {
                     matchNoVowel.append(Character.toLowerCase(c));
@@ -33,7 +34,7 @@ public class MeTryingWrong {
                 }
             }
             StringBuilder temp = new StringBuilder();
-            for (int i = 0; i < query.length();i++) {
+            for (int i = 0; i < query.length(); i++) {
                 char c = query.charAt(i);
                 if (vowelCheck(c)) {
                     temp.append(c);
@@ -52,7 +53,8 @@ public class MeTryingWrong {
         }
         return li.toArray(new String[0]);
     }
-    public boolean vowelCheck (char s) {
+
+    public boolean vowelCheck(char s) {
         if (s == 'a' || s == 'e' || s == 'i' || s == 'o' || s == 'u') {
             return true;
         }

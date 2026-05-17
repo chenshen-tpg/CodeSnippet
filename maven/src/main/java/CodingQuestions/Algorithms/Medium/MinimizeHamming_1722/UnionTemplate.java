@@ -3,25 +3,11 @@ package CodingQuestions.Algorithms.Medium.MinimizeHamming_1722;
 public class UnionTemplate {
 
     private int[] parent;
+
     public UnionTemplate(int n) {
         parent = new int[n];
         for (int i = 0; i < n; i++) {
             parent[i] = i;
-        }
-    }
-    // Find the root parent of x
-    public int find(int x) {
-        if (parent[x] != x) {
-            parent[x] = find(parent[x]);
-        }
-        return parent[x];
-    }
-    // Union the sets containing x and y
-    public void union(int x, int y) {
-        int rootX = find(x);
-        int rootY = find(y);
-        if (rootX != rootY) {
-            parent[rootY] = rootX;
         }
     }
 
@@ -38,6 +24,23 @@ public class UnionTemplate {
         }
         uf.union(4, 7);
         System.out.println(uf.find(2));
+    }
+
+    // Find the root parent of x
+    public int find(int x) {
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]);
+        }
+        return parent[x];
+    }
+
+    // Union the sets containing x and y
+    public void union(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+        if (rootX != rootY) {
+            parent[rootY] = rootX;
+        }
     }
 
 

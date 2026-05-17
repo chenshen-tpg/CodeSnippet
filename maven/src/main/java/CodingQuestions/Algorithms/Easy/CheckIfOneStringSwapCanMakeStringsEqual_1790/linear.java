@@ -4,8 +4,9 @@ public class linear {
     public static void main(String[] args) {
         String s1 = "caa", s2 = "aaz";
         linear solution = new linear();
-        solution.linear(s1,s2);
+        solution.linear(s1, s2);
     }
+
     public boolean linear(String s1, String s2) {
         int firstIndexDiff = 0;
         int secondIndexDiff = 0;
@@ -15,8 +16,7 @@ public class linear {
                 numDiffs++;
                 if (numDiffs > 2) {
                     return false;
-                }
-                else if (numDiffs == 1) {
+                } else if (numDiffs == 1) {
                     firstIndexDiff = i;
                 } else {
                     secondIndexDiff = i;

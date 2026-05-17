@@ -2,10 +2,11 @@ package CodingQuestions.Algorithms.Medium.MaximumPoints_1423;
 
 public class TEST {
     public static void main(String[] args) {
-        int [] point = {1, 2, 3, 4, 5, 6, 1};
+        int[] point = {1, 2, 3, 4, 5, 6, 1};
         int k = 3;
         maxScore(point, k);
     }
+
     public static int maxScore(int[] cardPoints, int k) {
         int n = cardPoints.length;
         int[] frontSetOfCards = new int[k + 1];

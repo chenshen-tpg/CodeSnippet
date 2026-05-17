@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class OnePassRefinedAI {
     public static void main(String[] args) {
         OnePassRefinedAI solution = new OnePassRefinedAI();
-        solution.candyModelAnsRefined(new int[] {1, 3, 5, 2, 4, 6, 3, 5, 7, 1});
+        solution.candyModelAnsRefined(new int[]{1, 3, 5, 2, 4, 6, 3, 5, 7, 1});
     }
+
     public int candyModelAnsRefined(int[] ratings) {
         int n = ratings.length;
         int[] candies = new int[n];

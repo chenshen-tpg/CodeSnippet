@@ -5,8 +5,9 @@ import java.util.PriorityQueue;
 
 public class TEST {
     public static void main(String[] args) {
-        maxEvents(new int [][] {{1,2},{2,3},{3,4},{1,2}});
+        maxEvents(new int[][]{{1, 2}, {2, 3}, {3, 4}, {1, 2}});
     }
+
     public static int maxEvents(int[][] events) {
         int n = events.length;
         int maxDay = 0;

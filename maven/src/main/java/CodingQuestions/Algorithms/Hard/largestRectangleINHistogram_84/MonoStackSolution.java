@@ -5,7 +5,7 @@ import java.util.Stack;
 public class MonoStackSolution {
 
     public static void main(String[] args) {
-        largestRectangleArea(new int [] {2,1,5,6,2,3});
+        largestRectangleArea(new int[]{2, 1, 5, 6, 2, 3});
     }
 
     public static int largestRectangleArea(int[] arr) {

@@ -8,18 +8,18 @@ import java.util.PriorityQueue;
 public class ListPQ {
     public static void main(String[] args) {
         ListPQ pq = new ListPQ();
-        String [] products = {"mobile","mouse","moneypot","monitor","mousepad"};
+        String[] products = {"mobile", "mouse", "moneypot", "monitor", "mousepad"};
         String searchWord = "mouse";
         pq.ListPQ_Bruteforce(products, searchWord);
     }
 
 
-    public List<List<String>> ListPQ_Bruteforce (String[] products, String searchWord) {
+    public List<List<String>> ListPQ_Bruteforce(String[] products, String searchWord) {
         List<List<String>> result = new ArrayList<>();
         PriorityQueue<String> heap = new PriorityQueue<>();
         for (int i = 1; i <= searchWord.length(); i++) {
             String t = searchWord.substring(0, i);
-            for (String product: products) {
+            for (String product : products) {
                 if (product.startsWith(t)) heap.offer(product);
                 if (heap.size() > 3) heap.poll();
             }

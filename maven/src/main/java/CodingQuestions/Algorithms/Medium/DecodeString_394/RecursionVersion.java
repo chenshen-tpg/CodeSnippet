@@ -6,6 +6,7 @@ public class RecursionVersion {
     public static void main(String[] args) {
 
     }
+
     public String decodeString(String s) {
         StringBuilder result = new StringBuilder();
         while (index < s.length() && s.charAt(index) != ']') {

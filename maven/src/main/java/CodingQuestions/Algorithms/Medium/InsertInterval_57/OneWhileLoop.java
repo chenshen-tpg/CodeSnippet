@@ -14,6 +14,7 @@ public class OneWhileLoop {
             System.out.println(r[0] + " " + r[1]);
         }
     }
+
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> res = new ArrayList<>();
         int l = 0, r = intervals.length;

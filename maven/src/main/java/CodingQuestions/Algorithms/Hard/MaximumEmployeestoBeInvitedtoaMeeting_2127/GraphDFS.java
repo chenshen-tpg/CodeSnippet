@@ -12,7 +12,7 @@ import java.util.Set;
 public class GraphDFS {
     private int bfs(int startNode, Set<Integer> visitedNodes, List<List<Integer>> reversedGraph) {
         Queue<int[]> queue = new LinkedList<>();
-        queue.offer(new int[] { startNode, 0 });
+        queue.offer(new int[]{startNode, 0});
         int maxDistance = 0;
         while (!queue.isEmpty()) {
             int[] current = queue.poll();
@@ -21,12 +21,13 @@ public class GraphDFS {
             for (int neighbor : reversedGraph.get(currentNode)) {
                 if (visitedNodes.contains(neighbor)) continue;
                 visitedNodes.add(neighbor);
-                queue.offer(new int[] { neighbor, currentDistance + 1 });
+                queue.offer(new int[]{neighbor, currentDistance + 1});
                 maxDistance = Math.max(maxDistance, currentDistance + 1);
             }
         }
         return maxDistance;
     }
+
     public int maximumInvitations(int[] favorite) {
         int numPeople = favorite.length;
         List<List<Integer>> reversedGraph = new ArrayList<>(numPeople);

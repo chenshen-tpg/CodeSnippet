@@ -7,6 +7,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public int maxTaskAssign(int[] tasks, int[] workers, int pills, int strength) {
         Arrays.sort(tasks);
         Arrays.sort(workers);
@@ -23,7 +24,8 @@ public class TEST {
         }
         return ans;
     }
-    private boolean check(int[] tasks, int[] workers, int pills, int strength,int mid) {
+
+    private boolean check(int[] tasks, int[] workers, int pills, int strength, int mid) {
         int p = pills;
         TreeMap<Integer, Integer> ws = new TreeMap<>();
         for (int i = workers.length - mid; i < workers.length; ++i) {

@@ -3,13 +3,13 @@ package CodingQuestions.Algorithms.Medium.MaxConsecutiveOnesIII_1004;
 public class IterationFindingZero {
     public static void main(String[] args) {
         IterationFindingZero m = new IterationFindingZero();
-        int[] nums = {1,1,0,0,0,1,1,1,0,1};
+        int[] nums = {1, 1, 0, 0, 0, 1, 1, 1, 0, 1};
         int k = 2;
         System.out.println(m.correct(nums, k));
     }
 
 
-    public int correct(int [] nums, int k) {
+    public int correct(int[] nums, int k) {
         int l = 0, r = 0;
         while (r < nums.length) {
             if (nums[r] == 0) {

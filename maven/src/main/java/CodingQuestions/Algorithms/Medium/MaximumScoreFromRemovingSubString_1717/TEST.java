@@ -36,6 +36,7 @@ public class TEST {
         int y5 = 8;
         System.out.println("Maximum Gain (Test Case 5): " + solution.maximumGain(s5, x5, y5)); // Expected: 32
     }
+
     public int maximumGain(String s, int x, int y) {
         int totalScore = 0;
         String highPriorityPair = x > y ? "ab" : "ba";
@@ -43,11 +44,12 @@ public class TEST {
         String stringAfterFirstPass = removeSubstring(s, highPriorityPair);
         int removedPairsCount = (s.length() - stringAfterFirstPass.length()) / 2;
         totalScore += removedPairsCount * Math.max(x, y);
-        String stringAfterSecondPass = removeSubstring(stringAfterFirstPass,lowPriorityPair);
-        removedPairsCount = (stringAfterFirstPass.length() - stringAfterSecondPass.length()) /2;
+        String stringAfterSecondPass = removeSubstring(stringAfterFirstPass, lowPriorityPair);
+        removedPairsCount = (stringAfterFirstPass.length() - stringAfterSecondPass.length()) / 2;
         totalScore += removedPairsCount * Math.min(x, y);
         return totalScore;
     }
+
     private String removeSubstring(String input, String targetPair) {
         Stack<Character> charStack = new Stack<>();
         for (int i = 0; i < input.length(); i++) {

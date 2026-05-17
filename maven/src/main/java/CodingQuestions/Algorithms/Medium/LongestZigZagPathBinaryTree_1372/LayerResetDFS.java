@@ -4,14 +4,17 @@ import CodingQuestions.Lib.TreeNode;
 
 public class LayerResetDFS {
 
+    int path = 0;
+
     public static void main(String[] args) {
 
     }
-    int path = 0;
+
     public int longestZigZag(TreeNode root) {
         helper(root, 0, 0);
         return path;
     }
+
     public void helper(TreeNode root, int left, int right) {
         if (root == null) return;
         path = Math.max(path, Math.max(left, right));

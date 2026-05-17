@@ -20,7 +20,7 @@ public class SampleAns {
 
     public boolean isUgly(int n) {
         if (n <= 0) return false;
-        for (int i : new int [] {2,3,5}) {
+        for (int i : new int[]{2, 3, 5}) {
             n = method(n, i);
         }
 
@@ -34,6 +34,7 @@ public class SampleAns {
 //        }
         return n == 1;
     }
+
     public int method(int n, int i) {
         while (n % i == 0) n /= i;
         return n;

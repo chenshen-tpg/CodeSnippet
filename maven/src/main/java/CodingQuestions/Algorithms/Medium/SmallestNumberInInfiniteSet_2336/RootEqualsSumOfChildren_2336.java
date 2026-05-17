@@ -11,7 +11,7 @@ public class RootEqualsSumOfChildren_2336 {
     static PriorityQueue<Integer> pr = new PriorityQueue();
     static Integer cur = 1;
 
-    public static void add (int num) {
+    public static void add(int num) {
 
         if (num <= cur || add.contains(num)) {
             return;
@@ -19,7 +19,8 @@ public class RootEqualsSumOfChildren_2336 {
         add.add(num);
         pr.add(num);
     }
-    public static void popSmallet(){
+
+    public static void popSmallet() {
         int ans;
         if (!pr.isEmpty()) {
             ans = pr.poll();

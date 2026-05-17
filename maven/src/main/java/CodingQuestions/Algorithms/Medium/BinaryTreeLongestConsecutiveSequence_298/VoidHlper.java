@@ -4,11 +4,13 @@ import CodingQuestions.Lib.TreeNode;
 
 public class VoidHlper {
     int ans = 0;
+
     public int longestConsecutive(TreeNode root) {
-        if(root == null) return 0;
-        helper(root,0, root.val);
+        if (root == null) return 0;
+        helper(root, 0, root.val);
         return ans;
     }
+
     public void helper(TreeNode root, int cur, int target) {
         if (root == null) return;
         helper(root.left, cur, root.val + 1);

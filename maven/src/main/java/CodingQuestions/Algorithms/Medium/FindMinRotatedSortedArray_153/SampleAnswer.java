@@ -1,7 +1,6 @@
 package CodingQuestions.Algorithms.Medium.FindMinRotatedSortedArray_153;
 
 
-
 public class SampleAnswer {
     /***
      *
@@ -21,7 +20,7 @@ public class SampleAnswer {
      */
     public static void main(String[] args) {
         SampleAnswer obj = new SampleAnswer();
-        obj.findMin(new int [] {3,4,5,1,2});
+        obj.findMin(new int[]{3, 4, 5, 1, 2});
     }
 
     public int findMin(int[] nums) {

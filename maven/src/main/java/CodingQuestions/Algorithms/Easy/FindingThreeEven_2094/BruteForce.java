@@ -14,12 +14,12 @@ public class BruteForce {
         Set<Integer> nums = new HashSet<>();
         Arrays.sort(digits);
         for (int i = 0; i < digits.length; i++) {
-            for (int j = 0 ; j < digits.length; j++) {
-                for (int k = 0; k <digits.length; k++) {
+            for (int j = 0; j < digits.length; j++) {
+                for (int k = 0; k < digits.length; k++) {
                     if (i == j || j == k || i == k) {
                         continue;
                     }
-                    int temp = digits[i] * 100 + digits[j] * 10 + digits[k] ;
+                    int temp = digits[i] * 100 + digits[j] * 10 + digits[k];
                     if (temp % 2 == 0 && temp >= 100) {
                         nums.add(temp);
                     }

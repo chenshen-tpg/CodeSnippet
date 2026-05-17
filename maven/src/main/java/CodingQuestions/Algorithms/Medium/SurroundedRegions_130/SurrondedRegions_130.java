@@ -6,6 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SurrondedRegions_130 {
+    Integer ROWS = 0;
+    Integer COLS = 0;
+
     public static void main(String[] args) {
         SurrondedRegions_130 s = new SurrondedRegions_130();
         char[][] board = {
@@ -22,6 +25,7 @@ public class SurrondedRegions_130 {
             System.out.println();
         }
     }
+
     public void sur(char[][] board) {
         if (board.length < 3 || board[0].length < 3) return;
         int m = board.length;
@@ -43,6 +47,7 @@ public class SurrondedRegions_130 {
             }
         }
     }
+
     private void helper(char[][] board, int r, int c) {
         if (r < 0 || c < 0 || r >= board.length || c >= board[0].length || board[r][c] != 'O') return;
         board[r][c] = '*';
@@ -52,12 +57,6 @@ public class SurrondedRegions_130 {
         helper(board, r, c - 1);
     }
 
-
-
-
-
-    Integer ROWS = 0;
-    Integer COLS = 0;
     public void solve(char[][] board) {
         if (board == null || board.length == 0) {
             return;
@@ -84,6 +83,7 @@ public class SurrondedRegions_130 {
             }
         }
     }
+
     protected void DFS(char[][] board, int row, int col) {
         if (board[row][col] != 'O') return;
         board[row][col] = 'E';
@@ -92,6 +92,7 @@ public class SurrondedRegions_130 {
         if (col > 0) this.DFS(board, row, col - 1);
         if (row > 0) this.DFS(board, row - 1, col);
     }
+
     protected void BFS(char[][] board, int r, int c) {
         LinkedList<Pair<Integer, Integer>> queue = new LinkedList<Pair<Integer, Integer>>();
         queue.offer(new Pair<>(r, c));

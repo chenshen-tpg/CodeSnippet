@@ -30,6 +30,7 @@ public class SampleAnswer {
     public static void main(String[] args) {
 
     }
+
     public int maxProfit(int[] prices) {
         int maxprofit = 0;
         for (int i = 1; i < prices.length; i++) {

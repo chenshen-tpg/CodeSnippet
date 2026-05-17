@@ -6,6 +6,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public int characterReplacement(String s, int k) {
         int j = 0;
         int max = 0;

@@ -4,6 +4,7 @@ public class Sample {
     public static void main(String[] args) {
 
     }
+
     public int thirdMax(int[] nums) {
         long first = Long.MIN_VALUE;
         long second = Long.MIN_VALUE;
@@ -21,6 +22,6 @@ public class Sample {
                 third = num;
             }
         }
-        return third == Long.MIN_VALUE ? (int)first :(int) third;
+        return third == Long.MIN_VALUE ? (int) first : (int) third;
     }
 }

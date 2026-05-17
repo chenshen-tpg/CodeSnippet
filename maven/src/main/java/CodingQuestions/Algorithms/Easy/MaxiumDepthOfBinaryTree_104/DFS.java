@@ -16,6 +16,7 @@ public class DFS {
         n2.right = n4;
         solution.maxDepth(root);
     }
+
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
         int left = maxDepth(root.left) + 1;

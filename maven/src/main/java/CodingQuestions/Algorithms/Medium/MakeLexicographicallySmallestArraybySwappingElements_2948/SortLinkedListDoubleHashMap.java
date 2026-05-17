@@ -7,10 +7,11 @@ import java.util.LinkedList;
 public class SortLinkedListDoubleHashMap {
     public static void main(String[] args) {
         SortLinkedListDoubleHashMap s = new SortLinkedListDoubleHashMap();
-        int [] nums = {1,7,6,18,2,1};
+        int[] nums = {1, 7, 6, 18, 2, 1};
         int limit = 2;
-        s.lexicographicallySmallestArray(nums,limit);
+        s.lexicographicallySmallestArray(nums, limit);
     }
+
     public int[] lexicographicallySmallestArray(int[] nums, int limit) {
         int[] numsSorted = new int[nums.length];
         for (int i = 0; i < nums.length; i++) numsSorted[i] = nums[i];

@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Medium.MaxConsecutiveOnesIII_1004;
 public class BruteForce {
     public static void main(String[] args) {
         BruteForce solution = new BruteForce();
-        int[] nums = {1,1,0,0,0,1,1,1,0,1};
+        int[] nums = {1, 1, 0, 0, 0, 1, 1, 1, 0, 1};
         int k = 2;
         System.out.println(solution.bruteForce(nums, k));
     }

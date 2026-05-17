@@ -1,4 +1,5 @@
 package CodingQuestions.Algorithms.Easy.MaxiumDepthOfBinaryTree_104;
+
 import CodingQuestions.Lib.TreeNode;
 
 public class DirectDFS {
@@ -16,10 +17,11 @@ public class DirectDFS {
         n2.right = n4;
         System.out.println(md.maxDepth(root));
     }
+
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
         int left = maxDepth(root.left);
         int right = maxDepth(root.right);
-        return Math.max(left,right) + 1;
+        return Math.max(left, right) + 1;
     }
 }

@@ -19,6 +19,7 @@ def rotate_the_box(boxGrid):
                 empty_row -= 1
     return rotated
 
+
 # Example usage:
 boxGrid = [
     ['#', '#', '*', '.', '*', '.'],

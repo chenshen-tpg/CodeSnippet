@@ -6,11 +6,6 @@ public class TEST {
         solution.kthCharacter(5);
     }
 
-    public char kthCharacter(int k) {
-        String word = "a";
-        return helper(word, k);
-    }
-
     public static char helper(String word, int k) {
         if (word.length() >= k) {
             return word.charAt(k - 1);
@@ -24,5 +19,10 @@ public class TEST {
         }
         return helper(str.toString(), k);
 
+    }
+
+    public char kthCharacter(int k) {
+        String word = "a";
+        return helper(word, k);
     }
 }

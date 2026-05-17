@@ -9,9 +9,10 @@ public class SortArrayByIncreasingOrder_1636 {
     public static void main(String[] args) {
         sort();
     }
-    public static void sort(){
-        int[] arr = {2,3,1,3,2};
-        int [] ans = new int[arr.length];
+
+    public static void sort() {
+        int[] arr = {2, 3, 1, 3, 2};
+        int[] ans = new int[arr.length];
         HashMap<Integer, Integer> hm = new HashMap<>();
         for (Integer i : arr) {
             hm.put(i, hm.getOrDefault(i, 0) + 1);
@@ -22,10 +23,10 @@ public class SortArrayByIncreasingOrder_1636 {
         );
         pq.addAll(hm.entrySet());
         int cal = 0;
-        while(!pq.isEmpty()){
+        while (!pq.isEmpty()) {
             Map.Entry<Integer, Integer> entry = pq.poll();
             int index = entry.getValue();
-            while(index > 0){
+            while (index > 0) {
                 ans[cal++] = entry.getKey();
                 index--;
             }
@@ -34,6 +35,7 @@ public class SortArrayByIncreasingOrder_1636 {
             System.out.print(ans[i] + "");
         }
     }
+
     public int[] frequencySort(int[] nums) {
         Map<Integer, Integer> freq = new HashMap<>();
         for (int num : nums) {

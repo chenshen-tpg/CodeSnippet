@@ -8,17 +8,17 @@ import java.util.Map;
 
 public class AdjacentList {
     public static void main(String[] args) {
-            int n = 6;
-            int[][] edges = {
-                    {0, 1},
-                    {0, 2},
-                    {1, 2},
-                    {3, 4},
-                    {3, 5}
-            };
-            AdjacentList solution = new AdjacentList();
-            int result = solution.countCompleteComponents(n, edges);
-            System.out.println("Number of complete components: " + result);
+        int n = 6;
+        int[][] edges = {
+                {0, 1},
+                {0, 2},
+                {1, 2},
+                {3, 4},
+                {3, 5}
+        };
+        AdjacentList solution = new AdjacentList();
+        int result = solution.countCompleteComponents(n, edges);
+        System.out.println("Number of complete components: " + result);
     }
 
     public int countCompleteComponents(int n, int[][] edges) {

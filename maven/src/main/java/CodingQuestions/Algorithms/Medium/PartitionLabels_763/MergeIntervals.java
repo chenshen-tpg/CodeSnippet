@@ -9,7 +9,7 @@ public class MergeIntervals {
         helper("ababcbacadefegdehijhklij");
     }
 
-    public static List<Integer> helper (String s) {
+    public static List<Integer> helper(String s) {
         List<Integer> res = new ArrayList<>();
         int[] second = new int[26];
         int[] first = new int[26];

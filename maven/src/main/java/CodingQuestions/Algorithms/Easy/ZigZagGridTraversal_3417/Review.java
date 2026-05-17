@@ -12,14 +12,15 @@ public class Review {
         System.out.println(zigzag(grid2));
         System.out.println(zigzag(grid3));
     }
-    public static List<Integer> zigzag(int [][] grid) {
+
+    public static List<Integer> zigzag(int[][] grid) {
         List<Integer> result = new ArrayList<>();
         if (grid == null || grid.length == 0 || grid[0].length == 0) return result;
         int rows = grid.length;
         int cols = grid[0].length;
         for (int i = 0; i < rows; i++) {
             if (i % 2 == 0) {
-                for (int j = 0; j < cols; j ++) {
+                for (int j = 0; j < cols; j++) {
                     if ((i + j) % 2 == 0) {
                         result.add(grid[i][j]);
                     }

@@ -4,6 +4,7 @@ public class TEST1 {
     public static void main(String[] args) {
 
     }
+
     public int minDominoRotations(int[] tops, int[] bottoms) {
         int res = getRotation(tops, bottoms, tops[0]);
         if (bottoms[0] != tops[0]) {

@@ -10,6 +10,7 @@ import java.util.TreeMap;
 public class DoubleHashMap {
     private Map<Integer, Integer> playerMap;
     private Map<Integer, Set<Integer>> scoreMap;
+
     public DoubleHashMap() {
         this.playerMap = new HashMap<>();
         this.scoreMap = new TreeMap<>(Collections.reverseOrder());
@@ -32,7 +33,7 @@ public class DoubleHashMap {
 
     public int top(int K) {
         int total = 0;
-        for (Map.Entry<Integer,Set<Integer>> entry: scoreMap.entrySet()) {
+        for (Map.Entry<Integer, Set<Integer>> entry : scoreMap.entrySet()) {
             int score = entry.getKey();
             Set<Integer> players = entry.getValue();
             if (players.size() <= K) {

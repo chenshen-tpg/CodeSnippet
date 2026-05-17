@@ -4,6 +4,7 @@ public class ArrayCheckThree {
     public static void main(String[] args) {
 
     }
+
     public int numberOfSubstrings(String s) {
         int[] freq = new int[3];
         int left = 0, ans = 0;

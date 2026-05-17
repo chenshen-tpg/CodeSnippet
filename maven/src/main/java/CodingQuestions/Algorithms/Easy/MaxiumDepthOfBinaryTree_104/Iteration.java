@@ -19,6 +19,7 @@ public class Iteration {
         n2.right = n4;
         System.out.println(md.maxDepth(root));
     }
+
     public int maxDepth(TreeNode root) {
         LinkedList<TreeNode> stack = new LinkedList<>();
         LinkedList<Integer> depths = new LinkedList<>();

@@ -8,6 +8,7 @@ public class LowestCommonAncestorofaBinaryTree_1644 {
     public static void main(String[] args) {
 
     }
+
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         TreeNode ans = LCA(root, p, q);
         if (ans == p) return dfs(p, q) ? p : null;

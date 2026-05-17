@@ -9,7 +9,7 @@ public class SumAll {
 
     private int sum(int[] arr) {
         int left = 0, sum = 0;
-        for (Integer a :arr) {
+        for (Integer a : arr) {
             sum += a;
         }
         //left plus one and right minus one

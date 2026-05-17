@@ -6,11 +6,12 @@ public class ModelAns {
     public static void main(String[] args) {
 
     }
+
     public void reorderList(ListNode head) {
         if (head == null) return;
 
         ListNode slow = head, fast = head;
-        while( fast!=null && fast.next!=null){
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -18,7 +19,7 @@ public class ModelAns {
         ListNode second = slow.next;
         slow.next = null;
         ListNode node = null;
-        while(second != null){
+        while (second != null) {
             ListNode temp = second.next;
             second.next = node;
             node = second;
@@ -27,7 +28,7 @@ public class ModelAns {
 
         ListNode first = head;
         second = node;
-        while(second != null) {
+        while (second != null) {
             ListNode temp1 = first.next, temp2 = second.next;
             first.next = second;
             second.next = temp1;

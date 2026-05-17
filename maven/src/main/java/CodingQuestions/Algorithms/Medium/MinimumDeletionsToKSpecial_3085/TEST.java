@@ -6,10 +6,11 @@ public class TEST {
     public static void main(String[] args) {
         minimumDeletions("aaabaaa", 2);
     }
+
     public static int minimumDeletions(String word, int k) {
         HashMap<Character, Integer> hm = new HashMap();
         for (int i = 0; i < word.length(); i++) {
-            hm.put(word.charAt(i),hm.getOrDefault(word.charAt(i), 0) + 1);
+            hm.put(word.charAt(i), hm.getOrDefault(word.charAt(i), 0) + 1);
         }
         int res = word.length();
         //5321

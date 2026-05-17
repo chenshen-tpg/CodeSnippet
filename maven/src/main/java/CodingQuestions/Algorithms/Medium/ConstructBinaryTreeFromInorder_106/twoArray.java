@@ -13,12 +13,12 @@ public class twoArray {
 
     public static void main(String[] args) {
         twoArray c = new twoArray();
-        int[] inorder = new int[]{9,3,15,20,7};
-        int[] postorder = new int[]{9,15,7,20,3};
+        int[] inorder = new int[]{9, 3, 15, 20, 7};
+        int[] postorder = new int[]{9, 15, 7, 20, 3};
         TreeNode root = c.buildTree(inorder, postorder);
     }
 
-    public TreeNode helper(int in_left, int in_right){
+    public TreeNode helper(int in_left, int in_right) {
         if (in_left > in_right) return null;
         int root_val = postorder[post_idx];
         TreeNode root = new TreeNode(root_val);

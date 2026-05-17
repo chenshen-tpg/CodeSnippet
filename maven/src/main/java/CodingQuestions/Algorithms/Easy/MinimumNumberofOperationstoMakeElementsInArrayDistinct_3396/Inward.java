@@ -6,6 +6,7 @@ public class Inward {
     public static void main(String[] args) {
 
     }
+
     class Solution {
 
         public int minimumOperations(int[] nums) {

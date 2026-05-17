@@ -1,11 +1,11 @@
 package CodingQuestions.Algorithms.Hard.BasicCalculator_224;
 
 public class SampleAnswerBest {
+    int i = 0;
+
     public static void main(String[] args) {
 
     }
-
-    int i = 0;
 
     public int calculate(String s) {
         int num = 0;

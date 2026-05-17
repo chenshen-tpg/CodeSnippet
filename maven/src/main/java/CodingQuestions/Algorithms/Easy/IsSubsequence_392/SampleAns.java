@@ -4,6 +4,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public boolean isSubsequence(String s, String t) {
         char[] sub = s.toCharArray();
         char[] tar = t.toCharArray();

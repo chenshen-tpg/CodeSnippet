@@ -23,6 +23,7 @@ public class Prefix_HM_DFS {
         int targetSum1 = 8;
         System.out.println(d.pathSum(root1, targetSum1));
     }
+
     public void preorder(TreeNode node, long currSum) {
         if (node == null) return;
         currSum += node.val;

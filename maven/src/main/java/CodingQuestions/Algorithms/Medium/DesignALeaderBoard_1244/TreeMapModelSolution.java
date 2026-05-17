@@ -15,6 +15,20 @@ public class TreeMapModelSolution {
         this.sortedScores = new TreeMap<>(Collections.reverseOrder());
     }
 
+    public static void main(String[] args) {
+        TreeMapModelSolution leaderboard = new TreeMapModelSolution();
+        leaderboard.addScore(1, 73);
+        leaderboard.addScore(2, 56);
+        leaderboard.addScore(3, 39);
+        leaderboard.addScore(4, 51);
+        leaderboard.addScore(5, 4);
+        System.out.println(leaderboard.top(1));
+        leaderboard.reset(1);
+        leaderboard.reset(2);
+        leaderboard.addScore(2, 51);
+        System.out.println(leaderboard.top(3));
+    }
+
     public void addScore(int playerId, int score) {
         if (!scores.containsKey(playerId)) {
             scores.put(playerId, score);
@@ -36,7 +50,7 @@ public class TreeMapModelSolution {
     public int top(int K) {
         int count = 0;
         int sum = 0;
-        for (Map.Entry<Integer, Integer> entry: this.sortedScores.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : this.sortedScores.entrySet()) {
             int times = entry.getValue();
             int key = entry.getKey();
             for (int i = 0; i < times; i++) {
@@ -62,19 +76,5 @@ public class TreeMapModelSolution {
         }
 
         this.scores.remove(playerId);
-    }
-
-    public static void main(String[] args) {
-        TreeMapModelSolution leaderboard = new TreeMapModelSolution();
-        leaderboard.addScore(1, 73);
-        leaderboard.addScore(2, 56);
-        leaderboard.addScore(3, 39);
-        leaderboard.addScore(4, 51);
-        leaderboard.addScore(5, 4);
-        System.out.println(leaderboard.top(1));
-        leaderboard.reset(1);
-        leaderboard.reset(2);
-        leaderboard.addScore(2, 51);
-        System.out.println(leaderboard.top(3));
     }
 }

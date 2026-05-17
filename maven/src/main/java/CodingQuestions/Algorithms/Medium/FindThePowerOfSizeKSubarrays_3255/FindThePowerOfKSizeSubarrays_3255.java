@@ -13,10 +13,10 @@ public class FindThePowerOfKSizeSubarrays_3255 {
 
 
     public int[] resultsArray(int[] nums, int k) {
-        int [] ans = new int [nums.length - k + 1];
+        int[] ans = new int[nums.length - k + 1];
         int maxans = 0;
-        for (int i = 0; i < nums.length; i ++) {
-            int [] tempAns = new int [k];
+        for (int i = 0; i < nums.length; i++) {
+            int[] tempAns = new int[k];
             int j = i;
             int tempMax = 0;
             int indexAns = 0;

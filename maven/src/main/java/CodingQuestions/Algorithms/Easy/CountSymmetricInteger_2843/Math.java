@@ -4,6 +4,7 @@ public class Math {
     public static void main(String[] args) {
 
     }
+
     //carefully check the constraints.
     public int countSymmetricIntegers(int low, int high) {
         int res = 0;

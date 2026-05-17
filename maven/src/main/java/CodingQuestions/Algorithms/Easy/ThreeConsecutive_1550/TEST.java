@@ -10,8 +10,7 @@ public class TEST {
                 if (count == 3) {
                     flag = true;
                 }
-            }
-            else {
+            } else {
                 count = 0;
             }
         }

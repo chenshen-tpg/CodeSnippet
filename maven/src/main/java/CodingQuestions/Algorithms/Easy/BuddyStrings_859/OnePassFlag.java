@@ -8,7 +8,7 @@ public class OnePassFlag {
         String s = "ab";
         String goal = "ba";
         OnePassFlag b = new OnePassFlag();
-        b.buddyStrings(s,goal);
+        b.buddyStrings(s, goal);
     }
 
     public boolean buddyStrings(String A, String B) {

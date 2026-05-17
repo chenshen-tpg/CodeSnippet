@@ -14,7 +14,7 @@ public class TEST {
         ListNode cur = before;
 
         while (head != null) {
-            if (head.val != 9)  cur = head;
+            if (head.val != 9) cur = head;
             head = head.next;
         }
         cur.val++;

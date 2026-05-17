@@ -13,8 +13,9 @@ public class ModelAns {
 
     public static void main(String[] args) {
         ModelAns s = new ModelAns();
-        System.out.println(s.snakesAndLadders(new int[][]{{-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1},{-1,-1,-1,-1,-1,-1},{-1,35,-1,-1,13,-1},{-1,-1,-1,-1,-1,-1},{-1,15,-1,-1,-1,-1}}));
+        System.out.println(s.snakesAndLadders(new int[][]{{-1, -1, -1, -1, -1, -1}, {-1, -1, -1, -1, -1, -1}, {-1, -1, -1, -1, -1, -1}, {-1, 35, -1, -1, 13, -1}, {-1, -1, -1, -1, -1, -1}, {-1, 15, -1, -1, -1, -1}}));
     }
+
     public int snakesAndLadders(int[][] board) {
         int n = board.length;
         Pair<Integer, Integer>[] cells = new Pair[n * n + 1];

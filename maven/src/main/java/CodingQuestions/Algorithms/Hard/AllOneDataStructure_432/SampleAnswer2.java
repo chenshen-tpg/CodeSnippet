@@ -6,23 +6,16 @@ import java.util.Set;
 
 public class SampleAnswer2 {
 
-    public static class Node {
-        int freq;
-        Set<String> keys;
-        Node prev;
-        Node next;
-
-        public Node(int freq, Node prev, Node next) {
-            this.freq = freq;
-            this.keys = new HashSet<>();
-            this.prev = prev;
-            this.next = next;
-        }
-    }
-
     HashMap<String, Node> hm;
     Node head;
     Node tail;
+    public SampleAnswer2() {
+        hm = new HashMap<>();
+        tail = new Node(0, null, null);
+        head = new Node(Integer.MAX_VALUE, null, null);
+        tail.next = head;
+        head.prev = tail;
+    }
 
     public static void main(String[] args) {
         String[] operations = {"AllOne", "inc", "inc", "getMaxKey", "getMinKey", "inc", "getMaxKey", "getMinKey"};
@@ -61,13 +54,6 @@ public class SampleAnswer2 {
                     break;
             }
         }
-    }
-    public SampleAnswer2() {
-        hm = new HashMap<>();
-        tail = new Node(0, null, null);
-        head = new Node(Integer.MAX_VALUE, null, null);
-        tail.next = head;
-        head.prev = tail;
     }
 
     public void inc(String key) {
@@ -130,6 +116,20 @@ public class SampleAnswer2 {
             return "";
         }
         return tail.next.keys.iterator().next();
+    }
+
+    public static class Node {
+        int freq;
+        Set<String> keys;
+        Node prev;
+        Node next;
+
+        public Node(int freq, Node prev, Node next) {
+            this.freq = freq;
+            this.keys = new HashSet<>();
+            this.prev = prev;
+            this.next = next;
+        }
     }
 
 }

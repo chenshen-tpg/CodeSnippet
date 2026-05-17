@@ -9,7 +9,8 @@ public class HashMapSolution {
     public static void main(String[] args) {
 
     }
-    public ListNode method(){
+
+    public ListNode method() {
         ListNode dummy = new ListNode(-1, new ListNode());
         ListNode h = new ListNode(), cur = dummy.next, pre = dummy;
         HashMap<Integer, Integer> hm = new HashMap<>();
@@ -17,7 +18,7 @@ public class HashMapSolution {
             hm.put(h.val, hm.getOrDefault(h.val, 0) + 1);
             h = h.next;
         }
-        while (cur !=null) {
+        while (cur != null) {
             if (hm.get(cur.val) > 1) {
                 pre.next = cur.next;
             } else {

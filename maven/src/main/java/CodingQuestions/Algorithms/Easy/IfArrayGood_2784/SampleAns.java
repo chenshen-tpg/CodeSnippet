@@ -4,8 +4,9 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public boolean isGood(int[] nums) {
-        int [] memo = new int [201];
+        int[] memo = new int[201];
         int max = 0;
         for (int num : nums) {
             memo[num]++;

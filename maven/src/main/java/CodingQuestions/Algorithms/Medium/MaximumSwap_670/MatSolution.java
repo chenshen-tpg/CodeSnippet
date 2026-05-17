@@ -10,7 +10,6 @@ public class MatSolution {
     }
 
 
-
     public int maximumSwap(int num) {
         int res = num;
         int diff = 0;

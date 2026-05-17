@@ -6,6 +6,7 @@ public class OnePass {
         String s = "  Bob    Loves  Alice   ";
         System.out.println(r.reverseWords(s));
     }
+
     public String reverseWords(String s) {
         s = s.trim();
         StringBuilder sb = new StringBuilder();

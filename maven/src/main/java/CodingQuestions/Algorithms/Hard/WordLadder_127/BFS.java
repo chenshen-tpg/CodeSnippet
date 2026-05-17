@@ -17,18 +17,19 @@ public class BFS {
         List<String> wordList1 = Arrays.asList("hot", "dot", "dog", "lot", "log", "cog");
         System.out.println(ladderLength("hit", "cog", wordList1));
     }
+
     public static int ladderLength(String beginWord, String endWord, List<String> wordList) {
         int l = beginWord.length();
         Map<String, List<String>> allComb = new HashMap<>();
         wordList.forEach(word -> {
             for (int i = 0; i < l; i++) {
-                String newWord = word.substring(0, i) + '*' + word.substring(i+1, l);
+                String newWord = word.substring(0, i) + '*' + word.substring(i + 1, l);
                 List<String> trans = allComb.getOrDefault(newWord, new ArrayList<>());
                 trans.add(word);
                 allComb.put(newWord, trans);
             }
         });
-        Queue<Pair<String,Integer>> q = new LinkedList<>();
+        Queue<Pair<String, Integer>> q = new LinkedList<>();
         q.add(new Pair(beginWord, 1));
         Map<String, Boolean> visited = new HashMap<>();
         visited.put(beginWord, true);
@@ -37,14 +38,14 @@ public class BFS {
             String word = node.getKey();
             int level = node.getValue();
             for (int i = 0; i < l; i++) {
-                String newWord = word.substring(0, i) + '*' + word.substring(i+1, l);
+                String newWord = word.substring(0, i) + '*' + word.substring(i + 1, l);
                 for (String adj : allComb.getOrDefault(newWord, new ArrayList<>())) {
                     if (adj.equals(endWord)) {
                         return level + 1;
                     }
                     if (!visited.containsKey(adj)) {
                         visited.put(adj, true);
-                        q.add(new Pair(adj, level+1));
+                        q.add(new Pair(adj, level + 1));
                     }
                 }
             }

@@ -20,6 +20,7 @@ class RotatingTheBox:
                     empty_row -= 1
         return rotated
 
+
 # Example usage:
 if __name__ == "__main__":
     boxGrid = [

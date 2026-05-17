@@ -3,12 +3,13 @@ package CodingQuestions.Algorithms.Medium.DesignSpreadSheet_3484;
 public class SampleAns2 {
     int[][] memo;
 
+    public SampleAns2(int rows) {
+        memo = new int[26][rows];
+    }
+
     public static void main(String[] args) {
         SampleAns2 spreadsheet = new SampleAns2(862);
         spreadsheet.setCell("V846", 52719);
-    }
-    public SampleAns2(int rows) {
-        memo = new int[26][rows];
     }
 
     public void setCell(String cell, int value) {

@@ -7,27 +7,6 @@ import java.util.Queue;
 
 public class PopulatingNextRightPointersInEachNodeII {
 
-    public Node connect(Node root) {
-        Queue<Node> q = new LinkedList();
-        q.add(root);
-        while(!q.isEmpty()){
-            int size = q.size();
-            for (int i = 0; i < size; i++){
-                Node tem = q.poll();
-                if (i < size - 1){
-                    tem.next = q.peek();
-                }
-                if (tem.left !=null){
-                    q.add(tem.left);
-                }
-                if (tem.right !=null){
-                    q.add(tem.left);
-                }
-            }
-        }
-        return root;
-    }
-
     public static void main(String[] args) {
         PopulatingNextRightPointersInEachNodeII p = new PopulatingNextRightPointersInEachNodeII();
         Node root = new Node(1);
@@ -44,6 +23,27 @@ public class PopulatingNextRightPointersInEachNodeII {
         n2.left = n5;
         n2.right = n6;
         System.out.println(p.connect(root));
+    }
+
+    public Node connect(Node root) {
+        Queue<Node> q = new LinkedList();
+        q.add(root);
+        while (!q.isEmpty()) {
+            int size = q.size();
+            for (int i = 0; i < size; i++) {
+                Node tem = q.poll();
+                if (i < size - 1) {
+                    tem.next = q.peek();
+                }
+                if (tem.left != null) {
+                    q.add(tem.left);
+                }
+                if (tem.right != null) {
+                    q.add(tem.left);
+                }
+            }
+        }
+        return root;
     }
 
 }

@@ -3,12 +3,13 @@ package CodingQuestions.Algorithms.Medium.ProductofArrayExceptSelf_238;
 public class OnePassPrefix {
     public static void main(String[] args) {
         OnePassPrefix p = new OnePassPrefix();
-        int[] nums = new int[]{1,2,3,4};
+        int[] nums = new int[]{1, 2, 3, 4};
         int[] res = p.productExceptSelf(nums);
         for (int i : res) {
             System.out.println(i);
         }
     }
+
     public int[] productExceptSelf(int[] nums) {
         int length = nums.length;
         int[] answer = new int[length];

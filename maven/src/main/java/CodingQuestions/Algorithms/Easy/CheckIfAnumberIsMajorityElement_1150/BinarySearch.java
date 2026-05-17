@@ -4,6 +4,7 @@ public class BinarySearch {
     public static void main(String[] args) {
 
     }
+
     public boolean isMajorityElement(int[] nums, int target) {
         int firstIndex = helper(nums, target, true);
         if (firstIndex == -1) {

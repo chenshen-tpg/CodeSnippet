@@ -11,6 +11,7 @@ public class Dividend {
         }
 
     }
+
     public int[] resultsArray(int[] nums, int k) {
         int n = nums.length;
         int[] results = new int[n - k + 1];

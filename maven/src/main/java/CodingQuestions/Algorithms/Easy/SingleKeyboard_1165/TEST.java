@@ -4,8 +4,9 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public int calculateTime(String keyboard, String word) {
-        int [] memo = new int [26];
+        int[] memo = new int[26];
         for (int i = 0; i < keyboard.length(); i++) {
             memo[keyboard.charAt(i) - 'a'] = i;
         }

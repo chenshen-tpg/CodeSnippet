@@ -3,14 +3,17 @@ package CodingQuestions.Algorithms.Easy.CountPrefixAndSuffixPairsI_3042;
 class Node {
 
     private Node[] links = new Node[26];
+
     // Check if the character is present in the current node
     public boolean contains(char c) {
         return links[c - 'a'] != null;
     }
+
     // Insert a new node for the character
     public void put(char c, Node node) {
         links[c - 'a'] = node;
     }
+
     // Get the next node for the character
     public Node next(char c) {
         return links[c - 'a'];
@@ -19,9 +22,11 @@ class Node {
 
 class Trie {
     private Node root;
+
     public Trie() {
         root = new Node();
     }
+
     // Insert a word into the Trie
     public void insert(String word) {
         Node node = root;
@@ -32,6 +37,7 @@ class Trie {
             node = node.next(c);
         }
     }
+
     // Check if the Trie contains a given prefix
     public boolean startsWith(String prefix) {
         Node node = root;
@@ -44,10 +50,12 @@ class Trie {
         return true;
     }
 }
+
 class Solution {
     public static void main(String[] args) {
 
     }
+
     public int countPrefixSuffixPairs(String[] words) {
         int n = words.length;
         int count = 0;

@@ -10,8 +10,8 @@ public class MapDFS {
 
     public static void main(String[] args) {
         MapDFS solution = new MapDFS();
-        int [] in = {9,3,15,20,7};
-        int [] post = {9,15,7,20,3};
+        int[] in = {9, 3, 15, 20, 7};
+        int[] post = {9, 15, 7, 20, 3};
         solution.buildTree(post, in);
     }
 

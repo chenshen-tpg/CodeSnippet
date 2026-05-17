@@ -1,7 +1,5 @@
 package CodingQuestions.Algorithms.Medium.High_AccessEmployees_2933;
 
-import java.util.*;
-
 public class MeTrying {
     public static void main(String[] args) {
         List<List<String>> testCases = new ArrayList<>(Arrays.asList(
@@ -17,7 +15,7 @@ public class MeTrying {
         findTheEmployee(testCases);
     }
 
-    public static List<String> findTheEmployee (List<List<String>> li) {
+    public static List<String> findTheEmployee(List<List<String>> li) {
         List<String> ans = new ArrayList<>();
         HashMap<String, List<String>> hm = new HashMap<>();
         for (int i = 0; i < li.size(); i++) {
@@ -37,7 +35,7 @@ public class MeTrying {
             if (temp.size() <= 2) continue;
             // key is to just check two between all the list.
             for (int i = 2; i < temp.size(); i++) {
-                if (Integer.valueOf(temp.get(i)) - Integer.valueOf(temp.get(i-2)) < 100) ans.add(s);
+                if (Integer.valueOf(temp.get(i)) - Integer.valueOf(temp.get(i - 2)) < 100) ans.add(s);
             }
         }
         return ans;

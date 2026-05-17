@@ -6,6 +6,7 @@ public class MeTrying2 {
     public static void main(String[] args) {
 
     }
+
     public int singleNumber(int[] nums) {
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; i += 2) {

@@ -10,6 +10,7 @@ public class FourForLoop {
         };
         gameOfLife(board3);
     }
+
     public static void gameOfLife(int[][] b) {
         int row = b.length;
         int col = b[0].length;

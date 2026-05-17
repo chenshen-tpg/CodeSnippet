@@ -5,6 +5,8 @@ import CodingQuestions.Lib.TreeNode;
 import java.util.HashMap;
 
 public class DFS {
+    int count;
+
     public static void main(String[] args) {
         TreeNode treenode = new TreeNode();
         int targetSum = 8;
@@ -24,18 +26,16 @@ public class DFS {
         d.helper(treenode, targetSum);
     }
 
-    int count ;
-
     public int helper(TreeNode root, int targetSum) {
         dfs(root, 0, targetSum, new HashMap());
         return count;
     }
 
-    public void dfs (TreeNode root, long current, int sum, HashMap<Long, Integer> h) {
+    public void dfs(TreeNode root, long current, int sum, HashMap<Long, Integer> h) {
         if (root == null) return;
         current += root.val;
         if (current == sum) count++;
-        count += h.getOrDefault(current - sum,0);
+        count += h.getOrDefault(current - sum, 0);
         h.put(current, h.getOrDefault(current, 0) + 1);
         dfs(root.left, current, sum, h);
         dfs(root.right, current, sum, h);

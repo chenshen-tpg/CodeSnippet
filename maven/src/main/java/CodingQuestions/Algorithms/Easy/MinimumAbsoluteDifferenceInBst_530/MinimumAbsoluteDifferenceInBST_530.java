@@ -10,6 +10,7 @@ public class MinimumAbsoluteDifferenceInBST_530 {
     TreeNode pre;
     int min = Integer.MAX_VALUE;
     List<Integer> li = new ArrayList<>();
+
     public static void main(String[] args) {
         MinimumAbsoluteDifferenceInBST_530 m = new MinimumAbsoluteDifferenceInBST_530();
         TreeNode root = new TreeNode(1);
@@ -19,9 +20,10 @@ public class MinimumAbsoluteDifferenceInBST_530 {
         n1.left = n2;
         System.out.println(m.getMinimumDifference(root));
     }
+
     public int getMinimumDifference(TreeNode root) {
 
-        if (root == null){
+        if (root == null) {
             return 0;
         }
         getMinimumDifference(root.left);
@@ -29,12 +31,13 @@ public class MinimumAbsoluteDifferenceInBST_530 {
         getMinimumDifference(root.right);
         int min = Integer.MAX_VALUE;
         for (int i = 1; i < li.size(); i++) {
-            min = Math.min(min, li.get(i) - li.get(i-1));
+            min = Math.min(min, li.get(i) - li.get(i - 1));
         }
         return min;
     }
+
     public int getMinimumDifference1(TreeNode root) {
-        if (root == null){
+        if (root == null) {
             return 0;
         }
         getMinimumDifference(root.left);

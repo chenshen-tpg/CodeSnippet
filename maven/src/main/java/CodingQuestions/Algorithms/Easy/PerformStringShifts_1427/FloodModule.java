@@ -4,6 +4,7 @@ public class FloodModule {
     public static void main(String[] args) {
 
     }
+
     public String stringShift(String s, int[][] shift) {
         int leftShifts = 0;
         for (int[] move : shift) {

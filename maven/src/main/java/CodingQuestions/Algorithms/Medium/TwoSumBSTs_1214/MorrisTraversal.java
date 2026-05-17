@@ -5,6 +5,10 @@ import CodingQuestions.Lib.TreeNode;
 public class MorrisTraversal {
 
 
+    public static void main(String[] args) {
+
+    }
+
     void morrisTraversal(TreeNode node) {
         TreeNode current = node;
         while (current != null) {
@@ -27,9 +31,5 @@ public class MorrisTraversal {
                 }
             }
         }
-    }
-
-    public static void main(String[] args) {
-
     }
 }

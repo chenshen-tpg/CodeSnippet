@@ -7,6 +7,7 @@ public class SampleAns2 {
         idx = 0;
         return calc(s);
     }
+
     private int calc(String s) {
         int res = 0, num = 0, sign = 1;
         while (idx < s.length()) {

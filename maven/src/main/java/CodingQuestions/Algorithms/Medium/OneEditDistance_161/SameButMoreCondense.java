@@ -4,6 +4,7 @@ public class SameButMoreCondense {
     public static void main(String[] args) {
 
     }
+
     public boolean isOneEditDistance(String s, String t) {
         for (int i = 0; i < Math.min(s.length(), t.length()); i++) {
             if (s.charAt(i) != t.charAt(i)) {

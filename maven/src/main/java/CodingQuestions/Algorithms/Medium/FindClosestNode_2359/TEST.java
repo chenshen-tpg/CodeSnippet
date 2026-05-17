@@ -8,10 +8,11 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public int closestMeetingNode(int[] edges, int node1, int node2) {
         int n = edges.length;
-        int [] memo1 = new int [n];
-        int [] memo2 = new int [n];
+        int[] memo1 = new int[n];
+        int[] memo2 = new int[n];
         Arrays.fill(memo1, Integer.MAX_VALUE);
         Arrays.fill(memo2, Integer.MAX_VALUE);
         bfs(node1, edges, memo1);
@@ -32,7 +33,7 @@ public class TEST {
         int n = edges.length;
         Queue<Integer> q = new LinkedList<>();
         q.offer(start);
-        Boolean [] vis = new Boolean[n];
+        Boolean[] vis = new Boolean[n];
         Arrays.fill(vis, false);
         memo[start] = 0;
         while (!q.isEmpty()) {

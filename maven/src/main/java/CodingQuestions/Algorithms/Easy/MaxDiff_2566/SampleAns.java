@@ -4,6 +4,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public int minMaxDifference(int num) {
         String s = String.valueOf(num);
         int n1 = 9, n2 = 0;

@@ -2,8 +2,9 @@ package CodingQuestions.Algorithms.Easy.MaximumValueofanOrderedTriplet_2873;
 
 public class Optimised {
     public static void main(String[] args) {
-        maximumTripletValue(new int [] {1000000,1,1000000});
+        maximumTripletValue(new int[]{1000000, 1, 1000000});
     }
+
     public static long maximumTripletValue(int[] nums) {
         int n = nums.length;
         int[] leftMax = new int[n];

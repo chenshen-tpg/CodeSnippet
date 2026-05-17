@@ -1,8 +1,10 @@
 package CodingQuestions.Algorithms.Medium.KthSmallestElementInABST_230;
 
+import CodingQuestions.Lib.TreeNode;
+
 import java.util.ArrayList;
 import java.util.List;
-import CodingQuestions.Lib.TreeNode;
+
 public class KthSmallestElement_230 {
 
 
@@ -14,10 +16,12 @@ public class KthSmallestElement_230 {
         root.left.right = new TreeNode(2);
         System.out.println(kse.kthSmallest(root, 1));
     }
+
     public int kthSmallest(TreeNode root, int k) {
         List<Integer> nums = helper(root, new ArrayList<Integer>());
         return nums.get(k - 1);
     }
+
     public List<Integer> helper(TreeNode root, List<Integer> arr) {
         if (root == null) return arr;
         helper(root.left, arr);

@@ -8,7 +8,7 @@ public class TwoPointers {
 
 
     public boolean TwoPointers(String s, String t) {
-        int ss = 0, sn = s.length(), ts = 0,tn = t.length();
+        int ss = 0, sn = s.length(), ts = 0, tn = t.length();
         while (ss < sn && ts < tn) {
             if (s.charAt(ss) == t.charAt(ts)) ss++;
             ts++;

@@ -5,7 +5,7 @@ public class MathFormula {
         int n = 0;
     }
 
-    public static long stupid (int n) {
+    public static long stupid(int n) {
         return 1 + n + (n - 1) * 2;
     }
     //1, 5, 13, 25, 41

@@ -12,6 +12,7 @@ public class TD_DP {
         for (int[] row : memo) Arrays.fill(row, -1);
         return lcsHelper(text1, text2, m, n);
     }
+
     private static int lcsHelper(String text1, String text2, int i, int j) {
         if (i == 0 || j == 0) return 0; // Base case
         if (memo[i][j] != -1) return memo[i][j]; // Check memo

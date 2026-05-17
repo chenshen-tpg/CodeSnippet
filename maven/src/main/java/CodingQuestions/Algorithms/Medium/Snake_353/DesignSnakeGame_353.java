@@ -6,19 +6,16 @@ public class DesignSnakeGame_353 {
     int width;
     int height;
     int[][] food;
-
-    class Point {
-        int i;
-        int j;
-
-        Point(int i, int j) {
-            this.i = i;
-            this.j = j;
-        }
-    }
-
     int k = 0;
     LinkedList<Point> snake;
+    public DesignSnakeGame_353(int width, int height, int[][] food) {
+        this.width = width;
+        this.height = height;
+        this.food = food;
+        this.k = 0;
+        this.snake = new LinkedList<>();
+        snake.addFirst(new Point(0, 0));
+    }
 
     public static void main(String[] args) {
         DesignSnakeGame_353 game = new DesignSnakeGame_353(3, 3, new int[][]{{2, 0}, {0, 0}, {0, 2}, {0, 1}, {2, 2}, {0, 1}});
@@ -38,15 +35,6 @@ public class DesignSnakeGame_353 {
         System.out.println(game.move("D")); // Expected output: 2
         System.out.println(game.move("R")); // Expected output: 2
         System.out.println(game.move("U")); // Expected output: 2
-    }
-
-    public DesignSnakeGame_353(int width, int height, int[][] food) {
-        this.width = width;
-        this.height = height;
-        this.food = food;
-        this.k = 0;
-        this.snake = new LinkedList<>();
-        snake.addFirst(new Point(0, 0));
     }
 
     public int move(String direction) {
@@ -71,6 +59,16 @@ public class DesignSnakeGame_353 {
             k++;
         }
         return k;
+    }
+
+    class Point {
+        int i;
+        int j;
+
+        Point(int i, int j) {
+            this.i = i;
+            this.j = j;
+        }
     }
 
 }

@@ -6,6 +6,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public boolean hasCycle(ListNode head) {
         ListNode fast = head;
         ListNode slow = head;

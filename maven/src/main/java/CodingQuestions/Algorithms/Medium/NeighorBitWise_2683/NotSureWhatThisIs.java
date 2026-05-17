@@ -15,12 +15,13 @@ public class NotSureWhatThisIs {
      A binary array is an array containing only 0's and 1's
      */
     public static void main(String[] args) {
-        int [] d1 = {1,0};
+        int[] d1 = {1, 0};
         System.out.println(wdym(d1));
     }
-    public static boolean wdym (int[] derived) {
+
+    public static boolean wdym(int[] derived) {
         int n = derived.length;
-        int [] temp = new int [n];
+        int[] temp = new int[n];
 
         for (int i = 0; i < derived.length; i++) {
             if (i == n - 1) {

@@ -7,6 +7,7 @@ public class TwoPointers {
     public static void main(String[] args) {
         partitionLabels("ababcbacadefegdehijhklij");
     }
+
     public static List<Integer> partitionLabels(String s) {
         List<Integer> res = new ArrayList<>();
         int[] last = new int[26];

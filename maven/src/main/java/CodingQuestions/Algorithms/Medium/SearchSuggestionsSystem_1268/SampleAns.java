@@ -6,11 +6,12 @@ import java.util.List;
 
 public class SampleAns {
     public static void main(String[] args) {
-        String [] products = {"mobile","mouse","moneypot","monitor","mousepad"};
+        String[] products = {"mobile", "mouse", "moneypot", "monitor", "mousepad"};
         String searchWord = "mouse";
         SampleAns solution = new SampleAns();
         solution.suggestedProducts(products, searchWord);
     }
+
     public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         List<List<String>> result = new ArrayList<>();
         Arrays.sort(products);

@@ -4,6 +4,7 @@ public class ModelAnswer_Greedy {
     public static void main(String[] args) {
         ModelAnswer_Greedy m = new ModelAnswer_Greedy();
     }
+
     public boolean ban(StringBuilder senateArray, char toBan, int startAt) {
         boolean loopAround = false;
         int pointer = startAt;

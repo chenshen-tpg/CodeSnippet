@@ -4,6 +4,7 @@ public class Twoloops {
     public static void main(String[] args) {
 
     }
+
     public String reverseStr(String s, int k) {
         char[] chars = s.toCharArray();
         for (int i = 0; i < chars.length; i += 2 * k) {

@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Medium.RemoveDuplicatesfromSortedArrayII_80;
 
 public class LinearCount {
     public static void main(String[] args) {
-        int [] nums = {1,1,1,2,2,3};
+        int[] nums = {1, 1, 1, 2, 2, 3};
         LinearCount solution = new LinearCount();
         solution.removeDuplicates(nums);
 

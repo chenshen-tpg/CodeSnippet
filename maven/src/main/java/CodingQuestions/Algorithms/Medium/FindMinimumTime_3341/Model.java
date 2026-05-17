@@ -9,20 +9,6 @@ import java.util.PriorityQueue;
 import java.util.Set;
 
 public class Model {
-    class Node implements Comparable<Node> {
-        int id;
-        int distance;
-
-        public Node(int id, int distance) {
-            this.id = id;
-            this.distance = distance;
-        }
-
-        @Override
-        public int compareTo(Node other) {
-            return Integer.compare(this.distance, other.distance);
-        }
-    }
     public static void main(String[] args) {
         // Example graph (adjacency list: node -> list of {neighbor, weight})
         Map<Integer, List<int[]>> graph = new HashMap<>();
@@ -75,6 +61,21 @@ public class Model {
             }
         }
         return distances;
+    }
+
+    class Node implements Comparable<Node> {
+        int id;
+        int distance;
+
+        public Node(int id, int distance) {
+            this.id = id;
+            this.distance = distance;
+        }
+
+        @Override
+        public int compareTo(Node other) {
+            return Integer.compare(this.distance, other.distance);
+        }
     }
 
 }

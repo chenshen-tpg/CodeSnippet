@@ -8,6 +8,7 @@ def is_armstrong(n):
         cal //= 10
     return ans == n
 
+
 # Example usage:
 print(is_armstrong(153))  # Output: True
 print(is_armstrong(123))  # Output: False
@@ -20,7 +21,8 @@ def is_armstrongNew(n):
     pow_table = [d ** length for d in range(10)]
     return sum(pow_table[d] for d in digits) == n
 
+
 # Example usage:
 print(is_armstrong(153))  # True
-print(is_armstrong(9474)) # True
+print(is_armstrong(9474))  # True
 print(is_armstrong(123))  # False

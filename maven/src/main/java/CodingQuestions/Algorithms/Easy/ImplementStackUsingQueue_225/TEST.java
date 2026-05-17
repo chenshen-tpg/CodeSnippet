@@ -17,6 +17,7 @@ import java.util.LinkedList;
  */
 public class TEST {
     LinkedList<Integer> queue;
+
     public static void main(String[] args) {
         TEST myStack = new TEST();// Simple test case
         myStack.push(1); // Stack: 1

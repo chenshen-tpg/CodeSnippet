@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Easy.CountSubArraysOfLengthThreeWithoutACondi
 public class LinearCount {
 
     public static void main(String[] args) {
-        System.out.println(helper(new int [] {1, 2, 1, 4, 1}));
+        System.out.println(helper(new int[]{1, 2, 1, 4, 1}));
     }
 
     public static int[] helper(int[] arr) {

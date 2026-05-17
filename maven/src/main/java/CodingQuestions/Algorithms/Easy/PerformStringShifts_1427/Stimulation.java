@@ -4,7 +4,8 @@ public class Stimulation {
     public static void main(String[] args) {
 
     }
-    public String stringShift(String str, int [][] memo) {
+
+    public String stringShift(String str, int[][] memo) {
         int shift = 0;
         for (int i = 0; i < memo.length; i++) {
             if (memo[i][0] == 0) {

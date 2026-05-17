@@ -4,6 +4,7 @@ public class BruteForce {
     public static void main(String[] args) {
 
     }
+
     public String longestPalindrome(String s) {
         String ans = "";
         for (int i = 0; i < s.length(); i++) {

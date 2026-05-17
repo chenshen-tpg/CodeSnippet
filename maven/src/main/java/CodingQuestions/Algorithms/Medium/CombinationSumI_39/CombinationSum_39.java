@@ -6,9 +6,10 @@ import java.util.List;
 
 public class CombinationSum_39 {
     List<List<Integer>> results;
+
     public static void main(String[] args) {
         CombinationSum_39 c = new CombinationSum_39();
-        System.out.println(c.combinationSum1(new int[]{2,3,6,7}, 7));
+        System.out.println(c.combinationSum1(new int[]{2, 3, 6, 7}, 7));
     }
 
     public List<List<Integer>> combinationSum1(int[] candidates, int target) {
@@ -17,6 +18,7 @@ public class CombinationSum_39 {
         this.backtrack(target, comb, 0, candidates);
         return results;
     }
+
     public void backtrack(int remain, LinkedList<Integer> comb, int start, int[] candidates) {
         if (remain == 0) {
             results.add(new ArrayList<Integer>(comb));

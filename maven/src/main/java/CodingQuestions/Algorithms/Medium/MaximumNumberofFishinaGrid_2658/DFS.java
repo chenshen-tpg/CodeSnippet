@@ -24,14 +24,15 @@ public class DFS {
         }
         return max;
     }
-    public int dfs (int [][] arr, int i, int j) {
+
+    public int dfs(int[][] arr, int i, int j) {
         if (i < 0 || i >= arr.length || j < 0 || j >= arr[0].length || arr[i][j] == 0) {
             return 0;
         }
         int temp = arr[i][j];
         arr[i][j] = 0;
-        int [][] dirs = {{1,0},{0,1},{-1,0},{0,-1}};
-        for (int [] dir : dirs) {
+        int[][] dirs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+        for (int[] dir : dirs) {
             int col = i + dir[0];
             int row = j + dir[1];
             temp += dfs(arr, col, row);

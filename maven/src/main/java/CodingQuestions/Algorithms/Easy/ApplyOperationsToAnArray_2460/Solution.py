@@ -1,4 +1,3 @@
-
 def applyOperations(nums):
     k = 0
     n = len(nums)
@@ -14,5 +13,6 @@ def applyOperations(nums):
         nums[i] = 0
     return nums
 
+
 # Example usage:
-print(applyOperations([1,2,2,1,1,0]))  # Output: [1, 4, 2, 0, 0, 0]
+print(applyOperations([1, 2, 2, 1, 1, 0]))  # Output: [1, 4, 2, 0, 0, 0]

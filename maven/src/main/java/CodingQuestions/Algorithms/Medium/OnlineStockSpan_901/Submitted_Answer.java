@@ -10,7 +10,7 @@ public class Submitted_Answer {
         while (!stack.isEmpty() && stack.peek()[0] <= price) {
             ans += stack.pop()[1];
         }
-        stack.push(new int[] {price, ans});
+        stack.push(new int[]{price, ans});
         return ans;
     }
 }

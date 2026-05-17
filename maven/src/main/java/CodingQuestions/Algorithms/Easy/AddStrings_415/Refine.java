@@ -22,8 +22,9 @@ package CodingQuestions.Algorithms.Easy.AddStrings_415;
  */
 public class Refine {
     public static void main(String[] args) {
-        addStrings("1","9");
+        addStrings("1", "9");
     }
+
     public static String addStrings(String num1, String num2) {
         StringBuilder res = new StringBuilder();
         int i = num1.length() - 1;
@@ -38,6 +39,6 @@ public class Refine {
             i--;
             j--;
         }
-        return res.reverse().toString(); 
+        return res.reverse().toString();
     }
 }

@@ -7,10 +7,11 @@ import java.util.Queue;
 
 public class QueueBFS {
     HashSet<Integer> hs = new HashSet<>();
+
     public static void main(String[] args) {
     }
 
-    public static boolean helper (List<List<Integer>> rooms) {
+    public static boolean helper(List<List<Integer>> rooms) {
         int[] memo = new int[rooms.size()];
         Queue<Integer> q = new LinkedList<>();
         q.add(0);

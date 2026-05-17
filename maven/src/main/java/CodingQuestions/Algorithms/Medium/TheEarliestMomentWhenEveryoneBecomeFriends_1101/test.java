@@ -8,6 +8,7 @@ public class test {
     public static void main(String[] args) {
 
     }
+
     private int find(int u) {
         if (par[u] != u) par[u] = find(par[u]);
         return par[u];

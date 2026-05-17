@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Easy.TrionicArray_3637;
 public class test {
 
     public static void main(String[] args) {
-        int [] c = new int [] {4,1,5,2,3};
+        int[] c = new int[]{4, 1, 5, 2, 3};
         test obj = new test();
         obj.isTrionic(c);
     }
@@ -18,12 +18,10 @@ public class test {
             if (!inc && nums[i] > nums[i - 1]) {
                 inc = true;
                 point1 = i;
-            }
-            else if (!dec && i > point1 && nums[i] < nums[i - 1]) {
+            } else if (!dec && i > point1 && nums[i] < nums[i - 1]) {
                 dec = true;
                 point2 = i;
-            }
-            else if (i > point2 && nums[i] > nums[i - 1]) {
+            } else if (i > point2 && nums[i] > nums[i - 1]) {
                 inca = true;
             }
         }

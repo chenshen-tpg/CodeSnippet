@@ -4,6 +4,7 @@ public class MeTrying {
     public static void main(String[] args) {
         repeatedSubstringPattern("bb");
     }
+
     public static boolean repeatedSubstringPattern(String s) {
         if (s.length() == 1) {
             return false;

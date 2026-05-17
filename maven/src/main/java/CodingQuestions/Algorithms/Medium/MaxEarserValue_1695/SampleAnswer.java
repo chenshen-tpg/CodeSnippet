@@ -6,6 +6,7 @@ public class SampleAnswer {
     public static void main(String[] args) {
 
     }
+
     public int maximumUniqueSubarray(int[] nums) {
         HashSet<Integer> hs = new HashSet();
         int sum = 0;

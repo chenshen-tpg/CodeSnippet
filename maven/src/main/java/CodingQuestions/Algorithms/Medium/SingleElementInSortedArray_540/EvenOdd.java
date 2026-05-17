@@ -5,7 +5,7 @@ public class EvenOdd {
 
     }
 
-    public int singleNonDuplicate (int [] nums) {
+    public int singleNonDuplicate(int[] nums) {
         int lo = 0, hi = nums.length - 1;
         while (lo < hi) {
             int mid = lo + (hi - lo) / 2;

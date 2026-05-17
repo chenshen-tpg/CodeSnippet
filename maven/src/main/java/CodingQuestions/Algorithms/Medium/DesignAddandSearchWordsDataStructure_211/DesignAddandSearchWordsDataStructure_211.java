@@ -19,21 +19,23 @@ public class DesignAddandSearchWordsDataStructure_211 {
         System.out.println(w.search(".ad"));
         System.out.println(w.search("b.."));
     }
+
     public void WordDictionary() {
         hm = new HashMap();
     }
 
     public void addWord(String word) {
         int l = word.length();
-        if(!hm.containsKey(l)){
+        if (!hm.containsKey(l)) {
             hm.put(l, new HashSet<>());
-        };
+        }
+        ;
         hm.get(l).add(word);
     }
 
     public boolean search(String word) {
         int m = word.length();
-        if (hm.containsKey(m)){
+        if (hm.containsKey(m)) {
             for (String w : hm.get(m)) {
                 int i = 0;
                 while ((i < m) && (w.charAt(i) == word.charAt(i) || word.charAt(i) == '.')) {
@@ -46,32 +48,36 @@ public class DesignAddandSearchWordsDataStructure_211 {
         }
         return false;
     }
+
     class WordDictionary {
-        private WordDictionary[] children;
         boolean isEndOfWord;
+        private WordDictionary[] children;
+
         public WordDictionary() {
             children = new WordDictionary[26];
             isEndOfWord = false;
         }
+
         public void addWord(String word) {
             WordDictionary curr = this;
-            for(char c: word.toCharArray()){
-                if(curr.children[c - 'a'] == null)
+            for (char c : word.toCharArray()) {
+                if (curr.children[c - 'a'] == null)
                     curr.children[c - 'a'] = new WordDictionary();
                 curr = curr.children[c - 'a'];
             }
             curr.isEndOfWord = true;
         }
+
         public boolean search(String word) {
             WordDictionary curr = this;
-            for(int i = 0; i < word.length(); ++i){
+            for (int i = 0; i < word.length(); ++i) {
                 char c = word.charAt(i);
-                if(c == '.'){
-                    for(WordDictionary ch: curr.children)
-                        if(ch != null && ch.search(word.substring(i+1))) return true;
+                if (c == '.') {
+                    for (WordDictionary ch : curr.children)
+                        if (ch != null && ch.search(word.substring(i + 1))) return true;
                     return false;
                 }
-                if(curr.children[c - 'a'] == null) return false;
+                if (curr.children[c - 'a'] == null) return false;
                 curr = curr.children[c - 'a'];
             }
             return curr != null && curr.isEndOfWord;

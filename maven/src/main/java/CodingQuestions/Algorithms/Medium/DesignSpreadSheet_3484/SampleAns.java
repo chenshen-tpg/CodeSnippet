@@ -3,17 +3,23 @@ package CodingQuestions.Algorithms.Medium.DesignSpreadSheet_3484;
 import java.util.HashMap;
 
 public class SampleAns {
+    HashMap<String, Integer> mpp = new HashMap<>();
+
+    public SampleAns(int rows) {
+    }
+
     public static void main(String[] args) {
 
     }
-    HashMap<String, Integer> mpp = new HashMap<>();
-    public SampleAns(int rows) {}
+
     public void setCell(String cell, int value) {
         mpp.put(cell, value);
     }
+
     public void resetCell(String cell) {
         mpp.put(cell, 0);
     }
+
     public int getValue(String formula) {
         formula = formula.substring(1);
         for (int i = 0; i < formula.length(); i++) {

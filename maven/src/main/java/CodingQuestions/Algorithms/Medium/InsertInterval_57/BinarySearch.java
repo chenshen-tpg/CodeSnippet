@@ -1,4 +1,5 @@
 package CodingQuestions.Algorithms.Medium.InsertInterval_57;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +15,7 @@ public class BinarySearch {
     }
 
     private int[][] insert(int[][] intervals, int[] newInterval) {
-        if (intervals.length == 0) return new int[][] { newInterval };
+        if (intervals.length == 0) return new int[][]{newInterval};
         int n = intervals.length;
         int target = newInterval[0];
         int left = 0, right = n - 1;

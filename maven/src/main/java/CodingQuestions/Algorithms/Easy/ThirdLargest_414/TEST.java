@@ -6,6 +6,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public int thirdMax(int[] nums) {
         int res = Integer.MIN_VALUE;
         HashSet<Integer> hs = new HashSet();

@@ -13,6 +13,6 @@ def apply_operations(nums):
         nums[i] = 0
     return nums
 
+
 if __name__ == "__main__":
     print(apply_operations([1, 2, 2, 1, 1, 0]))
-

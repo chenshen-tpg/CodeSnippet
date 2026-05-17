@@ -15,6 +15,7 @@ public class MySolution {
     public static void main(String[] args) {
 
     }
+
     public boolean isGood(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);

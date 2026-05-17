@@ -8,6 +8,7 @@ public class PrefixSolution {
     public static void main(String[] args) {
         prefix("aabca");
     }
+
     public static int prefix(String s) {
         int[] first = new int[26];
         int[] last = new int[26];

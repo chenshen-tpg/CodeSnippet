@@ -4,12 +4,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class Test {
+    Queue<int[]> q = new LinkedList<>();
+
     public static void main(String[] args) {
         int[][] mat = {{1, 0}, {2, 1}};
         Test m = new Test();
         m.highestPeak(mat);
     }
-    Queue<int[]> q = new LinkedList<>();
 
     public int[][] highestPeak(int[][] isWater) {
         int[][] heightCells = new int[isWater.length][isWater[0].length];
@@ -17,7 +18,7 @@ public class Test {
             for (int j = 0; j < isWater[0].length; j++) {
                 if (isWater[i][j] == 1) {
                     heightCells[i][j] = 0;
-                    q.add(new int[] {i, j});
+                    q.add(new int[]{i, j});
                 } else {
                     heightCells[i][j] = -1;
                 }
@@ -37,7 +38,7 @@ public class Test {
                 if (row >= 0 && row < heightCells.length && col >= 0 && col < heightCells[0].length) {
                     if (heightCells[row][col] != -1) continue;
                     heightCells[row][col] = heightCells[cell[0]][cell[1]] + 1;
-                    q.add(new int[] {row, col});
+                    q.add(new int[]{row, col});
                 }
 
             }

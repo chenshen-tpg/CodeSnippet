@@ -44,8 +44,7 @@ public class SampleAns {
                 if (Math.abs(st.peek()) < Math.abs(asteroid)) {
                     st.pop();
                     continue;
-                }
-                else if (Math.abs(st.peek()) == Math.abs(asteroid)) {
+                } else if (Math.abs(st.peek()) == Math.abs(asteroid)) {
                     st.pop();
                 }
                 flag = false;

@@ -9,10 +9,11 @@ public class SortLinear {
     public static void main(String[] args) {
 
     }
+
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> li = new ArrayList<>();
         Arrays.sort(nums);
-        HashMap<Integer,Integer> hm = new HashMap<>();
+        HashMap<Integer, Integer> hm = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             hm.put(nums[i], i);
         }

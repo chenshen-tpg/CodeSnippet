@@ -18,7 +18,7 @@ public class PQ {
         }
         // one line solution
         // for (int[] item : items) hm.computeIfAbsent(item[0], k -> new PriorityQueue<>((a, b) -> b - a)).add(item[1]);
-        int [][] res = new int [hm.size()][2];
+        int[][] res = new int[hm.size()][2];
         int index = 0;
         for (Integer m : hm.keySet()) {
             int count = 0;
@@ -27,7 +27,7 @@ public class PQ {
                 temp += hm.get(m).poll();
                 count++;
             }
-            int [] TempAns = new int [] {m, temp / 5};
+            int[] TempAns = new int[]{m, temp / 5};
             res[index++] = TempAns;
         }
         return res;

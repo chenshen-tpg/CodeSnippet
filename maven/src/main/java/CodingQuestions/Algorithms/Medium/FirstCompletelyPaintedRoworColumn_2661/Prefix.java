@@ -22,13 +22,13 @@ public class Prefix {
         int m = mat.length;
         int n = mat[0].length;
         for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n ; j++) {
+            for (int j = 0; j < n; j++) {
                 mp.put(mat[i][j], new int[]{i, j});
             }
         }
         int a[] = new int[m];
         int b[] = new int[n];
-        for (int i = 0; i < arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             int c[] = mp.get(arr[i]);
             a[c[0]]++;
             b[c[1]]++;

@@ -3,9 +3,10 @@ package CodingQuestions.Algorithms.Medium.MinimumTimeToRepairCars_2594;
 public class BinarySearch {
     public static void main(String[] args) {
         BinarySearch solution = new BinarySearch();
-        solution.helper(new int [] {4,2,3,1},10);
+        solution.helper(new int[]{4, 2, 3, 1}, 10);
     }
-    public long helper(int [] ranks, int cars) {
+
+    public long helper(int[] ranks, int cars) {
         int minRank = ranks[0], maxRank = ranks[0];
         for (int rank : ranks) {
             minRank = Math.min(minRank, rank);
@@ -18,7 +19,8 @@ public class BinarySearch {
         while (low < high) {
             long mid = (low + high) / 2;
             long carsRepaired = 0;
-            for (int rank = 1; rank <= maxRank; rank++) carsRepaired += freq[rank] * (long) Math.sqrt(mid / (long) rank);
+            for (int rank = 1; rank <= maxRank; rank++)
+                carsRepaired += freq[rank] * (long) Math.sqrt(mid / (long) rank);
             if (carsRepaired >= cars) high = mid;
             else low = mid + 1;
         }

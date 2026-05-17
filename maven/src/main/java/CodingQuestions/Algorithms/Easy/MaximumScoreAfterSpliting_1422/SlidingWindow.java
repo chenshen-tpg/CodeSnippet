@@ -4,6 +4,7 @@ public class SlidingWindow {
     public static void main(String[] args) {
         System.out.println(helper_onePass("00111"));
     }
+
     public static int helper_onePass(String s) {
         int maxScore = 0;
         int countZerosLeft = 0;

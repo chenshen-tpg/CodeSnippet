@@ -14,18 +14,20 @@ public class DFS {
         root.right.right = new TreeNode(3);
         System.out.println(solution.isSymmetric(root));
     }
+
     public boolean isSymmetric(TreeNode root) {
         TreeNode left = root.left;
         TreeNode right = root.right;
         return helper(left, right);
     }
-    public boolean helper (TreeNode left, TreeNode right) {
+
+    public boolean helper(TreeNode left, TreeNode right) {
         if (left == null && right == null) return true;
         if (right == null || left == null) return false;
         if (left.val != right.val) return false;
 //        helper(left.left, right.right);
 //        helper(left.right,right.left);
 //        return true;
-        return helper(left.left, right.right) &&  helper(left.right,right.left) ;
+        return helper(left.left, right.right) && helper(left.right, right.left);
     }
 }

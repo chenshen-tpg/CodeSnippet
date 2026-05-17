@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Easy.MinimumConsecutiveBlackBlocks_2379;
 public class MeTrying {
     public static void main(String[] args) {
         MeTrying solution = new MeTrying();
-        System.out.println(solution.helper("WBWBBBW",2));
+        System.out.println(solution.helper("WBWBBBW", 2));
     }
 
     public int helper(String blocks, int k) {

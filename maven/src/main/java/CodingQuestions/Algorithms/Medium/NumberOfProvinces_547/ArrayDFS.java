@@ -33,6 +33,7 @@ public class ArrayDFS {
         };
         System.out.println(arrayDFS.findCircleNum(testCase4));
     }
+
     public int findCircleNum(int[][] isConnected) {
         int n = isConnected.length;
         int numberOfComponents = 0;

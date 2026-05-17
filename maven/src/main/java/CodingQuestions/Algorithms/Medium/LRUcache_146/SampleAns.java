@@ -1,18 +1,6 @@
 package CodingQuestions.Algorithms.Medium.LRUcache_146;
 
 public class SampleAns {
-    class Node {
-        int key;
-        int value;
-        Node prev;
-        Node next;
-        Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-            this.prev = null;
-            this.next = null;
-        }
-    }
     public Node[] map;
     public int count, capacity;
     public Node head, tail;
@@ -25,18 +13,21 @@ public class SampleAns {
         this.head.next = this.tail;
         this.tail.prev = this.head;
     }
+
     private void deleteNode(Node node) {
         node.prev.next = node.next;
         node.next.prev = node.prev;
     }
+
     private void addToHead(Node node) {
         node.next = this.head.next;
         node.prev = this.head;
         node.next.prev = node;
         this.head.next = node;
     }
+
     public int get(int key) {
-        if(map[key] != null) {
+        if (map[key] != null) {
             Node node = map[key];
             deleteNode(node);
             addToHead(node);
@@ -45,6 +36,7 @@ public class SampleAns {
             return -1;
         }
     }
+
     public void put(int key, int value) {
         if (map[key] != null) {
             Node node = map[key];
@@ -63,6 +55,20 @@ public class SampleAns {
                 deleteNode(least);
                 addToHead(node);
             }
+        }
+    }
+
+    class Node {
+        int key;
+        int value;
+        Node prev;
+        Node next;
+
+        Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+            this.prev = null;
+            this.next = null;
         }
     }
 }

@@ -7,6 +7,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> li = new ArrayList();
         int left = 0, right = matrix[0].length - 1;
@@ -16,7 +17,7 @@ public class TEST {
                 li.add(matrix[top][i]);
             }
             top++;
-            for (int i = top; i  <= bot; i++) {
+            for (int i = top; i <= bot; i++) {
                 li.add(matrix[i][right]);
             }
             right--;

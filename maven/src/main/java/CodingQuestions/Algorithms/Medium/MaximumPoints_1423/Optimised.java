@@ -4,6 +4,7 @@ public class Optimised {
     public static void main(String[] args) {
 
     }
+
     public int maxScore(int[] cardPoints, int k) {
         int front = 0, back = 0;
         for (int i = 0; i < k; i++) front += cardPoints[i];

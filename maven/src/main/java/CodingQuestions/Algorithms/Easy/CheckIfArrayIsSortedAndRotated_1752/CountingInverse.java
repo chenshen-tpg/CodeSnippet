@@ -4,6 +4,7 @@ public class CountingInverse {
     public static void main(String[] args) {
 
     }
+
     public boolean stcheck(int[] nums) {
         if (nums.length == 1) return true;
         int count = 0;
@@ -12,7 +13,7 @@ public class CountingInverse {
                 count++;
             }
         }
-        if (nums[0] < nums[ nums.length - 1]) {
+        if (nums[0] < nums[nums.length - 1]) {
             count++;
         }
         return count <= 1;

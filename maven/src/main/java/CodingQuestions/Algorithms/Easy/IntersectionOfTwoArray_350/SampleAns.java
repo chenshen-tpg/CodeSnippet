@@ -6,6 +6,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     private int[] usingArrays(int[] nums1, int[] nums2) {
         int[] freq = new int[1001];
         int[] res = new int[1000];

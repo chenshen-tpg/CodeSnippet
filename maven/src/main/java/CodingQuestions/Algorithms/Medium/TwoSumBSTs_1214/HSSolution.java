@@ -8,6 +8,7 @@ public class HSSolution {
     public static void main(String[] args) {
 
     }
+
     public boolean twoSumBSTs(TreeNode root1, TreeNode root2, int target) {
         HashSet<Integer> hs1 = new HashSet(), hs2 = new HashSet();
         dfs(root1, hs1);
@@ -22,6 +23,6 @@ public class HSSolution {
         if (root == null) return;
         dfs(root.left, hs);
         hs.add(root.val);
-        dfs(root.right,hs);
+        dfs(root.right, hs);
     }
 }

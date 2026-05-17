@@ -7,7 +7,7 @@ public class builtIn {
     }
 
     public static String RemoveAllOccurrences(String s, String part) {
-        while (s.contains(part)){
+        while (s.contains(part)) {
             s = s.substring(0, s.indexOf(part)) + s.substring(s.indexOf(part) + part.length(), s.length());
         }
         return s;

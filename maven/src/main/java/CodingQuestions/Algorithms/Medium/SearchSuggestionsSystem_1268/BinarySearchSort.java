@@ -8,6 +8,7 @@ public class BinarySearchSort {
     public static void main(String[] args) {
 
     }
+
     int lower_bound(String[] products, int start, String word) {
         int i = start, j = products.length, mid;
         while (i < j) {
@@ -19,8 +20,8 @@ public class BinarySearchSort {
         }
         return i;
     }
-    public
-    List<List<String>> suggestedProducts(String[] products, String searchWord) {
+
+    public List<List<String>> suggestedProducts(String[] products, String searchWord) {
         Arrays.sort(products);
         List<List<String>> result = new ArrayList<>();
         int start = 0, bsStart = 0, n = products.length;

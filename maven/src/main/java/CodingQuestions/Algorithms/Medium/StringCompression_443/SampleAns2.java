@@ -4,7 +4,8 @@ public class SampleAns2 {
     public static void main(String[] args) {
 
     }
-    public static int test (char[] chars) {
+
+    public static int test(char[] chars) {
         int ans = 0;
         for (int i = 0; i < chars.length; i++) {
             int c = 1;

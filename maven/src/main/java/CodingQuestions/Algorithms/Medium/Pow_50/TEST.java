@@ -5,8 +5,9 @@ public class TEST {
         TEST solution = new TEST();
         solution.myPow(2.00000, -1);
     }
+
     public double myPow(double x, int n) {
-        return binaryExp(x,  n);
+        return binaryExp(x, n);
     }
 
     private double binaryExp(double x, long n) {

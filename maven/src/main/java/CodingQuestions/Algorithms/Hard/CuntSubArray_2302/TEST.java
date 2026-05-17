@@ -4,6 +4,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public long countSubarrays(int[] nums, long k) {
         int n = nums.length;
         long res = 0, total = 0;

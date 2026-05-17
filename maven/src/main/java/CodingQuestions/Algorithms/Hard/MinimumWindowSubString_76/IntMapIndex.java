@@ -10,7 +10,8 @@ public class IntMapIndex {
     }
 
     public String minWindow_highestUpvoted(String s, String t) {
-        if (s == null || t == null || s.length() == 0 || t.length() == 0 || s.length() < t.length()) return new String();
+        if (s == null || t == null || s.length() == 0 || t.length() == 0 || s.length() < t.length())
+            return new String();
         int[] map = new int[128];
         int count = t.length();
         int start = 0, end = 0, minLen = Integer.MAX_VALUE, startIndex = 0;

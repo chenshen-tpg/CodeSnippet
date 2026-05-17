@@ -5,14 +5,26 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TrieToSolve {
-    class Trie {
-        class Node {
-            boolean isWord = false;
-            List<Node> children = Arrays.asList(new Node[26]);
+    List<List<String>> suggestedProducts(String[] products,
+                                         String searchWord) {
+        Trie trie = new Trie();
+        List<List<String>> result = new ArrayList<>();
+        // Add all words to trie.
+        for (String w : products) trie.insert(w);
+        String prefix = new String();
+        for (char c : searchWord.toCharArray()) {
+            prefix += c;
+            result.add(trie.getWordsStartingWith(prefix));
         }
+        return result;
+    }
 
+    class Trie {
         Node Root, curr;
         List<String> resultBuffer;
+        Trie() {
+            Root = new Node();
+        }
 
         void dfsWithPrefix(Node curr, String word) {
             if (resultBuffer.size() == 3)
@@ -24,10 +36,6 @@ public class TrieToSolve {
             for (char c = 'a'; c <= 'z'; c++)
                 if (curr.children.get(c - 'a') != null)
                     dfsWithPrefix(curr.children.get(c - 'a'), word + c);
-        }
-
-        Trie() {
-            Root = new Node();
         }
 
         void insert(String s) {
@@ -56,18 +64,10 @@ public class TrieToSolve {
             dfsWithPrefix(curr, prefix);
             return resultBuffer;
         }
-    }
-    List<List<String>> suggestedProducts(String[] products,
-            String searchWord) {
-        Trie trie = new Trie();
-        List<List<String>> result = new ArrayList<>();
-        // Add all words to trie.
-        for (String w : products) trie.insert(w);
-        String prefix = new String();
-        for (char c : searchWord.toCharArray()) {
-            prefix += c;
-            result.add(trie.getWordsStartingWith(prefix));
+
+        class Node {
+            boolean isWord = false;
+            List<Node> children = Arrays.asList(new Node[26]);
         }
-        return result;
     }
 }

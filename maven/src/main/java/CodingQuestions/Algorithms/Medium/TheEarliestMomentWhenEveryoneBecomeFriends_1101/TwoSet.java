@@ -50,6 +50,7 @@ public class TwoSet {
 
         return -1;
     }
+
     private Set<Integer> findSet(List<Set<Integer>> sets, int friend) {
         for (Set<Integer> set : sets) {
             if (set.contains(friend)) {

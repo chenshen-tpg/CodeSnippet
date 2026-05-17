@@ -3,10 +3,12 @@ package CodingQuestions.Algorithms.Medium.PathSumIII_437;
 import CodingQuestions.Lib.TreeNode;
 
 public class DoubleRecursive {
+    int total = 0;
+
     public static void main(String[] args) {
 
     }
-    int total = 0;
+
     public int pathSum(TreeNode root, int sum) {
         if (root == null) return 0;
         helper(root, sum, 0);

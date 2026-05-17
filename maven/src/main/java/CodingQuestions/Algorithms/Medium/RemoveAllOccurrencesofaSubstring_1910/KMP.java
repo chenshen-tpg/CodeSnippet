@@ -6,6 +6,7 @@ public class KMP {
     public static void main(String[] args) {
 
     }
+
     public String removeOccurrences(String s, String part) {
         int[] kmpLPS = computeLongestPrefixSuffix(part);
         Stack<Character> charStack = new Stack<>();
@@ -42,15 +43,13 @@ public class KMP {
 
     private int[] computeLongestPrefixSuffix(String pattern) {
         int[] lps = new int[pattern.length()];
-        for (int current = 1, prefixLength = 0; current < pattern.length();) {
+        for (int current = 1, prefixLength = 0; current < pattern.length(); ) {
             if (pattern.charAt(current) == pattern.charAt(prefixLength)) {
                 lps[current] = ++prefixLength;
                 current++;
-            }
-            else if (prefixLength != 0) {
+            } else if (prefixLength != 0) {
                 prefixLength = lps[prefixLength - 1];
-            }
-            else {
+            } else {
                 lps[current] = 0;
                 current++;
             }

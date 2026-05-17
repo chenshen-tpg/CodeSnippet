@@ -18,7 +18,7 @@ public class DP {
                 else {
                     String s1 = prev[j];
                     String s2 = cur[j - 1];
-                    cur[j] = (s1.length() < s2.length()) ? s1 + str1.charAt(i - 1): s2 + str2.charAt(j - 1);
+                    cur[j] = (s1.length() < s2.length()) ? s1 + str1.charAt(i - 1) : s2 + str2.charAt(j - 1);
                 }
             }
             prev = cur;

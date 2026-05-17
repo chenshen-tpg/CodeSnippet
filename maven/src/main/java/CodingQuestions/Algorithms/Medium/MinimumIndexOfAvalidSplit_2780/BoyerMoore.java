@@ -6,6 +6,7 @@ public class BoyerMoore {
     public static void main(String[] args) {
 
     }
+
     public int minimumIndex(List<Integer> nums) {
         int x = nums.get(0), count = 0, xCount = 0, n = nums.size();
         for (int num : nums) {

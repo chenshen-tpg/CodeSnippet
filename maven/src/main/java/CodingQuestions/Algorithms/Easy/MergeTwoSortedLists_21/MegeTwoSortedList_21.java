@@ -17,11 +17,12 @@ public class MegeTwoSortedList_21 {
             res = res.next;
         }
     }
+
     // since the one is sorted, we can compare the first element of each list
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode head = new ListNode(-1);
         ListNode dummy = head;
-        while(list1 != null && list2 != null) {
+        while (list1 != null && list2 != null) {
             if (list1.val <= list2.val) {
                 dummy.next = list1;
                 list1 = list1.next;

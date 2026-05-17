@@ -4,14 +4,15 @@ public class TwoWhile {
     public static void main(String[] args) {
 
     }
-    public static String method (String s) {
+
+    public static String method(String s) {
         int left = 0, right = s.length() - 1;
-        char [] res = s.toCharArray();
+        char[] res = s.toCharArray();
         while (left < right) {
-            while (left < right && !"aeiou".contains(Character.toLowerCase(s.charAt(left))+"")) {
+            while (left < right && !"aeiou".contains(Character.toLowerCase(s.charAt(left)) + "")) {
                 left++;
             }
-            while (left < right && !"aeiou".contains(Character.toLowerCase(s.charAt(right))+"")) {
+            while (left < right && !"aeiou".contains(Character.toLowerCase(s.charAt(right)) + "")) {
                 right--;
             }
             char temp = res[left];

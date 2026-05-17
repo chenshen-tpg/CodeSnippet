@@ -4,15 +4,15 @@ import java.util.Stack;
 
 public class StackSwith {
     public static void main(String[] args) {
-        String[] tokens = {"4","13","5","/","+"};
-        String[] tokens1 = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
+        String[] tokens = {"4", "13", "5", "/", "+"};
+        String[] tokens1 = {"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
         System.out.println(evaluate(tokens));
     }
 
     public static int evaluate(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
-        for (String token:tokens) {
-            if(!"+-*/".contains(token)) {
+        for (String token : tokens) {
+            if (!"+-*/".contains(token)) {
                 stack.push(Integer.valueOf(token));
 
             } else {
@@ -25,6 +25,7 @@ public class StackSwith {
         }
         return stack.pop();
     }
+
     private static int applyOperator(int a, int b, String operator) {
         switch (operator) {
             case "+":

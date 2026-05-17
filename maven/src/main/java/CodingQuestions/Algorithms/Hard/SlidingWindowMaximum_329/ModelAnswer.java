@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ModelAnswer {
     public static void main(String[] args) {
-        int [] num = {1,3,-1,-3,5,3,6,7};
+        int[] num = {1, 3, -1, -3, 5, 3, 6, 7};
         int k = 3;
 //        int [] num = {1,-1};
         maxSlidingWindow(num, k);

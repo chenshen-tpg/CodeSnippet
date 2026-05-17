@@ -6,12 +6,12 @@ import java.util.PriorityQueue;
 
 public class HashMapPriorityQueue {
     public static void main(String[] args) {
-        int [] nums = {279,169,463,252,94,455,423,315,288,64,494,337,409,283,283,477,248,8,89,166,188,186,128};
-
+        int[] nums = {279, 169, 463, 252, 94, 455, 423, 315, 288, 64, 494, 337, 409, 283, 283, 477, 248, 8, 89, 166, 188, 186, 128};
 
 
         System.out.println(maximumSum(nums));
     }
+
     public static int maximumSum(int[] nums) {
         Map<Integer, PriorityQueue<Integer>> hm = new HashMap<>();
         int max = -1;

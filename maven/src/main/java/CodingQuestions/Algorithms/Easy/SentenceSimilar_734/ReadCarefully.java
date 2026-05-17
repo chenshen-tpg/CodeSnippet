@@ -27,6 +27,7 @@ public class ReadCarefully {
         }
         return true;
     }
+
     public boolean NaviWay(String[] sentence1, String[] sentence2, List<List<String>> similarPairs) {
         if (sentence1.length != sentence2.length) return false;
         HashMap<String, Set<String>> hm = new HashMap<>();

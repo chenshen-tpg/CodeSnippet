@@ -9,12 +9,31 @@ public class MegeKSortedLists_23 {
     public static void main(String[] args) {
         MegeKSortedLists_23 solution = new MegeKSortedLists_23();
         ListNode[] lists1 = {
-                createList(new int[]{1,4,5}),
-                createList(new int[]{1,3,4}),
-                createList(new int[]{2,6})
+                createList(new int[]{1, 4, 5}),
+                createList(new int[]{1, 3, 4}),
+                createList(new int[]{2, 6})
         };
         printList(solution.mergeKLists(lists1));
     }
+
+    public static ListNode createList(int[] arr) {
+        ListNode dummy = new ListNode(0);
+        ListNode curr = dummy;
+        for (int num : arr) {
+            curr.next = new ListNode(num);
+            curr = curr.next;
+        }
+        return dummy.next;
+    }
+
+    public static void printList(ListNode node) {
+        while (node != null) {
+            System.out.print(node.val + " ");
+            node = node.next;
+        }
+        System.out.println();
+    }
+
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode head = new ListNode(0);
         ListNode point = head;
@@ -45,22 +64,5 @@ public class MegeKSortedLists_23 {
             }
         }
         return head.next;
-    }
-    public static ListNode createList(int[] arr) {
-        ListNode dummy = new ListNode(0);
-        ListNode curr = dummy;
-        for (int num : arr) {
-            curr.next = new ListNode(num);
-            curr = curr.next;
-        }
-        return dummy.next;
-    }
-
-    public static void printList(ListNode node) {
-        while (node != null) {
-            System.out.print(node.val + " ");
-            node = node.next;
-        }
-        System.out.println();
     }
 }

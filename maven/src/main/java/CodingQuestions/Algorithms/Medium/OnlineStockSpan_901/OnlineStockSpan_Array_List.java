@@ -5,7 +5,13 @@ import java.util.List;
 
 public class OnlineStockSpan_Array_List {
     List<Integer> li;
-    int [] span;
+    int[] span;
+
+    public OnlineStockSpan_Array_List() {
+        li = new ArrayList<>();
+        span = new int[10000];
+    }
+
     public static void main(String[] args) {
         OnlineStockSpan_Array_List o = new OnlineStockSpan_Array_List();
         System.out.println(o.next(100));
@@ -18,10 +24,7 @@ public class OnlineStockSpan_Array_List {
 //        null, 1, 1, 1, 2, 1, 4, 6
         // maximum number of consecutive days
     }
-    public OnlineStockSpan_Array_List() {
-        li = new ArrayList<>();
-        span = new int[10000];
-    }
+
     public int next(int price) {
         int ans = 0;
         int index = 0;

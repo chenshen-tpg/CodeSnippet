@@ -2,9 +2,9 @@ package CodingQuestions.Algorithms.Medium.ReorganizeString_767;
 
 
 /***
-Given a string s, rearrange the characters of s so that any two adjacent characters are not the same.
-Return any possible rearrangement of s or return "" if not possible.
-***/
+ Given a string s, rearrange the characters of s so that any two adjacent characters are not the same.
+ Return any possible rearrangement of s or return "" if not possible.
+ ***/
 
 
 public class SampleAns {

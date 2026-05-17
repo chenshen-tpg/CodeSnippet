@@ -20,7 +20,7 @@ public class twoList {
         return r1.equals(r2);
     }
 
-    public List<Integer> helper (TreeNode node, ArrayList<Integer> al) {
+    public List<Integer> helper(TreeNode node, ArrayList<Integer> al) {
         if (node == null) return al;
         if (node.left == null && node.right == null) {
             al.add(node.val);

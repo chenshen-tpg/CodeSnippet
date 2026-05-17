@@ -1,10 +1,12 @@
 from collections import deque
 
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
+
 
 def averageOfLevels(root):
     ans = []
@@ -21,6 +23,7 @@ def averageOfLevels(root):
                 queue.append(node.right)
         ans.append(level_sum / size)
     return ans
+
 
 # Example usage:
 root = TreeNode(3)

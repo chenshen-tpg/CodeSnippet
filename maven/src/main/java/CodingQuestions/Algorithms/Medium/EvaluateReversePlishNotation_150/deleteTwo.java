@@ -4,6 +4,7 @@ public class deleteTwo {
     public static void main(String[] args) {
 
     }
+
     public int evalRPN(String[] tokens) {
         int currentPosition = 0;
         int length = tokens.length;
@@ -35,6 +36,7 @@ public class deleteTwo {
         }
         return Integer.parseInt(tokens[0]);
     }
+
     private void delete2AtIndex(String[] tokens, int d, int length) {
         for (int i = d; i < length - 2; i++) {
             tokens[i] = tokens[i + 2];

@@ -4,9 +4,9 @@ public class Transpose {
     public static void main(String[] args) {
         Transpose solution = new Transpose();
         int[][] matrix = {
-                {1,2,3},
-                {4,5,6},
-                {7,8,9}
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
         };
         solution.transpose(matrix);
         for (int[] row : matrix) {

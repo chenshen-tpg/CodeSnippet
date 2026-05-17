@@ -37,25 +37,25 @@ public class Review {
                 stack.push(s.charAt(i));
             }
         }
-        return  stack.toString().replaceAll("[\\[\\], ]", "");
+        return stack.toString().replaceAll("[\\[\\], ]", "");
     }
+
     public static String TwoStack(String s) {
         Stack<Integer> count = new Stack<>();
         Stack<StringBuilder> character = new Stack<>();
         StringBuilder sb = new StringBuilder();
         int k = 0;
         for (char c : s.toCharArray()) {
-            if (Character.isDigit(c)){
+            if (Character.isDigit(c)) {
                 k = k * 10 + c - '0';
-            }
-            else if (c == '[') {
+            } else if (c == '[') {
                 count.push(k);
                 character.push(sb);
                 sb = new StringBuilder();
                 k = 0;
             } else if (c == ']') {
                 StringBuilder decode = character.pop();
-                for (int i = count.pop(); i > 0; i--){
+                for (int i = count.pop(); i > 0; i--) {
                     decode.append(sb);
                 }
                 sb = decode;

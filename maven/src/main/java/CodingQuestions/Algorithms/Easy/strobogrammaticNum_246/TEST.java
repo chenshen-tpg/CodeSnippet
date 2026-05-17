@@ -17,7 +17,6 @@ public class TEST {
     }
 
 
-
     public boolean isStrobogrammatic(String num) {
         int len = num.length();
         if (len == 1) {
@@ -28,7 +27,7 @@ public class TEST {
             }
         }
 
-        if ( len > 2 && (num.contains("2") && num.indexOf(2) != len / 2 ||
+        if (len > 2 && (num.contains("2") && num.indexOf(2) != len / 2 ||
                 num.contains("3") && num.indexOf(3) != len / 2 ||
                 num.contains("4") && num.indexOf(4) != len / 2 ||
                 num.contains("5") && num.indexOf(5) != len / 2 ||

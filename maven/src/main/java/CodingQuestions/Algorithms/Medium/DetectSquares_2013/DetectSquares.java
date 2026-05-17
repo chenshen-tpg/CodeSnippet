@@ -8,6 +8,12 @@ import java.util.Map;
 public class DetectSquares {
     List<int[]> coordinates;
     Map<String, Integer> counts;
+
+    public DetectSquares() {
+        coordinates = new ArrayList<>();
+        counts = new HashMap<>();
+    }
+
     public static void main(String[] args) {
 
         DetectSquares detectSquares = new DetectSquares();
@@ -20,10 +26,6 @@ public class DetectSquares {
         detectSquares.add(new int[]{2, 1});
         detectSquares.add(new int[]{2, 2});
         System.out.println("Test case 2: " + detectSquares.count(new int[]{1, 1}));
-    }
-    public DetectSquares() {
-        coordinates = new ArrayList<>();
-        counts = new HashMap<>();
     }
 
     public void add(int[] point) {

@@ -16,9 +16,9 @@ public class ListTwoPointers {
         System.out.println(solution.helper(head));
     }
 
-    public int helper (ListNode head) {
+    public int helper(ListNode head) {
         List<Integer> li = new ArrayList<>();
-        while(head != null) {
+        while (head != null) {
             li.add(head.val);
             head = head.next;
         }
@@ -26,7 +26,7 @@ public class ListTwoPointers {
         int max = 0;
         while (left < right) {
             int sum = li.get(left) + li.get(right);
-            max = Math.max(max,sum);
+            max = Math.max(max, sum);
             left++;
             right--;
         }

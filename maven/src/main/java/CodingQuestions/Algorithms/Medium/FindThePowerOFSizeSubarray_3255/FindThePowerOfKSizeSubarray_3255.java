@@ -3,10 +3,11 @@ package CodingQuestions.Algorithms.Medium.FindThePowerOFSizeSubarray_3255;
 public class FindThePowerOfKSizeSubarray_3255 {
     public static void main(String[] args) {
         FindThePowerOfKSizeSubarray_3255 f = new FindThePowerOfKSizeSubarray_3255();
-        int [] nums = {1,2,3,4,3,2,5};
+        int[] nums = {1, 2, 3, 4, 3, 2, 5};
         int k = 3;
         f.upvoteAnswer2(nums, k);
     }
+
     public int[] upvoteAnswer2(int[] nums, int k) {
         int n = nums.length;
         int[] results = new int[n - k + 1];
@@ -35,6 +36,7 @@ public class FindThePowerOfKSizeSubarray_3255 {
         }
         return true;
     }
+
     public int[] upvoteAnswer(int[] nums, int k) {
         int[] num = new int[nums.length];
         int[] vec = new int[nums.length - k + 1];

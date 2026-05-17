@@ -9,6 +9,7 @@ public class OnlineStockSpan_Stack_Pair {
 
     Stack<Pair> stack2 = new Stack<>();
     ArrayList<Integer> al = new ArrayList<>();
+
     public static void main(String[] args) {
         OnlineStockSpan_Stack_Pair o = new OnlineStockSpan_Stack_Pair();
         System.out.println(o.next(100));
@@ -19,8 +20,6 @@ public class OnlineStockSpan_Stack_Pair {
         System.out.println(o.next(75));
         System.out.println(o.next(85));
     }
-
-
 
 
     public int next_array(int price) {
@@ -35,6 +34,7 @@ public class OnlineStockSpan_Stack_Pair {
         }
         return ans;
     }
+
     public int next(int price) {
         int ans = 1;
         while (!stack2.isEmpty() && ((int) stack2.peek().getKey() <= price)) {

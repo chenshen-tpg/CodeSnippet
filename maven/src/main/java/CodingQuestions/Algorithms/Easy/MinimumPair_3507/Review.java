@@ -6,7 +6,7 @@ import java.util.List;
 public class Review {
     public static void main(String[] args) {
         Review solution = new Review();
-        solution.minimumPairRemoval(new int [] {5,2,3,1});
+        solution.minimumPairRemoval(new int[]{5, 2, 3, 1});
     }
 
     public int minimumPairRemoval(int[] ints) {
@@ -14,7 +14,7 @@ public class Review {
         ArrayList<Integer> newLi = new ArrayList<>();
         for (Integer i : ints) newLi.add(i);
         if (newLi.size() < 2) return ans;
-        while(!checkInc(newLi)) {
+        while (!checkInc(newLi)) {
             int index = -1, sum = Integer.MAX_VALUE;
             for (int i = 1; i < newLi.size(); i++) {
                 if (newLi.get(i - 1) + newLi.get(i) < sum) {
@@ -30,6 +30,7 @@ public class Review {
         }
         return ans;
     }
+
     private boolean checkInc(List<Integer> ints) {
         for (int i = 1; i < ints.size(); i++) {
             if (ints.get(i - 1) > ints.get(i)) return false;

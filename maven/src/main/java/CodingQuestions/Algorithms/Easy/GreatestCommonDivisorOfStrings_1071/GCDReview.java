@@ -2,10 +2,10 @@ package CodingQuestions.Algorithms.Easy.GreatestCommonDivisorOfStrings_1071;
 
 public class GCDReview {
     public static void main(String[] args) {
-        System.out.println(gcd(10,5));
+        System.out.println(gcd(10, 5));
     }
 
-    public static int gcd (int x, int y) {
+    public static int gcd(int x, int y) {
         if (y == 0) return x;
         else return gcd(y, x % y);
     }

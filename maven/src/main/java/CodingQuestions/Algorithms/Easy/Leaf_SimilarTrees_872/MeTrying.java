@@ -9,6 +9,7 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public boolean leafSimilar(TreeNode root1, TreeNode root2) {
         List<Integer> li1 = new ArrayList();
         List<Integer> li2 = new ArrayList();
@@ -16,7 +17,8 @@ public class MeTrying {
         helper(li2, root2);
         return li1.equals(li2);
     }
-    public void helper (List<Integer> li, TreeNode root) {
+
+    public void helper(List<Integer> li, TreeNode root) {
         if (root == null) return;
         if (root.left == null && root.right == null) {
             li.add(root.val);

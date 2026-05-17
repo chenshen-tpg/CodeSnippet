@@ -26,6 +26,7 @@ public class SortSolution {
         // Test case 7: All elements are the same
         System.out.println(new SortSolution().maxSum(new int[]{2, 2, 2, 2})); // Expected: 2
     }
+
     public int maxSum(int[] nums) {
         Arrays.sort(nums);
         int prev = nums[nums.length - 1];

@@ -40,7 +40,7 @@ public class BFSPAIR {
 
         List<Integer> sortedKeys = new ArrayList<Integer>(columnTable.keySet());
         Collections.sort(sortedKeys);
-        for(int k : sortedKeys) {
+        for (int k : sortedKeys) {
             output.add(columnTable.get(k));
         }
 

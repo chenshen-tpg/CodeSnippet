@@ -13,6 +13,7 @@ public class TEST {
         }
         return new String(str);
     }
+
     public void reverse(int i, int j, char[] str) {
         while (i < j) {
             char temp = str[i];

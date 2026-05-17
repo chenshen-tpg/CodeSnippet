@@ -5,6 +5,7 @@ public class BitWise {
         BitWise solution = new BitWise();
         solution.isPowerOfTwo(16);
     }
+
     public boolean isPowerOfTwo(int n) {
         if (n == 0) return false;
         long x = (long) n;

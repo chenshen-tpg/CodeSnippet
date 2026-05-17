@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GPTMIMIC {
     public static void main(String[] args) {
-        int [] num = new int []{5,3,2,1};
+        int[] num = new int[]{5, 3, 2, 1};
         GPTMIMIC solution = new GPTMIMIC();
         solution.minimumPairRemoval(num);
     }

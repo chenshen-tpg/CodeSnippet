@@ -12,14 +12,15 @@ public class ValidPalindromeII_680 {
         int count = 0;
         while (i < j) {
             if (count == 0 && s.charAt(i) != s.charAt(j)) {
-                return (check(s,i,j-1) || check(s,i+1,j));
+                return (check(s, i, j - 1) || check(s, i + 1, j));
             }
             i++;
             j--;
         }
         return true;
     }
-    public boolean check(String s, int i, int j){
+
+    public boolean check(String s, int i, int j) {
         while (i < j) {
             if (s.charAt(i) != s.charAt(j)) {
                 return false;

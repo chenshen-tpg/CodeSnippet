@@ -4,6 +4,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public int numMagicSquaresInside(int[][] grid) {
         int res = 0;
         for (int i = 0; i <= grid.length - 3; i++) {

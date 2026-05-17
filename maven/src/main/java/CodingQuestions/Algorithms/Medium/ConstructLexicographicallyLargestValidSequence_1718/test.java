@@ -6,6 +6,7 @@ public class test {
     public static void main(String[] args) {
 
     }
+
     public int[] constructDistancedSequence(int n) {
         visited = new boolean[n + 1];
         int[] ans = new int[n * 2 - 1];

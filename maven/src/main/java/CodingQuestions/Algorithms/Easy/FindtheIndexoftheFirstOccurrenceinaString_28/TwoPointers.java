@@ -6,7 +6,7 @@ public class TwoPointers {
         System.out.println(twoPointers(haystack, needle));
     }
 
-    public static int twoPointers (String s1, String s2) {
+    public static int twoPointers(String s1, String s2) {
         if (s2.isEmpty()) return 0;
         for (int i = 0; i <= s1.length() - s2.length(); i++) {
             int j = 0;

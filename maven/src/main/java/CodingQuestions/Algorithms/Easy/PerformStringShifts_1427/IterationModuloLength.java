@@ -8,7 +8,7 @@ public class IterationModuloLength {
         System.out.println(performStringShift("wpdhhcj", new int[][]{{0, 4}}));
     }
 
-    public static String performStringShift(String str, int [][] memo) {
+    public static String performStringShift(String str, int[][] memo) {
         int shift = 0;
         for (int i = 0; i < memo.length; i++) {
             if (memo[i][0] == 0) {

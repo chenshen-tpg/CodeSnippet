@@ -7,6 +7,10 @@ public class Union {
     private int[] fa;
     private int[] rank;
 
+    public static void main(String[] args) {
+
+    }
+
     private int find(int x) {
         if (fa[x] != x) {
             fa[x] = find(fa[x]);
@@ -64,9 +68,5 @@ public class Union {
             }
         }
         return ans;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

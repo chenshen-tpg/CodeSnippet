@@ -4,11 +4,12 @@ public class RealFunc {
     public static void main(String[] args) {
 
     }
+
     public int findNumbers(int[] nums) {
         int ans = 0;
         for (int num : nums) {
             int count = 0;
-            while(num > 0) {
+            while (num > 0) {
                 num /= 10;
                 count++;
             }

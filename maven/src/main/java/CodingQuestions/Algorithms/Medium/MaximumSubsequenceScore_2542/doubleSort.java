@@ -6,8 +6,8 @@ import java.util.PriorityQueue;
 public class doubleSort {
 
     public static void main(String[] args) {
-        int [] nums1 = {4,2,3,1,1};
-        int [] nums2 = {7,5,10,9,6};
+        int[] nums1 = {4, 2, 3, 1, 1};
+        int[] nums2 = {7, 5, 10, 9, 6};
         int k = 3;
         doubleSort ds = new doubleSort();
         System.out.println(ds.maxScore(nums1, nums2, k));
@@ -15,8 +15,8 @@ public class doubleSort {
 
     public long maxScore(int[] nums1, int[] nums2, int k) {
         int[][] p = new int[nums1.length][2];
-        for (int i = 0;i < nums1.length; i++) {
-            p[i] = new int[] {nums1[i], nums2[i]};
+        for (int i = 0; i < nums1.length; i++) {
+            p[i] = new int[]{nums1[i], nums2[i]};
         }
         Arrays.sort(p, (a, b) -> b[1] - a[1]);
         PriorityQueue<Integer> heap = new PriorityQueue<>(k, (a, b) -> a - b);
@@ -25,7 +25,7 @@ public class doubleSort {
             sum += p[i][0];
             heap.add(p[i][0]);
         }
-        long ans = sum * p[k-1][1];
+        long ans = sum * p[k - 1][1];
         for (int i = k; i < nums1.length; i++) {
             sum += p[i][0] - heap.poll();
             heap.add(p[i][0]);

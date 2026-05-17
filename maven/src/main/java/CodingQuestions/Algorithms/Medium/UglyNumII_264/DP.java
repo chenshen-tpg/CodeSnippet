@@ -4,6 +4,7 @@ public class DP {
     public static void main(String[] args) {
 
     }
+
     public int nthUglyNumber(int n) {
         int[] uglyNumbers = new int[n]; // DP array to store ugly numbers
         uglyNumbers[0] = 1; // The first ugly number is 1

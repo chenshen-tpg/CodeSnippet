@@ -14,7 +14,7 @@ public class TEST1 {
                     y0 = j;
                 }
 
-        for (int[] d : new int[][] { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } }) {
+        for (int[] d : new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}}) {
             for (int x = x0 + d[0], y = y0 + d[1]; 0 <= x && x < 8 && 0 <= y && y < 8; x += d[0], y += d[1]) {
                 if (board[x][y] == 'p') {
                     res++;

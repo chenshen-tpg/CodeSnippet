@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Set;
 
 public class test {
-    List<List<Integer>> li = new ArrayList();
     private final Set<Integer> memo = new HashSet<>();
+    List<List<Integer>> li = new ArrayList();
 
     public static void main(String[] args) {
     }

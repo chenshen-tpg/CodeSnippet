@@ -11,9 +11,10 @@ public class LinkedListCycle_141 {
     public static void main(String[] args) {
 
     }
+
     public boolean hasCycle(ListNode head) {
         List<ListNode> visited = new ArrayList<>();
-        while(head!=null){
+        while (head != null) {
             if (visited.contains(head)) {
                 return true;
             }
@@ -22,6 +23,7 @@ public class LinkedListCycle_141 {
         }
         return false;
     }
+
     public boolean hasCycle1(ListNode head) {
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {

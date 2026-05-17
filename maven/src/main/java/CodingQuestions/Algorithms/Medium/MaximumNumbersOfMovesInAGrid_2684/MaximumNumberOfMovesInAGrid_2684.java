@@ -4,13 +4,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class MaximumNumberOfMovesInAGrid_2684 {
+    public static final int[] dirs = {-1, 0, 1};
+
     public static void main(String[] args) {
         int[][] grid = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         System.out.println(maxMoves(grid));
     }
-
-
-    public static final int[] dirs = {-1, 0, 1};
 
     public static int maxMoves(int[][] grid) {
         int M = grid.length, N = grid[0].length;
@@ -33,7 +32,7 @@ public class MaximumNumberOfMovesInAGrid_2684 {
                         vis[newRow][newCol] = true;
                         q.offer(new int[]{newRow, newCol, count + 1});
                     }
-                    
+
                 }
             }
         }

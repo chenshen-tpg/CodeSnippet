@@ -7,7 +7,7 @@ public class TwoPointers {
     }
 
     private static String method(String s) {
-        char memo [] = new char[s.length()];
+        char memo[] = new char[s.length()];
         int j = 0;
         for (int i = 0; i < s.length(); i++) {
             //take back the rare one.

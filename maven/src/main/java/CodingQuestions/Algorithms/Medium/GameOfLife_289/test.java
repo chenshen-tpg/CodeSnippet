@@ -14,7 +14,7 @@ public class test {
                 {0, 0, 1, 1},
                 {0, 0, 1, 1}
         };
-        int [] cord = {-1,0,1};
+        int[] cord = {-1, 0, 1};
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 int r = 1 + cord[i];
@@ -25,7 +25,7 @@ public class test {
             }
         }
         for (int i = 0; i < li.size(); i++) {
-            System.out.print("("+ li.get(i).getKey() + "," +li.get(i).getValue() +")" + " " );
+            System.out.print("(" + li.get(i).getKey() + "," + li.get(i).getValue() + ")" + " ");
         }
     }
 }

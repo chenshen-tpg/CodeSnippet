@@ -5,23 +5,25 @@ import java.util.Arrays;
 
 public class test {
     public static void main(String[] args) {
-        int [] prices = {3,2,6,5,0,3};
-        maxProfit(2,prices);
+        int[] prices = {3, 2, 6, 5, 0, 3};
+        maxProfit(2, prices);
     }
+
     public static int maxProfit(int k, int[] prices) {
         if (k == 0) return 0;
-        int[] profit = new int[k+1];
-        int[] cost = new int[k+1];
+        int[] profit = new int[k + 1];
+        int[] cost = new int[k + 1];
         profit[0] = 0;
         Arrays.fill(cost, Integer.MAX_VALUE);
-        for (int price: prices) {
+        for (int price : prices) {
             for (int i = 0; i < k; i++) {
-                cost[i+1] = Math.min(cost[i+1], price - profit[i]);
-                profit[i+1] = Math.max(profit[i+1], price - cost[i+1]);
+                cost[i + 1] = Math.min(cost[i + 1], price - profit[i]);
+                profit[i + 1] = Math.max(profit[i + 1], price - cost[i + 1]);
             }
         }
         return profit[k];
     }
+
     public int maxProfit_Array(int k, int[] prices) {
         int n = prices.length;
         // solve special cases
@@ -37,14 +39,14 @@ public class test {
                 end = i;
             } else {
                 if (end > start) {
-                    int[] t = { start, end };
+                    int[] t = {start, end};
                     transactions.add(t);
                 }
                 start = i;
             }
         }
         if (end > start) {
-            int[] t = { start, end };
+            int[] t = {start, end};
             transactions.add(t);
         }
         while (transactions.size() > k) {
@@ -86,28 +88,29 @@ public class test {
 
         return res;
     }
+
     public int maxProfit_DP(int k, int[] prices) {
         int n = prices.length;
         if (n <= 1)
             return 0;
         //if k >= n/2, then you can make maximum number of transactions.
-        if (k >=  n/2) {
+        if (k >= n / 2) {
             int maxPro = 0;
             for (int i = 1; i < n; i++) {
-                if (prices[i] > prices[i-1])
-                    maxPro += prices[i] - prices[i-1];
+                if (prices[i] > prices[i - 1])
+                    maxPro += prices[i] - prices[i - 1];
             }
             return maxPro;
         }
 
-        int[][] dp = new int[k+1][n];
+        int[][] dp = new int[k + 1][n];
         for (int i = 1; i <= k; i++) {
-            int localMax = dp[i-1][0] - prices[0];
+            int localMax = dp[i - 1][0] - prices[0];
             for (int j = 1; j < n; j++) {
-                dp[i][j] = Math.max(dp[i][j-1],  prices[j] + localMax);
-                localMax = Math.max(localMax, dp[i-1][j] - prices[j]);
+                dp[i][j] = Math.max(dp[i][j - 1], prices[j] + localMax);
+                localMax = Math.max(localMax, dp[i - 1][j] - prices[j]);
             }
         }
-        return dp[k][n-1];
+        return dp[k][n - 1];
     }
 }

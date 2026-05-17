@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class MeTrying {
 
-//    Example 1:
+    //    Example 1:
 //    Input: nums = [3,2,1]
 //    Output: 1
 //    Explanation:
@@ -27,10 +27,10 @@ public class MeTrying {
 //    The second distinct maximum is 2 (both 2's are counted together since they have the same value).
 //    The third distinct maximum is 1.
     public static void main(String[] args) {
-        helper(new int [] {1,2,2,5,3,5});
+        helper(new int[]{1, 2, 2, 5, 3, 5});
     }
 
-    public static int helper (int [] nums) {
+    public static int helper(int[] nums) {
         if (nums.length == 1) return nums[0];
         Queue<Integer> pq = new PriorityQueue<>();
         for (int num : nums) {
@@ -40,10 +40,9 @@ public class MeTrying {
         }
         if (pq.size() == 2) {
             pq.poll();
-        }
-        else if (pq.size() > 3) {
+        } else if (pq.size() > 3) {
             int temp = pq.size() - 3;
-            while(temp > 0) {
+            while (temp > 0) {
                 pq.poll();
                 temp--;
             }

@@ -4,6 +4,7 @@ public class BruteForce {
     public static void main(String[] args) {
 
     }
+
     public char findKthBit(int n, int k) {
         StringBuilder sequence = new StringBuilder("0");
 

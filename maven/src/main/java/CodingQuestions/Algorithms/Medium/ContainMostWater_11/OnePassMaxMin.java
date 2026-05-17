@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Medium.ContainMostWater_11;
 public class OnePassMaxMin {
     public static void main(String[] args) {
         OnePassMaxMin cw = new OnePassMaxMin();
-        System.out.println(cw.maxArea(new int[]{1,8,6,2,5,4,8,3,7}));
+        System.out.println(cw.maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7}));
     }
 
 

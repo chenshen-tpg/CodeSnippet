@@ -6,7 +6,7 @@ public class BinarySearch {
 
     public static void main(String[] args) {
         BinarySearch lis = new BinarySearch();
-        System.out.println(lis.lengthOfLIS1(new int[]{0,1,0,3,2,3}));
+        System.out.println(lis.lengthOfLIS1(new int[]{0, 1, 0, 3, 2, 3}));
     }
 
     public int lengthOfLIS1(int[] nums) {
@@ -24,6 +24,7 @@ public class BinarySearch {
 
         return sub.size();
     }
+
     private int binarySearch(ArrayList<Integer> sub, int num) {
         int left = 0;
         int right = sub.size() - 1;

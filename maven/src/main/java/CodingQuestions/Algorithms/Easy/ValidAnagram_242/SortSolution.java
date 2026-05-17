@@ -6,8 +6,9 @@ public class SortSolution {
     public static void main(String[] args) {
 
     }
+
     public boolean isAnagram(String s, String t) {
-        if(s.length() != t.length()){
+        if (s.length() != t.length()) {
             return false;
 
         }

@@ -17,6 +17,7 @@ public class ReverseBits_190 {
         }
         return result;
     }
+
     public int reverseBits1(int n) {
         int result = 0;
         for (int i = 0; i < 32; i++) {

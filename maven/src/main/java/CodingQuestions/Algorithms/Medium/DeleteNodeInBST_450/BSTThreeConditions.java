@@ -16,29 +16,27 @@ public class BSTThreeConditions {
         int key = 3;
         solution.helper(root, key);
     }
-    public TreeNode helper (TreeNode root, int key) {
-        if(root==null) return null;
 
-        if(key<root.val) {
-            root.left = helper(root.left,key);
-            return root;
-        }
+    public TreeNode helper(TreeNode root, int key) {
+        if (root == null) return null;
 
-        else if(key>root.val) {
-            root.right = helper(root.right,key);
+        if (key < root.val) {
+            root.left = helper(root.left, key);
             return root;
-        }
-        else{
-            if(root.left==null) {
+        } else if (key > root.val) {
+            root.right = helper(root.right, key);
+            return root;
+        } else {
+            if (root.left == null) {
                 return root.right;
-            } else if(root.right==null) {
+            } else if (root.right == null) {
                 return root.left;
             } else {
                 //Find the in-order successor (the smallest node in the right subtree)
                 TreeNode min = root.right;
                 while (min.left != null) min = min.left;
                 root.val = min.val;
-                root.right = helper(root.right,min.val);
+                root.right = helper(root.right, min.val);
                 return root;
             }
         }

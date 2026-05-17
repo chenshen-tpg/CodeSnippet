@@ -4,7 +4,8 @@ public class BruteForce {
     public static void main(String[] args) {
 
     }
-    public double rewrite_bruteForce (int [] nums, int k) {
+
+    public double rewrite_bruteForce(int[] nums, int k) {
         double ans = 0;
         for (int i = 0; i < nums.length - k; i++) {
             double temp = 0;

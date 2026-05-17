@@ -3,6 +3,10 @@ package CodingQuestions.Algorithms.Medium.DesignSpreadSheet_3484;
 public class TEST {
     int[][] memo;
 
+    public TEST(int rows) {
+        memo = new int[26][rows + 1];
+    }
+
     public static void main(String[] args) {
         TEST spreadsheet = new TEST(458);
 
@@ -13,9 +17,6 @@ public class TEST {
         spreadsheet.resetCell("A1");                           // Reset A1
         System.out.println(spreadsheet.getValue("=A1+B2"));    // Output: 15
     }
-    public TEST(int rows) {
-        memo = new int[26][rows + 1];
-    }
 
     public void setCell(String cell, int value) {
         int col = cell.charAt(0) - 'A';
@@ -25,7 +26,7 @@ public class TEST {
 
     public void resetCell(String cell) {
         int col = cell.charAt(0) - 'A';
-        int row = Integer.parseInt(cell.substring(1)) ;
+        int row = Integer.parseInt(cell.substring(1));
         memo[col][row] = 0;
     }
 

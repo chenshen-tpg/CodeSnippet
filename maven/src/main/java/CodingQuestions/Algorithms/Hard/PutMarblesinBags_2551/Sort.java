@@ -5,8 +5,9 @@ import java.util.Arrays;
 public class Sort {
     public static void main(String[] args) {
         Sort solution = new Sort();
-        solution.putMarbles(new int []{1,3,5,1},2);
+        solution.putMarbles(new int[]{1, 3, 5, 1}, 2);
     }
+
     public long putMarbles(int[] weights, int k) {
         int n = weights.length;
         int[] pairWeights = new int[n - 1];

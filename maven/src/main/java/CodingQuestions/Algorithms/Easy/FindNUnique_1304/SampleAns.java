@@ -5,6 +5,7 @@ public class SampleAns {
         SampleAns solution = new SampleAns();
         solution.sumZero(5);
     }
+
     public int[] sumZero(int n) {
         int[] ans = new int[n];
         int index = 0;

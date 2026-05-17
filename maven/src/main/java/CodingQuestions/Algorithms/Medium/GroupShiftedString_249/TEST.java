@@ -7,10 +7,11 @@ import java.util.Map;
 
 public class TEST {
     public static void main(String[] args) {
-        String [] strings = {"abc","bcd","acef","xyz","az","ba","a","z"};
+        String[] strings = {"abc", "bcd", "acef", "xyz", "az", "ba", "a", "z"};
         TEST solution = new TEST();
         solution.groupStrings(strings);
     }
+
     public String getHash(String s) {
         char[] chars = s.toCharArray();
         StringBuilder sb = new StringBuilder();
@@ -23,8 +24,8 @@ public class TEST {
 
     public List<List<String>> groupStrings(String[] strings) {
         Map<String, List<String>> hm = new HashMap<>();
-        for (String str : strings ) {
-            hm.computeIfAbsent( getHash(str),k-> new ArrayList<>()).add(str);
+        for (String str : strings) {
+            hm.computeIfAbsent(getHash(str), k -> new ArrayList<>()).add(str);
         }
         List<List<String>> groups = new ArrayList<>();
         for (List<String> group : hm.values()) {

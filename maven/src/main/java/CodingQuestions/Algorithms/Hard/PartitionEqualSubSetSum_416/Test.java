@@ -3,10 +3,10 @@ package CodingQuestions.Algorithms.Hard.PartitionEqualSubSetSum_416;
 public class Test {
     public static void main(String[] args) {
         Test solution = new Test();
-        solution.helper(new int [] {1,5,11,5});
+        solution.helper(new int[]{1, 5, 11, 5});
     }
 
-    public static boolean helper (int [] nums) {
+    public static boolean helper(int[] nums) {
         int totalSum = 0;
         for (int num : nums) totalSum += num;
         if (totalSum % 2 != 0) return false;

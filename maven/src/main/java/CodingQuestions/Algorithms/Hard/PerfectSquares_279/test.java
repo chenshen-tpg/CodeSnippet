@@ -6,6 +6,7 @@ public class test {
     public static void main(String[] args) {
         numSquares(12);
     }
+
     public static int numSquares(int n) {
         int[] dp = new int[n + 1];
         Arrays.fill(dp, Integer.MAX_VALUE);

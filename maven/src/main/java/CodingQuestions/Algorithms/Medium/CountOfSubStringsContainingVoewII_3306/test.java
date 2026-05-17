@@ -7,7 +7,8 @@ public class test {
     public static void main(String[] args) {
         System.out.println(helper("ieaouqqieaouqq", 1));
     }
-    public static int helper (String s , int k) {
+
+    public static int helper(String s, int k) {
         int ans = 0;
         Set<Character> set = new HashSet<>();
         if (s.length() < 5 + k) return 0;

@@ -4,14 +4,15 @@ public class DoubleReverse {
     public static void main(String[] args) {
 
     }
+
     public void reverseWords(char[] s) {
-        reverse(s, 0, s.length-1);  // reverse the whole string first
+        reverse(s, 0, s.length - 1);  // reverse the whole string first
         int r = 0;
         while (r < s.length) {
             int l = r;
             while (r < s.length && s[r] != ' ')
                 r++;
-            reverse(s, l, r-1);  // reverse words one by one
+            reverse(s, l, r - 1);  // reverse words one by one
             r++;
         }
     }

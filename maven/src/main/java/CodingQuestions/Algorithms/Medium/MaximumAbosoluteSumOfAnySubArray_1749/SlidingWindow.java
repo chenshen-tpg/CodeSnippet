@@ -3,9 +3,10 @@ package CodingQuestions.Algorithms.Medium.MaximumAbosoluteSumOfAnySubArray_1749;
 public class SlidingWindow {
     public static void main(String[] args) {
         SlidingWindow solution = new SlidingWindow();
-        System.out.println(solution.helper(new int [] {1, -3, 2, 3, -4}));
+        System.out.println(solution.helper(new int[]{1, -3, 2, 3, -4}));
     }
-    public int helper (int [] arr) {
+
+    public int helper(int[] arr) {
         int maxSoFar = arr[0];
         int currentMax = arr[0];
         int minSoFar = arr[0];

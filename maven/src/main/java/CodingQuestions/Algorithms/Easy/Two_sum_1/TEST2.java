@@ -11,11 +11,11 @@ public class TEST2 {
         HashMap<Integer, Integer> hm = new HashMap();
         for (int i = 0; i < nums.length; i++) {
             int cur = target - nums[i];
-            if (hm.containsKey(cur)){
-                return new int [] {i, hm.get(cur)};
+            if (hm.containsKey(cur)) {
+                return new int[]{i, hm.get(cur)};
             }
-            hm.put(nums[i],i);
+            hm.put(nums[i], i);
         }
-        return new int [] {-1, -1};
+        return new int[]{-1, -1};
     }
 }

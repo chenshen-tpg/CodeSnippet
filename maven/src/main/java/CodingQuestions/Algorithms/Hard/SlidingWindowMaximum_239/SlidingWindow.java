@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SlidingWindow {
     public static void main(String[] args) {
-        int [] nums = {1,3,-1,-3,5,3,6,7};
+        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
         int k = 3;
         SlidingWindow solution = new SlidingWindow();
         solution.maxSlidingWindow(nums, k);

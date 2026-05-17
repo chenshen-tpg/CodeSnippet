@@ -4,6 +4,7 @@ public class TEST2 {
     public static void main(String[] args) {
 
     }
+
     public int maxFrequencyElements(int[] nums) {
         int[] freq = new int[101];
         int max = 0;

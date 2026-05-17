@@ -9,6 +9,7 @@ public class Review {
     public static void main(String[] args) {
 
     }
+
     public int maxLevelSum(TreeNode root) {
         int count = Integer.MIN_VALUE;
         int ans = 0;

@@ -4,6 +4,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public int countPrimes(int n) {
         if (n <= 2) return 0;
         boolean[] nums = new boolean[n];

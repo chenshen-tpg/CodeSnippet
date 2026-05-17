@@ -12,6 +12,7 @@ public class Linear {
         int[][] events3 = {{10, 5}, {1, 7}};
         System.out.println(linear.buttonWithLongestTime(events3));
     }
+
     public int buttonWithLongestTime(int[][] events) {
         int ans = events[0][0];
         int prev = events[0][1];

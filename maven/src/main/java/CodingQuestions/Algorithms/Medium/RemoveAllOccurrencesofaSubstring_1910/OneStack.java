@@ -4,6 +4,7 @@ public class OneStack {
     public static void main(String[] args) {
 
     }
+
     public String removeOccurrences(String s, String part) {
         char[] input = s.toCharArray();
         char[] target = part.toCharArray();

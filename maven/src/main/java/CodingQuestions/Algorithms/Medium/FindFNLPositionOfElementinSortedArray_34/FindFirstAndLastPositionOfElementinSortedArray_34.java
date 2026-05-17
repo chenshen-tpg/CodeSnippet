@@ -3,15 +3,17 @@ package CodingQuestions.Algorithms.Medium.FindFNLPositionOfElementinSortedArray_
 public class FindFirstAndLastPositionOfElementinSortedArray_34 {
     public static void main(String[] args) {
         FindFirstAndLastPositionOfElementinSortedArray_34 ffl = new FindFirstAndLastPositionOfElementinSortedArray_34();
-        int [] res = ffl.searchRange(new int[]{5,7,7,8,8,10}, 8);
+        int[] res = ffl.searchRange(new int[]{5, 7, 7, 8, 8, 10}, 8);
         for (int i : res) {
             System.out.println(i);
         }
     }
+
     public int[] searchRange(int[] nums, int target) {
-        return findLeftMostIndex(nums, target) == -1 ?  new int []{-1,-1} : new int []{findLeftMostIndex(nums, target), findRightMostIndex(nums, target)};
+        return findLeftMostIndex(nums, target) == -1 ? new int[]{-1, -1} : new int[]{findLeftMostIndex(nums, target), findRightMostIndex(nums, target)};
     }
-    public int findLeftMostIndex(int [] nums, int target) {
+
+    public int findLeftMostIndex(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         int leftMostIndex = -1;
@@ -29,7 +31,7 @@ public class FindFirstAndLastPositionOfElementinSortedArray_34 {
         return leftMostIndex;
     }
 
-    public int findRightMostIndex(int [] nums, int target) {
+    public int findRightMostIndex(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         int rightMostIndex = -1;

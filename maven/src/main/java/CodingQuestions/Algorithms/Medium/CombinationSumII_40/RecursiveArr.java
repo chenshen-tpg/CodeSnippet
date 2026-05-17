@@ -5,20 +5,22 @@ import java.util.Arrays;
 import java.util.List;
 
 public class RecursiveArr {
+    ArrayList<List<Integer>> res = new ArrayList<>();
+
     public static void main(String[] args) {
 
     }
-    ArrayList<List<Integer>> res = new ArrayList<>();
+
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         Arrays.sort(candidates);
         helper(candidates, 0, target, new ArrayList<Integer>());
         return res;
     }
-    public void helper (int [] candidates, int start, int target, ArrayList<Integer> li) {
+
+    public void helper(int[] candidates, int start, int target, ArrayList<Integer> li) {
         if (target == 0) {
             res.add(new ArrayList<>(li));
-        }
-        else if (target < 0) {
+        } else if (target < 0) {
             return;
         }
         for (int i = start; i < candidates.length; i++) {

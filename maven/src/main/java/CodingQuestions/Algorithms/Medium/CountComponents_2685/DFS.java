@@ -19,6 +19,7 @@ public class DFS {
         int result = solution.countCompleteComponents(n, edges);
         System.out.println("Number of complete components: " + result);
     }
+
     public int countCompleteComponents(int n, int[][] edges) {
         List<Integer>[] graph = new ArrayList[n];
         for (int vertex = 0; vertex < n; vertex++) graph[vertex] = new ArrayList<>();

@@ -2,16 +2,13 @@ package CodingQuestions.Algorithms.Hard.RegularExpressionMatching_10;
 
 public class RegularExpressionMatching_10 {
     Result[][] memo;
-    enum Result {
-        TRUE,
-        FALSE,
-    }
 
     public static void main(String[] args) {
         RegularExpressionMatching_10 obj = new RegularExpressionMatching_10();
         System.out.println(obj.isMatch("mississippi", "mis*is*p*."));
         System.out.println(obj.isMatch("ab", ".*"));
     }
+
     public boolean isMatch(String s, String p) {
         if (p.isEmpty()) return s.isEmpty();
         boolean first_match = !s.isEmpty() && (p.charAt(0) == s.charAt(0) || p.charAt(0) == '.');
@@ -21,7 +18,6 @@ public class RegularExpressionMatching_10 {
             return first_match && isMatch(s.substring(1), p.substring(1));
         }
     }
-
 
     public boolean isMatchDPTD(String text, String pattern) {
         memo = new Result[text.length() + 1][pattern.length() + 1];
@@ -44,6 +40,7 @@ public class RegularExpressionMatching_10 {
         memo[i][j] = ans ? Result.TRUE : Result.FALSE;
         return ans;
     }
+
     public boolean isMatchBU(String text, String pattern) {
         boolean[][] dp = new boolean[text.length() + 1][pattern.length() + 1];
         dp[text.length()][pattern.length()] = true;
@@ -59,5 +56,10 @@ public class RegularExpressionMatching_10 {
             }
         }
         return dp[0][0];
+    }
+
+    enum Result {
+        TRUE,
+        FALSE,
     }
 }

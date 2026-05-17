@@ -7,6 +7,7 @@ public class REFINED {
     public static void main(String[] args) {
 
     }
+
     public int minimumOperationsRefined(int[] nums) {
         int operations = 0;
         List<Integer> list = new ArrayList<>();

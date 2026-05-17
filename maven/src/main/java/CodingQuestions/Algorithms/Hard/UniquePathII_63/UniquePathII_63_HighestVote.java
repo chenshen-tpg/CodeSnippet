@@ -10,6 +10,7 @@ public class UniquePathII_63_HighestVote {
         int result = uniquePathsWithObstacles(arr);
         System.out.println("Number of unique paths: " + result);
     }
+
     public static int uniquePathsWithObstacles(int[][] obstacleGrid) {
         if (obstacleGrid == null || obstacleGrid[0][0] == 1) {
             return 0;

@@ -6,6 +6,7 @@ public class SampleAns2 {
     public static void main(String[] args) {
 
     }
+
     public int eraseOverlapIntervals1(int[][] intervals) {
         if (intervals.length == 0) return 0;
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[1], b[1]));

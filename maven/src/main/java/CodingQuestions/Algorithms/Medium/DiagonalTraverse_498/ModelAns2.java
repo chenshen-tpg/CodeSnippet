@@ -4,6 +4,7 @@ public class ModelAns2 {
     public static void main(String[] args) {
 
     }
+
     public int[] findDiagonalOrder(int[][] mat) {
         if (mat.length == 0)
             return new int[0];

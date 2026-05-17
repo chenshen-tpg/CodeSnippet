@@ -7,6 +7,7 @@ public class GPT {
     public static void main(String[] args) {
 
     }
+
     public List<String> getLongestSubsequence(String[] words, int[] groups) {
         List<String> ans = new ArrayList<>();
         if (words.length == 0) {

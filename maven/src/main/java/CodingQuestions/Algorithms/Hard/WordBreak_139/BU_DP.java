@@ -8,10 +8,11 @@ public class BU_DP {
 
     public static void main(String[] args) {
         String s = "leetcode";
-        List<String> wordDict = new ArrayList<>(Arrays.asList("leet","code"));
+        List<String> wordDict = new ArrayList<>(Arrays.asList("leet", "code"));
         BU_DP wb = new BU_DP();
         System.out.println(wb.wordBreak(s, wordDict));
     }
+
     public boolean wordBreak(String s, List<String> wordDict) {
         boolean[] dp = new boolean[s.length()];
         for (int i = 0; i < s.length(); i++) {

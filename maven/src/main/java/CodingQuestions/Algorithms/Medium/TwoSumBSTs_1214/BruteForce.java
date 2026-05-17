@@ -13,8 +13,8 @@ public class BruteForce {
 
     public boolean twoSumBSTs(TreeNode root1, TreeNode root2, int target) {
         List<Integer> li1 = new ArrayList(), li2 = new ArrayList();
-        helper(root1,li1);
-        helper(root2,li2);
+        helper(root1, li1);
+        helper(root2, li2);
         for (int a : li1) {
             for (int b : li2) {
                 if (a + b == target) {
@@ -25,7 +25,7 @@ public class BruteForce {
         return false;
     }
 
-    public void helper (TreeNode root, List<Integer> li) {
+    public void helper(TreeNode root, List<Integer> li) {
         if (root == null) return;
         li.add(root.val);
         helper(root.left, li);

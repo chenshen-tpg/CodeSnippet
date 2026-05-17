@@ -9,7 +9,7 @@ public class MinimizeXor_2429 {
         // same number of bits, means 1100
         // minimal mean's all the way to right
 
-        minimizeXor(nums1,nums2);
+        minimizeXor(nums1, nums2);
     }
 
     public static int minimizeXor(int num1, int num2) {

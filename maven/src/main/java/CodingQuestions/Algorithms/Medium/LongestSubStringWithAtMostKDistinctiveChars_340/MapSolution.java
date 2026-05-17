@@ -8,10 +8,11 @@ public class MapSolution {
         MapSolution solution = new MapSolution();
         solution.helper("eceba", 2);
     }
+
     public int helper(String s, int k) {
         Map<Character, Integer> map = new HashMap<>();
         int j = 0, max = 0;
-        for(int i = 0; i < s.length(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
             while (map.size() > k) {
                 if (map.containsKey(s.charAt(j))) {

@@ -11,6 +11,7 @@ public class MinimumPositiveSumSubarray_3364 {
         int l1 = 2, r1 = 3;
         System.out.println(mps.helper(nums1, l1, r1));
     }
+
     public int helper(List<Integer> nums, int l, int r) {
         int res = Integer.MAX_VALUE;
         for (int i = l; i <= r; i++) {
@@ -25,15 +26,6 @@ public class MinimumPositiveSumSubarray_3364 {
         }
         return res == Integer.MAX_VALUE ? -1 : res;
     }
-
-
-
-
-
-
-
-
-
 
 
     public int minimumSumSubarray(List<Integer> nums, int l, int r) {
@@ -51,6 +43,7 @@ public class MinimumPositiveSumSubarray_3364 {
         }
         return res;
     }
+
     public int minimumSumSubarray_PreSum(List<Integer> nums, int l, int r) {
         int n = nums.size();
         int[] preSum = new int[n + 1];

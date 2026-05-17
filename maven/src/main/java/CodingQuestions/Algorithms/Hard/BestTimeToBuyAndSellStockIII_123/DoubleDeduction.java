@@ -2,11 +2,12 @@ package CodingQuestions.Algorithms.Hard.BestTimeToBuyAndSellStockIII_123;
 
 public class DoubleDeduction {
     public static void main(String[] args) {
-        int[] prices4 = new int [] {1, 2, 4, 2, 5, 7, 2, 4, 9, 0};
+        int[] prices4 = new int[]{1, 2, 4, 2, 5, 7, 2, 4, 9, 0};
         TwoArrays obj = new TwoArrays();
         System.out.println(obj.maxProfit(prices4));
 
     }
+
     public int maxProfit(int[] prices) {
         int t1Cost = Integer.MAX_VALUE, t2Cost = Integer.MAX_VALUE;
         int t1Profit = 0, t2Profit = 0;

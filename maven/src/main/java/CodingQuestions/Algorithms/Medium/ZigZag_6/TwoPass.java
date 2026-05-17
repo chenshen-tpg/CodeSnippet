@@ -11,6 +11,7 @@ public class TwoPass {
         int numRows = 3;
         solution.convert(s, numRows);
     }
+
     public String convert(String s, int numRows) {
         if (numRows == 1) {
             return s;

@@ -4,9 +4,9 @@ public class Reverse {
     public static void main(String[] args) {
         Reverse solution = new Reverse();
         int[][] matrix = {
-                {1,2,3},
-                {4,5,6},
-                {7,8,9}
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
         };
         solution.reflect(matrix);
         for (int[] row : matrix) {
@@ -16,6 +16,7 @@ public class Reverse {
             System.out.println();
         }
     }
+
     public void reflect(int[][] matrix) {
         int n = matrix.length;
         for (int i = 0; i < n; i++) {

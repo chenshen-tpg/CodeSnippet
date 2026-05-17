@@ -15,13 +15,14 @@ public class QueueIteration {
         int[] entrance1 = {1, 2};
         System.out.println(solver.nearestExit_Upvote(maze1, entrance1));
     }
+
     public int nearestExit_Upvote(char[][] maze, int[] entrance) {
         int rows = maze.length;
         int columns = maze[0].length;
         Queue<int[]> queue = new LinkedList<>();
         queue.offer(entrance);
         maze[entrance[0]][entrance[1]] = '+';
-        int[][] directions = new int[][] {{0, 1}, {0, -1}, {1, 0},{-1, 0}};
+        int[][] directions = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
         int steps = 0;
         int x, y;

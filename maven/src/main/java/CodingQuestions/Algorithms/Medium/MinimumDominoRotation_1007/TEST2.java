@@ -4,6 +4,7 @@ public class TEST2 {
     public static void main(String[] args) {
 
     }
+
     public int minDominoRotations(int[] tops, int[] bottoms) {
         int n = tops.length, res = Integer.MAX_VALUE;
         int[] face = new int[7];

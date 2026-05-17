@@ -4,6 +4,7 @@ public class test {
     public static void main(String[] args) {
 
     }
+
     public int divide(int dividend, int divisor) {
         long c = 0;
         long sign = 1;

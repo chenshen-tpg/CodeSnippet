@@ -7,6 +7,7 @@ public class TwoStackVersion {
         String s = "3[a]2[bc]"; //"aaabcbc"
         System.out.println(decodeString(s));
     }
+
     static String decodeString(String s) {
         Stack<Integer> countStack = new Stack<>();
         Stack<StringBuilder> stringStack = new Stack<>();

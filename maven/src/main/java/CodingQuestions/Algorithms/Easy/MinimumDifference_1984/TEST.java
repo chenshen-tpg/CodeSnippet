@@ -3,6 +3,12 @@ package CodingQuestions.Algorithms.Easy.MinimumDifference_1984;
 import java.util.Arrays;
 
 public class TEST {
+    public static void main(String[] args) {
+        int[] test = new int[]{87063, 61094, 44530, 21297, 95857, 93551, 9918};
+        TEST solution = new TEST();
+        solution.minimumDifference(test, 6);
+    }
+
     public int minimumDifference(int[] nums, int k) {
         if (nums.length == 1) return 0;
         Arrays.sort(nums);
@@ -11,11 +17,5 @@ public class TEST {
             min = Math.min(min, nums[i + k - 1] - nums[i]);
         }
         return min;
-    }
-
-    public static void main(String[] args) {
-        int [] test = new int [] {87063,61094,44530,21297,95857,93551,9918};
-        TEST solution = new TEST();
-        solution.minimumDifference(test, 6);
     }
 }

@@ -7,8 +7,11 @@ public class DP {
     public static void main(String[] args) {
 
     }
+
     public List<Integer> getRow(int rowIndex) {
-        List<Integer> row = new ArrayList(rowIndex + 1) {{add(1);}};
+        List<Integer> row = new ArrayList(rowIndex + 1) {{
+            add(1);
+        }};
 
         for (int i = 0; i < rowIndex; i++) {
             for (int j = i; j > 0; j--) {

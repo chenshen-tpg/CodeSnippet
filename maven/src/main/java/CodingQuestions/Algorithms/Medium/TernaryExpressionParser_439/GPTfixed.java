@@ -10,6 +10,7 @@ public class GPTfixed {
         System.out.println(solution.parseTernary("T?T?F:5:3")); // Output: F
         System.out.println(solution.parseTernary("F?1:T?4:5")); // Output: 5
     }
+
     public String parseTernary(String expression) {
         Stack<Character> stack = new Stack<>();
         for (int i = expression.length() - 1; i >= 0; i--) {

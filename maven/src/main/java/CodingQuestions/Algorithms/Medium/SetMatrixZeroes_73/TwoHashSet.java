@@ -7,12 +7,13 @@ public class TwoHashSet {
     public static void main(String[] args) {
 
     }
+
     public void setZeroes(int[][] matrix) {
         Set<Integer> rows = new HashSet<Integer>();
         Set<Integer> cols = new HashSet<Integer>();
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                if (matrix[i][j]==0) {
+                if (matrix[i][j] == 0) {
                     rows.add(i);
                     cols.add(j);
                 }
@@ -21,7 +22,7 @@ public class TwoHashSet {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 if (rows.contains(i) || cols.contains(j)) {
-                    matrix[i][j]=0;
+                    matrix[i][j] = 0;
                 }
             }
         }

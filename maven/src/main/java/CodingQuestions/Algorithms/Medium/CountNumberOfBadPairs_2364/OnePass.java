@@ -5,11 +5,12 @@ import java.util.Map;
 
 public class OnePass {
     public static void main(String[] args) {
-        int [] nums = {4,1,3,3};
+        int[] nums = {4, 1, 3, 3};
         OnePass solution = new OnePass();
         solution.count(nums);
     }
-    public long count (int [] nums) {
+
+    public long count(int[] nums) {
         long res = 0;
         Map<Integer, Integer> diffCount = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {

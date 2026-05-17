@@ -6,7 +6,7 @@ public class TEST {
     }
 
     public int minDominoRotations(int[] A, int[] B) {
-        if (check(A[0], B, A,  A.length) != -1 || A[0] == B[0]) return check(A[0], B, A,  A.length);
+        if (check(A[0], B, A, A.length) != -1 || A[0] == B[0]) return check(A[0], B, A, A.length);
         else return check(B[0], B, A, A.length);
     }
 

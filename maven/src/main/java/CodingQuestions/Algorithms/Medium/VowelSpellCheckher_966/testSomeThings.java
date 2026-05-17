@@ -14,7 +14,7 @@ public class testSomeThings {
         for (String s : stringArray) {
             System.out.println(s);
         }
-        HashMap<String , String > hm = new HashMap<>();
+        HashMap<String, String> hm = new HashMap<>();
 
     }
 }

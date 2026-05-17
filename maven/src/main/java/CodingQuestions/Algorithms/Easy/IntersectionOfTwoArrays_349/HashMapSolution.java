@@ -9,13 +9,13 @@ public class HashMapSolution {
     public static void main(String[] args) {
 
     }
+
     public int[] intersection(int[] nums1, int[] nums2) {
 
         Map<Integer, Integer> seen = new HashMap();
         List<Integer> result = new ArrayList<>();
 
         for (int x : nums1) seen.put(x, 1);
-
 
 
         for (int x : nums2) {
@@ -26,7 +26,7 @@ public class HashMapSolution {
         }
 
         // Convert to int array and result the result
-        return result.stream().mapToInt(i->i).toArray();
+        return result.stream().mapToInt(i -> i).toArray();
 
     }
 }

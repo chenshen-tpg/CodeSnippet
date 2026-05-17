@@ -22,14 +22,14 @@ public class BFS {
         int ans = 0;
         int max = Integer.MIN_VALUE;
         int level = 0;
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             int size = q.size();
             int curMax = 0;
             for (int i = 0; i < size; i++) {
                 TreeNode cur = q.poll();
                 curMax += cur.val;
-                if(cur.left != null) q.add(cur.left);
-                if(cur.right != null) q.add(cur.right);
+                if (cur.left != null) q.add(cur.left);
+                if (cur.right != null) q.add(cur.right);
             }
             level++;
             if (curMax > max) {

@@ -7,6 +7,7 @@ public class SampleAnswer {
     public static void main(String[] args) {
 
     }
+
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> li = new ArrayList();
         int left = 0, right = matrix[0].length - 1;

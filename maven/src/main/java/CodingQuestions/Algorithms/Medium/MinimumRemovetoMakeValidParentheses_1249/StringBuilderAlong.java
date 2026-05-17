@@ -4,6 +4,7 @@ public class StringBuilderAlong {
     public static void main(String[] args) {
 
     }
+
     public String minRemoveToMakeValid(String s) {
 
         // Pass 1: Remove all invalid ")"
@@ -15,7 +16,8 @@ public class StringBuilderAlong {
             if (c == '(') {
                 openSeen++;
                 balance++;
-            } if (c == ')') {
+            }
+            if (c == ')') {
                 if (balance == 0) continue;
                 balance--;
             }

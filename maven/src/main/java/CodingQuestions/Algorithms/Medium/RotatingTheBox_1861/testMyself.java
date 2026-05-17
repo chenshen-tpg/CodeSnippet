@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Medium.RotatingTheBox_1861;
 
 public class testMyself {
     public static void main(String[] args) {
-        char [] arr = new char [] {'#','#','#','.','#','.'};
+        char[] arr = new char[]{'#', '#', '#', '.', '#', '.'};
 
         int len = arr.length;
         int curIndex = len - 1;

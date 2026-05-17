@@ -1,6 +1,8 @@
 package CodingQuestions.Algorithms.Medium.FillASpecialGrid_3537;
 
 public class RECURSIVE {
+    private int val = 0;
+
     public static void main(String[] args) {
 
     }
@@ -12,10 +14,9 @@ public class RECURSIVE {
         solve(grid, 0, 0, size);
         return grid;
     }
-    private int val = 0;
 
-    private void solve(int[][] grid, int r, int c, int size){
-        if (size == 1){
+    private void solve(int[][] grid, int r, int c, int size) {
+        if (size == 1) {
             grid[r][c] = val++;
             return;
         }

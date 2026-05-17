@@ -13,16 +13,16 @@ public class StackBFS {
         seen[0] = true;
         Stack<Integer> stack = new Stack();
         stack.push(0);
-        while(!stack.empty()) {
+        while (!stack.empty()) {
             int node = stack.pop();
-            for (int c:rooms.get(node)) {
+            for (int c : rooms.get(node)) {
                 if (!seen[c]) {
                     seen[c] = true;
                     stack.push(c);
                 }
             }
         }
-        for (boolean v: seen)
+        for (boolean v : seen)
             if (!v) return false;
         return true;
     }

@@ -10,10 +10,11 @@ public class MeTring {
 //        System.out.println(Character.valueOf((char) (Integer.valueOf(s.charAt(1)) + 1)));
 
     }
+
     public String shiftingLetters(String s, int[][] shifts) {
         StringBuilder sb = new StringBuilder();
         int len = shifts.length;
-        int [] cal = new int[s.length()];
+        int[] cal = new int[s.length()];
         for (int i = 0; i < len; i++) {
             int start = shifts[i][0];
             int end = shifts[i][1];
@@ -23,9 +24,9 @@ public class MeTring {
                     cal[j]++;
                 }
             } else {
-               for (int j = start; j <= end; j++) {
-                   cal[j] --;
-               }
+                for (int j = start; j <= end; j++) {
+                    cal[j]--;
+                }
             }
         }
         for (int i = 0; i < s.length(); i++) {

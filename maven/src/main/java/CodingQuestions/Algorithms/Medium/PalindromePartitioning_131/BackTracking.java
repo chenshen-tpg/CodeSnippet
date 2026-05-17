@@ -5,10 +5,12 @@ import java.util.List;
 
 public class BackTracking {
     List<List<String>> li = new ArrayList<>();
+
     public static void main(String[] args) {
         BackTracking solution = new BackTracking();
         System.out.println(solution.partition("aab"));
     }
+
     public List<List<String>> partition(String s) {
         partition(0, s, new ArrayList<>());
         return li;
@@ -29,9 +31,10 @@ public class BackTracking {
             }
         }
     }
-    public boolean palindrome (String s) {
+
+    public boolean palindrome(String s) {
         if (s.length() == 1) return true;
-        int left = 0, right = s.length()-1;
+        int left = 0, right = s.length() - 1;
         while (left < right) {
             if (s.charAt(left) != s.charAt(right)) return false;
             left++;

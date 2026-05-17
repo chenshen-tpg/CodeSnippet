@@ -8,6 +8,8 @@ import java.util.HashMap;
 public class DFS {
 
 
+    private HashMap<NeighbourNode, NeighbourNode> visited = new HashMap<>();
+
     public static void main(String[] args) {
         DFS cg = new DFS();
         NeighbourNode node = new NeighbourNode(1);
@@ -18,7 +20,7 @@ public class DFS {
         NeighbourNode clone = cg.cloneGraph(node);
         System.out.println(clone.val);
     }
-    private HashMap<NeighbourNode, NeighbourNode> visited = new HashMap<>();
+
     public NeighbourNode cloneGraph(NeighbourNode node) {
         if (node == null) {
             return node;

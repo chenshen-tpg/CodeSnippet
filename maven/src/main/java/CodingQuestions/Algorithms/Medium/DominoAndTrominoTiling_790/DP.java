@@ -8,6 +8,7 @@ public class DP {
         //4 -> 10
 
     }
+
     public int numTilings(int n) {
         int MOD = 1_000_000_007;
         if (n <= 2) {

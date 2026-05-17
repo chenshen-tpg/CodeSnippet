@@ -7,16 +7,16 @@ public class Prefix {
     //    1, 1, 2, 3, 4
     public static void main(String[] args) {
         Prefix solution = new Prefix();
-        int ans [] = solution.prefixSolution(new String [] {"aba", "bcb", "ece", "aa", "e"}, new int [][] {{0, 2}, {1, 4}, {1, 1}});
+        int ans[] = solution.prefixSolution(new String[]{"aba", "bcb", "ece", "aa", "e"}, new int[][]{{0, 2}, {1, 4}, {1, 1}});
         for (int i = 0; i < ans.length; i++) System.out.print(ans[i] + " ");
 
     }
 
 
-    public int[] prefixSolution(String[]words, int[][] queries) {
-        int [] ans = new int[queries.length];
+    public int[] prefixSolution(String[] words, int[][] queries) {
+        int[] ans = new int[queries.length];
         String vowel = "aeiou";
-        int [] wordCount = new int[words.length];
+        int[] wordCount = new int[words.length];
         int sum = 0;
         for (int i = 0; i < words.length; i++) {
             int len = words[i].length();

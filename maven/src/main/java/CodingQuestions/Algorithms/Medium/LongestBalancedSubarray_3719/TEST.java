@@ -52,7 +52,7 @@ public class TEST {
         System.out.println(solution.helper(nums5));
     }
 
-    public int helper (int [] arr) {
+    public int helper(int[] arr) {
         int max = 0;
         for (int i = 0; i < arr.length; i++) {
             for (int j = i + 1; j <= arr.length; j++) {
@@ -64,7 +64,8 @@ public class TEST {
         }
         return max;
     }
-    public boolean check (int [] arr) {
+
+    public boolean check(int[] arr) {
         HashSet<Integer> hs = new HashSet<>();
         int even = 0, odd = 0;
         for (int a : arr) {

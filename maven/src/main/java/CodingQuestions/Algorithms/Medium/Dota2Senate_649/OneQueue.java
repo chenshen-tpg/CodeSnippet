@@ -7,6 +7,7 @@ public class OneQueue {
     public static void main(String[] args) {
 
     }
+
     public String predictPartyVictory(String senate) {
 
         int rCount = 0, dCount = 0;

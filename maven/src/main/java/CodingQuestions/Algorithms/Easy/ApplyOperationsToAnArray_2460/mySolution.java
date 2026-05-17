@@ -16,13 +16,14 @@ public class mySolution {
      */
     public static void main(String[] args) {
         mySolution obj = new mySolution();
-        obj.applyOperations(new int [] {1,2,2,1,1,0});
+        obj.applyOperations(new int[]{1, 2, 2, 1, 1, 0});
     }
+
     public int[] applyOperations(int[] nums) {
         int k = 0;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] == nums[i - 1]) {
-                nums[i-1] *= 2;
+                nums[i - 1] *= 2;
                 nums[i] = 0;
             }
         }

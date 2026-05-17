@@ -7,7 +7,8 @@ public class SampleAns2 {
     public static void main(String[] args) {
 
     }
-//left right scan once hsving the key
+
+    //left right scan once hsving the key
     public List<Integer> findKDistantIndices(int[] nums, int key, int k) {
         List<Integer> res = new ArrayList<>();
         int r = 0;

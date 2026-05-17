@@ -6,8 +6,9 @@ public class SampleAns2 {
     public static void main(String[] args) {
 
     }
+
     public long totalCost(int[] costs, int k, int candidates) {
-        int i = 0, j = costs.length -1;
+        int i = 0, j = costs.length - 1;
         PriorityQueue<Integer> forward = new PriorityQueue();
         PriorityQueue<Integer> backward = new PriorityQueue();
         long ans = 0;

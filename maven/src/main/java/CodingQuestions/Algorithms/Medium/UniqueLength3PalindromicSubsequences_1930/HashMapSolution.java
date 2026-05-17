@@ -8,9 +8,10 @@ public class HashMapSolution {
         String s = "aabca";
         countPalindromicSubsequence(s);
     }
+
     public static int countPalindromicSubsequence(String s) {
         Set<Character> letters = new HashSet();
-        for (Character c: s.toCharArray()) letters.add(c);
+        for (Character c : s.toCharArray()) letters.add(c);
         int ans = 0;
         for (Character letter : letters) {
             int i = -1;

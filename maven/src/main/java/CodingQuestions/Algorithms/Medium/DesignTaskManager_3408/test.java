@@ -6,9 +6,22 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 public class test {
-    PriorityQueue<int []> pq;
+    PriorityQueue<int[]> pq;
     HashMap<Integer, Integer> IDMap;
     HashMap<Integer, Integer> hmPriority;
+
+    public test(List<List<Integer>> tasks) {
+        pq = new PriorityQueue<>((a, b) -> {
+            if (b[0] != a[0]) return b[0] - a[0];
+            return b[1] - a[1];
+        });
+        hmPriority = new HashMap<>();
+        IDMap = new HashMap<>();
+        for (List<Integer> task : tasks) {
+            add(task.get(0), task.get(1), task.get(2));
+        }
+    }
+
     public static void main(String[] args) {
         test tm = new test(
                 Arrays.asList(
@@ -24,26 +37,15 @@ public class test {
         tm.add(5, 105, 15);
         System.out.println(tm.execTop());
     }
-    public test(List<List<Integer>> tasks) {
-       pq = new PriorityQueue<>((a,b) -> {
-           if (b[0] != a[0]) return b[0] - a[0];
-           return b[1] - a[1];
-       });
-        hmPriority = new HashMap<>();
-        IDMap = new HashMap<>();
-        for (List<Integer> task : tasks) {
-            add(task.get(0), task.get(1), task.get(2));
-        }
-    }
 
     public void add(int userId, int taskId, int priority) {
         IDMap.put(taskId, userId);
-        hmPriority.put(taskId,priority);
-        pq.add((new int [] {priority, taskId}));
+        hmPriority.put(taskId, priority);
+        pq.add((new int[]{priority, taskId}));
     }
 
     public void edit(int taskId, int newPriority) {
-        pq.add(new int [] {newPriority, taskId});
+        pq.add(new int[]{newPriority, taskId});
         hmPriority.put(taskId, newPriority);
     }
 
@@ -57,7 +59,7 @@ public class test {
             int p = t[0], id = t[1];
             if (hmPriority.getOrDefault(id, -3) == p) {
                 hmPriority.put(id, -1);
-                return IDMap.getOrDefault(id, - 1);
+                return IDMap.getOrDefault(id, -1);
             }
         }
         return -1;

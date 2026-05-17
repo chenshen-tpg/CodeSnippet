@@ -16,7 +16,7 @@ public class ModelAnsOne {
         int n = r * c;
         int i = r - 1, j = 0;
         int even = 0, counter = 0;
-        int [] moves = new int[n];
+        int[] moves = new int[n];
         while (i >= 0 && j >= 0) {
             if (board[i][j] != -1) {
                 moves[counter] = board[i][j] - 1;

@@ -3,6 +3,8 @@ package CodingQuestions.Algorithms.Hard.BinaryTreeMaximumPathSum_124;
 import CodingQuestions.Lib.TreeNode;
 
 public class DFS {
+    int maxSum = Integer.MIN_VALUE;
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(-10);
         root.left = new TreeNode(9);
@@ -12,7 +14,7 @@ public class DFS {
         DFS solution = new DFS();
         System.out.println(solution.maxPathSum(root));
     }
-    int maxSum = Integer.MIN_VALUE;
+
     public int maxPathSum(TreeNode root) {
         dfs(root);
         return maxSum;

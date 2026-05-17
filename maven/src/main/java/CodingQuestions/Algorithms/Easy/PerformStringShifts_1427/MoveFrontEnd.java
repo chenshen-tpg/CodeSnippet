@@ -4,9 +4,10 @@ public class MoveFrontEnd {
     public static void main(String[] args) {
         MoveFrontEnd solution = new MoveFrontEnd();
 //        solution.helper("abc", new int [][] {{1,1},{1,1},{0,2},{0,3}});
-        solution.helper("abc", new int [][] {{0,1},{1,2}});
+        solution.helper("abc", new int[][]{{0, 1}, {1, 2}});
     }
-    public String helper(String string, int [][] arr) {
+
+    public String helper(String string, int[][] arr) {
         int len = string.length();
         for (int[] move : arr) {
             int direction = move[0];

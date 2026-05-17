@@ -5,6 +5,7 @@ public class PreCal {
     public static void main(String[] args) {
 
     }
+
     public long minSum(int[] nums1, int[] nums2) {
         long countF = 0, countS = 0, countFZ = 0, countSZ = 0;
         for (int num : nums1) {

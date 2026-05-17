@@ -5,10 +5,11 @@ import java.util.Set;
 
 public class HashSetMethod {
     public static void main(String[] args) {
-        int [] a = {1,3,2,4};
-        int [] b = {3,1,2,4};
-        System.out.println(findThePrefixCommonArray(a,b));
+        int[] a = {1, 3, 2, 4};
+        int[] b = {3, 1, 2, 4};
+        System.out.println(findThePrefixCommonArray(a, b));
     }
+
     public static int[] findThePrefixCommonArray(int[] A, int[] B) {
         int n = A.length;
         int[] prefixCommonArray = new int[n];

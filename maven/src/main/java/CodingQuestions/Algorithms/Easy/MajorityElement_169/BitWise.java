@@ -2,10 +2,11 @@ package CodingQuestions.Algorithms.Easy.MajorityElement_169;
 
 public class BitWise {
     public static void main(String[] args) {
-        int [] nums = {3, 2, 3};
+        int[] nums = {3, 2, 3};
         BitWise solution = new BitWise();
         solution.majorityElementBitVersion(nums);
     }
+
     public int majorityElementBitVersion(int[] nums) {
         int n = nums.length;
         int majority_element = 0;

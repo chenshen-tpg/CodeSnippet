@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Easy.ThirdLargest_414;
 
 import java.util.HashSet;
 
-public class Attempted  {
+public class Attempted {
     public static void main(String[] args) {
 
     }

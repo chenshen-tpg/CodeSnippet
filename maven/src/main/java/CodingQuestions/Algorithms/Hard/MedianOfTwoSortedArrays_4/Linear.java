@@ -15,6 +15,6 @@ public class Linear {
         }
         while (i < n1) n[k++] = nums1[i++];
         while (j < n2) n[k++] = nums2[j++];
-        return n.length % 2 == 1 ? (double) n[(n.length - 1) / 2]: (double) (n[n.length / 2 - 1] + n[n.length / 2]) / 2;
+        return n.length % 2 == 1 ? (double) n[(n.length - 1) / 2] : (double) (n[n.length / 2 - 1] + n[n.length / 2]) / 2;
     }
 }

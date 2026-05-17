@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Medium.LongetNiceSubArray_2401;
 
 public class WrongSolution {
     public static void main(String[] args) {
-       int [] nums = {1,3,8,48,10};
+        int[] nums = {1, 3, 8, 48, 10};
         int count = 1;
         int res = 1;
         for (int i = 1; i < nums.length; i++) {

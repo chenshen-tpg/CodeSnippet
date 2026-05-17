@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 public class Wrong {
-    public static void main(String[] args) {
-
-    }
     List<Integer> num1;
     List<Integer> num2;
     Map<Integer, Integer> num2Counts;
@@ -21,6 +18,10 @@ public class Wrong {
             num2.add(num);
             num2Counts.put(num, num2Counts.getOrDefault(num, 0) + 1);
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public void add(int index, int val) {

@@ -8,9 +8,9 @@ public class review {
 
     }
 
-    public int [] doubleHashMap (int [][] queries) {
+    public int[] doubleHashMap(int[][] queries) {
         int n = queries.length;
-        int [] result = new int [n];
+        int[] result = new int[n];
         Map<Integer, Integer> colors = new HashMap<>();
         Map<Integer, Integer> balls = new HashMap<>();
         for (int i = 0; i < n; i++) {

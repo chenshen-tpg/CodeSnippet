@@ -4,6 +4,7 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public void moveZeroes(int[] nums) {
         int index = 0;
         int count = 0;

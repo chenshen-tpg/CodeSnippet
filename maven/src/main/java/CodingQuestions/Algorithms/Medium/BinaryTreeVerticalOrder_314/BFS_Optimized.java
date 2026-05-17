@@ -14,6 +14,7 @@ public class BFS_Optimized {
     public static void main(String[] args) {
 
     }
+
     public List<List<Integer>> verticalOrder(TreeNode root) {
         List<List<Integer>> output = new ArrayList();
         if (root == null) {
@@ -40,7 +41,7 @@ public class BFS_Optimized {
                 queue.offer(new Pair(root.right, column + 1));
             }
         }
-        for(int i = minColumn; i < maxColumn + 1; ++i) {
+        for (int i = minColumn; i < maxColumn + 1; ++i) {
             output.add(columnTable.get(i));
         }
         return output;

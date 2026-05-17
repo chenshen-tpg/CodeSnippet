@@ -8,7 +8,7 @@ public class Memo {
     }
 
     //For some operation related challenges, the pattern might be a calculation of even || odd
-    public static int linear (String s) {
+    public static int linear(String s) {
         int[] charFrequency = new int[26];
         int totalLength = 0;
         for (char currentChar : s.toCharArray()) {

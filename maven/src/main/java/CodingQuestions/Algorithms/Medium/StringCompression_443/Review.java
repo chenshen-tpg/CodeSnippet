@@ -6,7 +6,8 @@ public class Review {
         char[] chars = new char[]{'a', 'a', 'b', 'b', 'c', 'c', 'c'};
         System.out.println(sc.review(chars));
     }
-    public int review (char [] chars) {
+
+    public int review(char[] chars) {
         if (chars.length == 0) return 1;
         int ans = 0;
         for (int i = 0; i < chars.length; i++) {

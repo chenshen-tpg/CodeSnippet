@@ -10,11 +10,12 @@ public class Recursive {
     public static void main(String[] args) {
 
     }
+
     List<Integer> getElementsOnlyInFirstList(int[] nums1, int[] nums2) {
         Set<Integer> onlyInNums1 = new HashSet<>();
 
         // Store nums2 elements in an unordered set.
-        Set<Integer> existsInNums2 = new HashSet<> ();
+        Set<Integer> existsInNums2 = new HashSet<>();
         for (int num : nums2) {
             existsInNums2.add(num);
         }

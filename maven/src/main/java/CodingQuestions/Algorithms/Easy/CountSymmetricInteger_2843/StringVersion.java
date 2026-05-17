@@ -4,6 +4,7 @@ public class StringVersion {
     public static void main(String[] args) {
 
     }
+
     public int countSymmetricIntegers(int low, int high) {
         int count = 0;
         for (int i = low; i <= high; i++) {

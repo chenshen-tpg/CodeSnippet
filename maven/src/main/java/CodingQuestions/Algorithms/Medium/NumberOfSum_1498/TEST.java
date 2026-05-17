@@ -4,8 +4,9 @@ import java.util.Arrays;
 
 public class TEST {
     public static void main(String[] args) {
-        numSubseq(new int [] {2,3,3,4,6,7}, 12);
+        numSubseq(new int[]{2, 3, 3, 4, 6, 7}, 12);
     }
+
     public static int numSubseq(int[] nums, int target) {
         int n = nums.length;
         int mod = 1_000_000_007;

@@ -7,6 +7,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public long countInterestingSubarrays(List<Integer> nums, int modulo, int k) {
         int n = nums.size();
         HashMap<Integer, Integer> cnt = new HashMap<>();

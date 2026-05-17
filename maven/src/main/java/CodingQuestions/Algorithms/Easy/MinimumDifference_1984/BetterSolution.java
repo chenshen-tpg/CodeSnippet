@@ -6,6 +6,7 @@ public class BetterSolution {
     public static void main(String[] args) {
 
     }
+
     public int minimumDifference(int[] nums, int k) {
         if (k == 1) return 0;
         Arrays.sort(nums);

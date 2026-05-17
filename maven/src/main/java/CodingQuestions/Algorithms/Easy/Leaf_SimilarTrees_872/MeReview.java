@@ -38,7 +38,8 @@ public class MeReview {
         List<Integer> r2 = helper(root2, new ArrayList<>());
         return r1.equals(r2);
     }
-    public List<Integer> helper (TreeNode node, ArrayList<Integer> al) {
+
+    public List<Integer> helper(TreeNode node, ArrayList<Integer> al) {
         if (node == null) return al;
         if (node.left == null && node.right == null) {
             al.add(node.val);

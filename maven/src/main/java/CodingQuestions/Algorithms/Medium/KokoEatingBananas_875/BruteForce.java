@@ -3,12 +3,12 @@ package CodingQuestions.Algorithms.Medium.KokoEatingBananas_875;
 public class BruteForce {
     public static void main(String[] args) {
         BruteForce solution = new BruteForce();
-        int [] piles = {3,6,7,11};
+        int[] piles = {3, 6, 7, 11};
         int h = 8;
         System.out.println(solution.helper1(piles, h));
     }
 
-    public int helper1(int [] piles, int h) {
+    public int helper1(int[] piles, int h) {
         int speed = 1;
         while (true) {
             int hourSpent = 0;

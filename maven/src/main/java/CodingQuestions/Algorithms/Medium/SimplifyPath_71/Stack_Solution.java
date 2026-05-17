@@ -9,10 +9,10 @@ public class Stack_Solution {
         System.out.println(sp.SimplifyPathMyVersion(path));
     }
 
-    public String SimplifyPathMyVersion (String path) {
-        String [] simps = path.split("/");
+    public String SimplifyPathMyVersion(String path) {
+        String[] simps = path.split("/");
         Stack<String> stack = new Stack<>();
-        for(String simp : simps) {
+        for (String simp : simps) {
             if ("..".equals(simp)) {
                 if (!stack.isEmpty()) stack.pop();
             } else if (".".equals(simp) || "".equals(simp)) {
@@ -24,7 +24,7 @@ public class Stack_Solution {
         StringBuilder sb = new StringBuilder();
         // TIPs: we can use loop to iterate stack rather than pop them up
         // There is no pop all as well.
-        for (String s:stack) {
+        for (String s : stack) {
             sb.append("/");
             sb.append(s);
         }

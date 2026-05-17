@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Medium.MissingElementInSortedArray_1060;
 public class TEST {
     public static void main(String[] args) {
         TEST solution = new TEST();
-        solution.missingElement(new int [] {4,7,9,10}, 1);
+        solution.missingElement(new int[]{4, 7, 9, 10}, 1);
     }
 
     public int missingElement(int[] nums, int k) {

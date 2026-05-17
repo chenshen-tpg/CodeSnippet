@@ -6,14 +6,14 @@ import java.util.LinkedList;
 public class Review {
     public static void main(String[] args) {
         Review mi = new Review();
-        int[][] intervals = new int[][]{{1,3},{2,6},{8,10},{15,18}};
+        int[][] intervals = new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         mi.merge_LinkedListVersion(intervals);
-        Arrays.asList(1,2);
+        Arrays.asList(1, 2);
     }
 
     private int[][] merge_LinkedListVersion(int[][] intervals) {
         Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
-        LinkedList<int []> list = new LinkedList<>();
+        LinkedList<int[]> list = new LinkedList<>();
         // we could always add a list.isEmpty() to start the loop from the beginning
 //        list.add(intervals[0]);
 //        for (int i = 0; i < intervals.length; i++) {

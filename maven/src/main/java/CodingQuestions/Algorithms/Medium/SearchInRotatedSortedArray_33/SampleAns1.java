@@ -4,6 +4,7 @@ public class SampleAns1 {
     public static void main(String[] args) {
 
     }
+
     public int search(int[] nums, int target) {
         int n = nums.length;
         int left = 0, right = n - 1;
@@ -11,8 +12,7 @@ public class SampleAns1 {
             int mid = left + (right - left) / 2;
             if (nums[mid] == target) {
                 return mid;
-            }
-            else if (nums[mid] >= nums[left]) {
+            } else if (nums[mid] >= nums[left]) {
                 if (target >= nums[left] && target < nums[mid]) {
                     right = mid - 1;
                 } else {

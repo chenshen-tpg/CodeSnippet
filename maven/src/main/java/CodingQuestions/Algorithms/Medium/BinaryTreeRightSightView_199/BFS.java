@@ -21,6 +21,7 @@ public class BFS {
             System.out.print(showing.get(i) + " ");
         }
     }
+
     private List<Integer> BFS(TreeNode root) {
         if (root == null) return new ArrayList<>();
         Queue<TreeNode> q = new LinkedList<>();
@@ -36,7 +37,7 @@ public class BFS {
                 if (temp.left != null) {
                     q.offer(temp.left);
                 }
-                if (temp.right !=null) {
+                if (temp.right != null) {
                     q.offer(temp.right);
                 }
             }

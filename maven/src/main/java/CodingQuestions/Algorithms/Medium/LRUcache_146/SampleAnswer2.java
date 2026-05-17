@@ -41,23 +41,28 @@ import java.util.Map;
  */
 class LRUCache {
 
-    class Node {
-        int value;
-        int key;
-        Node prev;
-        Node next;
-    }
-
     private Map<Integer, Node> map = new HashMap<>();
     private Node head, tail;
     private int capacity;
-
     public LRUCache(int capacity) {
         this.capacity = capacity;
         head = new Node();
         tail = new Node();
         head.next = tail;
         tail.prev = head;
+    }
+
+    public static void main(String[] args) {
+        LRUCache cache = new LRUCache(2); // Capacity of 2
+        cache.put(1, 1); // Add key=1, value=1
+        cache.put(2, 2); // Add key=2, value=2
+        System.out.println(cache.get(1)); // Access key=1, should return 1
+        cache.put(3, 3); // Add key=3, value=3, evicts key=2 (LRU)
+        System.out.println(cache.get(2)); // Access key=2, should return -1 (not found)
+        cache.put(4, 4); // Add key=4, value=4, evicts key=1 (LRU)
+        System.out.println(cache.get(1)); // Access key=1, should return -1 (not found)
+        System.out.println(cache.get(3)); // Access key=3, should return 3
+        System.out.println(cache.get(4)); // Access key=4, should return 4
     }
 
     public int get(int key) {
@@ -112,17 +117,11 @@ class LRUCache {
         return res;
     }
 
-    public static void main(String[] args) {
-        LRUCache cache = new LRUCache(2); // Capacity of 2
-        cache.put(1, 1); // Add key=1, value=1
-        cache.put(2, 2); // Add key=2, value=2
-        System.out.println(cache.get(1)); // Access key=1, should return 1
-        cache.put(3, 3); // Add key=3, value=3, evicts key=2 (LRU)
-        System.out.println(cache.get(2)); // Access key=2, should return -1 (not found)
-        cache.put(4, 4); // Add key=4, value=4, evicts key=1 (LRU)
-        System.out.println(cache.get(1)); // Access key=1, should return -1 (not found)
-        System.out.println(cache.get(3)); // Access key=3, should return 3
-        System.out.println(cache.get(4)); // Access key=4, should return 4
+    class Node {
+        int value;
+        int key;
+        Node prev;
+        Node next;
     }
 }
 

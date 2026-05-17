@@ -11,6 +11,7 @@ public class Array {
         int[] result = solution.findMissingAndRepeatedValues(grid);
         System.out.println("Repeated: " + result[0] + ", Missing: " + result[1]);
     }
+
     public int[] findMissingAndRepeatedValues(int[][] grid) {
         int n = grid.length;
         int size = n * n;

@@ -4,6 +4,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public int longestPalindrome(String[] words) {
         int[][] wordPairsCount = new int[26][26];
         int palindromeLength = 0;

@@ -8,8 +8,8 @@ public class TLE {
 
 
     public boolean isZeroArray(int[] nums, int[][] queries) {
-        int [] memo = new int [nums.length];
-        for (int [] query : queries) {
+        int[] memo = new int[nums.length];
+        for (int[] query : queries) {
             int start = query[0], end = query[1];
             while (start <= end) {
                 nums[start]--;

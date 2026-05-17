@@ -14,7 +14,8 @@ public class SlowFastPointer {
         head.next.next.next.next.next.next = new ListNode(6);
         SlowFastPointer solution = new SlowFastPointer();
     }
-    public ListNode helper (ListNode head) {
+
+    public ListNode helper(ListNode head) {
         if (head == null) return null;
         ListNode odd = head, even = head.next, evenHead = even;
         while (even != null && even.next != null) {

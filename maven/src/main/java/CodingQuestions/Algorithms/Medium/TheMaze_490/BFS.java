@@ -7,6 +7,7 @@ public class BFS {
     public static void main(String[] args) {
 
     }
+
     public boolean hasPath(int[][] maze, int[] start, int[] destination) {
         int m = maze.length;
         int n = maze[0].length;

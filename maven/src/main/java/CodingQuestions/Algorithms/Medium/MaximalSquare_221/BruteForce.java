@@ -3,8 +3,8 @@ package CodingQuestions.Algorithms.Medium.MaximalSquare_221;
 public class BruteForce {
     public static void main(String[] args) {
         BruteForce m = new BruteForce();
-        System.out.println(m.maximalSquare(new char[][]{{'1','0','1','0','0'},{'1','0','1','1','1'},
-                {'1','1','1','1','1'},{'1','0','0','1','0'}}));
+        System.out.println(m.maximalSquare(new char[][]{{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'},
+                {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}}));
     }
 
     private int maximalSquare(char[][] matrix) {

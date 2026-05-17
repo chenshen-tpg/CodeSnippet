@@ -37,7 +37,6 @@ import java.util.Map;
  Replace %A% with "bce" and %B% with "ace" in the text.
  Then, for %C%, substitute %B% in "abc%B%" with "ace" to obtain "abcace".
  The final text becomes "bce_ace_abcace".
-
  *
  *
  */

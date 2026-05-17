@@ -27,6 +27,7 @@ public class ModelAns {
         int[] result = solution.maxTargetNodes(edges1, edges2, k);
         System.out.println("Maximized Target Nodes: " + result);
     }
+
     public int[] maxTargetNodes(int[][] edges1, int[][] edges2, int k) {
         int n = edges1.length + 1, m = edges2.length + 1;
         int[] count1 = build(edges1, k);

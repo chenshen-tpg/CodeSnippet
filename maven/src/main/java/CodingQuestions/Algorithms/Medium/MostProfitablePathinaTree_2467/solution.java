@@ -1,7 +1,5 @@
 package CodingQuestions.Algorithms.Medium.MostProfitablePathinaTree_2467;
 
-import java.util.*;
-
 public class solution {
     private Map<Integer, Integer> bobPath;
     private boolean[] visited;
@@ -22,7 +20,7 @@ public class solution {
         bobPath = new HashMap<>();
         visited = new boolean[n];
         Queue<int[]> nodeQueue = new LinkedList<>();
-        nodeQueue.add(new int[] { 0, 0, 0 });
+        nodeQueue.add(new int[]{0, 0, 0});
         for (int i = 0; i < n; i++) tree.add(new ArrayList<>());
         for (int[] edge : edges) {
             tree.get(edge[0]).add(edge[1]);
@@ -36,8 +34,7 @@ public class solution {
             int sourceNode = node[0], time = node[1], income = node[2];
             if (!bobPath.containsKey(sourceNode) || time < bobPath.get(sourceNode)) {
                 income += amount[sourceNode];
-            }
-            else if (time == bobPath.get(sourceNode)) {
+            } else if (time == bobPath.get(sourceNode)) {
                 income += amount[sourceNode] / 2;
             }
             if (tree.get(sourceNode).size() == 1 && sourceNode != 0) {
@@ -45,13 +42,14 @@ public class solution {
             }
             for (int adjacentNode : tree.get(sourceNode)) {
                 if (!visited[adjacentNode]) {
-                    nodeQueue.add(new int[] { adjacentNode, time + 1, income });
+                    nodeQueue.add(new int[]{adjacentNode, time + 1, income});
                 }
             }
             visited[sourceNode] = true;
         }
         return maxIncome;
     }
+
     private boolean findBobPath(int sourceNode, int time) {
         bobPath.put(sourceNode, time);
         visited[sourceNode] = true;

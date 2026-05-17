@@ -7,6 +7,7 @@ public class MeTryingWrong {
     public static void main(String[] args) {
 
     }
+
     public long countOfSubstrings(String s, int k) {
         int ans = 0;
         Set<Character> set = new HashSet<>();

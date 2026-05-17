@@ -13,9 +13,10 @@ public class OnePass {
         ));
         System.out.println(helper(list));
     }
-    public static int helper (List<List<Integer>> li) {
+
+    public static int helper(List<List<Integer>> li) {
         if (li == null || li.isEmpty() || li.get(0).isEmpty()) return 0;
-        int max = li.get(0).get(li.get(0).size()-1), min = li.get(0).get(0), res = 0;
+        int max = li.get(0).get(li.get(0).size() - 1), min = li.get(0).get(0), res = 0;
         for (int i = 1; i < li.size(); i++) {
             int n = li.get(i).size();
             //key is to store and swap

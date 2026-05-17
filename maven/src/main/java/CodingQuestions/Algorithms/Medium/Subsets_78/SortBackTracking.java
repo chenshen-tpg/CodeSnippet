@@ -6,6 +6,7 @@ import java.util.List;
 
 public class SortBackTracking {
     List<List<Integer>> res;
+
     public static void main(String[] args) {
 
     }
@@ -16,7 +17,7 @@ public class SortBackTracking {
         return res;
     }
 
-    private void helper(int start, int [] nums, List<Integer> tempList){
+    private void helper(int start, int[] nums, List<Integer> tempList) {
         res.add(new ArrayList<>(tempList));
         for (int i = start; i < nums.length; i++) {
             tempList.add(nums[i]);

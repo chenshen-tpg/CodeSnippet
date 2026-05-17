@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Hard.FindMedianFromDataStream_295;
 import java.util.PriorityQueue;
 
 public class FingMedianFromDataStream {
-    private PriorityQueue<Integer> small = new PriorityQueue<>((a,b) -> (b - a));
+    private PriorityQueue<Integer> small = new PriorityQueue<>((a, b) -> (b - a));
     private PriorityQueue<Integer> large = new PriorityQueue<>();
     private boolean even = true;
 
@@ -19,6 +19,7 @@ public class FingMedianFromDataStream {
         medianFinder.addNum(5);
         System.out.println(medianFinder.findMedian());
     }
+
     public double findMedian() {
         if (even)
             return (small.peek() + large.peek()) / 2.0;

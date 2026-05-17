@@ -5,19 +5,20 @@ import java.util.HashMap;
 import java.util.List;
 
 public class SubstringwithConcatenationofAllWords_30 {
+    private HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
+    private int wordLength;
+    private int substringSize;
+    private int k;
+
     public static void main(String[] args) {
         SubstringwithConcatenationofAllWords_30 sc = new SubstringwithConcatenationofAllWords_30();
         String s = "barfoofoobarthefoobarman";
-        String[] words = new String[]{"bar","foo","the"};
+        String[] words = new String[]{"bar", "foo", "the"};
         List<Integer> res = sc.findSubstringMy_Version(s, words);
         for (int i : res) {
             System.out.println(i);
         }
     }
-    private HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
-    private int wordLength;
-    private int substringSize;
-    private int k;
 
     private boolean check(int i, String s) {
         HashMap<String, Integer> remaining = new HashMap<>(wordCount);
@@ -76,6 +77,7 @@ public class SubstringwithConcatenationofAllWords_30 {
         }
         return ans;
     }
+
     class Solution {
         private HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
         private int n;

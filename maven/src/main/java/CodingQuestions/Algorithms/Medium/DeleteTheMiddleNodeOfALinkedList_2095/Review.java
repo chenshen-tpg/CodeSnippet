@@ -6,6 +6,7 @@ public class Review {
     public static void main(String[] args) {
 
     }
+
     public ListNode deleteMiddle(ListNode head) {
         if (head == null || head.next == null) {
             return null;
@@ -17,7 +18,7 @@ public class Review {
             count++;
         }
         ListNode dummy1 = head;
-        for (int i = 0; i < count /2 -1; i++) {
+        for (int i = 0; i < count / 2 - 1; i++) {
             dummy1 = dummy1.next;
         }
         dummy1.next = dummy1.next.next;

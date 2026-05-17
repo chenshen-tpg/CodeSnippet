@@ -6,8 +6,8 @@ import java.util.Map;
 
 public class DFS {
 
-    ArrayList res = new ArrayList();
     static Map<Character, String> letters;
+
     static {
         letters.put('2', "abc");
         letters.put('3', "def");
@@ -19,6 +19,7 @@ public class DFS {
         letters.put('9', "wxyz");
     }
 
+    ArrayList res = new ArrayList();
 
     public static void main(String[] args) {
         DFS l = new DFS();
@@ -26,17 +27,18 @@ public class DFS {
     }
 
     public List<String> letterCombinations(String digits) {
-        if(digits.length() == 0) return res;
-        backtrack(0,new StringBuilder(), digits);
+        if (digits.length() == 0) return res;
+        backtrack(0, new StringBuilder(), digits);
         return res;
     }
-    private void backtrack(int index, StringBuilder sb,String digits) {
+
+    private void backtrack(int index, StringBuilder sb, String digits) {
         if (sb.length() == digits.length()) {
             res.add(sb.toString());
             return;
         }
         String possibleLetters = letters.get(digits.charAt(index));
-        for (char letter: possibleLetters.toCharArray()) {
+        for (char letter : possibleLetters.toCharArray()) {
             sb.append(letter);
             backtrack(index + 1, sb, digits);
             sb.deleteCharAt(sb.length() - 1);

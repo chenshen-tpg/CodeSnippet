@@ -1,10 +1,11 @@
 package CodingQuestions.Algorithms.Medium.CoutGoodNumbers_1922;
 
 public class TEST {
+    long mod = 1000000007;
+
     public static void main(String[] args) {
 
     }
-    long mod = 1000000007;
 
     public int countGoodNumbers(long n) {
         return (int) ((helper(5, (n + 1) / 2) * helper(4, n / 2)) % mod);

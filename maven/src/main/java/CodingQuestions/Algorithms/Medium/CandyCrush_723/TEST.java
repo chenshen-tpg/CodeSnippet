@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class TEST {
     int m, n;
+
     public static void main(String[] args) {
 
     }
@@ -36,7 +37,7 @@ public class TEST {
                 }
             }
         }
-        for (int r = 0; r <  board.length; r++) {
+        for (int r = 0; r < board.length; r++) {
             for (int c = 1; c < n - 1; c++) {
                 if (board[r][c] == 0) continue;
                 if (board[r][c] == board[r][c - 1] && board[r][c] == board[r][c + 1]) {

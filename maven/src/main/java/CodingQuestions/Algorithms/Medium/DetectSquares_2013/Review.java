@@ -8,6 +8,12 @@ import java.util.Map;
 public class Review {
     List<int[]> li;
     Map<String, Integer> mp;
+
+    public Review() {
+        mp = new HashMap();
+        li = new ArrayList();
+    }
+
     public static void main(String[] args) {
 
         Review solution = new Review();
@@ -20,10 +26,6 @@ public class Review {
         solution.add(new int[]{2, 1});
         solution.add(new int[]{2, 2});
         System.out.println("Test case 2: " + solution.count(new int[]{1, 1}));
-    }
-    public Review() {
-        mp = new HashMap();
-        li = new ArrayList();
     }
 
     public void add(int[] point) {

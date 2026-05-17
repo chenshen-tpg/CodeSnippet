@@ -9,10 +9,10 @@ public class Rewrite {
         System.out.println(sp.helper(path));
     }
 
-    public String helper (String s) {
+    public String helper(String s) {
         StringBuilder ans = new StringBuilder();
         Stack<String> stack = new Stack<>();
-        String [] filter = s.split("/");
+        String[] filter = s.split("/");
         for (String f : filter) {
             if (".".equals(f) || "".equals(f)) {
                 continue;

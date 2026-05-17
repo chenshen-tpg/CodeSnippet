@@ -4,6 +4,7 @@ public class OnePassV3 {
     public static void main(String[] args) {
 
     }
+
     public String mergeAlternately(String word1, String word2) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < Math.max(word1.length(), word2.length()); i++) {

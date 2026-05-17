@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Medium.NumberOfSubArrayWithOddSum_1524;
 
 public class optimised {
     public static void main(String[] args) {
-        numOfSubarrays(new int [] {1,3,5});
+        numOfSubarrays(new int[]{1, 3, 5});
         System.out.println("Done");
     }
 

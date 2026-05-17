@@ -10,9 +10,9 @@ public class GPT_BU_DP {
 
     public static void main(String[] args) {
         String s = "leetcode";
-        List<String> wordDict = new ArrayList<>(Arrays.asList("leet","code"));
+        List<String> wordDict = new ArrayList<>(Arrays.asList("leet", "code"));
         GPT_BU_DP solution = new GPT_BU_DP();
-        solution.wordBreak(s,wordDict);
+        solution.wordBreak(s, wordDict);
     }
 
     public boolean wordBreak(String s, List<String> wordDict) {

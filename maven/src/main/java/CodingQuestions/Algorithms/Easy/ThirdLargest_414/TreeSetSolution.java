@@ -6,11 +6,12 @@ public class TreeSetSolution {
     public static void main(String[] args) {
 
     }
+
     public int thirdMax(int[] nums) {
         TreeSet<Integer> set = new TreeSet<>();
-        for(int num : nums){
+        for (int num : nums) {
             set.add(num);
-            if(set.size() > 3){
+            if (set.size() > 3) {
                 set.pollFirst();
             }
         }

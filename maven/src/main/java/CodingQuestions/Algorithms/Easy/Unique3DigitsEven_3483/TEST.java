@@ -6,11 +6,13 @@ import java.util.List;
 public class TEST {
 
     public static int ans = 0;
+
     public static void main(String[] args) {
-        totalNumbers(new int [] {1,2,3});
+        totalNumbers(new int[]{1, 2, 3});
     }
+
     public static int totalNumbers(int[] digits) {
-        helper(digits,0, new ArrayList<Integer>());
+        helper(digits, 0, new ArrayList<Integer>());
         return ans;
     }
 

@@ -4,9 +4,10 @@ public class DPsolution {
     public static void main(String[] args) {
 
     }
+
     public long mostPoints(int[][] questions) {
-        long [] memo = new long [questions.length];
-        memo[questions.length - 1] = questions[questions.length-1][0];
+        long[] memo = new long[questions.length];
+        memo[questions.length - 1] = questions[questions.length - 1][0];
         for (int i = questions.length - 2; i >= 0; i--) {
             memo[i] = questions[i][0];
             int skip = questions[i][1];

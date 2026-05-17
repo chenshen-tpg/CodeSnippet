@@ -6,6 +6,10 @@ public class Linear {
 
     TreeMap<Integer, Integer> hm = new TreeMap<>();
 
+    public Linear() {
+
+    }
+
     public static void main(String[] args) {
         Linear numberContainers = new Linear();
         System.out.println(numberContainers.find(10));
@@ -15,10 +19,6 @@ public class Linear {
         System.out.println(numberContainers.find(10));
         System.out.println(numberContainers.find(20));
         System.out.println(numberContainers.find(30));
-    }
-
-    public Linear() {
-
     }
 
     public void change(int index, int number) {

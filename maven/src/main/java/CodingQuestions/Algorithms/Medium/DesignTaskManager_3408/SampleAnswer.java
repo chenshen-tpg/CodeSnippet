@@ -1,11 +1,23 @@
 package CodingQuestions.Algorithms.Medium.DesignTaskManager_3408;
 
-import java.util.*;
-
 public class SampleAnswer {
     private PriorityQueue<int[]> pq;
     private Map<Integer, Integer> taskPriority;
     private Map<Integer, Integer> taskOwner;
+
+    public SampleAnswer(List<List<Integer>> tasks) {
+        pq = new PriorityQueue<>((a, b) -> {
+            if (b[0] != a[0]) {
+                return b[0] - a[0];
+            }
+            return b[1] - a[1];
+        });
+        taskPriority = new HashMap<>();
+        taskOwner = new HashMap<>();
+        for (List<Integer> t : tasks) {
+            add(t.get(0), t.get(1), t.get(2));
+        }
+    }
 
     public static void main(String[] args) {
         SampleAnswer tm = new SampleAnswer(
@@ -21,20 +33,6 @@ public class SampleAnswer {
         tm.rmv(101);
         tm.add(5, 105, 15);
         System.out.println(tm.execTop());
-    }
-
-    public SampleAnswer(List<List<Integer>> tasks) {
-        pq = new PriorityQueue<>((a, b) -> {
-            if (b[0] != a[0]) {
-                return b[0] - a[0];
-            }
-            return b[1] - a[1];
-        });
-        taskPriority = new HashMap<>();
-        taskOwner = new HashMap<>();
-        for (List<Integer> t : tasks) {
-            add(t.get(0), t.get(1), t.get(2));
-        }
     }
 
     public void add(int userId, int taskId, int priority) {

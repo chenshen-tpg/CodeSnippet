@@ -4,6 +4,7 @@ public class Refine {
     public static void main(String[] args) {
 
     }
+
     public boolean isTrionic(int[] nums) {
         int n = nums.length;
         if (n < 3) return false;

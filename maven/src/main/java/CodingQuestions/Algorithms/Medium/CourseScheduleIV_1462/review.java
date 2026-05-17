@@ -17,11 +17,11 @@ public class review {
 
     private List<Boolean> checkIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries) {
         List<List<Integer>> al = new ArrayList<>();
-        boolean [][] memo = new boolean[numCourses][numCourses];
+        boolean[][] memo = new boolean[numCourses][numCourses];
         for (int i = 0; i < numCourses; i++) {
             al.add(new ArrayList<>());
         }
-        for (int [] pre : prerequisites) {
+        for (int[] pre : prerequisites) {
             al.get(pre[0]).add(pre[1]);
         }
         for (int u = 0; u < numCourses; u++) {

@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class IterationMHashMap {
     public static void main(String[] args) {
-        int [] d = {1,3,5,7,9};
+        int[] d = {1, 3, 5, 7, 9};
         solver(d);
     }
 
-    public static int solver (int [] arr) {
+    public static int solver(int[] arr) {
         int mod = 1000000007;
         Map<Integer, Integer> map = new HashMap<>();
         long res = 0;

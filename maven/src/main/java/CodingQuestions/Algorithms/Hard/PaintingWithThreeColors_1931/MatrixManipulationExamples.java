@@ -5,6 +5,7 @@ public class MatrixManipulationExamples {
 
 
     }
+
     // Normal (naive) matrix exponentiation: O(n)
     long[][] normalMatrixPower(long[][] matrix, long p, long mod) {
         int size = matrix.length;
@@ -15,6 +16,7 @@ public class MatrixManipulationExamples {
         }
         return res;
     }
+
     // Fast matrix exponentiation: O(log n)
     long[][] fastMatrixPower(long[][] matrix, long p, long mod) {
         int size = matrix.length;
@@ -28,6 +30,7 @@ public class MatrixManipulationExamples {
         }
         return res;
     }
+
     // Matrix multiplication helper
     long[][] multiply(long[][] a, long[][] b, long mod) {
         int m = a.length, n = b[0].length, p = b.length;

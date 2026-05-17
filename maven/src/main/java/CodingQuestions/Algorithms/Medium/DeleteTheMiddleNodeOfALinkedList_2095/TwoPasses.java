@@ -14,17 +14,18 @@ public class TwoPasses {
         TwoPasses solution = new TwoPasses();
         solution.deleteMiddle(head);
     }
+
     public ListNode deleteMiddle(ListNode head) {
         if (head.next == null) return null;
         int len = 0;
         ListNode dummy = head;
-        while (dummy !=null) {
+        while (dummy != null) {
             dummy = dummy.next;
             len++;
         }
         ListNode cur = head;
         for (int i = 0; i < len / 2 - 1; i++) {
-            cur= cur.next;
+            cur = cur.next;
         }
         cur.next = cur.next.next;
         return head;

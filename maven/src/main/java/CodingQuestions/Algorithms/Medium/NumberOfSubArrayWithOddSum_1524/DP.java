@@ -2,9 +2,10 @@ package CodingQuestions.Algorithms.Medium.NumberOfSubArrayWithOddSum_1524;
 
 public class DP {
     public static void main(String[] args) {
-        numOfSubarrays(new int [] {1,3,5});
+        numOfSubarrays(new int[]{1, 3, 5});
         System.out.println("Done");
     }
+
     public static int numOfSubarrays(int[] arr) {
         int MOD = 1_000_000_007;
         int n = arr.length;

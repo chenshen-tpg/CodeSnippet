@@ -11,7 +11,7 @@ public class DijkstraShortestPath {
         int[][] d = new int[n][m];
         boolean[][] v = new boolean[n][m];
         for (int i = 0; i < n; i++) Arrays.fill(d[i], INF);
-        int[][] dirs = { { 1, 0 }, { -1, 0 }, { 0, 1 }, { 0, -1 } };
+        int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         d[0][0] = 0;
         PriorityQueue<State> q = new PriorityQueue<>();
         q.offer(new State(0, 0, 0));
@@ -37,11 +37,13 @@ public class DijkstraShortestPath {
 
     static class State implements Comparable<State> {
         int x, y, dis;
+
         State(int x, int y, int dis) {
             this.x = x;
             this.y = y;
             this.dis = dis;
         }
+
         @Override
         public int compareTo(State other) {
             return Integer.compare(this.dis, other.dis);

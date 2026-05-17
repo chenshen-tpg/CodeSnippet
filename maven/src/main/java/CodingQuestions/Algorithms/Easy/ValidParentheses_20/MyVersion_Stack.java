@@ -9,16 +9,14 @@ public class MyVersion_Stack {
         System.out.println(v.helper(s));
     }
 
-    public static boolean helper (String s) {
+    public static boolean helper(String s) {
         Stack<Character> stack = new Stack<>();
         for (char ss : s.toCharArray()) {
             if (ss == ')' && !stack.isEmpty()) {
                 if (stack.pop() != '(') return false;
-            }
-            else if (ss == '}' && !stack.isEmpty()) {
+            } else if (ss == '}' && !stack.isEmpty()) {
                 if (stack.pop() != '{') return false;
-            }
-            else if (ss == ']' && !stack.isEmpty()) {
+            } else if (ss == ']' && !stack.isEmpty()) {
                 if (stack.pop() != '[') return false;
             } else {
                 stack.add(ss);

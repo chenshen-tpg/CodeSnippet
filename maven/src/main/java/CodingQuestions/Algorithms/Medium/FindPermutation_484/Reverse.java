@@ -4,6 +4,7 @@ public class Reverse {
     public static void main(String[] args) {
 
     }
+
     public int[] findPermutation(String s) {
         int[] res = new int[s.length() + 1];
         for (int i = 0; i < res.length; i++) res[i] = i + 1;
@@ -16,6 +17,7 @@ public class Reverse {
         }
         return res;
     }
+
     public void reverse(int[] a, int start, int end) {
         for (int i = 0; i < (end - start) / 2; i++) {
             int temp = a[i + start];

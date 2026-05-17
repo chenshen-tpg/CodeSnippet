@@ -41,22 +41,22 @@ public class MeTrying {
 
     private int nearestExit(char[][] maze, int[] entrance) {
         int rows = maze.length, cols = maze[0].length;
-        int [][] dirs = new int [][] {{1, 0}, {0 , 1},{-1, 0}, {0, -1}};
+        int[][] dirs = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
         int startRow = entrance[0], startCol = entrance[1];
         maze[startRow][startCol] = '+';
         Queue<int[]> queue = new LinkedList<>();
-        queue.offer(new int []{startRow, startCol, 0});
+        queue.offer(new int[]{startRow, startCol, 0});
         while (!queue.isEmpty()) {
             int[] cur = queue.poll();
-            int curRow = cur[0], curCol = cur[1],curLen = cur[2];
-            for (int [] dir:dirs) {
+            int curRow = cur[0], curCol = cur[1], curLen = cur[2];
+            for (int[] dir : dirs) {
                 int nextRow = curRow + dir[0], nextCol = curCol + dir[1];
                 if (nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols && maze[nextRow][nextCol] == '.') {
-                    if (nextRow == 0 || nextCol == 0|| nextCol == cols -1 || nextRow == rows -1) {
+                    if (nextRow == 0 || nextCol == 0 || nextCol == cols - 1 || nextRow == rows - 1) {
                         return curLen + 1;
                     }
                     maze[nextRow][nextCol] = '+';
-                    queue.offer(new int[] {nextRow, nextCol, curLen + 1});
+                    queue.offer(new int[]{nextRow, nextCol, curLen + 1});
                 }
             }
         }

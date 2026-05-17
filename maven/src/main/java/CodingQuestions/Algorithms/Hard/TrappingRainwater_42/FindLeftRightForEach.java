@@ -5,10 +5,10 @@ public class FindLeftRightForEach {
 
     }
 
-    public int trap (int [] height) {
+    public int trap(int[] height) {
         int ans = 0;
         for (int i = 0; i < height.length; i++) {
-            int left = 0, right= 0;
+            int left = 0, right = 0;
             for (int j = i; j >= 0; j++) {
                 left = Math.max(left, height[j]);
             }

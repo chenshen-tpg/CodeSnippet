@@ -8,7 +8,7 @@ public class DoubleHashMap {
 
     }
 
-    public int [] method (int [][] queries, int limit) {
+    public int[] method(int[][] queries, int limit) {
         int n = queries.length;
         int[] result = new int[n];
         Map<Integer, Integer> colorMap = new HashMap<>();

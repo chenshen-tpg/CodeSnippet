@@ -4,6 +4,7 @@ public class DFS {
     public static void main(String[] args) {
 
     }
+
     class Solution {
 
         public int orangesRotting(int[][] grid) {
@@ -23,8 +24,10 @@ public class DFS {
             }
             return min - 2;
         }
-        public void helper(int [][] grid, int i, int j, int min) {
-            if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == 0 || (grid[i][j] > 1 && grid[i][j] < min)) return;
+
+        public void helper(int[][] grid, int i, int j, int min) {
+            if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] == 0 || (grid[i][j] > 1 && grid[i][j] < min))
+                return;
             grid[i][j] = min;
             min++;
             helper(grid, i - 1, j, min);

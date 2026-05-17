@@ -4,13 +4,14 @@ import java.util.HashSet;
 
 public class test {
     HashSet<Integer> hs = new HashSet<>();
+
     public static void main(String[] args) {
         test solution = new test();
         String pattern = "IIIDIDDD";
         solution.solver(pattern);
     }
 
-    public  String solver (String s) {
+    public String solver(String s) {
         return helper(1, s);
     }
 

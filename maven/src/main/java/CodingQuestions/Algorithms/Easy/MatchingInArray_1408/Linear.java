@@ -7,6 +7,7 @@ public class Linear {
     public static void main(String[] args) {
 
     }
+
     public List<String> stringMatching_BruteForce(String[] words) {
         int n = words.length;
         List<String> ans = new ArrayList<>();

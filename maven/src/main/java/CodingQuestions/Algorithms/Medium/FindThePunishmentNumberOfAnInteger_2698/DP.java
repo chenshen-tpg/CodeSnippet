@@ -6,6 +6,7 @@ public class DP {
     public static void main(String[] args) {
 
     }
+
     public boolean findPartitions(int i, int sum, String stringNum, int target, int[][] memo) {
         if (sum > target) return false;
         if (i == stringNum.length()) return sum == target;

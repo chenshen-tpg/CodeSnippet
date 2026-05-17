@@ -9,6 +9,7 @@ public class LongestSquareStreakInAnArray_2501 {
         LongestSquareStreakInAnArray_2501 ls = new LongestSquareStreakInAnArray_2501();
         System.out.println(ls.longestSquareStreak(new int[]{4, 3, 6, 16, 8, 2}));
     }
+
     public int longestSquareStreak(int[] nums) {
         Arrays.sort(nums);
         Set<Integer> processedNumbers = new HashSet<>();
@@ -31,6 +32,7 @@ public class LongestSquareStreakInAnArray_2501 {
         }
         return longestStreak < 2 ? -1 : longestStreak;
     }
+
     private boolean binarySearch(int[] nums, int target) {
         if (target < 0) return false;
 

@@ -8,8 +8,9 @@ public class TwoSet {
 
     public static void main(String[] args) {
         TwoSet solution = new TwoSet();
-        solution.intersection(new int [] {1,2,2,1}, new int [] {2,2});
+        solution.intersection(new int[]{1, 2, 2, 1}, new int[]{2, 2});
     }
+
     public int[] intersection(int[] nums1, int[] nums2) {
         Set<Integer> set1 = new HashSet<>();
         for (Integer n : nums1) {

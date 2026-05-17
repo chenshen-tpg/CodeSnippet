@@ -9,7 +9,7 @@ public class StackSolution {
     }
 
     public int[] findPermutation(String s) {
-        int [] res = new int [s.length() + 1];
+        int[] res = new int[s.length() + 1];
         Stack<Integer> stack = new Stack();
         int j = 0;
         for (int i = 0; i < s.length(); i++) {

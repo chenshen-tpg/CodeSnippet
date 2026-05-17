@@ -4,6 +4,7 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public int[] productExceptSelf(int[] nums) {
         int mul = 1;
         boolean flag = false;
@@ -17,7 +18,7 @@ public class MeTrying {
                 mul *= nums[i];
             }
         }
-        int [] res = new int [nums.length];
+        int[] res = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
             if (flag) {
                 if (nums[i] != 0) {

@@ -1,6 +1,6 @@
 package CodingQuestions.Algorithms.Medium.CountServersThatCommunicate_1267;
 
-public class Prefix  {
+public class Prefix {
     public static void main(String[] args) {
         int[][] grid = {
                 {1, 1, 0, 0},

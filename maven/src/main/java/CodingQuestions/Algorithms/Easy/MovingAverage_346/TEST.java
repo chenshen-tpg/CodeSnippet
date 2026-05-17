@@ -7,12 +7,13 @@ public class TEST {
     Queue<Integer> q;
     int k;
 
-    public static void main(String[] args) {
-
-    }
     public TEST(int size) {
         q = new LinkedList();
         k = size;
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public double next(int val) {

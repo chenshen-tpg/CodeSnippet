@@ -5,7 +5,7 @@ public class EvenOnly {
 
     }
 
-    public int helper (int [] nums) {
+    public int helper(int[] nums) {
         int lo = 0, hi = nums.length - 1;
         while (lo < hi) {
             int mid = lo + (hi - lo) / 2;

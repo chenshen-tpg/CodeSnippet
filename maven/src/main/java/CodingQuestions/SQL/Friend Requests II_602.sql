@@ -1,12 +1,10 @@
-WITH ALL AS (
-   SELECT requester_id AS id
-   FROM RequestAccepted
-   UNION ALL
-   SELECT accepter_id AS id
-   FROM RequestAccepted)
+WITH ALL AS (SELECT requester_id AS id
+             FROM RequestAccepted
+             UNION ALL
+             SELECT accepter_id AS id
+             FROM RequestAccepted)
 SELECT id,
-   COUNT(id) AS num
+       COUNT(id) AS num
 FROM ALL
 GROUP BY id
-ORDER BY COUNT(id) DESC
-LIMIT 1
+ORDER BY COUNT(id) DESC LIMIT 1

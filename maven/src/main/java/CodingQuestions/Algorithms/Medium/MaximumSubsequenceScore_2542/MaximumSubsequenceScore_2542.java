@@ -7,13 +7,14 @@ import java.util.PriorityQueue;
 
 public class MaximumSubsequenceScore_2542 {
     public static void main(String[] args) {
-        int [] nums1 = {4,2,3,1,1};
-        int [] nums2 = {7,5,10,9,6};
+        int[] nums1 = {4, 2, 3, 1, 1};
+        int[] nums2 = {7, 5, 10, 9, 6};
         PriorityQueue<Integer> pr = new PriorityQueue<>();
         int k = 1;
 
-        System.out.println(maxScore(nums1,nums2,k));
+        System.out.println(maxScore(nums1, nums2, k));
     }
+
     public static long maxScore(int[] nums1, int[] nums2, int k) {
         // Sort pair (nums1[i], nums2[i]) by nums2[i] in decreasing order.
         int n = nums1.length;

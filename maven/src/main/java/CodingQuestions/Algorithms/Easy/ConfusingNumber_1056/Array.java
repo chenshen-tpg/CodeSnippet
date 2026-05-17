@@ -5,6 +5,7 @@ public class Array {
         Array solution = new Array();
         solution.confusingNumber(916);
     }
+
     public boolean confusingNumber(int n) {
         String nums = n + "";
         StringBuilder sb = new StringBuilder();

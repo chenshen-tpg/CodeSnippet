@@ -15,17 +15,17 @@ public class MeTrying {
         System.out.println(h.test(arr2, mat2)); // Expected output:
     }
 
-    public static int test(int [] arr, int [][] mat) {
-        HashMap<Integer,int[]> hm = new HashMap<>();
+    public static int test(int[] arr, int[][] mat) {
+        HashMap<Integer, int[]> hm = new HashMap<>();
         for (int i = 0; i < mat.length; i++) {
-            for (int j = 0; j < mat[0].length ; j++) {
-                hm.put(mat[i][j], new int [] {i, j});
+            for (int j = 0; j < mat[0].length; j++) {
+                hm.put(mat[i][j], new int[]{i, j});
             }
         }
-        int [] r = new int [mat.length];
-        int [] c = new int [mat[0].length];
+        int[] r = new int[mat.length];
+        int[] c = new int[mat[0].length];
         for (int i = 0; i < arr.length; i++) {
-            int [] cur = hm.get(arr[i]);
+            int[] cur = hm.get(arr[i]);
             r[cur[0]]++;
             c[cur[1]]++;
             //row needs to fill with column vice versa
@@ -36,7 +36,6 @@ public class MeTrying {
 
         return -1;
     }
-
 
 
 }

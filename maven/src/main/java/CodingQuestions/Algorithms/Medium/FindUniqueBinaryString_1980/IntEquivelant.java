@@ -5,9 +5,10 @@ import java.util.Set;
 
 public class IntEquivelant {
     public static void main(String[] args) {
-        String [] s = {"111","011","001"};
+        String[] s = {"111", "011", "001"};
         findDifferentBinaryString(s);
     }
+
     public static String findDifferentBinaryString(String[] nums) {
         Set<Integer> integers = new HashSet();
         for (String num : nums) integers.add(Integer.parseInt(num, 2));

@@ -11,7 +11,8 @@ public class Reivew {
     public static void main(String[] args) {
 
     }
-    public NeighbourNode clone (NeighbourNode node) {
+
+    public NeighbourNode clone(NeighbourNode node) {
         if (node == null) return node;
         HashMap<NeighbourNode, NeighbourNode> hm = new HashMap<>();
         Queue<NeighbourNode> q = new LinkedList<>();

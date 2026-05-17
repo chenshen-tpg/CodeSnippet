@@ -39,10 +39,11 @@ public class TEST {
         System.out.println("actual = " + actual + ", expected = " + expected);
 
     }
+
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         Map<Integer, List<int[]>> adj = new HashMap<>();
         for (int[] i : flights)
-            adj.computeIfAbsent(i[0], value -> new ArrayList<>()).add(new int[] { i[1], i[2] });
+            adj.computeIfAbsent(i[0], value -> new ArrayList<>()).add(new int[]{i[1], i[2]});
         System.out.println();
         return 0;
     }

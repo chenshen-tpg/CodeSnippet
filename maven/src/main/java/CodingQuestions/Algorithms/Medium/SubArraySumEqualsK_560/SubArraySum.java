@@ -4,10 +4,11 @@ import java.util.HashMap;
 
 public class SubArraySum {
     public static void main(String[] args) {
-        int [] test = {1,2,3,4,7,6,1,1,2};
+        int[] test = {1, 2, 3, 4, 7, 6, 1, 1, 2};
         SubArraySum s = new SubArraySum();
-        System.out.println(s.subarraySum(test,7));
+        System.out.println(s.subarraySum(test, 7));
     }
+
     //important concept
     public int subarraySum(int[] nums, int k) {
         int count = 0, currSum = 0;

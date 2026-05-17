@@ -11,6 +11,7 @@ public class ReviewBFS {
     public static void main(String[] args) {
 
     }
+
     public List<Integer> rightSideView(TreeNode root) {
         if (root == null) return new ArrayList<>();
         List<Integer> res = new ArrayList();

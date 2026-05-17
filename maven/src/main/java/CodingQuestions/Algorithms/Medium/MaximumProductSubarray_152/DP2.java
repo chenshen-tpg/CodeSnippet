@@ -5,7 +5,7 @@ public class DP2 {
 
     }
 
-    public static int method (int [] nums) {
+    public static int method(int[] nums) {
         int max = nums[0], min = nums[0], res = nums[0];
         for (int i = 1; i < nums.length; i++) {
             int temp = max;

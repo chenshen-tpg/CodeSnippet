@@ -17,6 +17,7 @@ public class BFSQueueReverse {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(9);
     }
+
     public TreeNode invertTree(TreeNode root) {
         if (root == null) return null;
         Queue<TreeNode> q = new LinkedList<>();
@@ -28,8 +29,8 @@ public class BFSQueueReverse {
                 TreeNode temp = cur.left;
                 cur.left = cur.right;
                 cur.right = temp;
-                if (cur.left !=null) q.add(cur.left);
-                if (cur.right !=null) q.add(cur.right);
+                if (cur.left != null) q.add(cur.left);
+                if (cur.right != null) q.add(cur.right);
             }
         }
         return root;

@@ -4,6 +4,7 @@ public class SlidingWindow {
     public static void main(String[] args) {
 
     }
+
     public int maxScore(int[] cardPoints, int k) {
         int startingIndex = 0;
         int presentSubarrayScore = 0;

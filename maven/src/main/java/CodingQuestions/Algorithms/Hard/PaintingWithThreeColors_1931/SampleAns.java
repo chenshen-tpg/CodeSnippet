@@ -4,6 +4,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public int colorTheGrid(int m, int n) {
         long mod = 1_000_000_007;
         long[][][] matrixs = {
@@ -55,6 +56,7 @@ public class SampleAns {
         }
         return c;
     }
+
     private long[][] matrixPower(long[][] matrix, long p, long mod) {
         long[][] res = new long[matrix.length][matrix.length];
         for (int i = 0; i < matrix.length; i++) {

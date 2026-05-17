@@ -6,6 +6,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public ListNode reverseList(ListNode head) {
         ListNode dummy = null;
         ListNode cur = head;

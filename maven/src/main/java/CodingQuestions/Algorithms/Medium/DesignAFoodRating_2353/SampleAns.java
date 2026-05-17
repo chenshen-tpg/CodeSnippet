@@ -11,10 +11,6 @@ public class SampleAns {
     private Map<String, String> foodCuisineMap = new HashMap<>();
     private Map<String, TreeSet<Pair<Integer, String>>> cuisineFoodMap = new HashMap<>();
 
-    public static void main(String[] args) {
-
-    }
-
     public SampleAns(String[] foods, String[] cuisines, int[] ratings) {
         for (int i = 0; i < foods.length; i++) {
             foodRatingMap.put(foods[i], ratings[i]);
@@ -27,6 +23,10 @@ public class SampleAns {
                 return compareByRating;
             })).add(new Pair(-ratings[i], foods[i]));
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public void changeRating(String food, int newRating) {

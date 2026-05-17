@@ -6,6 +6,16 @@ import java.util.List;
 import java.util.Queue;
 
 public class BFS_UVList {
+    // Example usage
+    public static void main(String[] args) {
+        BFS_UVList solution = new BFS_UVList();
+        int numCourses = 2;
+        int[][] prerequisites = {{1, 0}};
+        int[][] queries = {{0, 1}, {1, 0}};
+        List<Boolean> result = solution.checkIfPrerequisite(numCourses, prerequisites, queries);
+        System.out.println(result); // Output: [false, true]
+    }
+
     public List<Boolean> checkIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries) {
         List<List<Integer>> graph = new ArrayList<>();
         for (int i = 0; i < numCourses; i++) {
@@ -39,15 +49,5 @@ public class BFS_UVList {
         }
 
         return answer;
-    }
-
-    // Example usage
-    public static void main(String[] args) {
-        BFS_UVList solution = new BFS_UVList();
-        int numCourses = 2;
-        int[][] prerequisites = {{1, 0}};
-        int[][] queries = {{0, 1}, {1, 0}};
-        List<Boolean> result = solution.checkIfPrerequisite(numCourses, prerequisites, queries);
-        System.out.println(result); // Output: [false, true]
     }
 }

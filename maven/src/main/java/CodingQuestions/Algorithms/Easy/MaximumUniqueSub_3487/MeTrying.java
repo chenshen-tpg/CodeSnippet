@@ -6,6 +6,7 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public int maxSum(int[] nums) {
         int max = 0;
         int maxN = Integer.MIN_VALUE;
@@ -16,7 +17,7 @@ public class MeTrying {
         for (int h : hs) {
             if (h > 0) {
                 max += h;
-            } else if (h <= 0){
+            } else if (h <= 0) {
                 maxN = Math.max(maxN, h);
             }
         }

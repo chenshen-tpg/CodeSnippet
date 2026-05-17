@@ -10,12 +10,13 @@ public class MeTrying {
         MeTrying solution = new MeTrying();
         String word1 = "abc";
         String word2 = "bca";
-        System.out.println(solution.check(word1,word2));
+        System.out.println(solution.check(word1, word2));
     }
+
     public boolean check(String a, String b) {
         if (a.length() != b.length() || a.length() == 0 || b.length() == 0) return false;
-        HashMap<Character,Integer> hmA = new HashMap<>();
-        HashMap<Character,Integer> hmB = new HashMap<>();
+        HashMap<Character, Integer> hmA = new HashMap<>();
+        HashMap<Character, Integer> hmB = new HashMap<>();
         for (char ac : a.toCharArray()) hmA.put(ac, hmA.getOrDefault(ac, 0) + 1);
         for (char bc : b.toCharArray()) hmB.put(bc, hmB.getOrDefault(bc, 0) + 1);
         if (!hmA.keySet().equals(hmB.keySet())) return false;

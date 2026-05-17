@@ -1,8 +1,9 @@
 package CodingQuestions.Algorithms.Medium.pyramidTransition_756;
 
-import java.util.*;
-
 public class TEST {
+    Map<String, List<Character>> map = new HashMap<>();
+    Map<String, Boolean> memo = new HashMap<>();
+
     public static void main(String[] args) {
         String bottom = "BCD";
         List<String> allowed = Arrays.asList("BCC", "CDE", "CEA", "FFF");
@@ -10,8 +11,7 @@ public class TEST {
         boolean result = test.pyramidTransition(bottom, allowed);
         System.out.println("Can build pyramid: " + result);
     }
-    Map<String, List<Character>> map = new HashMap<>();
-    Map<String, Boolean> memo = new HashMap<>();
+
     public boolean pyramidTransition(String bottom, List<String> allowed) {
         for (String s : allowed) {
             String key = s.substring(0, 2);
@@ -19,6 +19,7 @@ public class TEST {
         }
         return solve(bottom);
     }
+
     private boolean solve(String bottom) {
         if (bottom.length() == 1) return true;
         if (memo.containsKey(bottom)) return memo.get(bottom);
@@ -26,6 +27,7 @@ public class TEST {
         memo.put(bottom, result);
         return result;
     }
+
     private boolean generateNextRow(String bottom, int idx, StringBuilder currentNext) {
         if (idx == bottom.length() - 1) {
             return solve(currentNext.toString());

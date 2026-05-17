@@ -22,7 +22,7 @@ public class SampleAnswer {
      The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
      */
     public static void main(String[] args) {
-        int [] prices = new int [] {1, 3, 2, 8, 4, 9};
+        int[] prices = new int[]{1, 3, 2, 8, 4, 9};
         int fee = 2;
         SampleAnswer solution = new SampleAnswer();
         solution.test(prices, fee);

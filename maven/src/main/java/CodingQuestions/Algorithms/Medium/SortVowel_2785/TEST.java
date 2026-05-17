@@ -30,14 +30,12 @@ public class TEST {
     }
 
 
-
-
     public String sortVowels(String s) {
         List<Character> li = new ArrayList();
         StringBuilder left = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             char cur = s.charAt(i);
-            if ("aeiou".contains(Character.toLowerCase(cur) +"")){
+            if ("aeiou".contains(Character.toLowerCase(cur) + "")) {
                 left.append('#');
                 li.add(cur);
             } else {
@@ -50,7 +48,7 @@ public class TEST {
         StringBuilder res = new StringBuilder();
         for (int i = 0; i < before.length(); i++) {
             char cur = before.charAt(i);
-            if (cur =='#') {
+            if (cur == '#') {
                 res.append(li.get(j++));
             } else {
                 res.append(cur);

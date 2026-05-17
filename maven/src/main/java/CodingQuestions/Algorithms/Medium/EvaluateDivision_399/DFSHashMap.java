@@ -8,6 +8,7 @@ import java.util.Map;
 
 public class DFSHashMap {
     HashSet<String> vis;
+
     public static void main(String[] args) {
         DFSHashMap solver = new DFSHashMap();
         List<List<String>> equations1 = Arrays.asList(
@@ -24,6 +25,7 @@ public class DFSHashMap {
         );
         System.out.println(Arrays.toString(solver.calcEquation(equations1, values1, queries1))); // Expected output: [6.0, 0.5, -1.0, 1.0, -1.0]
     }
+
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         HashMap<String, HashMap<String, Double>> gr = buildGraph(equations, values);
         double[] finalAns = new double[queries.size()];
@@ -59,7 +61,7 @@ public class DFSHashMap {
     }
 
     public void dfs(String node, String dest, HashMap<String, HashMap<String, Double>> gr, double[] ans, double temp) {
-        if (vis.contains(node))  return;
+        if (vis.contains(node)) return;
         vis.add(node);
         if (node.equals(dest)) {
             ans[0] = temp;

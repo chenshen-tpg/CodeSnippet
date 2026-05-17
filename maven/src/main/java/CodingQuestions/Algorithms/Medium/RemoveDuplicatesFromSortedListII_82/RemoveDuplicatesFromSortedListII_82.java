@@ -20,6 +20,7 @@ public class RemoveDuplicatesFromSortedListII_82 {
             res = res.next;
         }
     }
+
     public static ListNode deleteDuplicates(ListNode head) {
         if (head == null) return null;
         ListNode dummy = new ListNode(0);
@@ -39,12 +40,13 @@ public class RemoveDuplicatesFromSortedListII_82 {
         }
         return dummy.next;
     }
+
     public ListNode deleteDuplicates1(ListNode head) {
         ListNode s = new ListNode(0, head);
         ListNode pred = s;
 
         while (head != null) {
-            if(head.next != null && head.val == head.next.val) {
+            if (head.next != null && head.val == head.next.val) {
                 while (head.next != null && head.val == head.next.val) {
                     head = head.next;
                 }

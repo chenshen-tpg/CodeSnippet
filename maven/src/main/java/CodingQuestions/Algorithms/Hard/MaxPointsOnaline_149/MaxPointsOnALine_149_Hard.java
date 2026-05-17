@@ -7,11 +7,11 @@ import java.util.Map;
 public class MaxPointsOnALine_149_Hard {
     public int maxPoints(int[][] points) {
         int n = points.length;
-        if (n == 1)return 1;
+        if (n == 1) return 1;
         int max = 0;
-        for (int i=0; i < n; i++) {
+        for (int i = 0; i < n; i++) {
             Map<Double, Integer> map = new HashMap<>();
-            for (int j=i+1; j < n; j++) {
+            for (int j = i + 1; j < n; j++) {
                 double slope = calculateSlope(points[i], points[j]);
                 map.put(slope, map.getOrDefault(slope, 0) + 1);
                 max = Math.max(max, map.get(slope));
@@ -19,6 +19,7 @@ public class MaxPointsOnALine_149_Hard {
         }
         return max + 1;
     }
+
     private double calculateSlope(int[] p1, int[] p2) {
         int x1 = p1[0], x2 = p2[0];
         int y1 = p1[1], y2 = p2[1];
@@ -26,6 +27,7 @@ public class MaxPointsOnALine_149_Hard {
         if (y1 == y2) return 0;
         return (double) (y2 - y1) / (double) (x2 - x1);
     }
+
     public int maxPointsCheckOut(int[][] points) {
         int n = points.length;
         if (n == 1) return 1;
@@ -33,7 +35,8 @@ public class MaxPointsOnALine_149_Hard {
         for (int i = 0; i < n; i++) {
             Map<Double, Integer> cnt = new HashMap<>();
             for (int j = 0; j < n; j++) {
-                if (j != i) cnt.merge(Math.atan2(points[j][1] - points[i][1], points[j][0] - points[i][0]), 1, Integer::sum);
+                if (j != i)
+                    cnt.merge(Math.atan2(points[j][1] - points[i][1], points[j][0] - points[i][0]), 1, Integer::sum);
             }
             result = Math.max(result, Collections.max(cnt.values()) + 1);
         }

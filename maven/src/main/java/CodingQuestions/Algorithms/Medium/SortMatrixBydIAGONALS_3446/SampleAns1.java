@@ -8,9 +8,9 @@ public class SampleAns1 {
     public static void main(String[] args) {
         SampleAns1 solution = new SampleAns1();
         int[][] grid = {
-                {1,7,3},
-                {9,8,2},
-                {4,5,6}
+                {1, 7, 3},
+                {9, 8, 2},
+                {4, 5, 6}
         };
         int[][] result = solution.sortMatrix(grid);
         for (int[] row : result) {
@@ -20,6 +20,7 @@ public class SampleAns1 {
             System.out.println();
         }
     }
+
     public int[][] sortMatrix(int[][] grid) {
         int n = grid.length;
         for (int i = 0; i < n; i++) {

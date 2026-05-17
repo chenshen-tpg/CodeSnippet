@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Medium.MaximumSumCircularSubarray_918;
 
 public class Surfix {
     public static void main(String[] args) {
-        int [] nums = {5,-3,5};
+        int[] nums = {5, -3, 5};
         System.out.println(maxSubarraySumCircular(nums));
     }
 

@@ -7,6 +7,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public int minOperations(int[] nums, int k) {
         Set<Integer> st = new HashSet<>();
         for (int num : nums) {

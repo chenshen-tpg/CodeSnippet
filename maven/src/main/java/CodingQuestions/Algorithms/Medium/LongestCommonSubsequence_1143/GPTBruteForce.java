@@ -7,6 +7,7 @@ public class GPTBruteForce {
     public static void main(String[] args) {
 
     }
+
     public int longestCommonSubsequence(String text1, String text2) {
         Set<String> subsequences1 = generateSubsequences(text1);
         Set<String> subsequences2 = generateSubsequences(text2);
@@ -19,6 +20,7 @@ public class GPTBruteForce {
 
         return maxLength;
     }
+
     private Set<String> generateSubsequences(String text) {
         HashSet<String> subsequences = new HashSet<>();
         generateSubsequencesHelper(text, 0, "", subsequences);

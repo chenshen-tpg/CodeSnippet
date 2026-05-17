@@ -4,9 +4,10 @@ public class OnePassMemo {
     public static void main(String[] args) {
 
     }
+
     public boolean linear(String s, String goal) {
         int count = 0;
-        int [] memo = new int [26];
+        int[] memo = new int[26];
         if (s.length() != goal.length())
             return false;
         for (int i = 0; i < s.length(); i++) {

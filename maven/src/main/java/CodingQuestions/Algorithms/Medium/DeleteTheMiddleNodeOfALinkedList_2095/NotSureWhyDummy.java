@@ -15,7 +15,7 @@ public class NotSureWhyDummy {
             count++;
         }
         ListNode dummy1 = head;
-        for (int i = 0; i < count /2 -1; i++) {
+        for (int i = 0; i < count / 2 - 1; i++) {
             dummy1 = dummy1.next;
         }
         dummy1.next = dummy1.next.next;

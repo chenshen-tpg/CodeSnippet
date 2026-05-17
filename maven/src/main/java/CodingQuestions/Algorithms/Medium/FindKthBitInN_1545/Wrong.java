@@ -17,7 +17,7 @@ public class Wrong {
     }
 
 
-    public String helper (String s) {
+    public String helper(String s) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
             if ("0".equals(s.charAt(i))) sb.append("1");

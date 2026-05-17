@@ -32,18 +32,18 @@ public class BFSHM {
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
         int cord = 0;
-        HashMap<Integer,Integer> hm = new HashMap<>();
+        HashMap<Integer, Integer> hm = new HashMap<>();
         hm.put(root.val, cord);
-        while(!q.isEmpty()) {
+        while (!q.isEmpty()) {
             for (int i = 0; i < q.size(); i++) {
                 TreeNode cur = q.remove();
                 if (cur.left != null) {
                     q.add(cur.left);
-                    hm.put(cur.left.val,cord - 1);
+                    hm.put(cur.left.val, cord - 1);
                 }
                 if (cur.right != null) {
                     q.add(cur.right);
-                    hm.put(cur.right.val,cord + 1);
+                    hm.put(cur.right.val, cord + 1);
                 }
             }
             cord++;

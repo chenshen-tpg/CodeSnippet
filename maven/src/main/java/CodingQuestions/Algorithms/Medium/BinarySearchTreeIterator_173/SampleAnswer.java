@@ -56,7 +56,7 @@ public class SampleAnswer {
         bst.li = new ArrayList<>();
         bst.index = 0;
         bst.helper(root);
-        while(bst.hasNext()) {
+        while (bst.hasNext()) {
             System.out.println(bst.next());
         }
     }
@@ -68,7 +68,8 @@ public class SampleAnswer {
     public boolean hasNext() {
         return index + 1 < li.size();
     }
-    public void helper(TreeNode root){
+
+    public void helper(TreeNode root) {
         if (root == null) {
             return;
         }

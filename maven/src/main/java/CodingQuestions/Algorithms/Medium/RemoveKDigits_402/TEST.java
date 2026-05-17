@@ -17,7 +17,7 @@ public class TEST {
             }
             String tempString = num;
             if (sb.toString().equals(tempString)) return "0";
-            long tempVal = Long.valueOf(tempString.replaceFirst(sb.toString(),""));
+            long tempVal = Long.valueOf(tempString.replaceFirst(sb.toString(), ""));
             minimal = Math.min(minimal, tempVal);
         }
         return String.valueOf(minimal);

@@ -4,6 +4,7 @@ public class BruteForce {
     public static void main(String[] args) {
 
     }
+
     public int equalPairs(int[][] grid) {
         int count = 0, n = grid.length;
         for (int r = 0; r < n; ++r) {

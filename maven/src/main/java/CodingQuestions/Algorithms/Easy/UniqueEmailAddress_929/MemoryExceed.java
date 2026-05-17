@@ -13,6 +13,7 @@ public class MemoryExceed {
         int result = memoryExceed.numUniqueEmails(emails);
         System.out.println("Number of unique emails: " + result); // Expected output: 2
     }
+
     public int numUniqueEmails(String[] emails) {
         HashSet<String> hs = new HashSet();
         for (String email : emails) {

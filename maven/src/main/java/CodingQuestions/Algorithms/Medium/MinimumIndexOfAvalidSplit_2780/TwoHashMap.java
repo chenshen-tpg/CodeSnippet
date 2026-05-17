@@ -8,6 +8,7 @@ public class TwoHashMap {
     public static void main(String[] args) {
 
     }
+
     public int minimumIndex(List<Integer> nums) {
         Map<Integer, Integer> firstMap = new HashMap<>();
         Map<Integer, Integer> secondMap = new HashMap<>();

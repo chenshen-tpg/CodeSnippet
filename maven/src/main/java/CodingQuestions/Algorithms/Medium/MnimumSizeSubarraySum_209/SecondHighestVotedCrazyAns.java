@@ -4,8 +4,9 @@ public class SecondHighestVotedCrazyAns {
 
     public static void main(String[] args) {
         SecondHighestVotedCrazyAns solution = new SecondHighestVotedCrazyAns();
-        solution.minSubArrayLen(7, new int[]{2,3,1,2,4,3});
+        solution.minSubArrayLen(7, new int[]{2, 3, 1, 2, 4, 3});
     }
+
     public int minSubArrayLen(int s, int[] nums) {
         return solveNLogN(s, nums);
     }
@@ -25,7 +26,7 @@ public class SecondHighestVotedCrazyAns {
     private int binarySearch(int lo, int hi, int key, int[] sums) {
         while (lo <= hi) {
             int mid = (lo + hi) / 2;
-            if (sums[mid] >= key){
+            if (sums[mid] >= key) {
                 hi = mid - 1;
             } else {
                 lo = mid + 1;

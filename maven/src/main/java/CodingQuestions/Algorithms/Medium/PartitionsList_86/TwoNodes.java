@@ -3,6 +3,26 @@ package CodingQuestions.Algorithms.Medium.PartitionsList_86;
 import CodingQuestions.Lib.ListNode;
 
 public class TwoNodes {
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode n1 = new ListNode(4);
+        ListNode n2 = new ListNode(3);
+        ListNode n3 = new ListNode(2);
+        ListNode n4 = new ListNode(5);
+        ListNode n5 = new ListNode(2);
+        head.next = n1;
+        n1.next = n2;
+        n2.next = n3;
+        n3.next = n4;
+        n4.next = n5;
+        TwoNodes pl = new TwoNodes();
+        ListNode res = pl.partition(head, 3);
+        while (res != null) {
+            System.out.println(res.val);
+            res = res.next;
+        }
+    }
+
     /***
      Given the head of a linked list and a value x,
      partition it such that all nodes less than x come before nodes greater than or equal to x.
@@ -35,26 +55,5 @@ public class TwoNodes {
             }
         }
         return dummy.next;
-    }
-
-
-    public static void main(String[] args) {
-        ListNode head = new ListNode(1);
-        ListNode n1 = new ListNode(4);
-        ListNode n2 = new ListNode(3);
-        ListNode n3 = new ListNode(2);
-        ListNode n4 = new ListNode(5);
-        ListNode n5 = new ListNode(2);
-        head.next = n1;
-        n1.next = n2;
-        n2.next = n3;
-        n3.next = n4;
-        n4.next = n5;
-        TwoNodes pl = new TwoNodes();
-        ListNode res = pl.partition(head, 3);
-        while (res != null) {
-            System.out.println(res.val);
-            res = res.next;
-        }
     }
 }

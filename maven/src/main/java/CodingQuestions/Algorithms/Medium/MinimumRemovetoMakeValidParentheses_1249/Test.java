@@ -9,13 +9,15 @@ public class Test {
         String s = "lee(t(c)o)de)";
         minRemoveToMakeValid(s);
     }
+
     public static String minRemoveToMakeValid(String s) {
         Set<Integer> indexesToRemove = new HashSet<>();
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(') {
                 stack.push(i);
-            } if (s.charAt(i) == ')') {
+            }
+            if (s.charAt(i) == ')') {
                 if (stack.isEmpty()) {
                     indexesToRemove.add(i);
                 } else {

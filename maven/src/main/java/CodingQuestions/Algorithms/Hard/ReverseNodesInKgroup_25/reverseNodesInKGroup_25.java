@@ -6,6 +6,7 @@ public class reverseNodesInKGroup_25 {
     public static void main(String[] args) {
 
     }
+
     public ListNode reverseKGroup(ListNode head, int k) {
         ListNode curr = head;
         int count = 0;
@@ -25,6 +26,7 @@ public class reverseNodesInKGroup_25 {
         }
         return head;
     }
+
     public ListNode reverseLinkedList(ListNode head, int k) {
         ListNode new_head = null;
         ListNode ptr = head;

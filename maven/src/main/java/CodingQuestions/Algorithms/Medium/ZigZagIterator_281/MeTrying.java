@@ -7,9 +7,11 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public class ZigzagIterator {
         List<Integer> li;
         int start;
+
         public ZigzagIterator(List<Integer> v1, List<Integer> v2) {
             li = new ArrayList();
             start = 0;

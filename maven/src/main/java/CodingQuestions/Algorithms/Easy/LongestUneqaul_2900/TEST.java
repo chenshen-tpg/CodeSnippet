@@ -6,13 +6,14 @@ import java.util.List;
 
 public class TEST {
     public static void main(String[] args) {
-            TEST test = new TEST();
-            String[] words = {"e", "a", "b"};
-            int[] groups = {0, 0, 1};
+        TEST test = new TEST();
+        String[] words = {"e", "a", "b"};
+        int[] groups = {0, 0, 1};
 
-            List<String> result = test.getLongestSubsequence(words, groups);
-            System.out.println("Longest Subsequence: " + result);
+        List<String> result = test.getLongestSubsequence(words, groups);
+        System.out.println("Longest Subsequence: " + result);
     }
+
     public List<String> getLongestSubsequence(String[] words, int[] groups) {
         if (words.length == 1 && groups.length == 1) return Arrays.asList(words[0]);
         List<String> ans = new ArrayList(), temp = new ArrayList();

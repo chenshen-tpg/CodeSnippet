@@ -6,9 +6,10 @@ import java.util.Map;
 public class HashMapSolution {
     public static void main(String[] args) {
         HashMapSolution solution = new HashMapSolution();
-        int [] nums = {2,3,4,6};
+        int[] nums = {2, 3, 4, 6};
         solution.tupleSameProduct(nums);
     }
+
     public int tupleSameProduct(int[] nums) {
         int len = nums.length;
         Map<Integer, Integer> hm = new HashMap<>();

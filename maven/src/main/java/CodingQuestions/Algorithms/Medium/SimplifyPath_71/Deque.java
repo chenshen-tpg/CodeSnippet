@@ -8,6 +8,7 @@ public class Deque {
         String path = "/.../a/../b/c/../d/./";
         System.out.println(sp.simplifyPath(path));
     }
+
     public String simplifyPath(String path) {
         ArrayDeque<String> dirOrFiles = new ArrayDeque<>();
         for (String dirOrFile : path.split("/")) {

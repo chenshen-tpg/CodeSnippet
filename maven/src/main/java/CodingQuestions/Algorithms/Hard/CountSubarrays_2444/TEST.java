@@ -3,8 +3,9 @@ package CodingQuestions.Algorithms.Hard.CountSubarrays_2444;
 public class TEST {
     public static void main(String[] args) {
         TEST solution = new TEST();
-        solution.countSubarrays(new int [] {1,3,5,2,7,5}, 1, 5);
+        solution.countSubarrays(new int[]{1, 3, 5, 2, 7, 5}, 1, 5);
     }
+
     public long countSubarrays(int[] nums, int minK, int maxK) {
         long answer = 0;
         int minPosition = -1, maxPosition = -1, leftBound = -1;

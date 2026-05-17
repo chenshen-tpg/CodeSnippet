@@ -12,6 +12,7 @@ public class Linear {
         Linear solution = new Linear();
         solution.reverseList(head);
     }
+
     public ListNode reverseList(ListNode head) {
         ListNode pre = null;
         while (head != null) {

@@ -6,16 +6,17 @@ public class Memory_Exceeded {
     public static void main(String[] args) {
         Memory_Exceeded solution = new Memory_Exceeded();
         int limit = 4;
-        int [][] queries = {{1,4},{2,5},{1,3},{3,4}};
+        int[][] queries = {{1, 4}, {2, 5}, {1, 3}, {3, 4}};
         int limit2 = 4;
-        int queries2 [][]= {{0,1},{1,2},{2,2},{3,4},{4,5}}; //[1,2,2,3,4]
+        int queries2[][] = {{0, 1}, {1, 2}, {2, 2}, {3, 4}, {4, 5}}; //[1,2,2,3,4]
         int limit1 = 1;
         int[][] queries1 = {{0, 1}, {0, 4}, {0, 4}, {0, 1}, {1, 2}};
-        int [] ans = solution.queryResults(limit1,queries1);
+        int[] ans = solution.queryResults(limit1, queries1);
         for (int i = 0; i < ans.length; i++) {
             System.out.print(ans[i] + " ");
         }
     }
+
     public int[] queryResults(int limit, int[][] queries) {
         int n = 0;
         for (int i = 0; i < queries.length; i++) {

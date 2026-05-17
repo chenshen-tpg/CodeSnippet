@@ -10,6 +10,7 @@ public class SimplifiedVersion {
     public static void main(String[] args) {
 
     }
+
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         Map<String, Map<String, Double>> graph = buildGraph(equations, values);
         double[] results = new double[queries.size()];

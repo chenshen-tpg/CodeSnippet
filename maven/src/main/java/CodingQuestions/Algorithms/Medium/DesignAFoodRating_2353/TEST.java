@@ -7,6 +7,6 @@ public class TEST {
     public static void main(String[] args) {
         List<List<String>> li = new ArrayList<>();
         li.add(new ArrayList<>());
-        li.get(0).set(2,"Something");
+        li.get(0).set(2, "Something");
     }
 }

@@ -2,9 +2,10 @@ package CodingQuestions.Algorithms.Medium.MaxSumOfAPairWithEqualSumOfDigits_2342
 
 public class preFix {
     public static void main(String[] args) {
-        int [] nums = {18,43,36,13,7};
+        int[] nums = {18, 43, 36, 13, 7};
         maximumSum(nums);
     }
+
     public static int maximumSum(int[] nums) {
         int[] max = new int[82];
         int ans = -1;

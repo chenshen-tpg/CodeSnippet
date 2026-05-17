@@ -7,6 +7,7 @@ public class Linear {
         Linear solution = new Linear();
         System.out.println(solution.multiply(num1, num2));
     }
+
     public String multiply(String num1, String num2) {
         int m = num1.length(), n = num2.length();
         int[] pos = new int[m + n];

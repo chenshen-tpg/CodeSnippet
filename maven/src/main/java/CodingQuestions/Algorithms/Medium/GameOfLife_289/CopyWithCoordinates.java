@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Medium.GameOfLife_289;
 public class CopyWithCoordinates {
     public static void main(String[] args) {
         CopyWithCoordinates g = new CopyWithCoordinates();
-        int[][] board = new int[][]{{0,1,0},{0,0,1},{1,1,1},{0,0,0}};
+        int[][] board = new int[][]{{0, 1, 0}, {0, 0, 1}, {1, 1, 1}, {0, 0, 0}};
         g.gameOfLife(board);
         for (int[] ints : board) {
             for (int anInt : ints) {
@@ -40,9 +40,10 @@ public class CopyWithCoordinates {
             }
         }
     }
+
     public void gameOfLifeOneLoop(int[][] board) {
-        int [][] copy = new int[board.length][board[0].length];
-        int [][] dir = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}, {-1, 1}, {-1, -1}, {1, 1},{1, -1}};
+        int[][] copy = new int[board.length][board[0].length];
+        int[][] dir = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}, {-1, 1}, {-1, -1}, {1, 1}, {1, -1}};
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
                 copy[i][j] = board[i][j];
@@ -57,7 +58,7 @@ public class CopyWithCoordinates {
                         countOne++;
                     }
                 }
-                if (copy[i][j] == 1 && (countOne < 2 || countOne > 3 )) board[i][j] = 0;
+                if (copy[i][j] == 1 && (countOne < 2 || countOne > 3)) board[i][j] = 0;
                 if (copy[i][j] == 0 && countOne == 3) board[i][j] = 1;
             }
         }

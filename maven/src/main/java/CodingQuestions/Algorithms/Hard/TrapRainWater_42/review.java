@@ -4,9 +4,10 @@ public class review {
     public static void main(String[] args) {
 
     }
+
     public int trap(int[] height) {
         int n = height.length;
-        int left = 0, right = n-1;
+        int left = 0, right = n - 1;
         int leftMax = 0, rightMax = 0;
         int res = 0;
         while (left <= right) {

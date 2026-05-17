@@ -7,6 +7,7 @@ public class Metrying {
         Metrying calculator = new Metrying();
         System.out.println(calculator.helper("3+2*2")); // Output: 7
     }
+
     private int helper(String s) {
         Stack<Integer> st = new Stack<>();
         int num = 0;

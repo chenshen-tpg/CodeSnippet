@@ -4,6 +4,7 @@ public class Linear_TwoPass {
     public static void main(String[] args) {
 
     }
+
     public long gridGame(int[][] grid) {
         long first = 0;
         long second = 0;

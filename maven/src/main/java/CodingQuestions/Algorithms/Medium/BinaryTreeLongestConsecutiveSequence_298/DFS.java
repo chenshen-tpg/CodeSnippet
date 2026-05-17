@@ -9,6 +9,7 @@ public class DFS {
         dfs(root, null, 0);
         return maxLength;
     }
+
     private void dfs(TreeNode p, TreeNode parent, int length) {
         if (p == null) return;
         if (parent != null && p.val == parent.val + 1) length = length + 1;

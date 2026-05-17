@@ -44,7 +44,7 @@ public class GraphWithQuestion {
         }
         List<Integer> result4 = zigzag(grid4);
         System.out.println("10x10 grid, first 10: " + result4.subList(0, 10));
-        System.out.println("10x10 grid, last 10: " + result4.subList(result4.size()-10, result4.size()));
+        System.out.println("10x10 grid, last 10: " + result4.subList(result4.size() - 10, result4.size()));
 
         // Large rectangular grid 20x5
         int[][] grid5 = new int[20][5];
@@ -56,7 +56,7 @@ public class GraphWithQuestion {
         }
         List<Integer> result5 = zigzag(grid5);
         System.out.println("20x5 grid, first 10: " + result5.subList(0, 10));
-        System.out.println("20x5 grid, last 10: " + result5.subList(result5.size()-10, result5.size()));
+        System.out.println("20x5 grid, last 10: " + result5.subList(result5.size() - 10, result5.size()));
 
         // Large rectangular grid 5x20
         int[][] grid6 = new int[5][20];
@@ -68,7 +68,7 @@ public class GraphWithQuestion {
         }
         List<Integer> result6 = zigzag(grid6);
         System.out.println("5x20 grid, first 10: " + result6.subList(0, 10));
-        System.out.println("5x20 grid, last 10: " + result6.subList(result6.size()-10, result6.size()));
+        System.out.println("5x20 grid, last 10: " + result6.subList(result6.size() - 10, result6.size()));
     }
 
     public static List<Integer> zigzag(int[][] grid) {

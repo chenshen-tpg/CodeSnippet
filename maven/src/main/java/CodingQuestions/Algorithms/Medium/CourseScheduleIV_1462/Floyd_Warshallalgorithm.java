@@ -12,6 +12,7 @@ public class Floyd_Warshallalgorithm {
         List<Boolean> result = solution.checkIfPrerequisite(numCourses, prerequisites, queries);
         System.out.println(result);
     }
+
     public List<Boolean> checkIfPrerequisite(int numCourses, int[][] prerequisites, int[][] queries) {
         boolean[][] reachable = new boolean[numCourses][numCourses];
         for (int[] prereq : prerequisites) {

@@ -4,6 +4,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public int makeTheIntegerZero(int num1, int num2) {
         int k = 1;
         while (true) {

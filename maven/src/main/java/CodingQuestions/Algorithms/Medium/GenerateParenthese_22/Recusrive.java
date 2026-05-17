@@ -12,10 +12,11 @@ public class Recusrive {
     }
 
     public List<String> generateParenthesis(int n) {
-        recursive(0,0,n, "");
+        recursive(0, 0, n, "");
         return al;
     }
-    private void recursive(int left,int right, int max, String s) {
+
+    private void recursive(int left, int right, int max, String s) {
         if (left == max & right == max) {
             al.add(s);
             return;

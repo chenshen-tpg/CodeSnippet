@@ -4,6 +4,7 @@ public class MimicPrefix {
     public static void main(String[] args) {
 
     }
+
     public double findMaxAverageBySumEveryStep(int[] nums, int k) {
         int[] sum = new int[nums.length];
         sum[0] = nums[0];

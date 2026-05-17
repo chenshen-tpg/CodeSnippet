@@ -14,6 +14,7 @@ public class Backtracking {
         helper(1, n, k, new ArrayList<>(), result);
         return result;
     }
+
     // two issues, starting from 1,2,3,4...n, and the length of the combination is k
     public void helper(int start, int end, int len, List<Integer> temp, List<List<Integer>> result) {
         if (temp.size() == len) {

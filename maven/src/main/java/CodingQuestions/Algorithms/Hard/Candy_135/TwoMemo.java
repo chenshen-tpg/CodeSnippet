@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class TwoMemo {
     public static void main(String[] args) {
-        int [] ratings = {1,0,2};
+        int[] ratings = {1, 0, 2};
         TwoMemo solution = new TwoMemo();
         solution.candy1(ratings);
     }

@@ -3,13 +3,13 @@ package CodingQuestions.Algorithms.Easy.ApplyOperationsToAnArray_2460;
 public class onePass {
     public static void main(String[] args) {
         onePass obj = new onePass();
-        obj.applyOperations(new int [] {1,2,3,4,5,6,7,8,9,10});
+        obj.applyOperations(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10});
     }
 
     public int[] applyOperations(int[] nums) {
         int j = 0;
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == nums[i - 1] && nums[i- 1] != 0) {
+            if (nums[i] == nums[i - 1] && nums[i - 1] != 0) {
                 nums[i - 1] *= 2;
                 nums[i] = 0;
             }

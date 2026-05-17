@@ -4,6 +4,7 @@ public class BruteForce {
     public static void main(String[] args) {
 
     }
+
     public int[] findThePrefixCommonArray(int[] A, int[] B) {
         int n = A.length;
         int[] prefixCommonArray = new int[n];

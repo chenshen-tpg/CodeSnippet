@@ -6,6 +6,7 @@ public class Recursive {
     public static void main(String[] args) {
 
     }
+
     public ListNode plusOne(ListNode head) {
         if (head == null) return new ListNode(1);
         ListNode plused = plusOne(head.next);

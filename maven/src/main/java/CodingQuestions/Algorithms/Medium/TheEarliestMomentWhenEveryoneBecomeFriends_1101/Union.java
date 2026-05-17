@@ -18,6 +18,7 @@ public class Union {
         };
         int n = 6;
     }
+
     private int find(int u) {
         if (par[u] != u) par[u] = find(par[u]);
         return par[u];

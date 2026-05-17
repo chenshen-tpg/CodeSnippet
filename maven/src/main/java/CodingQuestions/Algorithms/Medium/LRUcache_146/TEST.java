@@ -7,6 +7,11 @@ public class TEST {
     LinkedHashMap<Integer, Integer> lru;
     int capacity;
 
+    public TEST(int capacity) {
+        lru = new LinkedHashMap();
+        this.capacity = capacity;
+    }
+
     public static void main(String[] args) {
         TEST lruCache = new TEST(2);
         lruCache.put(1, 1); // Cache: {1=1}
@@ -19,14 +24,12 @@ public class TEST {
         System.out.println(lruCache.get(3)); // Output: 3, Cache: {4=4, 3=3}
         System.out.println(lruCache.get(4)); // Output: 4, Cache: {3=3, 4=4}
     }
-    public TEST(int capacity) {
-        lru = new LinkedHashMap();
-        this.capacity = capacity;
-    }
+
     public int get(int key) {
         int val = lru.getOrDefault(key, -1);
-        if (val == -1) {return - 1;}
-        else {
+        if (val == -1) {
+            return -1;
+        } else {
             lru.remove(key);
             lru.put(key, val);
         }

@@ -1,7 +1,5 @@
 package CodingQuestions.Algorithms.Medium.High_AccessEmployees_2933;
 
-import java.util.*;
-
 public class HashMapSolution {
     public static void main(String[] args) {
         List<List<String>> access_times = new ArrayList<>(Arrays.asList(

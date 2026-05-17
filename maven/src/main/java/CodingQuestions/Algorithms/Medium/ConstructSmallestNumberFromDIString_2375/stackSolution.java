@@ -8,7 +8,8 @@ public class stackSolution {
         stackSolution solution = new stackSolution();
         solution.smallestNum(pattern);
     }
-    public String smallestNum (String pattern) {
+
+    public String smallestNum(String pattern) {
         StringBuilder result = new StringBuilder();
         Stack<Integer> numStack = new Stack<>();
         for (int i = 0; i <= pattern.length(); i++) {

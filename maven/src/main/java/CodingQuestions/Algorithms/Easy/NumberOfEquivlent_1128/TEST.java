@@ -12,6 +12,7 @@ public class TEST {
         };
         numEquivDominoPairs(arr);
     }
+
     public static int numEquivDominoPairs(int[][] dominoes) {
         int[] num = new int[100];
         int res = 0;

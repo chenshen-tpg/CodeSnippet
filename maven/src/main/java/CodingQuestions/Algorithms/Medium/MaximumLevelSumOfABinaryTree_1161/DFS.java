@@ -29,7 +29,8 @@ public class DFS {
         }
         return layer;
     }
-    public void helper (TreeNode node, int layer, List<Integer> li) {
+
+    public void helper(TreeNode node, int layer, List<Integer> li) {
         if (node == null) return;
 
         if (li.size() == layer) {

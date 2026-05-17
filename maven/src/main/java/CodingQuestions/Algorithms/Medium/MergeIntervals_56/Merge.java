@@ -6,9 +6,9 @@ import java.util.LinkedList;
 public class Merge {
     public static void main(String[] args) {
         Merge mi = new Merge();
-        int[][] intervals = new int[][]{{1,3},{2,6},{8,10},{15,18}};
+        int[][] intervals = new int[][]{{1, 3}, {2, 6}, {8, 10}, {15, 18}};
         mi.merge(intervals);
-        Arrays.asList(1,2);
+        Arrays.asList(1, 2);
     }
 
     public int[][] merge(int[][] intervals) {
@@ -34,12 +34,12 @@ public class Merge {
             if (i <= end) {
                 end = Math.max(range[i], end);
             } else {
-                result.add(new int[] {start + min, end + min});
+                result.add(new int[]{start + min, end + min});
                 start = i;
                 end = range[i];
             }
         }
-        result.add(new int[] {start + min, end + min});
+        result.add(new int[]{start + min, end + min});
         return result.toArray(new int[result.size()][]);
     }
 }

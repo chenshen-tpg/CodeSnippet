@@ -4,6 +4,7 @@ public class TwoPointers {
     public static void main(String[] args) {
 
     }
+
     public boolean canChange(String start, String target) {
         int len = start.length();
         int i = 0, j = 0;

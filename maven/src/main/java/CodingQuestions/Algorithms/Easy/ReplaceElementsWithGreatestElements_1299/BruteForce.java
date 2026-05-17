@@ -4,6 +4,7 @@ public class BruteForce {
     public static void main(String[] args) {
 
     }
+
     public int[] replaceElements(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int max = 0;

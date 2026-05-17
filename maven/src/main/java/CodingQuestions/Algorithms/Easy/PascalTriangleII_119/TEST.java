@@ -8,6 +8,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public List<Integer> getRow(int rowIndex) {
         if (rowIndex <= 0) return new ArrayList<>(Arrays.asList(1));
         List<List<Integer>> pascal = new ArrayList<>();

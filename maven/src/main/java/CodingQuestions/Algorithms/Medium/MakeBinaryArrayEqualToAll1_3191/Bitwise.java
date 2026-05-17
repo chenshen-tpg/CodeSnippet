@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Medium.MakeBinaryArrayEqualToAll1_3191;
 
 public class Bitwise {
     public static void main(String[] args) {
-        int [] test = {0,1,1,1,0,0};
+        int[] test = {0, 1, 1, 1, 0, 0};
         Bitwise solution = new Bitwise();
         solution.minOperations(test);
     }

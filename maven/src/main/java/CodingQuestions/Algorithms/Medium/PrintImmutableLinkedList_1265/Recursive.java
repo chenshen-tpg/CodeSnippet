@@ -3,8 +3,6 @@ package CodingQuestions.Algorithms.Medium.PrintImmutableLinkedList_1265;
 import CodingQuestions.Lib.ImmutableListNode;
 
 
-
-
 public class Recursive {
 
     public void printLinkedListInReverse(ImmutableListNode head) {

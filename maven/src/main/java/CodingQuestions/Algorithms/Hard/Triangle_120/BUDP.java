@@ -15,6 +15,7 @@ public class BUDP {
         triangle.add(new ArrayList<>(Arrays.asList(4, 1, 8, 3)));
         System.out.println(t.minimumTotal(triangle));
     }
+
     public int minimumTotal(List<List<Integer>> t) {
         for (int row = 1; row < t.size(); row++) {
             for (int col = 0; col <= row; col++) {

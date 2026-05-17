@@ -7,7 +7,7 @@ public class DP {
     }
 
     public int countLetters(String s) {
-        int [] substrings = new int[s.length()];
+        int[] substrings = new int[s.length()];
         int total = 1;
         substrings[0] = 1;
         for (int i = 1; i < s.length(); i++) {

@@ -6,10 +6,10 @@ public class MeTringInitial {
         StringBuilder temp = new StringBuilder();
 
         for (int i = 0; i < s.length(); i++) {
-            if (!temp.toString().contains(s.charAt(i)+"")) {
+            if (!temp.toString().contains(s.charAt(i) + "")) {
                 temp.append(s.charAt(i));
             } else {
-                if (s.contains(temp.toString())){
+                if (s.contains(temp.toString())) {
                     count++;
                 }
             }

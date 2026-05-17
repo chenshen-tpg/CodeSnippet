@@ -9,6 +9,7 @@ public class SlidingWindows {
         SlidingWindows solution = new SlidingWindows();
         solution.countVowelSubstrings("cuaieuouac");
     }
+
     public int countVowelSubstrings(String word) {
         int count = 0;
         Map<Character, Integer> hm = new HashMap<>();

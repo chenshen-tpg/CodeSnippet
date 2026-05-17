@@ -13,6 +13,7 @@ public class Set {
         int result = memoryExceed.numUniqueEmails(emails);
         System.out.println("Number of unique emails: " + result); // Expected output: 2
     }
+
     public int numUniqueEmails(String[] emails) {
         java.util.Set<String> set = new HashSet<>();
         for (String email : emails) {

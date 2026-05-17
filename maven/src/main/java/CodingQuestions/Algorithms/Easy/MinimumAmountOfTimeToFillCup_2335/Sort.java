@@ -6,6 +6,7 @@ public class Sort {
     public static void main(String[] args) {
 
     }
+
     public int fillCups(int[] amount) {
         int res = 0;
         while (amount[0] > 0 || amount[1] > 0 || amount[2] > 0) {
@@ -14,7 +15,7 @@ public class Sort {
                 amount[1]--;
                 amount[2]--;
                 res++;
-            } else if (amount[2] > 0){
+            } else if (amount[2] > 0) {
                 amount[2]--;
                 res++;
             }

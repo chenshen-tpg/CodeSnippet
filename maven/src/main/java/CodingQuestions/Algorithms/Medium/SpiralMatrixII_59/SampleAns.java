@@ -4,6 +4,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
         int count = 1;

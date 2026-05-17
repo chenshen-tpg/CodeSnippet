@@ -4,6 +4,7 @@ public class SampleAns2 {
     public static void main(String[] args) {
 
     }
+
     public int compareVersion(String version1, String version2) {
         String[] nums1 = version1.split("\\.");
         String[] nums2 = version2.split("\\.");

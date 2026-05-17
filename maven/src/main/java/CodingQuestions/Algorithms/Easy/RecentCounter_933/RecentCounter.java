@@ -6,6 +6,10 @@ import java.util.Queue;
 public class RecentCounter {
     Queue<Integer> q;
 
+    public RecentCounter() {
+        q = new LinkedList<>();
+    }
+
     public static void main(String[] args) {
 
         RecentCounter counter = new RecentCounter();
@@ -17,16 +21,14 @@ public class RecentCounter {
         // Test case 4
         System.out.println(counter.ping(3002)); // Expected output: 3
     }
-    public RecentCounter() {
-        q = new LinkedList<>();
-    }
+
     //seems not right but accepted...
     public int ping(int t) {
         int ans = 1;
         q.add(t);
         int lowerBound = t - 3000;
         int highBound = t;
-        for (Integer i:q) {
+        for (Integer i : q) {
             if (lowerBound <= i && i < highBound) {
                 ans++;
             }

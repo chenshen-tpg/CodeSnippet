@@ -7,6 +7,7 @@ public class MeTrying {
     public static void main(String[] args) {
 
     }
+
     public boolean uniqueOccurrences(int[] arr) {
         HashMap<Integer, Integer> hm = new HashMap();
         for (int i = 0; i < arr.length; i++) {

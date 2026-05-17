@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Easy.AddStrings_415;
 public class TEST {
     public static void main(String[] args) {
         TEST obj = new TEST();
-        System.out.println(obj.addStrings("12","91"));
+        System.out.println(obj.addStrings("12", "91"));
     }
 
     public String addStrings(String num1, String num2) {

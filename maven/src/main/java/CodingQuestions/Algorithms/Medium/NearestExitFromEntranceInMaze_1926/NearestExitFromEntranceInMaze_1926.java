@@ -5,45 +5,47 @@ import java.util.Queue;
 
 public class NearestExitFromEntranceInMaze_1926 {
     public static void main(String[] args) {
-        String [][] maze = {{"+","+","+"},{".",".","."},{"+","+","+"}};
-        int [] entrance = {1,0};
+        String[][] maze = {{"+", "+", "+"}, {".", ".", "."}, {"+", "+", "+"}};
+        int[] entrance = {1, 0};
         for (int i = 0; i < maze.length; i++) {
             for (int j = 0; j < maze[i].length; j++) {
-                if (i == entrance[0] && j == entrance[1]){
+                if (i == entrance[0] && j == entrance[1]) {
                     System.out.println(maze[i][j]);
                 }
             }
         }
     }
 
-    public static boolean helper (int[][]maze,int x, int y){
+    public static boolean helper(int[][] maze, int x, int y) {
         if (x > maze[0].length || y > maze[0].length) {
             return false;
         }
         if (".".equals(maze[x][y])) {
 
         }
-        helper(maze,x+1,y);
-        helper(maze,x-1,y);
-        helper(maze,x,y+1);
-        helper(maze,x,y-1);
+        helper(maze, x + 1, y);
+        helper(maze, x - 1, y);
+        helper(maze, x, y + 1);
+        helper(maze, x, y - 1);
         return true;
     }
-    public static void remover (){
+
+    public static void remover() {
         String s = "[[\"+\",\"+\",\"+\"],[\".\",\".\",\".\"],[\"+\",\"+\",\"+\"]]";
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
-            if(s.charAt(i)=='[') {
+            if (s.charAt(i) == '[') {
                 sb.append("{");
-            }else if (s.charAt(i)==']'){
+            } else if (s.charAt(i) == ']') {
                 sb.append("}");
-            }else{
+            } else {
                 sb.append(s.charAt(i));
             }
         }
         System.out.println(sb.toString());
     }
-    public static int xx(int [][] maze, int [] entrance) {
+
+    public static int xx(int[][] maze, int[] entrance) {
         int rows = maze.length, cols = maze[0].length;
         int[][] dirs = new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
         int startRow = entrance[0], startCol = entrance[1];
@@ -66,5 +68,5 @@ public class NearestExitFromEntranceInMaze_1926 {
         }
         return -1;
     }
-    
+
 }

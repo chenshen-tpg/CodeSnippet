@@ -4,6 +4,7 @@ public class SampleAns2 {
     public static void main(String[] args) {
 
     }
+
     public int search(int[] nums, int target) {
         int n = nums.length - 1;
         int l = 0, r = nums.length - 1;
@@ -15,13 +16,14 @@ public class SampleAns2 {
                 r = mid - 1;
             }
         }
-        int ans = binarySearch(nums, 0 , l - 1, target);
+        int ans = binarySearch(nums, 0, l - 1, target);
         if (ans != -1) {
             return ans;
         }
         return binarySearch(nums, l, n, target);
     }
-    private int binarySearch( int[] nums, int left, int right, int target) {
+
+    private int binarySearch(int[] nums, int left, int right, int target) {
         while (left <= right) {
             int mid = (left + right) / 2;
             if (nums[mid] == target) {

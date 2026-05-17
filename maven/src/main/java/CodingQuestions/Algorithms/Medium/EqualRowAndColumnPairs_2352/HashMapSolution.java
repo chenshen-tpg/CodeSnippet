@@ -6,10 +6,11 @@ import java.util.HashMap;
 public class HashMapSolution {
     public static void main(String[] args) {
         HashMapSolution solution = new HashMapSolution();
-        int [][] arr = new int [][]{{3,1,2,2},{1,4,4,5},{2,4,2,2},{2,4,2,2}};
+        int[][] arr = new int[][]{{3, 1, 2, 2}, {1, 4, 4, 5}, {2, 4, 2, 2}, {2, 4, 2, 2}};
         solution.helper(arr);
     }
-    public int  helper (int [][] grid) {
+
+    public int helper(int[][] grid) {
         int count = 0;
         int n = grid.length;
         HashMap<String, Integer> hm = new HashMap();

@@ -3,6 +3,13 @@ package CodingQuestions.Algorithms.Easy.ImplementQueueusingStacks_232;
 import java.util.Stack;
 
 public class ImplementQueueusingStacks_232 {
+    Stack<Integer> stackIn;
+    Stack<Integer> stackOut;
+    public ImplementQueueusingStacks_232() {
+        stackIn = new Stack();
+        stackOut = new Stack();
+    }
+
     public static void main(String[] args) {
         ImplementQueueusingStacks_232 queue = new ImplementQueueusingStacks_232();
         // Test case 1: Push elements and check the order
@@ -24,12 +31,6 @@ public class ImplementQueueusingStacks_232 {
         // Test case 3: Check empty queue
         System.out.println(queue.pop());  // Expected output: -1
         System.out.println(queue.peek()); // Expected output: -1
-    }
-    Stack<Integer> stackIn;
-    Stack<Integer> stackOut;
-    public ImplementQueueusingStacks_232() {
-       stackIn = new Stack();
-       stackOut = new Stack();
     }
 
     public void push(int x) {

@@ -31,7 +31,8 @@ public class StackSolution {
         }
         return max;
     }
-    private int model (ListNode head) {
+
+    private int model(ListNode head) {
         ListNode current = head;
         Stack<Integer> st = new Stack<Integer>();
         while (current != null) {

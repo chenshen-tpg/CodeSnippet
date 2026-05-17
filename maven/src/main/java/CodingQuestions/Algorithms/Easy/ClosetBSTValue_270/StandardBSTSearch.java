@@ -11,7 +11,8 @@ public class StandardBSTSearch {
         helper(root, target);
         return ans;
     }
-    public void helper (TreeNode root, double target) {
+
+    public void helper(TreeNode root, double target) {
         if (root == null) return;
         double diff = Math.abs(root.val - target);
         if (diff < min) {

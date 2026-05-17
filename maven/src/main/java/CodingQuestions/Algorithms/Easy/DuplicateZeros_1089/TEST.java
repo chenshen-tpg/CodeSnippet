@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Easy.DuplicateZeros_1089;
 public class TEST {
     public static void main(String[] args) {
         TEST solution = new TEST();
-        solution.duplicateZeros(new int [] {1,0,2,3,0,4,5,0});
+        solution.duplicateZeros(new int[]{1, 0, 2, 3, 0, 4, 5, 0});
     }
 
     public void duplicateZeros(int[] arr) {

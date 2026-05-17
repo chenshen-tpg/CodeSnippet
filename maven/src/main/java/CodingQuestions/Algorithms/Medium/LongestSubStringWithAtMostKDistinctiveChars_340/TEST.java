@@ -7,7 +7,7 @@ public class TEST {
 
     }
 
-    public  int helper (String s, int k) {
+    public int helper(String s, int k) {
         int[] count = new int[256];
         int num = 0, i = 0, res = 0;
         for (int j = 0; j < s.length(); j++) {
@@ -18,7 +18,7 @@ public class TEST {
 //            }
 //            count[s.charAt(j)]++;
             if (num > k) {
-                while (--count[s.charAt(i++)] > 0);
+                while (--count[s.charAt(i++)] > 0) ;
                 num--;
             }
             res = Math.max(res, j - i + 1);

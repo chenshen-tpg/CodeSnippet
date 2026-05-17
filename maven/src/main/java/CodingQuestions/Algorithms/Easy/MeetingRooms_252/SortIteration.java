@@ -10,9 +10,10 @@ public class SortIteration {
         boolean result = s.canAttendMeetings(intervals);
         System.out.println(result);
     }
+
     public boolean canAttendMeetings(int[][] intervals) {
         if (intervals.length == 0) return true;
-        Arrays.sort(intervals, ((int [] a, int [] b) -> Integer.compare(a[0], b[0])));
+        Arrays.sort(intervals, ((int[] a, int[] b) -> Integer.compare(a[0], b[0])));
         int end = intervals[0][1];
         for (int i = 1; i < intervals.length; i++) {
             if (intervals[i][0] < end) return false;

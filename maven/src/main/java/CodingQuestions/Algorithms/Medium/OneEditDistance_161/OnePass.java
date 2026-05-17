@@ -4,6 +4,7 @@ public class OnePass {
     public static void main(String[] args) {
 
     }
+
     public boolean isOneEditDistance(String s, String t) {
         int slen = s.length(), tlen = t.length();
         //always iterate the STRING with smaller length

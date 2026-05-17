@@ -6,6 +6,11 @@ import java.util.List;
 public class OnlineStockSpan_BruteForce {
 
     List<Integer> li;
+
+    public OnlineStockSpan_BruteForce() {
+        li = new ArrayList<>();
+    }
+
     public static void main(String[] args) {
         OnlineStockSpan_BruteForce o = new OnlineStockSpan_BruteForce();
         System.out.println(o.next(29));
@@ -18,9 +23,6 @@ public class OnlineStockSpan_BruteForce {
         // maximum number of consecutive days
     }
 
-    public OnlineStockSpan_BruteForce() {
-        li = new ArrayList<>();
-    }
     public int next(int price) {
         int curIndex = 1;
         for (int i = 0; i < li.size(); i++) {

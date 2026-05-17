@@ -4,10 +4,11 @@ public class OptiSolution {
 
 
     public static void main(String[] args) {
-        int [] a = {1,3,2,4};
-        int [] b = {3,1,2,4};
+        int[] a = {1, 3, 2, 4};
+        int[] b = {3, 1, 2, 4};
         findThePrefixCommonArray(a, b);
     }
+
     public static int[] findThePrefixCommonArray(int[] A, int[] B) {
         int n = A.length;
         int[] prefixCommonArray = new int[n];

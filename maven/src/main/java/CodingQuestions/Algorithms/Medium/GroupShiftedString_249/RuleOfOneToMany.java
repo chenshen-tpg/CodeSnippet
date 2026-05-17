@@ -12,7 +12,7 @@ public class RuleOfOneToMany {
 
     public List<List<String>> groupStrings(String[] strings) {
         List<List<String>> res = new ArrayList();
-        HashMap<Integer,List<String>> hm = new HashMap();
+        HashMap<Integer, List<String>> hm = new HashMap();
         for (int i = 0; i < strings.length; i++) {
             hm.computeIfAbsent(strings[i].length(), k -> new ArrayList<>()).add(strings[i]);
         }

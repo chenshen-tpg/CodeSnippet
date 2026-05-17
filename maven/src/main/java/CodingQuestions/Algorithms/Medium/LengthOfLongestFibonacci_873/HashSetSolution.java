@@ -5,10 +5,10 @@ import java.util.Set;
 
 public class HashSetSolution {
     public static void main(String[] args) {
-        helper(new int [] {1, 3, 7, 11, 12, 14, 18});
+        helper(new int[]{1, 3, 7, 11, 12, 14, 18});
     }
 
-    public static int helper (int [] arr) {
+    public static int helper(int[] arr) {
         int n = arr.length;
         Set<Integer> numSet = new HashSet<>();
         for (int num : arr) numSet.add(num);

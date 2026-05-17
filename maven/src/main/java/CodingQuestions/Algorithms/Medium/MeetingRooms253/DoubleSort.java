@@ -4,11 +4,12 @@ import java.util.Arrays;
 
 public class DoubleSort {
     public static void main(String[] args) {
-        int [][] interval = {{0 , 30}, {5, 10}, {15, 20}};
+        int[][] interval = {{0, 30}, {5, 10}, {15, 20}};
         DoubleSort m = new DoubleSort();
         System.out.println(m.minMeetingRoomsSolutions(interval));
 
     }
+
     public int minMeetingRoomsSolutions(int[][] intervals) {
         int[] starts = new int[intervals.length];
         int[] ends = new int[intervals.length];

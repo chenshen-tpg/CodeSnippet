@@ -2,10 +2,11 @@ package CodingQuestions.Algorithms.Medium.JumpGame_55;
 
 public class SampleAns {
     public static void main(String[] args) {
-        int[] nums1 = {2, 3, 1, 1, 4 , 1, 1 ,2, 1, 2};
+        int[] nums1 = {2, 3, 1, 1, 4, 1, 1, 2, 1, 2};
         System.out.println(jump(nums1)); // Output: 2
 
     }
+
     public static int jump(int[] nums) {
         if (nums.length < 2) return 0;
         int jumps = 0;

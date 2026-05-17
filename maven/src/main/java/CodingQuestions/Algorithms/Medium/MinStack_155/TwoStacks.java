@@ -5,13 +5,14 @@ import java.util.Stack;
 public class TwoStacks {
     Stack<Integer> stack;
     Stack<Integer> minStack;
-    public static void main(String[] args) {
-
-    }
 
     public TwoStacks() {
         stack = new Stack<>();
         minStack = new Stack<>();
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public void push(int val) {

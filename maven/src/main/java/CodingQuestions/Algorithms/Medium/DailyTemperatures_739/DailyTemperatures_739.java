@@ -10,9 +10,10 @@ public class DailyTemperatures_739 {
             System.out.println(i);
         }
     }
+
     private int[] dailyTemperatures(int[] arr) {
         Stack<Integer> stack = new Stack<>();
-        int [] ans = new int[arr.length];
+        int[] ans = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
             int curTem = arr[i];
             while (!stack.isEmpty() && arr[stack.peek()] < curTem) {
@@ -22,12 +23,13 @@ public class DailyTemperatures_739 {
             stack.push(i);
         }
 
-    return ans;
-}
+        return ans;
+    }
+
     public int[] dailyTemperatures_model(int[] temperatures) {
         int n = temperatures.length;
         int[] answer = new int[n];
-        Stack <Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<>();
 
         for (int currDay = 0; currDay < n; currDay++) {
             int currentTemp = temperatures[currDay];
@@ -40,10 +42,11 @@ public class DailyTemperatures_739 {
 
         return answer;
     }
+
     private int[] dailyTemperatures_bruteForce(int[] arr) {
-        int [] ans = new int [arr.length];
+        int[] ans = new int[arr.length];
         int index = 0;
-        for (int i = 0; i < arr.length;i++) {
+        for (int i = 0; i < arr.length; i++) {
             int count = 0;
             for (int j = i; j < arr.length; j++) {
                 if (arr[j] <= arr[i]) {
@@ -59,7 +62,7 @@ public class DailyTemperatures_739 {
 
 
     private int[] dailyTemperatures_gpt(int[] arr) {
-        Stack <int[]> stack = new Stack<>();
+        Stack<int[]> stack = new Stack<>();
         for (int i = 0; i < arr.length; i++) {
             while (!stack.isEmpty() && arr[i] > stack.peek()[0]) {
                 int[] temp = stack.pop();

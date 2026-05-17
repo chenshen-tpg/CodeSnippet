@@ -4,19 +4,7 @@ public class SubStringSolution {
     public static void main(String[] args) {
 
     }
-    public boolean hasMatch_Long(String s, String p) {
-        int index = -1;
-        for (int i = 0; i < p.length(); i++) {
-            if (p.charAt(i) == '*') {
-                index = i;
-                break;
-            }
-        }
-        int num1 = fun(s, p.substring(0, index));
-        if (num1 == -1) return false;
-        int num2 = fun(s.substring(num1), p.substring(index + 1));
-        return num2 != -1;
-    }
+
     static int fun(String s, String k) {
         int n = s.length();
         int m = k.length();
@@ -30,5 +18,19 @@ public class SubStringSolution {
             if (j == m) return i + j;
         }
         return -1;
+    }
+
+    public boolean hasMatch_Long(String s, String p) {
+        int index = -1;
+        for (int i = 0; i < p.length(); i++) {
+            if (p.charAt(i) == '*') {
+                index = i;
+                break;
+            }
+        }
+        int num1 = fun(s, p.substring(0, index));
+        if (num1 == -1) return false;
+        int num2 = fun(s.substring(num1), p.substring(index + 1));
+        return num2 != -1;
     }
 }

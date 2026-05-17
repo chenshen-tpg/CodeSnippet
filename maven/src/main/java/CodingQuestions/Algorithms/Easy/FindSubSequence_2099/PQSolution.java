@@ -4,7 +4,7 @@ import java.util.PriorityQueue;
 
 public class PQSolution {
     public static void main(String[] args) {
-        maxSubsequence(new int [] {2,1,3,3},2);
+        maxSubsequence(new int[]{2, 1, 3, 3}, 2);
     }
 
     public static int[] maxSubsequence(int[] nums, int k) {

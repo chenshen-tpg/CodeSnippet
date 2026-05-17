@@ -3,10 +3,11 @@ package CodingQuestions.Algorithms.Medium.BinaryTreeLongestConsecutiveSequenceII
 import CodingQuestions.Lib.TreeNode;
 
 public class DFSArray {
+    int maxval = 0;
+
     public static void main(String[] args) {
 
     }
-    int maxval = 0;
 
     public int longestConsecutive(TreeNode root) {
         longestPath(root);
@@ -14,7 +15,7 @@ public class DFSArray {
     }
 
     public int[] longestPath(TreeNode root) {
-        if (root == null) return new int[] {0,0};
+        if (root == null) return new int[]{0, 0};
         int inr = 1, dcr = 1;
         if (root.left != null) {
             int[] left = longestPath(root.left);
@@ -35,6 +36,6 @@ public class DFSArray {
         }
 
         maxval = Math.max(maxval, dcr + inr - 1);
-        return new int[] {inr, dcr};
+        return new int[]{inr, dcr};
     }
 }

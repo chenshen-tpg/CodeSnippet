@@ -38,7 +38,6 @@ import java.util.TreeSet;
  allOne.inc("leet");
  allOne.getMaxKey(); // return "hello"
  allOne.getMinKey(); // return "leet"
-
  *
  *
  *
@@ -47,16 +46,17 @@ public class HashMapAndSet {
     private Map<String, Integer> count;
     private TreeSet<Pair<Integer, String>> set;
 
-    public static void main(String[] args) {
-
-    }
     public HashMapAndSet() {
         count = new HashMap<>();
         set = new TreeSet<>((a, b) -> a.getKey().equals(b.getKey()) ? a.getValue().compareTo(b.getValue()) : a.getKey().compareTo(b.getKey()));
     }
 
+    public static void main(String[] args) {
+
+    }
+
     public void inc(String key) {
-        int n = count.getOrDefault(key , 0);
+        int n = count.getOrDefault(key, 0);
         count.put(key, n + 1);
         set.remove(new Pair<>(n, key));
         set.add(new Pair<>(n + 1, key));
@@ -78,6 +78,6 @@ public class HashMapAndSet {
     }
 
     public String getMinKey() {
-        return set.isEmpty()? "" : set.first().getValue();
+        return set.isEmpty() ? "" : set.first().getValue();
     }
 }

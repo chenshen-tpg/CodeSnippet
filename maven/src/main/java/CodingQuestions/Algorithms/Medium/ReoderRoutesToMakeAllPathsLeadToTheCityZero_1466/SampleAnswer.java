@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SampleAnswer {
-    boolean [] visited;
+    boolean[] visited;
     List<List<Integer>> al;
 
     public static void main(String[] args) {
@@ -20,23 +20,23 @@ public class SampleAnswer {
     }
 
 
-    public int minReorder (int n, int [][] arr) {
+    public int minReorder(int n, int[][] arr) {
         al = new ArrayList<>();
         visited = new boolean[n];
         for (int i = 0; i < n; i++)
             al.add(new ArrayList<>());
-        for (int [] a : arr) {
+        for (int[] a : arr) {
             al.get(a[0]).add(a[1]);
             al.get(a[1]).add(-a[0]);
         }
-        return dfs(al,0);
+        return dfs(al, 0);
     }
 
     private int dfs(List<List<Integer>> al, int i) {
         int change = 0;
         for (int to : al.get(i)) {
             if (!visited[Math.abs(to)]) {
-                change += dfs (al, Math.abs(to)) + (to > 0 ? 1:0);
+                change += dfs(al, Math.abs(to)) + (to > 0 ? 1 : 0);
             }
         }
         return change;

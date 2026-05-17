@@ -2,9 +2,11 @@ package CodingQuestions.Algorithms.Hard.SovlingQuestionsWithSkip_2140;
 
 public class DPrecursive {
     long dp[];
+
     public static void main(String[] args) {
 
     }
+
     public long mostPoints(int[][] questions) {
         int n = questions.length;
         dp = new long[n];

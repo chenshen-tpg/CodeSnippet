@@ -3,7 +3,7 @@ package CodingQuestions.Algorithms.Medium.MaxNumberOfKSumPairs_1679;
 public class hashmapSolution {
     public static void main(String[] args) {
         hashmapSolution mn = new hashmapSolution();
-        System.out.println(mn.maxOperations_hashmap(new int[]{4,4,1,3,1,3,2,2,5,5,1,5,2,1,2,3,5,4}, 2));
+        System.out.println(mn.maxOperations_hashmap(new int[]{4, 4, 1, 3, 1, 3, 2, 2, 5, 5, 1, 5, 2, 1, 2, 3, 5, 4}, 2));
     }
 
     public int maxOperations_hashmap(int[] nums, int k) {

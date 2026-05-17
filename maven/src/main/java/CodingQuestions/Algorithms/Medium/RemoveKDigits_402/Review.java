@@ -4,7 +4,8 @@ public class Review {
     public static void main(String[] args) {
 
     }
-    public String removeKDigits (String num, int k) {
+
+    public String removeKDigits(String num, int k) {
         if (k == num.length()) return "0";
         StringBuilder sb = new StringBuilder();
         for (char digit : num.toCharArray()) {
@@ -15,7 +16,7 @@ public class Review {
             sb.append(digit);
         }
         while (k > 0) {
-            sb.deleteCharAt(sb.length() -1);
+            sb.deleteCharAt(sb.length() - 1);
             k--;
         }
         int i = 0;

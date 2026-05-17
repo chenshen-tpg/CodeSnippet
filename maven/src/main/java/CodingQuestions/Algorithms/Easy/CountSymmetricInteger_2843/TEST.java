@@ -3,8 +3,9 @@ package CodingQuestions.Algorithms.Easy.CountSymmetricInteger_2843;
 public class TEST {
     public static void main(String[] args) {
         TEST solution = new TEST();
-        solution.countSymmetricIntegers(1200,1230);
+        solution.countSymmetricIntegers(1200, 1230);
     }
+
     public int countSymmetricIntegers(int low, int high) {
         int count = 0;
         while (low <= high) {

@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class test {
-//    Input: words1 = ["acaac","cccbb","aacbb","caacc","bcbbb"], words2 = ["c","cc","b"]
+    //    Input: words1 = ["acaac","cccbb","aacbb","caacc","bcbbb"], words2 = ["c","cc","b"]
     public static void main(String[] args) {
         test solution = new test();
-        System.out.println(solution.wordSubsets(new String [] {"acaac","cccbb","aacbb","caacc","bcbbb","bcc","ccccbae"}, new String [] {"c","cc","b"}));
+        System.out.println(solution.wordSubsets(new String[]{"acaac", "cccbb", "aacbb", "caacc", "bcbbb", "bcc", "ccccbae"}, new String[]{"c", "cc", "b"}));
     }
 
     public List<String> wordSubsets(String[] words1, String[] words2) {
-        int [] count = new int [26];
-        int [] temp;
+        int[] count = new int[26];
+        int[] temp;
         int i;
         ArrayList<String> res = new ArrayList();
         for (String word2 : words2) {
@@ -28,9 +28,10 @@ public class test {
         }
         return res;
     }
-    public int [] helper (String s) {
-        int [] temp = new int [26];
-        for (char c : s.toCharArray()) temp[c - 'a'] ++;
+
+    public int[] helper(String s) {
+        int[] temp = new int[26];
+        for (char c : s.toCharArray()) temp[c - 'a']++;
         return temp;
     }
 }

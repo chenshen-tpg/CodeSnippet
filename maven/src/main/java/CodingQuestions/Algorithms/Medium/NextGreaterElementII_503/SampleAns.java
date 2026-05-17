@@ -6,6 +6,7 @@ public class SampleAns {
     public static void main(String[] args) {
 
     }
+
     public int[] nextGreaterElements(int[] nums) {
         int n = nums.length;
         int[] ans = new int[n];

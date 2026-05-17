@@ -32,10 +32,11 @@ public class WordPattern_290 {
 
         return true;
     }
+
     public boolean wordPattern1(String pattern, String s) {
         StringBuilder sb = new StringBuilder();
-        String [] ss = s.split(" ");
-        for (String k:ss) {
+        String[] ss = s.split(" ");
+        for (String k : ss) {
             if ("dog".equals(k)) {
                 sb.append("a");
             } else if ("cat".equals(k)) {

@@ -4,18 +4,17 @@ import java.util.HashSet;
 import java.util.PriorityQueue;
 
 class SmallestInfiniteSet {
-    public static void main(String[] args) {
-
-    }
-
     private HashSet<Integer> add;
     private PriorityQueue<Integer> pr;
     private Integer cur;
-
     public SmallestInfiniteSet() {
         add = new HashSet<>();
         pr = new PriorityQueue<>();
         cur = 1;
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public int popSmallest() {

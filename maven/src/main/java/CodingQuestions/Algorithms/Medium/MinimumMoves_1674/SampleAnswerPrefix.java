@@ -21,7 +21,7 @@ public class SampleAnswerPrefix {
      */
     public static void main(String[] args) {
         SampleAnswerPrefix obj = new SampleAnswerPrefix();
-        obj.minMoves(new int[]{1,2,2,1}, 2);
+        obj.minMoves(new int[]{1, 2, 2, 1}, 2);
     }
 
     public int minMoves(int[] nums, int limit) {

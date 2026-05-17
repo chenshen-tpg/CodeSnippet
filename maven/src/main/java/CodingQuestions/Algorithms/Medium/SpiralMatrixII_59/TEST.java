@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Medium.SpiralMatrixII_59;
 
 public class TEST {
     public static void main(String[] args) {
-        int [][] test = {{1,2,3},{8,9,4},{7,6,5}};
+        int[][] test = {{1, 2, 3}, {8, 9, 4}, {7, 6, 5}};
         int fullLen = 3 * 3, n = 3;
         while (fullLen > 0) {
             for (int i = 0; i < n; i++) {

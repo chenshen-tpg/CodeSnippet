@@ -5,6 +5,12 @@ import java.util.Map;
 import java.util.TreeSet;
 
 public class test {
+    private Map<Integer, TreeSet<Integer>> numberToIndices = new HashMap<>();
+    private Map<Integer, Integer> indexToNumbers = new HashMap<>();
+    // Constructor
+    public test() {
+    }
+
     public static void main(String[] args) {
         test numberContainers = new test();
         System.out.println(numberContainers.find(10));
@@ -14,14 +20,6 @@ public class test {
         System.out.println(numberContainers.find(10));
         System.out.println(numberContainers.find(20));
         System.out.println(numberContainers.find(30));
-    }
-
-
-    private Map<Integer, TreeSet<Integer>> numberToIndices = new HashMap<>();
-    private Map<Integer, Integer> indexToNumbers  = new HashMap<>();
-
-    // Constructor
-    public test() {
     }
 
     public void change(int index, int number) {

@@ -2,7 +2,7 @@ package CodingQuestions.Algorithms.Hard.PartitionEqualSubSetSum_416;
 
 public class DP {
     public static void main(String[] args) {
-        int [] nums = {1, 5, 11, 5};
+        int[] nums = {1, 5, 11, 5};
         DP solution = new DP();
         solution.canPartition(nums);
     }

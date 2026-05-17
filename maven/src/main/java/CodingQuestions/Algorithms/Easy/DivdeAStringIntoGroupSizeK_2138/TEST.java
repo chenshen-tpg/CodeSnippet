@@ -10,8 +10,8 @@ public class TEST {
         } else {
             size = len / k;
         }
-        String [] res = new String [size];
-        int index = 0, temp = 0,tempindex = 0;
+        String[] res = new String[size];
+        int index = 0, temp = 0, tempindex = 0;
         StringBuilder tempString = new StringBuilder();
         for (int i = 0; i < len; i++) {
             temp++;

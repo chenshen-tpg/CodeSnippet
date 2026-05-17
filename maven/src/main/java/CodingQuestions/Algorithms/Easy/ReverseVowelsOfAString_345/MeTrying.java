@@ -2,10 +2,11 @@ package CodingQuestions.Algorithms.Easy.ReverseVowelsOfAString_345;
 
 public class MeTrying {
     public static void main(String[] args) {
-        StringBuilder sb  = new StringBuilder("asd");
+        StringBuilder sb = new StringBuilder("asd");
         sb.reverse();
         System.out.println(sb.charAt(1));
     }
+
     public String reverseVowels(String s) {
         StringBuilder sb = new StringBuilder();
         StringBuilder temp = new StringBuilder();
@@ -19,8 +20,7 @@ public class MeTrying {
         for (int i = 0; i < s.length(); i++) {
             if ("aeiouAEIOU".contains(s.charAt(i) + "")) {
                 sb.append(temp.charAt(index++));
-            }
-            else {
+            } else {
                 sb.append(s.charAt(i));
             }
         }

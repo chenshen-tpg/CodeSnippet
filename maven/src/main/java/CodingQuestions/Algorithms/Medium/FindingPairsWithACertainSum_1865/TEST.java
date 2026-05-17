@@ -4,15 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TEST {
-    public static void main(String[] args) {
-
-    }
-
-
     private int[] nums1;
     private int[] nums2;
     private Map<Integer, Integer> nums2Freqs;
-
     public TEST(int[] nums1, int[] nums2) {
         this.nums1 = nums1;
         this.nums2 = nums2;
@@ -20,6 +14,10 @@ public class TEST {
         for (int num : nums2) {
             nums2Freqs.put(num, nums2Freqs.getOrDefault(num, 0) + 1);
         }
+    }
+
+    public static void main(String[] args) {
+
     }
 
     public void add(int index, int val) {

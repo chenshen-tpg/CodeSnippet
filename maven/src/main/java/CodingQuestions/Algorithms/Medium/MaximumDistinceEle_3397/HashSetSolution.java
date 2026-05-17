@@ -11,6 +11,7 @@ public class HashSetSolution {
         HashSetSolution obj = new HashSetSolution();
         System.out.println(obj.maxDistinctElementsNEXT(nums, k));
     }
+
     public int maxDistinctElementsNEXT(int[] arr, int diff) {
         int prev = Integer.MIN_VALUE;
         Set<Integer> ans = new HashSet<>();

@@ -10,6 +10,7 @@ class Node {
     Node prev;
     Node next;
     Set<String> keys = new HashSet<>();
+
     Node(int freq) {
         this.freq = freq;
     }

@@ -1,7 +1,7 @@
 package CodingQuestions.Algorithms.Medium.NumberOfSubStringContainingAllThreeCharacter_1358;
 
 public class CheckLast {
-    
+
     public static void main(String[] args) {
 
     }
@@ -9,7 +9,7 @@ public class CheckLast {
     public int numberOfSubstrings(String s) {
         int len = s.length();
         // Track last position of a, b, c
-        int[] lastPos = { -1, -1, -1 };
+        int[] lastPos = {-1, -1, -1};
         int total = 0;
 
         for (int pos = 0; pos < len; pos++) {

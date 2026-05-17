@@ -20,7 +20,7 @@ public class CheckifaParenthesesStringCanBeValid_2116 {
 //
 //    }
 
-    public static boolean TwoStackToTrack(String s , String locked) {
+    public static boolean TwoStackToTrack(String s, String locked) {
         int length = s.length();
         if (length % 2 == 1) return false;
         Stack<Integer> openBrackets = new Stack<>();
@@ -40,7 +40,7 @@ public class CheckifaParenthesesStringCanBeValid_2116 {
                 }
             }
         }
-        while (!openBrackets.isEmpty() && !unlocked.isEmpty() && openBrackets.peek() < unlocked.peek()){
+        while (!openBrackets.isEmpty() && !unlocked.isEmpty() && openBrackets.peek() < unlocked.peek()) {
             openBrackets.pop();
             unlocked.pop();
         }

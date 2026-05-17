@@ -3,9 +3,10 @@ package CodingQuestions.Algorithms.Medium.SetMatrixZeroes_73;
 public class Iteration {
     public static void main(String[] args) {
         Iteration sm = new Iteration();
-        int[][] matrix = new int[][]{{1,2,3},{4,0,6},{7,8,9}};
+        int[][] matrix = new int[][]{{1, 2, 3}, {4, 0, 6}, {7, 8, 9}};
         sm.setZeroes(matrix);
     }
+
     public void setZeroes(int[][] matrix) {
         int n = matrix.length;
         int m = matrix[0].length;

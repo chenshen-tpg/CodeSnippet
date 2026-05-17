@@ -10,7 +10,7 @@ import java.util.Queue;
 public class CourseScheduleII_210 {
     public static void main(String[] args) {
         CourseScheduleII_210 c = new CourseScheduleII_210();
-        int[][] prerequisites = new int[][]{{1,0},{2,0},{3,1},{3,2}};
+        int[][] prerequisites = new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}};
         int[] res = c.findOrder(4, prerequisites);
         for (int i : res) {
             System.out.println(i);

@@ -10,16 +10,17 @@ public class QueueMemoFlagGraph {
 
 
     public static void main(String[] args) {
-        int [][] graph = {{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}};
+        int[][] graph = {{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}};
         QueueMemoFlagGraph m = new QueueMemoFlagGraph();
         m.eventualSafeNodes(graph);
     }
+
     public List<Integer> eventualSafeNodes(int[][] graph) {
         List<Integer> res = new ArrayList<>();
         Queue<Integer> q = new LinkedList<>();
         List<List<Integer>> memo = new ArrayList<>();
-        int [] indegree = new int[graph.length];
-        boolean [] node = new boolean [graph.length];
+        int[] indegree = new int[graph.length];
+        boolean[] node = new boolean[graph.length];
         for (int i = 0; i < graph.length; i++) memo.add(new ArrayList<>());
         for (int i = 0; i < graph.length; i++) {
             for (int j = 0; j < graph[i].length; j++) {

@@ -4,6 +4,7 @@ public class TEST {
     public static void main(String[] args) {
 
     }
+
     public String licenseKeyFormatting(String s, int k) {
         int count = k;
         StringBuilder sb = new StringBuilder();

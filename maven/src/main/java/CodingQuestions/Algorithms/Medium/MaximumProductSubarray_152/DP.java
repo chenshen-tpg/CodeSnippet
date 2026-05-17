@@ -4,7 +4,8 @@ public class DP {
     public static void main(String[] args) {
 
     }
-    public static int helper (int [] nums) {
+
+    public static int helper(int[] nums) {
         if (nums.length == 0) return 0;
         int max = nums[0];
         int min = nums[0];

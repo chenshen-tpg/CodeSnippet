@@ -2,10 +2,11 @@ package CodingQuestions.Algorithms.Medium.RemoveDuplicatesfromSortedArrayII_80;
 
 public class TwoPointerSwap {
     public static void main(String[] args) {
-        int [] nums = {1,1,1,2,2,3};
+        int[] nums = {1, 1, 1, 2, 2, 3};
         TwoPointerSwap solution = new TwoPointerSwap();
         solution.removeDuplicates(nums);
     }
+
     public int removeDuplicates(int[] nums) {
         if (nums.length == 0) return 0;
         int i = 1;

@@ -2,9 +2,10 @@ package CodingQuestions.Algorithms.Easy.CountPrefixAndSuffixPairsI_3042;
 
 public class CountPrefixAndSuffixPairsI_3042 {
     public static void main(String[] args) {
-        String [] words = {"a","aba","ababa","aa"} ;
+        String[] words = {"a", "aba", "ababa", "aa"};
         countPrefixSuffixPairs(words);
     }
+
     public static int countPrefixSuffixPairs(String[] words) {
         int count = 0;
         for (int i = 0; i < words.length; i++) {

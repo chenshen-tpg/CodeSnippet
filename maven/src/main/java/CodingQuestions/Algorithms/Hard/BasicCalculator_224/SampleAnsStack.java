@@ -11,6 +11,7 @@ public class SampleAnsStack {
 
         System.out.println(new SampleAnsStack().calculate(" 7 - ( 3 + 2 ) ")); // Expected: 2
     }
+
     public int calculate(String s) {
         Stack<Integer> stack = new Stack<>();
         int number = 0, sign = 1, result = 0;

@@ -6,6 +6,7 @@ public class Two {
     public static void main(String[] args) {
 
     }
+
     public ListNode deleteNodes(ListNode head, int m, int n) {
         ListNode currentNode = head;
         ListNode lastMNode = head;

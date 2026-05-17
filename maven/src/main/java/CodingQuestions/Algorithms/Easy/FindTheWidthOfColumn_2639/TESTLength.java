@@ -7,6 +7,6 @@ public class TESTLength {
             a /= 10;
             count++;
         }
-        System.out.println(count );
+        System.out.println(count);
     }
 }

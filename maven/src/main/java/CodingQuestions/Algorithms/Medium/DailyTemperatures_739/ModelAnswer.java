@@ -6,8 +6,9 @@ public class ModelAnswer {
     public static void main(String[] args) {
 
     }
+
     public int[] dailyTemperatures(int[] arr) {
-        int [] ans = new int [arr.length];
+        int[] ans = new int[arr.length];
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < arr.length; i++) {
             int temp = arr[i];

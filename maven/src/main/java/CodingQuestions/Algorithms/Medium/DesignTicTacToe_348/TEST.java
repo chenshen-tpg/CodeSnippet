@@ -1,22 +1,23 @@
 package CodingQuestions.Algorithms.Medium.DesignTicTacToe_348;
 
 public class TEST {
-    int [][] memo;
+    int[][] memo;
     int len;
 
     public TEST(int n) {
-        memo = new int [n][n];
+        memo = new int[n][n];
         len = n;
     }
 
     public int move(int row, int col, int player) {
         memo[row][col] = player;
-        if ( checkRow(row, player) ||
+        if (checkRow(row, player) ||
                 checkCol(col, player) ||
                 (row == col && checkDiag(player)) ||
                 (col == len - row - 1 && checkAnti(player))) return player;
         return 0;
     }
+
     public boolean checkRow(int row, int player) {
         for (int col = 0; col < len; col++) {
             if (memo[row][col] != player) {

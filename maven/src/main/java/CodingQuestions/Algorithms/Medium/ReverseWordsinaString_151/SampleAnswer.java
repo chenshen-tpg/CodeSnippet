@@ -4,6 +4,7 @@ public class SampleAnswer {
     public static void main(String[] args) {
 
     }
+
     public String reverseWords(String s) {
         StringBuilder res = new StringBuilder();
         int startIndex = s.length() - 1;

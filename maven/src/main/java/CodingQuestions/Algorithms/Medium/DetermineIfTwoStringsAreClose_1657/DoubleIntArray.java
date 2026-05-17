@@ -6,7 +6,8 @@ public class DoubleIntArray {
     public static void main(String[] args) {
 
     }
-    public boolean helper (String word1, String word2) {
+
+    public boolean helper(String word1, String word2) {
         if (word1.length() != word2.length()) return false;
         int word1Map[] = new int[26];
         int word2Map[] = new int[26];
