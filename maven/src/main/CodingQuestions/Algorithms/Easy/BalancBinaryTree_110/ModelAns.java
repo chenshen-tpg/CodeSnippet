@@ -3,12 +3,7 @@ package main.CodingQuestions.Algorithms.Easy.BalancBinaryTree_110;
 import main.CodingQuestions.Lib.TreeNode;
 
 public class ModelAns {
-    /***
-     *
-     *
-     * @param args
-     * Given a binary tree, determine if it is height-balanced.
-     */
+
     public static void main(String[] args) {
 
     }
