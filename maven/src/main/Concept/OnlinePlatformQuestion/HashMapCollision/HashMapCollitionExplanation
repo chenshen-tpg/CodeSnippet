@@ -1,0 +1,22 @@
+HashMap collisions happen when two different keys produce the same hash index and are placed in the same bucket.
+This is unavoidable because the number of possible keys is much larger than the number of buckets.
+
+When does this happen?
+When two keys have the same hashCode() result (or their hashes map to the same bucket index).
+Example: "abc".hashCode() % 16 == "def".hashCode() % 16 (if the table size is 16).
+
+Why do we need to solve it?
+If collisions are not handled, one key could overwrite another, or you could lose data.
+Without collision handling, you cannot reliably store and retrieve values.
+
+What could be the issue?
+Too many collisions (bad hash function or too small table) make lookups slow, as you have to search a long list/tree in a bucket.
+If equals() is not implemented correctly, you may not find the right value even if it exists.
+
+When is it okay to keep collisions?
+Collisions are normal and expected; you just need to handle them efficiently.
+If your hash function is good and your table is sized well, collisions will be rare and performance will be good.
+You only need to worry if you see performance problems or if you use custom objects as keys and don’t override equals and hashCode properly.
+
+Summary:
+Collisions are normal in HashMap. You must handle them to avoid data loss and slow lookups. As long as you use a good hash function and implement equals/hashCode correctly, collisions are not a problem.
