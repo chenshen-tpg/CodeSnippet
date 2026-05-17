@@ -1,7 +1,5 @@
 package CodingQuestions.Algorithms.Template.Graph.BFS;
 
-import java.util.*;
-
 class Pair {
     int node, weight;
 

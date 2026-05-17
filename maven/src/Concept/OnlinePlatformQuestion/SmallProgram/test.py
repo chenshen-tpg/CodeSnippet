@@ -1,14 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 class Point:
     def __init__(self, x, y):
         self.x = x
         self.y = y
+
     def __eq__(self, other):
         return isinstance(other, Point) and self.x == other.x and self.y == other.y
+
     def __hash__(self):
         return hash((self.x, self.y))
+
 
 def print_secret_message(url):
     try:
@@ -38,6 +42,7 @@ def print_secret_message(url):
             print(row_str)
     except Exception as e:
         print(f"Error fetching the document: {e}")
+
 
 if __name__ == "__main__":
     doc_url = "https://docs.google.com/document/d/e/2PACX-1vSvM5gDlNvt7npYHhp_XfsJvuntUhq184By5xO_pA4b_gCWeXb6dM6ZxwN8rE6S4ghUsCj2VKR21oEP/pub"
