@@ -5,9 +5,9 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 
-public class TEST {
+public class QueueSolution {
     public static void main(String[] args) {
-        TEST obj = new TEST();
+        QueueSolution obj = new QueueSolution();
         obj.canReach(new int[] {4,2,3,0,3,1,2}, 0);
     }
 
