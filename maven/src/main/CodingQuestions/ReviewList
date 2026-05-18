@@ -1,22 +1,24 @@
 3 Algorithm Question minimal for a day
 ======================================
 
-616 Medium Add Bold Tag in String -> String Manipulation -> keep finding indexOf  16/5/2026
+616. Medium Add Bold Tag in String -> String Manipulation -> keep finding indexOf  16/5/2026
 
-153 Medium Count Binary Substrings -> Binary Search -> rotation means mid > right 16/5/2026
+153. Medium Count Binary Substrings -> Binary Search -> rotation means mid > right 16/5/2026
 
-1920 Easy Build Array from permutation  -> linear ->  Arrays sort 16/5/2026
+1920. Easy Build Array from permutation  -> linear ->  Arrays sort 16/5/2026
 
-696  Easy Count Binary Substrings -> group count and record, changes then record differences -> 17/5/2026
+696.  Easy Count Binary Substrings -> group count and record, changes then record differences -> 17/5/2026
 
-504 Easy Base 7 -> module 7 then divide 7 -> 17/5/2026
+504. Easy Base 7 -> module 7 then divide 7 -> 17/5/2026
 
-1306 Jump game3 -> Queue/Recursive solution -> Don't quite understand recursive but queue is fine ->  17/5/2026 current pos and the next pos.
+1306. Jump game3 -> Queue/Recursive solution -> Don't quite understand recursive but queue is fine ->  17/5/2026 current pos and the next pos.
 
 1502. Can Make Arithmetic Progression From Sequence -> can cut it half -> 18/5/2026
 
-3386 Button with longest push time -> it's not consecutive button press -> 18/5/2026
+3386. Button with longest push time -> it's not consecutive button press -> 18/5/2026
 
-3350 Adjacent Increasing Subarrays Detection II ->  getting the Increase / 2
+3350. Adjacent Increasing Subarrays Detection II ->  getting the Increase / 2  18/5/2026
 
-1722
+257. Binary Tree Paths -> need review   18/5/2026
+
+1722. Need to review later  18/5/2026

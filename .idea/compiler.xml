@@ -11,12 +11,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="my-s3-project" />
-        <module name="SystemDesign" />
         <module name="maven" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Code_Learning" target="21" />
+      <module name="SystemDesign" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>
