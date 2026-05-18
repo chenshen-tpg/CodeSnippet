@@ -1,4 +1,4 @@
-package main.CodingQuestions.Algorithms.Template.Graph.Dijkstra;
+package main.Concept.JavaQuestion.JavaConcept.Graph.Dijkstra;
 
 
 import java.util.ArrayList;

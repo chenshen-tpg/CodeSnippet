@@ -1,4 +1,4 @@
-package main.Concept.JavaQuestion.JavaConcept;
+package main.Concept.JavaQuestion.JavaConcept.VM;
 
 
 import org.openjdk.jol.info.ClassLayout;
