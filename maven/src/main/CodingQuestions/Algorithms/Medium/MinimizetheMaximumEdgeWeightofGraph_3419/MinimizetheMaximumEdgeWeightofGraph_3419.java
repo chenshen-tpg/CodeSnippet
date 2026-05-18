@@ -1,0 +1,4 @@
+package main.CodingQuestions.Algorithms.Medium.MinimizetheMaximumEdgeWeightofGraph_3419;
+
+public class MinimizetheMaximumEdgeWeightofGraph_3419 {
+}

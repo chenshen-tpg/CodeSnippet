@@ -1,0 +1,24 @@
+package main.CodingQuestions.Algorithms.Medium.LongestZigZagPathBinaryTree_1372;
+
+import main.CodingQuestions.Lib.TreeNode;
+
+public class LayerResetDFS {
+
+    int path = 0;
+
+    public static void main(String[] args) {
+
+    }
+
+    public int longestZigZag(TreeNode root) {
+        helper(root, 0, 0);
+        return path;
+    }
+
+    public void helper(TreeNode root, int left, int right) {
+        if (root == null) return;
+        path = Math.max(path, Math.max(left, right));
+        if (root.left != null) helper(root.left, right + 1, 0);
+        if (root.right != null) helper(root.right, 0, left + 1);
+    }
+}
