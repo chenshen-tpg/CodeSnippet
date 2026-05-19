@@ -2,7 +2,7 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Python" name="Python">
-      <configuration sdkName="Python 3.14" />
+      <configuration sdkName="Python 3.14 (Personal_Code)" />
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_9" inherit-compiler-output="true">
@@ -12,7 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="openjdk-21" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:6.1.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:6.1.6" level="project" />
@@ -27,5 +27,6 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:10.1.20" level="project" />
     <orderEntry type="library" name="Maven: software.amazon.awssdk:regions:2.20.0" level="project" />
     <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:3.37.0" level="project" />
+    <orderEntry type="library" name="Python 3.14 (Personal_Code) interpreter library" level="application" />
   </component>
 </module>
