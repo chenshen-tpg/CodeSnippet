@@ -3,7 +3,7 @@ package main.Concept.JavaQuestion.Implementation.CustomisedStack;
 public class IssueDescription {
     // Your previous Plain Text content is preserved below:
 
-// Hello! Your interview question is below. Write code in this pad just like you would normally – your AI Interviewer will be able to see it.
+// Hello! Your interview question is below. Write code in this pad just like you would normally – your HI Interviewer will be able to see it.
 
 // # Linked-List-Based Stack
 
