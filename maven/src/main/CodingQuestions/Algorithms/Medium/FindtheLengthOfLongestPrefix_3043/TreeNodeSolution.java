@@ -9,6 +9,21 @@ public class TreeNodeSolution {
     }
     class TrieNode {
         TrieNode[] children = new TrieNode[10];
+        // Add a value field for debug/printing
+        Integer value = null;
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder();
+            sb.append("TrieNode{");
+            sb.append("value=").append(value).append(", children=[");
+            for (int i = 0; i < children.length; i++) {
+                if (children[i] != null) {
+                    sb.append(i).append(":").append(children[i].value).append(", ");
+                }
+            }
+            sb.append("]}");
+            return sb.toString();
+        }
     }
 
     public int longestCommonPrefix(int[] arr1, int[] arr2) {
@@ -21,8 +36,12 @@ public class TreeNodeSolution {
                 TrieNode next = node.children[index] == null ? new TrieNode() : node.children[index];
                 node.children[index] = next;
                 node = next;
+                node.value = index; // Set value for debug
             }
         }
+
+        // Print the trie structure for debug
+        printTrie(head, "");
 
         int max = 0;
         for (int num : arr2) {
@@ -37,8 +56,18 @@ public class TreeNodeSolution {
                 node = next;
                 max = Math.max(max, i + 1);
             }
-
         }
         return max;
+    }
+
+    // Helper to print the trie
+    private void printTrie(TrieNode node, String prefix) {
+        if (node == null) return;
+        System.out.println(prefix + node);
+        for (int i = 0; i < node.children.length; i++) {
+            if (node.children[i] != null) {
+                printTrie(node.children[i], prefix + i);
+            }
+        }
     }
 }
