@@ -50,14 +50,18 @@ What to shard by: The field or column you use to split the data. It defines how 
 How to distribute it: The rule for assigning those groups to shards. It defines how the data is distributed across machines.
 
 Choosing Your Shard Key
+=======================
 In an interview, a common statement is "I'm going to shard by [field]". The key is knowing what field to use as your shard key and why.
 Bad shard key leads to uneven data distribution, hot spots where one shard gets pounded while others sit idle, and queries that have to hit every shard to find what they need.
 A good shard key distributes data evenly, aligns with your query patterns, and scales as your system grows.
+
 Here's what makes a good shard key:
-High cardinality: The key should have many unique values. Sharding by a boolean field (true/false) means you can only have two shards max, which defeats the purpose. Sharding by user ID when you have millions of users gives you plenty of room to distribute data.
+High cardinality: The key should have many unique values. Sharding by a boolean field (true/false) means you can only have two shards max, which defeats the purpose.
+Sharding by user ID when you have millions of users gives you plenty of room to distribute data.
 Even distribution: Values should spread evenly across shards. If you shard by country and 90% of your users are in the US, that shard will be massively larger than the others. User ID usually distributes well.
 Creation timestamps can work if new records don't all pile onto the most recent shard.
-Aligns with queries: Your most common queries should ideally hit just one shard. If you shard users by user_id, queries like "get user profile" or "get user's orders" hit a single shard. Queries that span all shards become expensive.
+Aligns with queries: Your most common queries should ideally hit just one shard. If you shard users by user_id, queries like "get user profile" or "get user's orders" hit a single shard.
+Queries that span all shards become expensive.
 
 For example, some good shard keys would be:
 🟢 user_id for user-centric app: High cardinality (millions of users), even distribution, and most queries are scoped to a single user anyway ("show me this user's data"). Perfect fit.
@@ -65,4 +69,23 @@ For example, some good shard keys would be:
 Whereas bad ones could be:
 🔴 is_premium (boolean): Only two possible values means only two shards. One shard gets all premium users, the other gets free users. If most users are free, that shard is overloaded.
 🔴 created_at for a growing table: All new writes go to the most recent shard. That shard becomes a hot spot for writes while older shards handle almost no traffic.
+
+Sharding Strategies
+===================
+
+Once you know your shard key, you need to decide how to distribute that data across shards. There are three main strategies, each with different trade-offs.
+
+Range-Based Sharding
+Range sharding is the most straightforward. It just groups records by a continuous range of values. You pick a shard key like user_id or created_at, then assign value ranges to shards.
+For example, if we were to shard by user_id, we might assign the first 1 million users to shard 1, the next 1 million users to shard 2, and so on.
+Shard 1 → User IDs 1–1M
+Shard 2 → User IDs 1M–2M
+Shard 3 → User IDs 2M–3M
+The main advantage of range-based sharding is simplicity and support for efficient range scans. If you need all orders between user IDs 500K and 600K, you only hit one shard.
+
+Tips
+======
+Most real-world access patterns don't distribute evenly across ranges. If you shard orders by created_at, almost all your traffic hits the most recent shard because users care about recent orders.
+New writes only go to the latest shard. Old shards sit mostly idle.
+
 
