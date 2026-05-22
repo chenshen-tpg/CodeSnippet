@@ -88,4 +88,81 @@ Tips
 Most real-world access patterns don't distribute evenly across ranges. If you shard orders by created_at, almost all your traffic hits the most recent shard because users care about recent orders.
 New writes only go to the latest shard. Old shards sit mostly idle.
 
+Range-based sharding works best when different users naturally query different ranges. Multi-tenant systems, for example, are a good fit.
+These are systems where each company gets a range of IDs. Think of a SaaS application where each client has a range of user IDs.
+Company A's users only query Company A's range, and Company B's users only query Company B's range. This distributes the load across shards.
 
+Hash-Based Sharding (Default)
+
+Hash sharding uses a hash function to evenly distribute records across shards. Instead of assigning ranges, you take a shard key like user_id, hash it, and use the result to pick a shard.
+For example, if we had 4 shards, we could route users like this:
+shard = hash(user_id) % 4
+
+User 42  → hash(42) % 4 = Shard 2
+User 99  → hash(99) % 4 = Shard 3
+User 123 → hash(123) % 4 = Shard 1
+The big advantage of hash-based sharding is even distribution. Since the hash function scrambles the input values, new users get distributed evenly across all shards.
+The downside shows up when you need to add or remove shards. If you go from 4 shards to 5, the modulo operation changes from % 4 to % 5, which means almost every record maps to a different shard. You have to move massive amounts of data around.
+This is where consistent hashing comes in. Instead of simple modulo, consistent hashing minimizes data movement when you add or remove shards. We cover this in detail in our consistent hashing page, but the key point is that hash-based sharding works great as long as you have a plan for resharding.
+
+Tips
+=====
+Generally speaking, this is the default and most common sharding strategy.
+It's also what your interviewer will likely assume you're using unless you explicitly state otherwise.
+
+Directory-Based Sharding
+========================
+
+Directory sharding uses a lookup table to decide where each record lives. Instead of using a formula, you store shard assignments in a mapping table or service.
+For example:
+user_to_shard
+---------------
+User 15   → Shard 1
+User 87   → Shard 4
+User 204  → Shard 2
+The power of directory-based sharding is flexibility. If a particular user generates tons of traffic, you can move them to a dedicated shard. If you need to rebalance load, you just update the mapping table.
+You can implement complex sharding logic that would be impossible with a simple hash function.
+The downside is that every single request requires a lookup. Before you can query user data, you have to ask the directory service which shard that user lives on.
+This adds latency to every request and makes the directory service a critical dependency. If the directory goes down, your entire system stops working even if all the data shards are healthy.
+Directory-based sharding makes sense when you need maximum flexibility and can afford the extra lookup cost.
+Most systems start with hash-based or range-based sharding and only use a directory if they have specific requirements that demand it.
+
+Tips
+=====
+Realistically, while directory-based sharding is a valid solution for dynamic use cases, it is rarely the answer in a system design interview.
+It introduces a single point of failure and adds latency to every request,
+which will prompt your interviewer to ask a number of follow-up questions that could derail the conversation.
+
+Challenges of Sharding
+======================
+Sharding solves your scaling problem but introduces new ones. Data is now distributed across multiple machines, which means you have to deal with uneven load, queries that span shards,
+and maintaining consistency across databases.
+These challenges are unavoidable, but you can design around them if you know what to expect.
+
+Hot Spots and Load Imbalance
+============================
+Even with a good shard key, some shards can end up handling way more traffic than others.
+This is called a hot spot, and it negates the main benefit of sharding because one overloaded shard becomes your bottleneck.
+The most common cause is the celebrity problem. If you shard users by user_id, Taylor Swift's shard handles 1000x more traffic than a normal user's shard.
+Every time someone views her profile, likes her post, or sends her a message, that request hits the same shard.
+Hash-based distribution doesn't help here because the issue isn't the distribution strategy, it's that some keys are inherently more active than others.
+
+Server -> shard1 1m rps
+       -> shard2
+       -> shard3
+
+Time-based sharding creates a different kind of hot spot. If you shard by creation date, all new writes go to the most recent shard.
+That shard handles all the write traffic while older shards sit mostly idle handling only reads of historical data.
+You can detect hot spots by monitoring shard metrics like query latency, CPU usage, and request volume. When one shard consistently shows higher metrics than others, you have a hot spot problem.
+Here's how to handle them:
+Isolate hot keys to dedicated shards: If Taylor Swift's account generates too much traffic, move it to a dedicated shard that only handles celebrity accounts. This is why directory-based sharding can be useful for specific cases, though you probably wouldn't start there.
+Use compound shard keys: Instead of sharding just by user_id, combine it with another dimension like hash(user_id + date). This spreads a single user's data across multiple shards over time, which helps if the hot spot is both high volume and spans time periods.
+Dynamic shard splitting: Some databases support automatically splitting a shard when it gets too large or too hot. For example, MongoDB's balancer will split and migrate range-based chunks (including when using a hashed shard key) to maintain balance.
+By contrast, Vitess supports online resharding, but it is operator-driven (initiated and managed by operators), not automatic.
+
+Cross-Shard Operations
+======================
+When your data lives on multiple machines, any query that needs data from more than one shard becomes expensive. Instead of querying one database, you have to query multiple shards, wait for all of them to respond, and aggregate the results yourself.
+The problem shows up with queries that don't align with your shard key. If you shard users by user_id, a query like "get user 12345's profile" hits one shard. Fast and simple.
+But a query like "get the top 10 most popular posts globally" has to check every shard because posts are scattered across all user shards.
+You send the query to all 64 shards, wait for all 64 responses, merge the results, and then return the top 10. That's 64x the network calls and latency.
