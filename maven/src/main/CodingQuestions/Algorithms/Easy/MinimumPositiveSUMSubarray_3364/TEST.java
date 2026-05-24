@@ -3,9 +3,9 @@ package main.CodingQuestions.Algorithms.Easy.MinimumPositiveSUMSubarray_3364;
 import java.util.Arrays;
 import java.util.List;
 
-public class MinimumPositiveSumSubarray_3364 {
+public class TEST {
     public static void main(String[] args) {
-        MinimumPositiveSumSubarray_3364 mps = new MinimumPositiveSumSubarray_3364();
+        TEST mps = new TEST();
 
         List<Integer> nums1 = Arrays.asList(3, -2, 1, 4);
         int l1 = 2, r1 = 3;
