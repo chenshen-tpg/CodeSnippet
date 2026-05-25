@@ -1,4 +1,4 @@
-package main.Concept.JavaQuestion.Implementation;
+package main.Concept.JavaQuestion.Implementation.StockAnlysis;
 
 import java.util.Collections;
 import java.util.TreeMap;

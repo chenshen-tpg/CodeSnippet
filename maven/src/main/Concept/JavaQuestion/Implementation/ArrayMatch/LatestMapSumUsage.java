@@ -1,4 +1,4 @@
-package main.Concept.JavaQuestion.Implementation;
+package main.Concept.JavaQuestion.Implementation.ArrayMatch;
 
 import java.util.HashMap;
 

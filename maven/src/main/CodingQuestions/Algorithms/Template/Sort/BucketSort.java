@@ -1,4 +1,4 @@
-package main.Concept.JavaQuestion.Implementation.Sort;
+package main.CodingQuestions.Algorithms.Template.Sort;
 
 import java.util.*;
 

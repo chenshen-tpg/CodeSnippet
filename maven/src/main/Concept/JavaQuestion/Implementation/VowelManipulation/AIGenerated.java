@@ -1,4 +1,4 @@
-package main.Concept.JavaQuestion.Implementation.Vowel;
+package main.Concept.JavaQuestion.Implementation.VowelManipulation;
 
 public class AIGenerated {
     public static void main(String[] args) {

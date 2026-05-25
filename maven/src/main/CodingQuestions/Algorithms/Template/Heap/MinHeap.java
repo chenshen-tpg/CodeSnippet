@@ -1,4 +1,4 @@
-package main.Concept.JavaQuestion.JavaConcept.Heap;
+package main.CodingQuestions.Algorithms.Template.Heap;
 
 public class MinHeap {
     private int[] heap;

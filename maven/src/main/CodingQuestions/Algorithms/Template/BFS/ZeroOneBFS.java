@@ -1,4 +1,4 @@
-package main.Concept.JavaQuestion.JavaConcept.Graph.BFS;
+package main.CodingQuestions.Algorithms.Template.BFS;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
