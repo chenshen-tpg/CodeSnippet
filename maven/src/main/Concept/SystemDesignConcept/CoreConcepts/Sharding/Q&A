@@ -1,0 +1,79 @@
+(1) What is the typical distinction between partitioning and sharding?
+
+1 Partitioning is only for SQL databases, while sharding is only for NoSQL
+2 Partitioning duplicates data for redundancy, while sharding compresses it
+3 Partitioning splits data within one database instance, while sharding spreads data across multiple machines
+4 They are just different names for replication
+
+Partitioning usually means dividing a table's data within a single database instance, while sharding distributes data across multiple machines. The terms overlap in casual use,
+but the key difference is whether the data lives on one machine or many.
+
+(2) What makes a good shard key?
+
+1 High cardinality and even distribution
+2 Boolean fields for simplicity
+3 Low cardinality and uneven distribution
+4 Always use creation timestamp
+
+(3)Sharding by a boolean field like is_premium is a good strategy because it's simple to implement.
+
+True or False.
+
+(4) What is the main advantage of range-based sharding (e.g., orders sharded by date, with January on shard 1 and February on shard 2)?
+
+1 It automatically rebalances data as shards fill up
+2 It provides even distribution of data
+3 Range queries within a shard's key range avoid cross-shard reads
+4 It eliminates hot spots
+
+(5) Simple modulo-based hash sharding (e.g., hash(key) % N shards) makes it easy to add or remove shards without significant data movement.
+
+Simple modulo hashing requires massive data redistribution when changing shard count.
+Going from hash(key) % 4 to hash(key) % 5 changes where most records map, requiring most data to move.
+Consistent hashing is a different technique that minimizes this problem by only moving data from affected shards.
+
+(6) What is one way to minimize cross-shard queries when you frequently need to query posts along with user data?
+1 Use two-phase commit for all queries
+2 Always query all shards
+3 Create a separate unsharded table for posts in a centralized database
+4 Denormalize by storing post data on the user's shard
+
+(7) Directory-based sharding relies on a lookup service that becomes a single point of failure and adds a lookup to every request.
+True Or False
+
+(8) What is the 'celebrity problem' in sharding?
+
+1 Celebrities refuse to use sharded databases
+2 Some keys generate far more traffic, creating hot spots
+3 Sharding celebrities' data is illegal or not allowed under GDPR
+4 Celebrity data is too large to store
+
+(9) Range-based sharding by created_at timestamp is ideal because it ensures even distribution of data over time.
+True or False
+
+(10) How should you handle a query like 'get top 10 most popular posts globally' when sharding by user_id?
+
+1 Cache the results since it requires hitting all shards
+2 Avoid it entirely, it's impossible with user_id sharding
+3 Store all posts on one shard
+4 Reshard by post_id instead
+
+(11) Two-phase commit (2PC) can block indefinitely if the coordinator fails after the prepare phase, which makes it fragile for cross-shard transactions in production.
+True or False
+
+(12) Which approach avoids the need for distributed transactions across shards?
+1 Querying all shards for every transaction
+2 Designing so related data lives on the same shard
+3 Using two-phase commit for every write operation across shards
+4 Accepting permanent data inconsistency
+
+(13) You should mention sharding early in a system design interview to show you understand distributed systems.
+True or False
+
+(14) For a social media app where most queries are user-centric (user's posts, followers, likes), what would be the best shard key?
+1 content_type
+2 user_id
+3 post_id
+4 created_at
+(15) Modern databases like DynamoDB, Cassandra, and MongoDB require you to implement sharding logic manually from scratch.
+True or False

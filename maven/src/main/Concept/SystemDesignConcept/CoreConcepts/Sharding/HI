@@ -120,10 +120,12 @@ user_to_shard
 User 15   → Shard 1
 User 87   → Shard 4
 User 204  → Shard 2
-The power of directory-based sharding is flexibility. If a particular user generates tons of traffic, you can move them to a dedicated shard. If you need to rebalance load, you just update the mapping table.
+The power of directory-based sharding is flexibility. If a particular user generates tons of traffic, you can move them to a dedicated shard.
+If you need to rebalance load, you just update the mapping table.
 You can implement complex sharding logic that would be impossible with a simple hash function.
 The downside is that every single request requires a lookup. Before you can query user data, you have to ask the directory service which shard that user lives on.
-This adds latency to every request and makes the directory service a critical dependency. If the directory goes down, your entire system stops working even if all the data shards are healthy.
+This adds latency to every request and makes the directory service a critical dependency. If the directory goes down,
+your entire system stops working even if all the data shards are healthy.
 Directory-based sharding makes sense when you need maximum flexibility and can afford the extra lookup cost.
 Most systems start with hash-based or range-based sharding and only use a directory if they have specific requirements that demand it.
 
@@ -135,7 +137,9 @@ which will prompt your interviewer to ask a number of follow-up questions that c
 
 Challenges of Sharding
 ======================
-Sharding solves your scaling problem but introduces new ones. Data is now distributed across multiple machines, which means you have to deal with uneven load, queries that span shards,
+Sharding solves your scaling problem but introduces new ones. Data is now distributed across multiple machines,
+which means you have to deal with uneven load,
+queries that span shards,
 and maintaining consistency across databases.
 These challenges are unavoidable, but you can design around them if you know what to expect.
 
@@ -162,7 +166,105 @@ By contrast, Vitess supports online resharding, but it is operator-driven (initi
 
 Cross-Shard Operations
 ======================
-When your data lives on multiple machines, any query that needs data from more than one shard becomes expensive. Instead of querying one database, you have to query multiple shards, wait for all of them to respond, and aggregate the results yourself.
+When your data lives on multiple machines, any query that needs data from more than one shard becomes expensive. Instead of querying one database, you have to query multiple shards,
+wait for all of them to respond, and aggregate the results yourself.
 The problem shows up with queries that don't align with your shard key. If you shard users by user_id, a query like "get user 12345's profile" hits one shard. Fast and simple.
 But a query like "get the top 10 most popular posts globally" has to check every shard because posts are scattered across all user shards.
 You send the query to all 64 shards, wait for all 64 responses, merge the results, and then return the top 10. That's 64x the network calls and latency.
+
+
+Server -get popular posts> shard1
+        -get popular posts -> shard2
+        ->get poplar posts -> shard3
+
+You can't eliminate cross-shard queries entirely, but you can minimize them.
+
+Cache the result
+================
+
+If top 10 most popular posts requires hitting all shards, cache the result for 5 mins. The first query is expensive, but the next thousand requests hit the cache
+instead of querying 64 shards.  This works especially well for queries well for queries that don't need real-time accuracy (eventual consistency is acceptable).
+Leaderboards, trending content, and aggregate stats are perfect candidates.
+
+Denormalize to keep related data together
+=========================================
+
+If you frequently needs to query posts along with user data, store some post info direclt on the user's shard. Yes, this duplicates data.
+It makes updates more complex. But it lets you query everything from one shard, a trade-off.
+
+Accept the hit for rare queries
+===============================
+Sometimes a query genuinely needs to hit all shards and that's okay as long as it's infrequent. An admin dashboard that show "total users across all shards" can
+afford to be slow if it's only loaded a few times a day.
+
+Cross-shard operations are often a signal that something in your design needs rethinking. if you find "we will query all shards and aggregate the results" for
+a common use cse, pause and consider: denormalize/ Cache/ precompute
+
+Maintaining consistency
+=======================
+
+When you data lives on a single database, transactions are straightforward. If you need to deduct inventory and create an order record atomically,  two operations in a data transaction.
+Either two succeed or both failed. DB handles the consistency guarantees.
+Sharding breaks this. If the user's account lives on shard 1 and the transaction record lives on shard2, you can't use single database transaction.
+You are coordinating writes across two independent db.
+The textbook solution is two-phase commit(2pc), all shards to prepare the transaction , wait for everyone to confirm they are ready, then everyone start commiting.
+This guarantees consistency but is slow and fragile. If any shard fails, the whole system can get stuck.
+Most prod system avoid 2PC because the performance and reliability trade-offs are not worth.
+
+Design to avoid cross-shard transaction. user_id keep all user's data on the shard. like balance, transaction history, profile info, all on one shard.
+
+Use sagas for multi-shard operations when you need to coordinate across shards, use saga pattern. Break the operation into a sequence of independent steps.
+Eventual consistency without the fragility of 2PC.
+
+1 SHARD1 Deduct money from User A's account
+2 SHARD2 Add money to User B's account;
+3 If step 2 fails, refund UserA.
+
+
+Accept eventual consistency: strict consistency isn't required. user's follower count is denormalized across multiple shards for fast
+profile lookups, it's fine if some shards show different counts for a few seconds. All shards will converge to the correct number.
+Simpler than a distributed transaction. TLDR is that most application can be designed to avoid cross-shard transactions entirely.
+
+Sharding in modern database
+===========================
+
+Most DB handles sharding automatically.
+
+NoSQL db like Cassandra, dynamoDB and MongoDB all let you specify a partition key and handle the rest, but they do not all use the same
+distribute mechanism:
+
+Cassandra uses a partitioner with virtual nodes, which is a form of consistent hashing to map partition keys to token ranges on nodes.
+DynamoDB hashes the partition key to route items to internal partitions and splits partitions as they grow; this is not classic ring-based
+consistent hashing exposed to users.
+
+MongoDB shards data into range-based chunks on the shard key. If you choose a hashed shard key. The ranges are over the hash space.
+A background balancer automatically splits and migrates chunks to deep shards balanced.
+
+They automatically rebalance when adding capacity and route queries. SQL databases have similar techniques. Vitess & Citus are popular open-source
+sharding layers that sit in front of PostgreSQL or MySQL
+
+It's enough to say "We'll use DynamoDB with user_id as the partition key" or "We'll shard using Vitess on user_id and plan for operator-driven online resharding."
+
+
+When do we need sharding
+========================
+
+Capacity planning hit one of these limits:
+Storage, 500M users with 5KB of data each. 2.5TB is okay to handle ### need to check the number .
+Write throughput 50K writes per second, write load will struggle.
+Read throughput 100M users making multiple queries. Distribute the read load across shards.
+
+(1) Identify the bottleneck (2) Explain why single DB won't scale (3) Propose sharding
+
+(1) A shard key based on access patterns e.g for the social media app, most queries are user-centric. when someone load their feed, we'are querying their posts, followers,likes.
+All scoped to a single user. ===> Shard by user_id.
+
+(2) Choose your distribution strategy => hash based hashing with consistent hashing. Hash the user_id to distribute users evenly across shards."
+(3) Call out the trade-offs "The trade-off is that global queries become expensive. If we need 'trending posts across all users' we have to query all shards and aggregate results. We can handle that by caching trending content and pre-computing it with a background job rather than calculating it on every request."
+(4)Address how you'll handle growth "We'll start with 64 shards, which gives us room to grow. Consistent hashing makes it easier to add shards later without resharding all the data. If we need more capacity, we can add shards and only a fraction of the data moves."
+
+Conclusion
+Sharding is what you do when a single database can't handle your scale anymore. You split data across multiple machines to increase storage capacity and throughput.
+There are two main decisions that matter: pick a shard key that aligns with your query patterns, and choose a distribution strategy that spreads load evenly. Get these wrong and you'll have hot spots and expensive cross-shard queries.
+In interviews, bring up sharding when you've identified a database bottleneck. Walk through your shard key choice, explain the trade-offs, and show you've thought about cross-shard queries and resharding. Most importantly, don't shard too early.
+A well-tuned single database can get you surprisingly far.
