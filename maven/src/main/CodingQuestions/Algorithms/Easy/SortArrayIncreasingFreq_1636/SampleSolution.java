@@ -1,11 +1,11 @@
-package main.CodingQuestions.Algorithms.Easy.SortArrayByIncreasingOrder_1636;
+package main.CodingQuestions.Algorithms.Easy.SortArrayIncreasingFreq_1636;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class SortArrayByIncreasingOrder_1636 {
+public class SampleSolution {
     public static void main(String[] args) {
         sort();
     }
