@@ -1,0 +1,121 @@
+1. Core Features
+================
+
+User registration and authentication
+
+//DB based verification:
+For every future request, the browser automatically sends that cookie back.
+The server looks up the ID in its database to see if it’s still valid.
+
+//Token based verification:
+The browser stores it (usually in localStorage or a cookie) and
+sends it in the Authorization Header of every request.
+
+Session-based: traditional websites/Server Memory &DB shared session store/ vulnerable to CSRF
+Token-based Mobile app/ Client-side/ High scalability/ Vulnerable to XSS
+
+
+File upload, download, and delete
+Folder creation and navigation
+File versioning (history, rollback)
+File sharing (links, permissions)
+Sync across devices
+Search (by name, metadata)
+Notifications
+
+
+==================
+
+2. High-Level Architecture
+
+Frontend
+
+Web client, desktop client, and mobile apps
+
+Backend (API Layer)
+RESTful or gRPC APIs for all client interactions
+
+Core Services
+User Service: Handles user data, authentication, permissions
+File Service: Handles file metadata, versioning, and operations
+Storage Service: Handles actual file storage and retrieval
+Sync Service: Handles device synchronization and conflict resolution
+Sharing Service: Manages file/folder sharing and permissions
+Notification Service: Push/email notifications for sharing, changes
+Search Service: Indexes files and metadata for fast search
+
+Data Storage
+Metadata: Relational DB (e.g., PostgreSQL, MySQL) for user info, file metadata, permissions, version history
+File Storage: Distributed object storage (e.g., AWS S3, HDFS, custom blob store)
+Cache: Redis/Memcached for hot metadata and session data
+Search Index: Elasticsearch or Solr for fast file search
+
+Other Components
+CDN: For fast file delivery and download
+Encryption Service: Encrypt files at rest and in transit
+Audit/Logging: Track file access, changes, and sharing events
+
+
+3. Key Design Considerations
+============================
+
+Scalability
+
+Use microservices for independent scaling of file, user, and sync services
+Use distributed storage for large files and high throughput
+
+Consistency & Reliability
+
+Use strong consistency for file metadata and permissions
+Eventual consistency for file sync across devices
+File versioning to handle conflicts and rollbacks
+
+Security & Privacy
+
+Encrypt files at rest and in transit
+
+Fine-grained access control and sharing permissions
+Audit logs for compliance
+
+Performance
+
+Use CDN for file delivery
+Use caching for metadata and frequently accessed files
+Asynchronous processing for large file uploads/downloads
+
+
+4. Example Data Flow: File Upload
+=================================
+User uploads a file via client.
+API authenticates user and checks permissions.
+File is split into chunks (for large files).
+Chunks are uploaded to distributed storage (e.g., S3).
+Metadata (file name, size, owner, version, location) is stored in the metadata DB.
+File version/history is updated.
+User receives confirmation and file is available for sync/download.
+
+
+5. Example Textual Architecture Diagram
+=======================================
+
+[Client] <---> [API Gateway] <---> [User Service] <--> [User DB]
+                                   |
+                                   +--> [File Service] <--> [Metadata DB]
+                                   |                        [Search Index]
+                                   +--> [Storage Service] <--> [Object Storage/S3]
+                                   +--> [Sync Service]
+                                   +--> [Sharing Service]
+                                   +--> [Notification Service]
+                                   +--> [Cache]
+                                   +--> [CDN]
+
+
+6. Advanced Topics
+==================
+
+
+Deduplication: Store only unique file chunks to save space.
+Delta Sync: Only upload/download changed parts of files.
+Offline Support: Queue changes and sync when online.
+Collaboration: Real-time editing and conflict resolution.
+Monitoring & Analytics: Track usage, errors, and performance.

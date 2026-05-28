@@ -1,121 +1,80 @@
-1. Core Features
+Dropbox is a cloud-based file storage service that allows users to store and share files.
+It provides a secure and reliable way to store and access files from anywhere, on any device.
+
+Core Requirements / Functional
+=================
+
+(1) upload a file from any device
+(2) download a file from any device
+(3) share a file with other users and view the files shared with them
+(4) Users can automatically sync files across devices
+
+Non-Functional Requirements
+===========================
+
+Core requirement:
+High available (over consistency)
+Large as 50GB
+Secure & reliable, able to recover file
+Low latency
+
+#Unlike stock, file might appear after a few seconds (CAP Theory)
+
+For Dropbox, the primary entities are File(uploading, downloading and sharing)
+FileMetadata(info like name, size, type, author)
+user
+
+API or Interface
 ================
+POST /files for upload
+Request:
+{
+  File,
+  FileMetadata
+}
 
-User registration and authentication
+GET /files/{fileId} -> File & FileMetadata for download
 
-//DB based verification:
-For every future request, the browser automatically sends that cookie back.
-The server looks up the ID in its database to see if it’s still valid.
+For sharing function, it might have an endpoint like this:
+POST /files/{fileId}/share
+Request:
+{
+  User[] // The users to share the file with
+}
 
-//Token based verification:
-The browser stores it (usually in localStorage or a cookie) and
-sends it in the Authorization Header of every request.
+Query for changes to files on the server, wo need to know which file needs to be synced to the local
+GET /files/changes?since={timestamp} -> ChangeEvent[]
 
-Session-based: traditional websites/Server Memory &DB shared session store/ vulnerable to CSRF
-Token-based Mobile app/ Client-side/ High scalability/ Vulnerable to XSS
+Change Event includes the fieldId (change type), update meta data.
 
-
-File upload, download, and delete
-Folder creation and navigation
-File versioning (history, rollback)
-File sharing (links, permissions)
-Sync across devices
-Search (by name, metadata)
-Notifications
-
-
-==================
-
-2. High-Level Architecture
-
-Frontend
-
-Web client, desktop client, and mobile apps
-
-Backend (API Layer)
-RESTful or gRPC APIs for all client interactions
-
-Core Services
-User Service: Handles user data, authentication, permissions
-File Service: Handles file metadata, versioning, and operations
-Storage Service: Handles actual file storage and retrieval
-Sync Service: Handles device synchronization and conflict resolution
-Sharing Service: Manages file/folder sharing and permissions
-Notification Service: Push/email notifications for sharing, changes
-Search Service: Indexes files and metadata for fast search
-
-Data Storage
-Metadata: Relational DB (e.g., PostgreSQL, MySQL) for user info, file metadata, permissions, version history
-File Storage: Distributed object storage (e.g., AWS S3, HDFS, custom blob store)
-Cache: Redis/Memcached for hot metadata and session data
-Search Index: Elasticsearch or Solr for fast file search
-
-Other Components
-CDN: For fast file delivery and download
-Encryption Service: Encrypt files at rest and in transit
-Audit/Logging: Track file access, changes, and sharing events
+Tips
+====
+The user info will be passed in the headers (session token / JWT).
 
 
-3. Key Design Considerations
-============================
+High level design
+=================
+Storing a file (1) file content (raw bytes) (2) metadata
 
-Scalability
+For metadata, Nosql DB like dynamoDB can be used. DynamoDB is a fully managed NoSQL db hosted by AWS. Meta data is loosely structured
+with few relations and the main query pattern being to fetch files by user. SQL db would work.
 
-Use microservices for independent scaling of file, user, and sync services
-Use distributed storage for large files and high throughput
-
-Consistency & Reliability
-
-Use strong consistency for file metadata and permissions
-Eventual consistency for file sync across devices
-File versioning to handle conflicts and rollbacks
-
-Security & Privacy
-
-Encrypt files at rest and in transit
-
-Fine-grained access control and sharing permissions
-Audit logs for compliance
-
-Performance
-
-Use CDN for file delivery
-Use caching for metadata and frequently accessed files
-Asynchronous processing for large file uploads/downloads
+Schema could be
+  {
+    "id": "123",
+    "name": "file.txt",
+    "size": 1000,
+    "mimeType": "text/plain",
+    "uploadedBy": "user1"
+  }
 
 
-4. Example Data Flow: File Upload
-=================================
-User uploads a file via client.
-API authenticates user and checks permissions.
-File is split into chunks (for large files).
-Chunks are uploaded to distributed storage (e.g., S3).
-Metadata (file name, size, owner, version, location) is stored in the metadata DB.
-File version/history is updated.
-User receives confirmation and file is available for sync/download.
+  For storage
 
+  Single server:
 
-5. Example Textual Architecture Diagram
-=======================================
+  upload directly to our backend server and store. Good for small volume.
+  Horizontally scale is problem and server could be down.
 
-[Client] <---> [API Gateway] <---> [User Service] <--> [User DB]
-                                   |
-                                   +--> [File Service] <--> [Metadata DB]
-                                   |                        [Search Index]
-                                   +--> [Storage Service] <--> [Object Storage/S3]
-                                   +--> [Sync Service]
-                                   +--> [Sharing Service]
-                                   +--> [Notification Service]
-                                   +--> [Cache]
-                                   +--> [CDN]
-
-
-6. Advanced Topics
-==================
-
-
-Deduplication: Store only unique file chunks to save space.
-Delta Sync: Only upload/download changed parts of files.
-Offline Support: Queue changes and sync when online.
-Collaboration: Real-time editing and conflict resolution.
-Monitoring & Analytics: Track usage, errors, and performance.
+  Bolb Storage:
+  Amazon S3 or Google cloud. 
