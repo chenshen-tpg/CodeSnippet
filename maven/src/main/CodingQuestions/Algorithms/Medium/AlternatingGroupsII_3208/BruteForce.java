@@ -1,6 +1,6 @@
 package main.CodingQuestions.Algorithms.Medium.AlternatingGroupsII_3208;
 
-public class test {
+public class BruteForce {
     public static void main(String[] args) {
         System.out.println(6 % 7);
     }
