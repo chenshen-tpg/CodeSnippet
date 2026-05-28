@@ -3,7 +3,7 @@ package main.CodingQuestions.Algorithms.Easy.FlipGame_293;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SampleAnswer {
+public class SampleSolution {
     public static void main(String[] args) {
 
     }

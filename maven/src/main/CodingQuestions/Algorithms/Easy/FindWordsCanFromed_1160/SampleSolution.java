@@ -1,6 +1,6 @@
 package main.CodingQuestions.Algorithms.Easy.FindWordsCanFromed_1160;
 
-public class SampleAns {
+public class SampleSolution {
     public int countCharacters(String[] words, String chars) {
         int[] counts = new int[26];
         for (int i = 0; i < chars.length(); i++) {
