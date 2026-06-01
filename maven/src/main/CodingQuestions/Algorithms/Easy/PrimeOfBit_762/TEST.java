@@ -3,13 +3,14 @@ package main.CodingQuestions.Algorithms.Easy.PrimeOfBit_762;
 public class TEST {
 
     public static void main(String[] args) {
-
+        TEST test = new TEST();
+        test.countPrimeSetBits(6,10);
     }
 
     public int countPrimeSetBits(int left, int right) {
         int count = 0;
         while (left <= right) {
-            if (isPrime(left)) count++;
+            if (isPrime(Integer.bitCount(left))) count++;
             left++;
         }
         return count;
