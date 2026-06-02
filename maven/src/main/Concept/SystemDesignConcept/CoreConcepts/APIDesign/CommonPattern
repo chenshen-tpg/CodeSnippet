@@ -34,7 +34,7 @@ Include pagination than which specific approach you choose.
 Versioning Strategies
 APIs evolve over time, and you need a strategy for handling changes without breaking existing clients. This is particularly important for public APIs where you can't control when clients update their code.
 The most common approach is URL versioning, where you include the version number in the path: /v1/events or /v2/events. This is explicit and easy to understand. Clients know exactly which version they're using just by looking at the URL. It's also simple to implement since you can route different versions to different code paths.
-Header versioning puts the version in an HTTP header instead: Accept-Version: v2 or API-Version: 2. This keeps URLs cleaner and follows HTTP standards better, but it's less obvious to developers and harder to test in browsers.
+Header versioning puts the version in an HTTP header instead: Accept-Version: v2 or API-Version: 2. This keeps URLs cleaner and follows HTTP standards better, but it's less obvious to developers and harder to mySolution in browsers.
 For interviews, URL versioning is usually the safer choice because it's more widely understood and easier to explain quickly. Unless the interviewer specifically asks about header versioning, stick with the URL approach.
 You'll see that in our breakdowns we don't even include versioning in the API design. This is more a product of it just not being important to most interviewers rather than a statement that it's not important in practice (it is).
 

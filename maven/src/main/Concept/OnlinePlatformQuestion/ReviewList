@@ -70,7 +70,7 @@ $30 – $100
 
 1. Toptal
 ---------
--The Process: 5-stage process including a screen, timed codility test (90 mins), live technical interview, and a 2-week test project.-
+-The Process: 5-stage process including a screen, timed codility mySolution (90 mins), live technical interview, and a 2-week mySolution project.-
 
 Interview Questions:
 "Solve this 3-D array optimization problem using a sliding window."
@@ -79,7 +79,7 @@ Interview Questions:
 
 2. Arc.dev
 ----------
--The Process: Profile review, an English/Video screen, a language-specific aptitude test, and a final senior-level technical interview.-
+-The Process: Profile review, an English/Video screen, a language-specific aptitude mySolution, and a final senior-level technical interview.-
 Interview Questions:
 
 "Describe a time you had to optimize a slow database query. What was your process?"
@@ -299,7 +299,7 @@ src/main.Concept/randomShit/Platform/ScrapeAsite
 -The Process: Technical writing and edge-case testing assessments.-
 
 Questions:
-"Create a set of test cases to break a login validation logic."
+"Create a set of mySolution cases to break a login validation logic."
 ---------------------------------------------------------------
 src/main.Concept/randomShit/Platform/Security
 
