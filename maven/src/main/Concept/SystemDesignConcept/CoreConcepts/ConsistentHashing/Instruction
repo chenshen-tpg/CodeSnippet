@@ -37,4 +37,82 @@ but it changed which database instance almost every event was stored on.
 
 Might be prime number can mitigate the issues....
 
+Consist Hashing is the technique that solves the problem of data redistribution when adding or removing a instance in a
+distributed system. It is to arrange both data & db in a circular space (hash ring)
 
+(1) hash ring with fixed numbers (2) db nodes on the ring at 0,25,50,75 (3) find the hash value on the ring, move clockwise
+until db found.
+
+It's going clockwise, for example new db at 90. only 75-90 need to move. Those events are going to DB1.
+
+If DB2 failed. 0-25 going to DB3.
+
+The problem for the above, when db2 failed and removed. All the events will go to DB3. DB3 now has 2x the load of the
+DB1 & 4.
+
+Virtual nodes, we multiple the in the DB hash ring.  Event Mapped to VN(virtual node) will be distributed accordingly
+Event will distributed evenly across remaining db instead overlow neighbor only.
+
+Hotspot can still occur, it's when one node gets a disproportionate amount of traffic( A hot event can generate 100 times read)
+
+Consistent hashing doesn't solve the above issue since it's distribute keys only.
+(1) Read replicas - replicate popular keys across multiple nodes and load balance can read.(common approach)
+(2) Key-space slating: random suffix to hot keys. (redistribution)
+(3) Adaptive rebalancing: move key ranges off overloaded nodes. (Internal function in DynamoDB)
+
+In summary:
+===========
+VN prevents structural imbalance, replication and key salting prevent workload imbalance.
+
+Data Movement in Practice:
+==========================
+Most distributed db use replication alongside consistent hashing to handle failures.
+DynamoDB replicates each partition across three availability zones. Primary node fails, a replica is promoted via
+consensus algorithm like Raft.
+Cassandra replicating data to N consecutive nodes on the ring.
+
+Data movement happens only at adding capacity or replacing node to restore. Consistent hashing make sue fraction of keys
+to be re-replicated.
+
+Consistent Hashing in work
+==========================
+
+Consistent hashing not only in db, but anywhere you need to distribute data across cluster or servers.
+Like clusters(db/caches/message brokers/set of application servers)
+
+Apache cassandra, hashing to distribute data across the ring.
+Amazon DynamoDB: under the hood for partition placement.
+CDNs: determine which edge server should cache what contents.
+
+Most modern distributed systems handle sharding and data distribution internally.
+For infra =>
+(1)How to design distributed db #
+(2) How to design distributed cache #
+(3) how to design a message broker #
+
+Questions
+=========
+(1) Why consistent hashing beats simple modulo-based sharding for data distribution
+(2) How virtual nodes improve load balancing across the cluster
+(3) Strategies for handling node failures and additions
+(4) How hot spots arise and techniques to mitigate them (replication, key salting)
+(5) The relationship between consistent hashing and replication for fault tolerance
+
+Conclusion
+=========
+
+Consistent hashing is one of those algorithms that revolutionized distributed systems by solving a seemingly simple problem:
+how to distribute data across servers while minimizing redistribution when the number of servers changes.
+
+While the implementation details can get complex, the core concept is beautifully simple - arrange everything in a circle and walk clockwise.
+This elegant solution is now built into many of the distributed systems we use daily, from DynamoDB to Cassandra.
+
+One thing to keep in mind: the term "consistent hashing" gets used loosely in practice.
+As Martin Kleppmann points out in Designing Data-Intensive Applications,
+some systems that claim to use consistent hashing actually use variations like hash-based partitioning with fixed slot ranges.
+The core principle of minimizing data movement during rebalancing is what matters, even if the exact implementation differs from the textbook ring approach.
+
+In system design
+you usually don't need to implement consistent hashing yourself.
+Just know when it's being used under the hood,
+and save the deep dive for those infrastructure-heavy questions where it really matters.
