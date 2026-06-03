@@ -1,0 +1,90 @@
+CAP theories
+
+Consistency - all nodes see data at the same time. When a write is made, all subsequent reads from any node will
+have updated value.
+
+Availability - Every request to a non-failing node, without the guarantee that it contains the most recent version
+of data.
+
+Partition Tolerance - The system continues to operate despite arbitrary message loss or failure.
+
+Partition tolerance is a must. So the CAP is to ask consistency or availability
+
+Example
+=======
+
+Two servers website, one server in US another in EU.
+
+(1)UserA connects to the closest server and update names in US.
+(2)This update is replicated to the EU server
+(3)When userB in EU views UserA's profile. They can see the update name.
+
+The issue happens when connection between US and EU down.
+When UserB view userA's profile.
+OptionA: return an error because data is not up-to-date(Consistency)
+OptionB: show potentially stale data(availability)
+
+Above is a practical CAP theory.
+
+
+When to choose consistency:
+===========================
+Ticket Booking/E-commerce Inventory/ Financial System
+
+(1) Running to a same set (2) available but it's empty (oversell) (3) trade at incorrect prices
+
+When to choose availability:
+============================
+Social media/content platform/review sites(YELP)
+
+(1) fine to see a late update (2) old description is fine (3) outdated info bettern than none
+
+CAP theory
+==========
+(1) function requirements(features) (2) non-functional requirements
+CAP as a part of non-functional requirements.
+
+Consistency involvement:
+=========================
+
+Distributed Transactions: ensuring data in sync through two-phase commit protocol.
+User will experience higher latency.
+
+Single-node solution: Using single db instance to avoid propagation issues. Scalability issue.
+
+Tech choices: RDBMS(postgre/mysql) Google spanner/ dynamo db;
+
+Availability involvement:
+Multiple replicas: async replication, allowing reads to be served from replica. Improving read performance
+
+Change Data Capture (CDC): Using CDC to track changes in the primary db and propagate them async to replicas, caches
+and other systems. Primary system to remain available while updating
+
+Tech: Cassandra/ dynamo/ redis
+
+Advance exploration in CAP:
+===========================
+
+Modern distributed system open require nuanced approaches.
+
+Ticketmaster: booking a seat: strong consistency to prevent double-booking.
+Viewing event: prioritize availability
+
+Tinder: consistency in matching
+availability in viewing a user profile
+
+Different level of consistency:
+
+Strong Consistency: necessary for systems that require absolute accuracy like bank account balances.
+Causal Consistency: Related events appear in the same order to all users. This ensures logical ordering of dependent actions,
+such as ensuring comments on a post must appear after the post itself.
+Read-your-own-writes Consistency: Users always see their own updates immediately, though other users might see older versions.
+This is commonly used in social media platforms where users expect to see their own profile updates right away.
+
+Eventual Consistency: The system will become consistent over time but may temporarily have inconsistencies.
+This is the most relaxed form of consistency and is often used in systems like DNS where temporary inconsistencies are acceptable.
+This is the default behavior of most distributed databases and what we are implicitly choosing when we prioritize availability.
+
+Conclusion
+CAP theorem is important. It sets the stage for how you approach your design in an interview and should not be overlooked.
+But it doesn't need to be complicated. Just ask yourself: "Does every read need to read the most recent write?" If the answer is yes, you need to prioritize consistency. If the answer is no, you can prioritize availability.
