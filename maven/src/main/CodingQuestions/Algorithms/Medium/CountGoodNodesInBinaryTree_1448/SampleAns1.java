@@ -13,7 +13,8 @@ public class SampleAns1 {
         helper(root, Integer.MIN_VALUE);
         return count;
     }
-
+    //?? larger than the current value and update
+// need question
     public void helper(TreeNode root, int cur) {
         if (root == null) return;
         if (root.val >= cur) count++;
