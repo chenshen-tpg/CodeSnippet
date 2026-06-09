@@ -1,6 +1,6 @@
 package main.Coding.Algorithms.Hard.PaintingWithThreeColors_1931;
 
-public class SampleAns {
+public class SampleSolution {
     public static void main(String[] args) {
 
     }

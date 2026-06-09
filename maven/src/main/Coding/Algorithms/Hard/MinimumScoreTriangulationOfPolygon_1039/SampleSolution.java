@@ -4,13 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 //don't understand this.
-public class SampleAns {
+public class SampleSolution {
     int n;
     int[] values;
     Map<Integer, Integer> memo = new HashMap<Integer, Integer>();
 
     public static void main(String[] args) {
-        SampleAns solution = new SampleAns();
+        SampleSolution solution = new SampleSolution();
         solution.minScoreTriangulation(new int[]{1, 3, 1, 4, 1, 5});
     }
 

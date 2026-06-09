@@ -5,9 +5,9 @@ import main.Coding.Lib.ListNode;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class MegeKSortedLists_23 {
+public class SampleSolution {
     public static void main(String[] args) {
-        MegeKSortedLists_23 solution = new MegeKSortedLists_23();
+        SampleSolution solution = new SampleSolution();
         ListNode[] lists1 = {
                 createList(new int[]{1, 4, 5}),
                 createList(new int[]{1, 3, 4}),

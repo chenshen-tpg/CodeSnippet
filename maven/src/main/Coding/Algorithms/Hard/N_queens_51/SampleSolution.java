@@ -3,7 +3,7 @@ package main.Coding.Algorithms.Hard.N_queens_51;
 import java.util.HashSet;
 import java.util.Set;
 
-public class NQueenII_52 {
+public class SampleSolution {
     private int size;
 
     public static void main(String[] args) {

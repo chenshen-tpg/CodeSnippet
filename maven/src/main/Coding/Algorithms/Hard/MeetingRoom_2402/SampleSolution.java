@@ -2,9 +2,9 @@ package main.Coding.Algorithms.Hard.MeetingRoom_2402;
 
 import java.util.Arrays;
 
-public class ModelAns {
+public class SampleSolution {
     public static void main(String[] args) {
-        ModelAns solution = new ModelAns();
+        SampleSolution solution = new SampleSolution();
         int[][] meetings = new int[][]{{0, 10}, {1, 5}, {2, 7}, {3, 4}};
         int result = solution.mostBooked(2, meetings);
         System.out.println(result);

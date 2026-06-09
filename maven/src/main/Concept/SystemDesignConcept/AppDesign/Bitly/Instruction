@@ -1,3 +1,55 @@
 Bit.ly is a URL shortening service that converts long URLs into shorter
 
-Clear understanding of the requirements. 
+Clear understanding of the requirements.
+
+Core requirements:
+=================
+Submit a long URL and receive a shortened version
+(1) specify a custom alias for their shortenedURL
+(2) expiration date for the url.
+
+
+Below the line:
+==============
+User authentication and account management
+Analytics on link click,
+
+Non-Functional requirements
+==========================
+
+specification about how a system operates. It defines scalability, latency, security
+and availability of the system. The benchmark like 100 million daily active users.
+
+(1) Uniqueness for the short codes
+(2) redirection with minimall delay
+(3) reliable
+(4) 1B shortened URL
+
+Below the line
+=============
+Data consistency
+Advanced security features
+
+
+Tips
+=====
+System is significant imbalance between read and write operations. reads more(skewed) as use short URL more than
+creating.
+
+Summary
+=======
+Functional Requirement: user can create short urls from original one (custom alisa/expiration time),
+user can access the original url by vising the short url
+
+Non functional requirements: uniqueness of short urls, low latency redirection,
+availability focused, Scalable
+
+Core entities
+=============
+
+Original URL/ Short URL/ User
+
+API
+========
+
+

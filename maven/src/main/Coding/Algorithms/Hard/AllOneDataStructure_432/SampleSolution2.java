@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SampleAnswer2 {
+public class SampleSolution2 {
 
     HashMap<String, Node> hm;
     Node head;
     Node tail;
-    public SampleAnswer2() {
+    public SampleSolution2() {
         hm = new HashMap<>();
         tail = new Node(0, null, null);
         head = new Node(Integer.MAX_VALUE, null, null);
@@ -30,12 +30,12 @@ public class SampleAnswer2 {
                 {}
         };
 
-        SampleAnswer2 allOne = null;
+        SampleSolution2 allOne = null;
 
         for (int i = 0; i < operations.length; i++) {
             switch (operations[i]) {
                 case "AllOne":
-                    allOne = new SampleAnswer2();
+                    allOne = new SampleSolution2();
                     System.out.println("AllOne initialized");
                     break;
                 case "inc":
