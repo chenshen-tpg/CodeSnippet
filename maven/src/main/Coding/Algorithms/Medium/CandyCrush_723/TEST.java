@@ -61,8 +61,6 @@ public class TEST {
     void drop(int[][] board) {
         for (int c = 0; c < n; c++) {
             int lowestZero = -1;
-
-            // Iterate over each column
             for (int r = m - 1; r >= 0; r--) {
                 if (board[r][c] == 0) {
                     lowestZero = Math.max(lowestZero, r);
