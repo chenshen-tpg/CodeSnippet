@@ -51,5 +51,113 @@ Original URL/ Short URL/ User
 
 API
 ========
+Rest API
+
+To horten a URL, POST endpoint to take in the long URL and custom alias and expiration date.
+Using POST here is to create a new entry in data mapping.
+
+POST /urls
+{
+  "long_url": "https://www.example.com/some/very/long/url",
+  "custom_alias": "optional_custom_alias",
+  "expiration_date": "optional_expiration_date"
+}
+
+-> return
+{
+  "short_url": "http://short.ly/abc123"
+}
+
+For redirection, GET endpoint that takes in the short and redirect to the original long URL
+GET /{short_code}
+-> HTTP 302 Redirect to the original long URL
+
+#HTTP status should be 201 Created, not 200 OK
+#unless a custom_alias collision is detected, in which case they return a 409 Conflict.
 
 
+
+High-level design
+=================
+Client -(post)
+Server(Generate shortURL, Save to db)
+db(alias, original url, creationTime, expirationTime, createdBy)
+
+Client: user interact through web/mobile app
+Server: receive requests and handle logic like creation&validation
+DB: Stores the mapping, expiration date.
+
+When a user submit the URL and the client sends a POST request.
+(1) Server receives the request and validates URL (is-url lib)
+Optionally, check the long URL is already shortened.
+Same long URL may separate expiration dates, independent analytics or custom aliases.
+
+(2) If the URL is valid, generate a short code. custom alias could be short code(avoid duplication).
+Prefixing generated codes with a character that aliases can't use.
+
+(3) Insert the URL to db, storing the short code, long URL and expiration date.
+
+(4) Return the short URL to the client.
+
+
+User should be able to access the original URL by using the shortened URL.
+
+Available in the domain, localhost/abc123 if is abc123.
+
+Client POST /url Get/{shortCode}
+
+Server Write(generate short URL/ save to db) Read(look up original url in DB/ return 302 redirect)
+
+Database (short url code/ original url/ expiration time/ creation time/ created by)
+
+When a user access a shortened URL, the following process occurs:
+
+(1) User's browser sends a GET request to our server with the short code
+(2) Server receives this request and look up in DB
+(3) If the short code is found and hasn't expired, the server retries the long URL. For expired URLs return 410
+(4) The server then sends an HTTP redirect response to the user's browser.
+
+For cleanup, background job periodically to delete expired rows from DB. Cache TTL to match or be shorter
+than URL expiration times so stale entries are automatically evicted.
+
+301 (permanent redirect):
+HTTP/1.1 301 moved permanently
+Location: https://
+
+302 (found): This indicated the resource is temporarily located at a different URL.
+Browser do not cache this response.
+HTTP/1.1 302 Found
+Location: https://www.original-long-url.com
+
+In either case, browser will automatically follow the redirect to the original long URL
+
+For a URL shortener, 302 redirect is often preferred because:
+(1) It gives more control over the redirection process, allowing update or expire links.
+(2) Prevent browsers from caching, for the change in the future.
+(3) It allows to track click statistics for short URL
+
+Potential Deep Dives
+====================
+
+Several areas can dive deeper like collision, scalability and performance.
+
+(1) How to ensure short urls are unique
+ensure the short codes are unique
+short codes to be short as possible
+code is efficiently generated
+
+Bad solution: long url prefix
+==============================
+approach: www.linkedin.com/in/evan-king-40072280/ we could just take the first N (lets say 8 for now) characters of the url and use that as the short code.
+In this case www.short.ly/www.link.
+
+Bad: can not ensure uniqueness.
+
+great solution: hash function
+===========================
+approach: Generating a random number each time. Math.random() it doesn't provide enough entropy (As an example).
+So SHA-256 hash function, for letter case HMAC.
+
+
+great solution unique counter with Base62 encoding
+=================================================
