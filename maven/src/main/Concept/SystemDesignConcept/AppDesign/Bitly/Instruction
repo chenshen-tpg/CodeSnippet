@@ -161,3 +161,16 @@ So SHA-256 hash function, for letter case HMAC.
 
 great solution unique counter with Base62 encoding
 =================================================
+Take output of the counter and encode it using base62. Redis to manage the counter because it's single threaded and support atomic
+Operation( no race condition). It's INCR command atomically increments the counter and returns the new value in a single operation.
+Each counter value is unique, eliminating the risk of collision. The system can scale horizontally to handle massive URLs.
+The short code can be decoded back to the original ID if needed.
+
+Challenges
+In a distributed environment, maintaining a single global counter can be challenging due to sync issues. All instances would need to agree
+on the counter value. Security concern may raise as it's sequential value. Apply a reversible transformation before base 62 encoding.
+Billion urls, would result in a 6 char string.
+This means that even with a billion URLs, our short codes would still be quite compact. At 62^6 (approximately 56 billion URLs),
+we'd need to move to 7-character codes, giving us capacity for 62^7 (over 3.5 trillion) URLs.
+This scalability allows us to handle a massive number of URLs while keeping the codes short
+
