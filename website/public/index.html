@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding Solutions Viewer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>🚀 Algorithm Solutions</h1>
+      <p>Interactive viewer for coding challenges</p>
+    </header>
+
+    <!-- Controls -->
+    <div class="controls">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name, class, or problem ID..."
+        class="search-input"
+      >
+
+      <select id="difficultyFilter" class="filter-select">
+        <option value="All">All Difficulties</option>
+        <option value="Normal">Normal</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <!-- Problem List -->
+      <div class="problem-list">
+        <h2>Problems <span id="problemCount">0</span></h2>
+        <div id="problemsContainer" class="problems-grid">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Code Viewer -->
+      <div class="code-viewer">
+        <div id="codePanel" class="code-panel">
+          <div class="code-header">
+            <h2 id="codeTitle">Select a solution to view</h2>
+            <button id="closeCodeBtn" class="close-btn">✕</button>
+          </div>
+          <pre id="codeContainer"><code id="codeContent"></code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
+
