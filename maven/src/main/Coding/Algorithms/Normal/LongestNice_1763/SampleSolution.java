@@ -3,6 +3,10 @@ package main.Coding.Algorithms.Normal.LongestNice_1763;
 import java.util.HashSet;
 
 public class SampleSolution {
+    public static void main(String[] args) {
+
+    }
+
     public String longestNiceSubstring(String s) {
         String result = "";
         for (int i = 0; i < s.length(); i++) {
