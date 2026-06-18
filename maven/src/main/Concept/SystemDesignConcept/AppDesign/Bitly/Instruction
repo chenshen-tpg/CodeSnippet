@@ -166,7 +166,7 @@ Operation( no race condition). It's INCR command atomically increments the count
 Each counter value is unique, eliminating the risk of collision. The system can scale horizontally to handle massive URLs.
 The short code can be decoded back to the original ID if needed.
 
-Challenges
+Great solution Challenges
 In a distributed environment, maintaining a single global counter can be challenging due to sync issues. All instances would need to agree
 on the counter value. Security concern may raise as it's sequential value. Apply a reversible transformation before base 62 encoding.
 Billion urls, would result in a 6 char string.
@@ -174,3 +174,83 @@ This means that even with a billion URLs, our short codes would still be quite c
 we'd need to move to 7-character codes, giving us capacity for 62^7 (over 3.5 trillion) URLs.
 This scalability allows us to handle a massive number of URLs while keeping the codes short
 
+(2) How can we Ensure the redirections fast?
+============================
+
+With a large db of shortened URLs, finding the right quick is important.
+Without optimization, system will check every single pair(Full table scan)
+
+Good solution approach:
+indexing, a quick way to find. A separate sorted list to search.
+B-tree indexing:  O(logn) look up time.
+PrimaryKey: short code as the primary key. THe uniqueness benefits both
+indexing and data integrity.
+
+Good solution Challenges
+=========================
+disk-based db slower then memory access.  Typical SSD 10k IOPS
+Read 100M DAU, 5k7 per second. ~600k read per second due to peak hours.
+
+Great solution In-memory cache (Redis)
+
+Approach: To improve speed, the cache can store frequently accessed mapping
+of short codes to long URLs. If cache hit, server retrieves the long URL from
+cache. If not, keep check db.
+
+Memory access time (0.0001ms) && SSD (0.1ms) && hdd(10ms)
+Memory can support (M reads pp) && SSD (100K) && HDD (100)
+
+Challenges
+==========
+
+in memory cache offers significant performance improvements but it
+has challenges. Cache invalidation can be complex (updates&deletion)
+Although URLs are read-heavy (no changes). Cache needs time to load.
+Memory limitations require careful decisions on cache size&eviction policies
+LRU.
+
+Great solution: CDN & Edge computing
+
+The short URL domain is served through a CDN with points of presence(POPs) geographically distributed around
+the world.The CDN nodes cache the mappings of short code & LongURL. Allowing redirect requests to be handled
+close to the user's location. Furthermore, by deploying the redirect logic to the edge using platform like
+Cloudflare workers or aws lambda@edge, the redirection can happen directly at the CDN level.
+
+Challenges
+Ensuring cache invalidation and consistency across all CND nodes can be complex. Edge computing requires
+configuration and understanding of serverless function at the edge. Cost might be an issue. Edge functions
+might have limitations in execution time, memory, and available libraries, requiring careful optimization. Debugging
+and monitoring edge env can be more challenging. (Trade off)
+
+
+(3) How can we scale to support 1B shortened URLs and 100M DAU?
+
+Size of DB
+short code(8 bytes)
+long URL (~100 bytes)
+CreationTime (~8 bytes)
+Customs Alias (~100 bytes)
+
+~200 bytes per row. Round up to 500 bytes to accounts for any additional metadata like the creator id etc..
+If 1b mapping need to be stored, it's 500 bytes * 1B rows = 500 GB data. Internet might be the upper bound.
+shard data across multiple servers.
+
+What db tech could be used.
+100k new urls are created per day. 100k new rows is ~1 row per second.
+DB replication to prevent down. DB backup, snapshot of our db and stores it in a separate location.
+For primary server, read & write might be separated. Microservice architecture for read & write.
+
+Counter should be independent and accessible to all instances of write service. Might be with metadata store in the
+redis(centralized redis)
+
+Counter batching (1) Each Write service instance requests a batch of counter value from redis instance
+(2) redis instance atomically increments the counter by 1000 and return the start of the bach.
+(3) Write service instance can then use 1000 values locally without needing to contact Redis for each
+(4) batch is exhausted, request new one.
+
+This approach reduces the load on redit and still remaining the uniqueness across all instances.
+To ensure high availability of counter service, Redis Sentinel/cluster with automatic failover.
+100k operations can be handled by single redis instance.
+
+Multi region deployment, disjoint counter ranges to each region to avoid cross-region coordination.
+Writes go to the local region's redis.
