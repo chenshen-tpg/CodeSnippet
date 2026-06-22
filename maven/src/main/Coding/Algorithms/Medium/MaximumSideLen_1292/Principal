@@ -1,0 +1,3 @@
+The Inclusion-Exclusion Principle is a foundational counting technique used to find
+the size of the union of multiple sets.
+ensures that no elements are overcounted or undercounted when dealing with overlapping categories.
