@@ -1,5 +1,7 @@
 package main.Coding.Algorithms.Medium.LRUcache_146;
 
+import main.Coding.Lib.Node;
+
 public class SampleAns {
     public Node[] map;
     public int count, capacity;
@@ -31,7 +33,7 @@ public class SampleAns {
             Node node = map[key];
             deleteNode(node);
             addToHead(node);
-            return node.value;
+            return node.val;
         } else {
             return -1;
         }
@@ -40,7 +42,7 @@ public class SampleAns {
     public void put(int key, int value) {
         if (map[key] != null) {
             Node node = map[key];
-            node.value = value;
+            node.val = value;
             deleteNode(node);
             addToHead(node);
         } else {
@@ -55,20 +57,6 @@ public class SampleAns {
                 deleteNode(least);
                 addToHead(node);
             }
-        }
-    }
-
-    class Node {
-        int key;
-        int value;
-        Node prev;
-        Node next;
-
-        Node(int key, int value) {
-            this.key = key;
-            this.value = value;
-            this.prev = null;
-            this.next = null;
         }
     }
 }
