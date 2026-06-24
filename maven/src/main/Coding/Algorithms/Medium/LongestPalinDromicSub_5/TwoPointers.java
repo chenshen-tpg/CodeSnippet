@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Medium.LongestPalindromicSubString_5;
+package main.Coding.Algorithms.Medium.LongestPalinDromicSub_5;
 
 public class TwoPointers {
 
