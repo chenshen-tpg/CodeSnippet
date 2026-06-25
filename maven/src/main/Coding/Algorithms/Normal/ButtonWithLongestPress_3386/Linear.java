@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Normal.ButtonWithLongestPushTime_3386;
+package main.Coding.Algorithms.Normal.ButtonWithLongestPress_3386;
 
 public class Linear {
     public static void main(String[] args) {

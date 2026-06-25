@@ -1,8 +1,8 @@
-package main.Coding.Algorithms.Medium.LongestSubStringWithoutRepeatAns_3;
+package main.Coding.Algorithms.Medium.LongSubNoRepeat_3;
 
 import java.util.Arrays;
 
-public class HashMapVersion {
+public class SampleAns {
     public static void main(String[] args) {
 
     }
