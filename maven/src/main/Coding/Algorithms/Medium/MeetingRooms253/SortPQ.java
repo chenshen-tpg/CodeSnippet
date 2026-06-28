@@ -12,14 +12,12 @@ public class SortPQ {
     }
 
     public static int ModelAnswer(int[][] intervals) {
-//        Arrays.sort(intervals, (a, b)->Integer.compare(a[0], b[0]));
-//        PriorityQueue<int[]> pq = new PriorityQueue<>((a, b)->Integer.compare(a[1],b[1]));
         Arrays.sort(intervals, (int[] a, int[] b) -> a[0] - b[0]);
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> a[1] - b[1]);
         for (int[] arr : intervals) {
-            //add the earliest start meeting
-            if (pq.isEmpty()) pq.add(arr);
-            else {
+            if (pq.isEmpty()) {
+                pq.add(arr);
+            } else {
                 if (pq.peek()[1] <= arr[0]) {
                     pq.poll();
                 }

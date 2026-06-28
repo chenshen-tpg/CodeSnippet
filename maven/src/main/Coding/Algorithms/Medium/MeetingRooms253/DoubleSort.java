@@ -21,7 +21,6 @@ public class DoubleSort {
         Arrays.sort(ends);
         int rooms = 0, endsItr = 0;
         for (int i = 0; i < starts.length; i++) {
-            //start[0,5,15] end[10,20,30]
             if (starts[i] < ends[endsItr]) {
                 rooms++;
             } else {
