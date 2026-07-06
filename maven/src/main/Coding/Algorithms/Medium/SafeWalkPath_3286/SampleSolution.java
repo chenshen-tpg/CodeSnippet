@@ -1,5 +1,8 @@
 package main.Coding.Algorithms.Medium.SafeWalkPath_3286;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
+
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -8,7 +11,17 @@ import java.util.PriorityQueue;
 public class SampleSolution {
 
     public static void main(String[] args) {
-
+        int [][] grid = new int [][] {{0,1,0,0,0},{0,1,0,1,0},{0,0,0,1,0}};
+        List<List<Integer>> li = new ArrayList<>(
+                Arrays.asList(
+                    Arrays.asList(0,1,0,0,0),
+                    Arrays.asList(0,1,0,1,0),
+                    Arrays.asList(0,0,0,1,0)
+                )
+        );
+        int health = 1;
+        SampleSolution test = new SampleSolution();
+        test.findSafeWalk(li,health);
     }
 
 
