@@ -8,26 +8,28 @@ public class TEST {
     public int[] sumAndMultiply(String s, int[][] queries) {
         int mod = 1000000007;
         int len = queries.length;
-        int [] ans = new int [len];
+        int[] ans = new int[len];
+
         for (int i = 0; i < len; i++) {
             int l = queries[i][0];
             int r = queries[i][1];
-            StringBuilder sb = new StringBuilder();
             long sum = 0;
             long con = 0;
+            boolean hasNonZero = false;
             while (l <= r) {
                 if (s.charAt(l) != '0') {
-                    sb.append(s.charAt(l));
-                    sum += Integer.parseInt(s.charAt(l)+"");
+                    int digit = s.charAt(l) - '0';
+                    sum += digit;
+                    con = (con * 10 + digit) % mod;
+                    hasNonZero = true;
                 }
                 l++;
             }
-            if (sb.length() == 0) {
+            if (!hasNonZero) {
                 ans[i] = 0;
             } else {
                 sum %= mod;
-                con = Long.valueOf(sb.toString()) % mod;
-                ans[i] = (int)((sum *con) % mod);
+                ans[i] = (int) ((sum * con) % mod);
             }
         }
         return ans;

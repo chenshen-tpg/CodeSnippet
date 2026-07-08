@@ -1,9 +1,13 @@
 package main.Coding.Algorithms.Medium.ConcatenMultiple_3756;
 
 public class SampleSolution {
-    public static void main(String[] args) {
 
+
+    public static void main(String[] args) {
+        SampleSolution test = new SampleSolution();
+        test.sumAndMultiply("9876543210", new int [][] {{0,9}});
     }
+
     public int[] sumAndMultiply(String s, int[][] queries) {
         int mod = 1000000007;
         int n = s.length();
