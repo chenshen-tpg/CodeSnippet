@@ -1,8 +1,8 @@
 package main.Coding.Algorithms.Medium.PathExistence_3532;
 
 public class SampleSolution {
-    public static void main(String[] args) {
 
+    public static void main(String[] args) {
         SampleSolution test = new SampleSolution();
         test.pathExistenceQueries(4, new int [] {2,5,6,8},2,new int [][] {{0,1},{0,2},{1,3},{2,3}});
     }
