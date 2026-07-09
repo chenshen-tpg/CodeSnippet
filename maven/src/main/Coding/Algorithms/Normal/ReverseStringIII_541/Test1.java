@@ -1,0 +1,28 @@
+package main.Coding.Algorithms.Normal.ReverseStringIII_541;
+
+public class Test1 {
+    public static void main(String[] args) {
+        Test1 solution = new Test1();
+        solution.reverseWords(new char[]{'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'});
+        System.out.println("");
+    }
+
+    public void reverseWords(char[] s) {
+        reverse(s, 0, s.length - 1);
+        int j = 0;
+        for (int i = 0; i < s.length; i++) {
+            if (s[i] == s.length || s[i] == ' ') {
+                reverse(s, j, i - 1);
+                j = i + 1;
+            }
+        }
+    }
+
+    public void reverse(char[] s, int start, int end) {
+        while (start < end) {
+            char temp = s[start];
+            s[start++] = s[end];
+            s[end--] = temp;
+        }
+    }
+}
