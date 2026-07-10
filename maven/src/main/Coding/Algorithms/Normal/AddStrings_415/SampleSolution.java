@@ -1,6 +1,6 @@
 package main.Coding.Algorithms.Normal.AddStrings_415;
 
-public class Refine {
+public class SampleSolution {
     public static void main(String[] args) {
 
         System.out.println(addStrings("1", "9"));
