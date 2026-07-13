@@ -6,10 +6,8 @@ public class ImmutableListNode {
     public ListNode next;
 
     public void printValue() {
+
     }
-
-    ;
-
     public ImmutableListNode getNext() {
         return null;
     }
