@@ -30,7 +30,7 @@ public class BFS {
             }
         });
         Queue<Pair<String, Integer>> q = new LinkedList<>();
-        q.add(new Pair(beginWord, 1));
+        q.add(new Pair<>(beginWord, 1));
         Map<String, Boolean> visited = new HashMap<>();
         visited.put(beginWord, true);
         while (!q.isEmpty()) {
@@ -45,7 +45,7 @@ public class BFS {
                     }
                     if (!visited.containsKey(adj)) {
                         visited.put(adj, true);
-                        q.add(new Pair(adj, level + 1));
+                        q.add(new Pair<>(adj, level + 1));
                     }
                 }
             }

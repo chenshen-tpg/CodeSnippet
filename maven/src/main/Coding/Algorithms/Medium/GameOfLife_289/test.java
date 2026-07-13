@@ -20,7 +20,7 @@ public class test {
                 int r = 1 + cord[i];
                 int c = 1 + cord[j];
                 if (!(cord[r] == 0 && cord[c] == 0)) {
-                    li.add(new Pair(r, c));
+                    li.add(new Pair<>(r, c));
                 }
             }
         }
