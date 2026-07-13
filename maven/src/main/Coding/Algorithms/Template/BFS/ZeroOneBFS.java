@@ -23,8 +23,8 @@ public class ZeroOneBFS {
             int u = dq.pollFirst();
 
             for (Pair neighbor : adj.get(u)) {
-                int v = neighbor.element0;
-                int w = neighbor.element1;
+                int v = neighbor.node;
+                int w = neighbor.weight;
 
                 if (dist[u] + w < dist[v]) {
                     dist[v] = dist[u] + w;

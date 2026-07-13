@@ -11,19 +11,6 @@ public class SampleAns {
     private Map<String, String> foodCuisineMap = new HashMap<>();
     private Map<String, TreeSet<Pair<Integer, String>>> cuisineFoodMap = new HashMap<>();
 
-    public SampleAns(String[] foods, String[] cuisines, int[] ratings) {
-        for (int i = 0; i < foods.length; i++) {
-            foodRatingMap.put(foods[i], ratings[i]);
-            foodCuisineMap.put(foods[i], cuisines[i]);
-            cuisineFoodMap.computeIfAbsent(cuisines[i], k -> new TreeSet<>((a, b) -> {
-                int compareByRating = Integer.compare(a.getKey(), b.getKey());
-                if (compareByRating == 0) {
-                    return a.getValue().compareTo(b.getValue());
-                }
-                return compareByRating;
-            })).add(new Pair(-ratings[i], foods[i]));
-        }
-    }
 
     public static void main(String[] args) {
 
