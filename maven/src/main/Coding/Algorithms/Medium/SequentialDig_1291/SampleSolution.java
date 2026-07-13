@@ -20,11 +20,11 @@ public class SampleSolution {
                 if (low <= num && num <= high) {
                     a.add(num);
                 }
-                ++nextDigit;
+                nextDigit++;
             }
         }
 
-       Collections.sort(a);
+        Collections.sort(a);
         return a;
     }
 }
