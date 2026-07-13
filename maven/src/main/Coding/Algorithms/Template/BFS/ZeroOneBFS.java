@@ -1,18 +1,13 @@
 package main.Coding.Algorithms.Template.BFS;
 
+import main.Coding.Lib.Pair;
+
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 import java.util.List;
 
-class Pair {
-    int node, weight;
 
-    Pair(int node, int weight) {
-        this.node = node;
-        this.weight = weight;
-    }
-}
 
 public class ZeroOneBFS {
 
@@ -28,8 +23,8 @@ public class ZeroOneBFS {
             int u = dq.pollFirst();
 
             for (Pair neighbor : adj.get(u)) {
-                int v = neighbor.node;
-                int w = neighbor.weight;
+                int v = neighbor.element0;
+                int w = neighbor.element1;
 
                 if (dist[u] + w < dist[v]) {
                     dist[v] = dist[u] + w;
