@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Template.Dijkstra;
+package main.Coding.Algorithms.Classic.Dijkstra;
 
 import java.util.*;
 

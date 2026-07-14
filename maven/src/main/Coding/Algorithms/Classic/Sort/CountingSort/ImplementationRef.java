@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Template.Sort.CountingSort;
+package main.Coding.Algorithms.Classic.Sort.CountingSort;
 
 public class ImplementationRef {
     public static void main(String[] args) {

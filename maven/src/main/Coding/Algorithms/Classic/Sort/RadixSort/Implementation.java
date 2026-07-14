@@ -1,10 +1,10 @@
-package main.Coding.Algorithms.Template.Sort;
+package main.Coding.Algorithms.Classic.Sort.RadixSort;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class RadixSort {
+public class Implementation {
     // Bucket sort function for each place value digit.
     private void bucketSort(int[] arr, int placeValue) {
         List<List<Integer>> buckets = new ArrayList<>(10);

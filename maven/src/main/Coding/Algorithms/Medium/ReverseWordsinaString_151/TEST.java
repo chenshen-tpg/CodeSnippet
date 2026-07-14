@@ -6,6 +6,7 @@ public class TEST {
     }
 
     public String reverseWords(String s) {
+        //trim() will remove leading and trailing whitespace characters from a String.
         s = s.trim();
         String d = s.replaceAll("\\s+", " ");
         String[] c = d.split(" ");

@@ -1,21 +1,12 @@
-package main.Coding.Algorithms.Template.Dijkstra;
+package main.Coding.Algorithms.Classic.Dijkstra;
 
+
+import main.Coding.Lib.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
-
-class Pair {
-    int node;
-    int dist;
-
-    Pair(int node, int dist) {
-        this.node = node;
-        this.dist = dist;
-    }
-}
-
 public class DijkstraTemplate {
 
 
@@ -23,7 +14,7 @@ public class DijkstraTemplate {
         int[] dist = new int[n];
         Arrays.fill(dist, Integer.MAX_VALUE);
         PriorityQueue<Pair> pq = new PriorityQueue<>(
-                (a, b) -> a.dist - b.dist
+                (a, b) -> a.node - b.weight
         );
 
         dist[src] = 0;
@@ -32,14 +23,14 @@ public class DijkstraTemplate {
         while (!pq.isEmpty()) {
             Pair curr = pq.poll();
             int u = curr.node;
-            int d = curr.dist;
+            int d = curr.weight;
 
             // Skip outdated entries
             if (d > dist[u]) continue;
 
             for (Pair neighbor : adj.get(u)) {
                 int v = neighbor.node;
-                int weight = neighbor.dist;
+                int weight = neighbor.weight;
 
                 if (dist[u] + weight < dist[v]) {
                     dist[v] = dist[u] + weight;

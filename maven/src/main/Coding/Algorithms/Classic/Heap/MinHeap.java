@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Template.Heap;
+package main.Coding.Algorithms.Classic.Heap;
 
 public class MinHeap {
     private int[] heap;

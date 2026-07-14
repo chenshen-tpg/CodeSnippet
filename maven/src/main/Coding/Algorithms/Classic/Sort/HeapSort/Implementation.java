@@ -1,6 +1,6 @@
-package main.Coding.Algorithms.Template.Sort;
+package main.Coding.Algorithms.Classic.Sort.HeapSort;
 
-public class HeapSort {
+public class Implementation {
 
     private void swap(int[] arr, int index1, int index2) {
         int temp = arr[index1];

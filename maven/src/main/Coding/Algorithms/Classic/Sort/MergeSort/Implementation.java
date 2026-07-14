@@ -1,6 +1,6 @@
-package main.Coding.Algorithms.Template.Sort;
+package main.Coding.Algorithms.Classic.Sort.MergeSort;
 
-public class MegeSort {
+public class Implementation {
     // Function to merge two sub-arrays in sorted order.
     private void merge(int[] arr, int left, int mid, int right, int[] tempArr) {
         // Calculate the start and sizes of two halves.

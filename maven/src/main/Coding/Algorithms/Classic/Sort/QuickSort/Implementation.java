@@ -1,6 +1,6 @@
-package main.Coding.Algorithms.Template.Sort;
+package main.Coding.Algorithms.Classic.Sort.QuickSort;
 
-public class QuickSort {
+public class Implementation {
 
     public static void main(String[] args) {
         int[] arr = {10, 7, 8, 9, 1, 5};

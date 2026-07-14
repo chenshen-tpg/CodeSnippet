@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Template.BFS;
+package main.Coding.Algorithms.Classic.BFS;
 
 import main.Coding.Lib.Pair;
 

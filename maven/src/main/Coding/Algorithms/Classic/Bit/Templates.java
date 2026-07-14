@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Template.BitManipulation;
+package main.Coding.Algorithms.Classic.Bit;
 
 public class Templates {
     public static void main(String[] args) {
@@ -25,7 +25,6 @@ public class Templates {
     public void swappingNums () {
         int a = 1;
         int b = 2;
-        int c = 3;
         a = a ^ b;
         b = a ^ b;
         a = a ^ b;
