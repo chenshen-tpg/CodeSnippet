@@ -20,4 +20,13 @@ public class GCD1 {
         return str1.substring(0, gcd(str1.length(), str2.length()));
     }
 
+    public static int gcdLinear(int i, int j) {
+
+        while (j != 0) {
+            int temp = j;
+            j = i % j;
+            i = temp;
+        }
+        return i;
+    }
 }
