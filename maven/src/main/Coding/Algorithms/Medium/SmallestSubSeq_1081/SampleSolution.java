@@ -1,12 +1,8 @@
 package main.Coding.Algorithms.Medium.SmallestSubSeq_1081;
 
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-
-public class TEST {
+public class SampleSolution {
     public static void main(String[] args) {
-        TEST test = new TEST();
+        SampleSolution test = new SampleSolution();
         test.smallestSubsequence("cbacdcbc");
     }
     public String smallestSubsequence(String s) {
