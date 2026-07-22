@@ -8,13 +8,12 @@ public class SampleSol2 {
 
 
     public int bitwiseComplement(int n) {
-        if (n == 0)
-            return 1;
-        int todo = n, bit = 1;
-        while (todo != 0) {
-            n = n ^ bit;
-            bit <<= 1;
-            todo >>= 1;
+        if (n == 0) return 1;
+        int cur = n, count = 1;
+        while (cur != 0) {
+            n = n ^ count;
+            count <<= 1;
+            cur >>= 1;
         }
         return n;
     }
