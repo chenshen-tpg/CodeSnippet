@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Normal.strobogrammaticNum_246;
+package main.Coding.Algorithms.Normal.StrobogrammaticNum_246;
 
 import java.util.HashMap;
 import java.util.Map;
