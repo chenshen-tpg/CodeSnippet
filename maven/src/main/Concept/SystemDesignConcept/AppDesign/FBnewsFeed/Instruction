@@ -1,0 +1,26 @@
+Fan-out is a system design pattern where a single incoming message, event,
+
+or data write is copied and sent to multiple destinations or processing workers.
+
+Core approaches include fan-out-on-write (pushing copies immediately to recipients for fast reads)
+
+and fan-out-on-read (pulling and aggregating data only when requested)
+
+Non-Functional Requirements
+===========================
+
+Core Requirements
+=================
+
+Users should be able to create posts.
+Users should be able to friend/follow people.
+Users should be able to view a feed of posts from people they follow,
+in reverse chronological order (newest first).
+
+Users should be able to page through their feed.
+Below the line (out of scope):
+Users should be able to like and comment on posts.
+Posts can be private or have restricted visibility.
+For the sake of this problem (and most system design problems for what it's worth),
+we can assume that users are already authenticated and that we have their user ID stored in the session or JWT.
+

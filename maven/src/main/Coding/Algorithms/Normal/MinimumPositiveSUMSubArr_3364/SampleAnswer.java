@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Normal.MinimumPositiveSUMSubarray_3364;
+package main.Coding.Algorithms.Normal.MinimumPositiveSUMSubArr_3364;
 
 public class SampleAnswer {
     public static void main(String[] args) {

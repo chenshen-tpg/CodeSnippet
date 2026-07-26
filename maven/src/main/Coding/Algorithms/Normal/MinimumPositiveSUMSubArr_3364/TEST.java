@@ -1,4 +1,4 @@
-package main.Coding.Algorithms.Normal.MinimumPositiveSUMSubarray_3364;
+package main.Coding.Algorithms.Normal.MinimumPositiveSUMSubArr_3364;
 
 import java.util.Arrays;
 import java.util.List;
