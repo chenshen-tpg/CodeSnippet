@@ -3,7 +3,7 @@ package main.Coding.Algorithms.Normal.OnePath_3963;
 public class TEST {
     public static void main(String[] args) {
         TEST test = new TEST();
-        String [] ss = test.createGrid(3,4);
+        String [] ss = test.createGrid(2,3);
 
         for (int i = 0; i < ss.length; i++) {
             System.out.println(ss[i]);
